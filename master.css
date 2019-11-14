@@ -21,3 +21,23 @@ border-bottom: 3px solid #061147;
   width: 50px;
   overflow: hidden;
 }
+/*######################################################################################################################################*/
+/* Format the navbar with proper background. It shouldn't get overlapped with the body of the document. */
+.topnav {
+  overflow: hidden;
+  background-color: ;
+}
+/* Locates the menue bar on the left of the page and text will be white. */
+.topnav a {
+  float: left;
+  color: ;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+/* When hovering over menue items*/
+.topnav a:hover {
+  background-color: ;
+  color: ;
+}
