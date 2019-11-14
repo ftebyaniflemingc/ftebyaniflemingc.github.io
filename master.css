@@ -2,3 +2,22 @@
 /*Authors: Fariba Tebyanian, Kamel Chehbun, Richard Liu, Gowsigan Sritharan, and Adepoju Faderin */
 /*######################################################################################################################################*/
 /* Format body of the page */
+body{
+  background-color: #f2f4fc;
+  font-family: "Sego UI", Tahoma, Palatino, Geneva, Verdana, sans-serif;
+}
+.topbanner (
+padding: 20px 45px;
+background: #212529;
+border-bottom: 3px solid #061147;
+)
+#topname {
+ text-align: center;
+  float: left;
+  overflow: hidden;
+}
+#weblogo {
+ max-size: 250px;
+  width: 50px;
+  overflow: hidden;
+}
