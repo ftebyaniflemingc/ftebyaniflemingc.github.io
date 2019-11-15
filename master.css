@@ -27,18 +27,20 @@ border-bottom: 3px solid #061147;
   overflow: hidden;
   display: inline-block;
   background-color: #0737f4;
-  padding: 20px;
+  border-bottom: 3px solid #061147;
+  padding: 10px 50px;
+  float: center;
 }
-/* Locates the menue bar on the left of the page and text will be white. */
+/* Locates the menu bar on the left of the page and text will be white. */
 .topnav a {
   float: center;
   color: #ffffff;
   font-size: 20px;
   text-align: center;
   padding: 10px 10px;
-  text-decoration: none;
+  text-decoration: underline;
 }
-/* When hovering over menue items*/
+/* When hovering over menu items*/
 .topnav a:hover {
   background-color: #061147;
   color:  #fafbff;
