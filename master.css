@@ -42,3 +42,10 @@ border-bottom: 3px solid #061147;
   background-color: #061147;
   color:  #fafbff;
 }
+/* Style the content */
+.content {
+  padding: 10px;
+  height: 500px; 
+  text-align: center;
+}
+
