@@ -6,11 +6,11 @@ body{
   background-color: #f2f4fc;
   font-family: "Sego UI", Tahoma, Palatino, Geneva, Verdana, sans-serif;
 }
-.topbanner (
+.topbanner {
 padding: 20px 45px;
 background: #212529;
 border-bottom: 3px solid #061147;
-)
+}
 #topname {
  text-align: center;
   float: left;
