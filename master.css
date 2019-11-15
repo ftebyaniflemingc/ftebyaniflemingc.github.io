@@ -26,11 +26,11 @@ border-bottom: 3px solid #061147;
 .topnav {
   overflow: hidden;
   display: inline-block;
-  background-color: 0737f4;
+  background-color: #0737f4;
 }
 /* Locates the menue bar on the left of the page and text will be white. */
 .topnav a {
-  float: left;
+  float: center;
   color: #ffffff;
   font-size: 20px;
   text-align: center;
