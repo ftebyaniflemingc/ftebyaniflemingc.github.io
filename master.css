@@ -3,8 +3,8 @@
 /*######################################################################################################################################*/
 /* Format body of the page */
 body{
-  background-color: #f2f4fc;
-  font-family: "Sego UI", Tahoma, Palatino, Geneva, Verdana, sans-serif;
+  background-color: #transparent;
+  font-family: "Calibri", Tahoma, Geneva, Verdana, sans-serif;
 }
 .topbanner {
 padding: 20px 45px;
