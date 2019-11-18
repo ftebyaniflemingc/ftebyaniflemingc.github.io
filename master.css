@@ -35,15 +35,16 @@ border-bottom: 3px solid #061147;
 .topnav a {
   float: center;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   padding: 10px 10px;
-  text-decoration: underline;
+  text-decoration: none;
 }
 /* When hovering over menu items*/
 .topnav a:hover {
   background-color: #061147;
   color:  #fafbff;
+  text-decoration: underline;
 }
 /* End of formatting navbar */
 
