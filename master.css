@@ -45,11 +45,23 @@ border-bottom: 3px solid #061147;
   background-color: #061147;
   color:  #fafbff;
 }
+/* End of formatting navbar */
+
 /* Style the content */
 .content {
   padding: 10px;
   height: 500px; 
   text-align: center;
 }
-
+/* Style the paragraph */
+* {
+ box-sizing: border-box; 
+}
+.prg {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 5px;
+  text-indent: 50px;
+  background-color: #1e90ff;
+}
 
