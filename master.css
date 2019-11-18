@@ -58,6 +58,7 @@ border-bottom: 3px solid #061147;
  box-sizing: border-box; 
 }
 .prg {
+  text-align: left;
   margin-left: auto;
   margin-right: auto;
   padding: 10px 5px;
