@@ -28,8 +28,8 @@ border-bottom: 3px solid #061147;
   display: inline-block;
   background-color: #0737f4;
   border-bottom: 3px solid #061147;
-  padding: 10px 30px;
-  float: center;
+  padding: 10px 256px 10px 30px;
+  
 }
 /* Locates the menu bar on the left of the page and text will be white. */
 .topnav a {
