@@ -25,7 +25,7 @@ border-bottom: 3px solid #061147;
 /* Format the navbar with proper background. It shouldn't get overlapped with the body of the document. */
 .topnav {
   overflow: hidden;
-  display: inline-block;
+  /* display: inline-block; */
   background-color: #0737f4;
   border-bottom: 3px solid #061147;
   padding: 10px 256px 10px 30px;
