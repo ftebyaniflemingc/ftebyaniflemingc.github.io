@@ -66,8 +66,10 @@ border-bottom: 3px solid #061147;
 .list{
   text-indent: 50px;
 }
+/*######################################################################################################################################*/
 /* Format the Service and team member pages in two columns left side for images and right column for text. 
-I got the idea from the following website: https://www.sphericalgrape.com/gis-services.html  */
+I got the idea from the following website: https://www.sphericalgrape.com/gis-services.html 
+Code by Fariba*/
 /* column to set the images */
 .column.image {
   width: 55%;
