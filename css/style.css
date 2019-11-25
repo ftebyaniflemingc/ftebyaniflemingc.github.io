@@ -71,13 +71,13 @@ border-bottom: 3px solid #061147;
 I got the idea from the following website: https://www.sphericalgrape.com/gis-services.html 
 Code by Fariba*/
 /* column to set the images */
-.column.image {
+.clmimage {
   width: 55%;
   padding-left: 120px;
 }
 
 /* column to set the paragraph*/
-.column.text {
+.clmtext {
   width: 45%;
   padding-right: 120px;
 }
