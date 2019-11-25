@@ -12,11 +12,7 @@ padding: 20px 50px;
 background: #fafbff;
 border-bottom: 3px solid #061147;
 }
-#topname {
- text-align: center;
-  float: left;
-  overflow: hidden;
-}
+
 #weblogo {
  max-size: 550px;
   width: 250px;
@@ -70,3 +66,17 @@ border-bottom: 3px solid #061147;
 .list{
   text-indent: 50px;
 }
+/* Format the Service and team member pages in two columns left side for images and right column for text. 
+I got the idea from the following website: https://www.sphericalgrape.com/gis-services.html  */
+/* column to set the images */
+.column.image {
+  width: 55%;
+  padding-left: 120px;
+}
+
+/* column to set the paragraph*/
+.column.text {
+  width: 45%;
+  padding-right: 120px;
+}
+
