@@ -86,14 +86,14 @@ Code by Fariba*/
 /* Two unequal columns in a line */
 .clm {
   float: center;
-  padding: 25px;
+  padding: 15px;
   overflow:hidden;
   
 }
 /* column to set the paragraph*/
 .clmtext {
   float: right;
-  paddingt: 25px;
+  paddingt: 15px;
   text-align: left;
 }
 
