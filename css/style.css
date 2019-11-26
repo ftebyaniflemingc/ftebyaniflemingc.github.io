@@ -92,7 +92,6 @@ Code by Fariba*/
 /* column to set the paragraph*/
 .clmtext {
   float: right;
-  paddingt: 15px;
   text-align: left;
 }
 
@@ -101,6 +100,5 @@ Code by Fariba*/
   float: left;
   display: block;
   max-width: 100%;
-  max-hight: 100%;
-}
+ }
 
