@@ -63,6 +63,12 @@ border-bottom: 3px solid #061147;
   text-indent: 50px;
   background-color: #1e90ff;
 }
+.title{
+  color: #061147;
+  font-size: 40pt;
+  font-weight: 120;
+  text-alighn: center;
+}
 .list{
   text-indent: 50px;
 }
