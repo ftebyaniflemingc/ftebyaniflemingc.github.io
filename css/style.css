@@ -92,8 +92,9 @@ Code by Fariba*/
 }
 /* column to set the paragraph*/
 .clmtext {
-  float: left;
+  float: right;
   paddingt: 25px;
+  text-align: left;
 }
 
 /* Formatting the images */
