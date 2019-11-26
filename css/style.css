@@ -78,7 +78,9 @@ I got the idea from the following website: https://www.sphericalgrape.com/gis-se
 Code by Fariba*/
 .service{
  margin: auto;
- max-width: 70$;
+ max-width: 70%;
+ padding: 50px;
+ text-align: center;
 }
 /* Two unequal columns in a line */
 .clm {
