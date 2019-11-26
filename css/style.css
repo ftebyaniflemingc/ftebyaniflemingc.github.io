@@ -70,6 +70,10 @@ border-bottom: 3px solid #061147;
 /* Format the Service and team member pages in two columns left side for images and right column for text. 
 I got the idea from the following website: https://www.sphericalgrape.com/gis-services.html 
 Code by Fariba*/
+.service{
+ margin: auto;
+ max-width: 70$;
+}
 /* Two unequal columns in a line */
 .clm {
   float: center;
