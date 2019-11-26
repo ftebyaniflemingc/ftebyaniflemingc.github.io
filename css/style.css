@@ -70,17 +70,30 @@ border-bottom: 3px solid #061147;
 /* Format the Service and team member pages in two columns left side for images and right column for text. 
 I got the idea from the following website: https://www.sphericalgrape.com/gis-services.html 
 Code by Fariba*/
+/* Two unequal columns in a line */
+.clm {
+  float: left;
+  padding: 10px;
+  
+}
 /* column to set the images */
-.clmimage {
+.clm.image {
   width: 55%;
   padding-left: 120px;
 }
 
 /* column to set the paragraph*/
-.clmtext {
+.clm.text {
   width: 45%;
   padding-right: 120px;
 }
+/* Responsive layout - formats two columns verticaly in a line */
+@media screen and (max-width: 500px) {
+  .clm.image, .clm.text {
+    width: 100%;
+  }
+}
+/* Formatting the images */
 .image{
   display: block;
   max-width: 100%;
