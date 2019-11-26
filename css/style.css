@@ -65,7 +65,7 @@ border-bottom: 3px solid #061147;
 }
 h1{
   color: #061147;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 120px;
   text-alighn: center;
 }
@@ -76,11 +76,12 @@ h1{
 /* Format the Service and team member pages in two columns left side for images and right column for text. 
 I got the idea from the following website: https://www.sphericalgrape.com/gis-services.html 
 Code by Fariba*/
-.service{
+.service {
+  text-align: center;
  margin: auto;
  max-width: 70%;
  padding: 50px;
- text-align: center;
+ 
 }
 /* Two unequal columns in a line */
 .clm {
@@ -91,7 +92,7 @@ Code by Fariba*/
 }
 /* column to set the paragraph*/
 .clmtext {
-  float: center;
+  float: left;
   padding-right: 120px;
 }
 
