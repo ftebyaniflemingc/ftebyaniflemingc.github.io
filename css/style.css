@@ -72,29 +72,20 @@ I got the idea from the following website: https://www.sphericalgrape.com/gis-se
 Code by Fariba*/
 /* Two unequal columns in a line */
 .clm {
-  float: left;
-  padding: 10px;
+  float: center;
+  padding: 25px;
+  overflow:hidden;
   
 }
-/* column to set the images */
-.clm.image {
-  width: 55%;
-  padding-left: 120px;
-}
-
 /* column to set the paragraph*/
-.clm.text {
-  width: 45%;
+.clmtext {
+  float: center;
   padding-right: 120px;
 }
-/* Responsive layout - formats two columns verticaly in a line */
-@media screen and (max-width: 500px) {
-  .clm.image, .clm.text {
-    width: 100%;
-  }
-}
+
 /* Formatting the images */
 .image{
+  float: left;
   display: block;
   max-width: 100%;
   max-hight: 100%;
