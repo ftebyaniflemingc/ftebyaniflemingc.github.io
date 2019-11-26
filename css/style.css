@@ -85,7 +85,6 @@ Code by Fariba*/
 }
 /* Two unequal columns in a line */
 .clm {
-  float: center;
   padding: 15px;
   overflow:hidden;
   
