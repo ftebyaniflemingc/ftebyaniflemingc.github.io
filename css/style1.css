@@ -1,0 +1,145 @@
+
+/*######################################################################################################################################*/
+/*Authors: Fariba Tebyanian, Kamel Chehbun, Richard Liu, Gowsigan Sritharan, and Adepoju Faderin */
+/*######################################################################################################################################*/
+/* Format body of the page. The source of font-family was found here: https://gist.github.com/renyi/877176*/
+body{
+  background-color: transparent;
+  font-family: "Calibri", Tahoma, Geneva, Verdana, sans-serif;
+}
+.topbanner {
+padding: 20px 50px;
+background: #fafbff;
+border-bottom: 3px solid #061147;
+}
+
+#weblogo {
+  max-height: 550px;
+  width: 250px;
+  overflow: hidden;
+}
+/*######################################################################################################################################*/
+/* Format the navbar with proper background. It shouldn't get overlapped with the body of the document. */
+.topnav {
+  overflow: hidden;
+  /* display: inline-block; */
+  background-color: #0737f4;
+  border-bottom: 3px solid #061147;
+  padding: 10px 256px 10px 30px;
+  
+}
+/* Locates the menu bar on the left of the page and text will be white. Code ~Fariba */
+.topnav a {
+  float: center;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+/* When hovering over menu items*/
+.topnav a:hover {
+  background-color: #061147;
+  color:  #fafbff;
+  text-decoration: underline;
+}
+/* End of formatting navbar */
+
+/* Style the content Code ~Fariba  */
+.content {
+  padding: 50px;
+  height: 500px; 
+  text-align: center;
+}
+/* Style the paragraph Code ~Fariba */
+* {
+ box-sizing: border-box; 
+}
+.prg {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 5px;
+  text-indent: 50px;
+  background-color: #1e90ff;
+}
+h1.title{
+  color: #061147;
+  font-size: 60px;
+  font-weight: 120px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.list{
+  text-indent: 50px;
+}
+/* To format each paragraph content in Service and Team Member pages. Code ~Fariba */
+p.p {
+  float: left;
+  margin: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-indent: 50px;
+  font-size: 16pt;
+}
+p.d {
+  text-align: right;
+  font-weight: bold;
+  margin: 0px;
+  padding: 10px;
+}
+/*######################################################################################################################################*/
+/* Format the Service and team member pages in two columns left side for images and right column for text. 
+I got the idea from the following website: https://www.sphericalgrape.com/gis-services.html 
+Code ~Fariba*/
+.contain {
+  text-align: center;
+ margin: auto;
+ max-width: 70%;
+ padding: 25px;
+ }
+/* Two unequal columns in a line */
+.clm {
+  padding: 50px 2px;
+  overflow:hidden;
+ }
+/* column to set the paragraph*/
+.clmtext {
+  float: right;
+  text-align: justify;
+  max-width: 60%;
+}
+/* Formatting the images */
+.image{
+  float: left;
+  display: block;
+  max-width: 40%;
+ }
+/* Formating member title */
+p.membertitle{
+color: #c00; 
+text-transform: uppercase;
+}
+
+p.member-text {
+  text-align: left;
+  margin: 0px;
+  font-size: 14pt;
+}
+p.member-date {
+  text-align: right;
+  font-weight: bold;
+  margin: 0px;
+}
+/* column to set the Team Member paragraph in the left side of page*/
+.clmtext-member {
+  float: left;
+  text-align: justify;
+  max-width: 60%;
+}
+/* Formatting the Team Member images in the right side of page */
+.image-member{
+  float: right;
+  display: block;
+  max-width: 40%;
+ }
