@@ -102,6 +102,7 @@ Code ~Fariba*/
 .clm {
   padding: 50px 2px;
   overflow:hidden;
+  
  }
 /* column to set the paragraph*/
 .clmtext {
@@ -115,6 +116,15 @@ Code ~Fariba*/
   display: block;
   max-width: 40%;
  }
+ /* Formating a line between member block. Code source: */ 
+     
+hr.line{
+  padding-top: 25px;
+  padding-left: 25px;
+  border-top: 1px solid  #010c35;
+  max-width: 40%;  
+}
+
 /* Formating member title */
 p.membertitle{
 color: #c00; 
