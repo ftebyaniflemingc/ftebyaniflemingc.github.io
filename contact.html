@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contact - CCC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Set up the menu bar. Code based on www.w3schools.com/ -->
+  <!-- Load the stylesheet -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+	<!--By Kamel: Menu Bar: Adding an icon from font-awesome.min that will stack vertically the menu bar on smaller screens-->
+	<!--https://www.w3schools.com/html/html_responsive.asp-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="scripts/form.js"></script>
+
+</head>
+<head>
+
+  <body>
+	  
+    <!--By Kamel: HOME PAGE; Slideshow banner-->
+	<div class="row">
+		<div class="panel1">
+			<img src="images/WLogo.png">			
+		</div>
+  
+		<div class="panel2">
+			<div class="banner">
+				<img class="slidesshow" src="images/Banner1_5thGIS.png">
+				<img class="slidesshow" src="images/Banner2_5thGIS.png">
+				<img class="slidesshow" src="images/Banner3_5thGIS.png">
+	  
+			<script src="scripts/slideshow.js"></script>
+			</div>
+		</div>
+  
+	</div>
+    <!-- Top menu bar, the codes source: https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_black 
+          done by Fariba-->
+		  <!--Resonsive Design id="mytopnav" added by Kamel: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_topnav-->
+    <div class="topnav" id="mytopnav">
+      	<a class="active" href="index.html">Home</a>
+      	<a href="teammembers.html">Team Members</a>
+      	<a href="services.html">Services</a>
+     	<a href="products.html">Products</a>
+		<a href="training.html">Training</a>                                                        
+		<a href="testimonials.html">Testimonials</a>                                                                                                                 
+    	<a href="contact.html">Contact</a>
+    	<a href="partners.html">Partners</a>	       
+		<a href="careers.html">Careers</a>
+		<a href="news.html">News</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
+		<script src="scripts/mytopnav.js"></script>
+
+    </div>
+    <!-- Banner Ends -->
+   
+	
+<!--Contacts Page: Done by Kamel-->
+
+<div class="header">
+
+<div class="contact-info">
+<h2>Contact Us:</h2>
+
+
+<i class="fa fa-phone" aria-hidden="true" ></i> P 1-613-603-9867<br>
+<i class="fa fa-fax" aria-hidden="true"></i> F 1-416-876-9856<br>
+<!-- Inserted  GoogleMap using the Google API Key in the GEOM101 Assignment --> 
+<a href="https://www.google.com/maps/place/glebe+ottawa/"><img src="https://maps.googleapis.com/maps/api/staticmap?center=athens,on&zoom=6&size=450x230&maptype=roadmap&markers=color:blue%7COttawa,ON&markers=color:green%7CToronto,ON&markers=color:red%7CMontreal,Qc&key=AIzaSyBjZiWFPIlj4Gx4aa2YQsphCnOOVR5UBj8" alt="Google Map of Victoria,BC"></a>
+<br>
+
+<i class="fa fa-google-plus-square" aria-hidden="true"></i>
+<i class="fa fa-facebook-square" aria-hidden="true"></i>
+<i class="fa fa-linkedin-square" aria-hidden="true"></i>
+<i class="fa fa-twitter-square" aria-hidden="true"></i>
+
+</div>
+
+ </div>
+
+<div class="background">
+<h2 class="w3-center">Let's Work Together!</h2>
+
+<!--The field set code has been taken and modified from https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_fieldset -->
+<!--From action code from https://www.w3schools.com/js/tryit.asp?filename=tryjs_validation_html
+and fieldset code from https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_fieldset -->
+
+
+<form  action="mailto:ccccounsulting@gmail.com"" id="form" method="post"  onsubmit="return validateForm()" >
+	<fieldset>
+	<h4>Questions or Concern! Receive reply within 24 hours.<br></h4>
+	
+	<h5><i>Quotation for projects included</i></h5>
+	
+	<div class="labels">
+	
+		<label><span>Name:</span>
+		<input type="text" id="name" name="name" placeholder="Ex:Joe Smith" tabindex="1"></label>
+	
+		<label><span>Email:</span>
+		<input id="email" placeholder="Ex:joe@example.com" tabindex="2"></label>
+	</div>
+	<div>
+		<label><span>Project Details:</span>
+		<textarea id="comments" placeholder="Details" tabindex="1"> </textarea></label>
+	</div>
+	
+	<input class="button2" type="submit" value="Submit" />
+
+	</fieldset>
+</form>
+
+</div>
+
+	
+<!-- FOOTER SECTION, Inserting an image grouping Partners Logos, Done by Kamel -->
+
+	
+<div id="footer">
+
+ <div class="fpanel">
+	<h2>The 5th GIS</h2>
+	
+	<div class="logo">
+	<a  href="http://www.linkedin.com/in/the5thGIS"> <img src="images/linkedin-logo-png-11.png"  alt="LinkedIN"></a>
+	<a  href="http://www.facebook.com/public/the5thGIS"> <img src="images/facebook-6.png" alt="facebook"></a>
+	<a href="Terms.doc" target="_blank">Terms </a>
+	<a href="Privacy.doc" target="_blank">Privacy </a>
+	<a>@2019</a>
+	</div>
+  </div>
+
+	<div class="fpanel1">
+		<div class="pagefootermenu">  
+			<li><a href="index.html">HOME</a></li>
+			<li><a href="teammembers">Team Members</a></li>
+			<li><a href="services">Services</a></li>	
+			<li><a href="products">Products</a></li>
+			<li><a href="training">Training</a></li>
+		</div>
+	</div>
+	<div class="fpanel2">
+		<div class="pagefootermenu">  
+			<li><a href="testimonials">Testimonials</a></li>
+			<li><a href="contact">Contact Partners</a></li>
+			<li><a href="partners.html">Partners</a></li>
+			<li><a href="careers.html">Careers</a></li>
+			<li><a href="news.html">News</a></li>
+		</div>
+	</div>
+ 
+	<div class="fpanel">
+    <h3>Toronto</h3>
+	<p>89, Lyon Rd.</p>
+	<p>Toronto, Ontario</p>
+	<p>K3B 3H2</p>
+	<p></p>
+	<p>t: +1 416 768 9870</p>
+	</div>
+
+	<div class="fpanel">
+    <h3>Ottawa</h3>
+	<p>610, Du Plateau St.</p>
+	<p>Ottawa, Ontario</p>
+	<p>K4A 4G4</p>
+	<p></p>
+	<p>t: +1 613 453 2345</p>
+	</div>
+  
+    <div class="fpanel">
+    <h3>Montreal</h3>
+	<p>65, Nicholas St.</p>
+	<p>Montreal, Quebec</p>
+	<p>T1X 0L3</p>
+	<p></p>
+	<p>t: +1 418 366 0978</p>
+  </div>
+   
+
+</div>
+
+<!-- End Footer Section -->		
+</body>
+		
+</html>
