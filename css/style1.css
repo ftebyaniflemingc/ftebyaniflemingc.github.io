@@ -119,8 +119,8 @@ Code ~Fariba*/
  /* Formating a line between member block. Code source: */ 
      
 hr.line{
-  padding-top: 25px;
-  padding-left: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   border-top: 1px solid  #010c35;
   max-width: 40%;  
 }
