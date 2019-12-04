@@ -1,9 +1,9 @@
-/*######################################################################################################################################*/
+/*#####################################################################################################*/
 /*Authors: Fariba Tebyanian, Kamel Chehbun, Richard Liu, Gowsigan Sritharan, and Adepoju Faderin */
-/*######################################################################################################################################*/
-/* Format body of the page */
+/*#####################################################################################################*/
+/* Format body of the page. The source of font-family was found here: https://gist.github.com/renyi/877176*/
 body{
-  background-color: #transparent;
+  background-color: transparent;
   font-family: "Calibri", Tahoma, Geneva, Verdana, sans-serif;
 }
 .topbanner {
@@ -13,30 +13,34 @@ border-bottom: 3px solid #061147;
 }
 
 #weblogo {
- max-size: 550px;
+  max-width: 550px;
   width: 250px;
   overflow: hidden;
 }
-/*######################################################################################################################################*/
+/*#######################################################################################################*/
 /* Format the navbar with proper background. It shouldn't get overlapped with the body of the document. */
 .topnav {
   overflow: hidden;
-  /* display: inline-block; */
   background-color: #0737f4;
   border-bottom: 3px solid #061147;
-  padding: 10px 256px 10px 30px;
+  padding: 15px 30px;
+
 }
+/* Format the links insirde the navbar. It shouldn't collapse when resizing. Code ~Fariba
+code source: https://stackoverflow.com/questions/30690199/how-do-i-prevent-the-line-break-on-resizing*/
+#mytopnav{
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
 /* Locates the menu bar on the left of the page and text will be white. */
 .topnav a {
-  float: center;
   color: #ffffff;
-  font-size: auto;
   text-align: center;
   padding: 10px 10px;
   text-decoration: none;
 }
 
-  
   .topnav .icon {
   display: none;
 }
@@ -67,15 +71,37 @@ border-bottom: 3px solid #061147;
   text-indent: 50px;
   background-color: #1e90ff;
 }
-h1{
+
+h1.title{
   color: #061147;
-  font-size: 40px;
-  font-weight: 120px;
-  text-alighn: center;
+  font-size: 60px;
+  text-transform: uppercase;
+  text-align: center;
+  }
+#team-tilte{
+  white-space:nowrap;
+  text-overflow:ellipsis;
 }
 .list{
   text-indent: 50px;
 }
+/* To format each paragraph content in Service and Team Member pages. Code ~Fariba */
+p.p {
+  float: left;
+  margin: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-indent: 50px;
+  font-size: 16pt;
+}
+p.d {
+  text-align: right;
+  font-weight: bold;
+  margin: 0px;
+  padding: 10px;
+}
+
+
 /*######################################################################################################################################*/
 /* Format the Service and team member pages in two columns left side for images and right column for text. 
 I got the idea from the following website: https://www.sphericalgrape.com/gis-services.html 
@@ -161,8 +187,6 @@ https://www.w3schools.com/html/html_responsive.asp*/
   }
 }
 
-
-
 /* ---------- HOME PAGE: By Kamel---------- */
 
 /* ---------- Footer Section with 4 panels of equal size: By Kamel---------- */
@@ -176,14 +200,14 @@ https://www.w3schools.com/html/html_responsive.asp*/
 	text-align: left;
 	letter-spacing: 2px;
 	font-size: 12px;
-	height:90px;
+	height:95px;
 }
 
 
 /* Create footer panels that floats next to each other */
 .fpanel {
 	float: left;
-    width: 20%;
+    width: 25%;
 	font-size: 11px;
 	border-right: 1px solid #1e90ff;
 	padding-left: 10px;
@@ -192,7 +216,7 @@ https://www.w3schools.com/html/html_responsive.asp*/
 }
 
 .fpanel h2 {
-	color: #00008b;
+	color: #010c35;
 	font-family: Georgia,serif;
 	font-size: 16px;
 	letter-spacing: 1.8px;
@@ -221,7 +245,6 @@ https://www.w3schools.com/html/html_responsive.asp*/
 
 .fpanel p {
 	font-size: 10px;
-	line-height:0.5px;
 }
 
 .logo a {
@@ -236,7 +259,9 @@ https://www.w3schools.com/html/html_responsive.asp*/
 .logo {
 	word-spacing: 10px;
 	position: center;
-	padding-left: 20px;
+  padding-left: 20px;
+  white-space:nowrap;
+  text-overflow:ellipsis;
 }
 
 a {
@@ -247,10 +272,6 @@ a {
 list-style-type: none;
 }
 
-
-
-
-
 /*CONTACTS PAGE: contact us page*/
 @import url(https://fonts.googleapis.com/css?family=Cardo|Lato:700,400,400italic);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100);
@@ -258,7 +279,6 @@ list-style-type: none;
 	float: right;
 	padding: 25px;
 }
-
 
 div.background {
 	padding-bottom: 20%;
@@ -317,5 +337,83 @@ fieldset{
 	border-radius: 8px;
 	text-align: center;
 	cursor: pointer;
-	
 }
+
+/*######################################################################################################################################*/
+/* Format the Service and team member pages in two columns left side for images and right column for text. 
+I got the idea from the following website: https://www.sphericalgrape.com/gis-services.html 
+Code ~Fariba*/
+.contain {
+ text-align: ledt;
+ margin: auto;
+ max-width: 70%;
+ padding: 25px;
+ }
+/* Two unequal columns in a line */
+.clm {
+  padding: 50px 2px;
+  overflow:hidden;
+  
+ }
+/* column to set the paragraph*/
+.clmtext {
+  float: right;
+  text-align: justify;
+  max-width: 60%;
+}
+/* Formatting the images */
+.image{
+  float: left;
+  display: block;
+  max-width: 40%;
+ }
+ /* Formating a line between member block. Code source: */ 
+     
+hr.line{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-top: 1px solid  #010c35;
+  max-width: 40%;  
+}
+/* Formating the link to remove underline link and different color  */
+.active{
+  text-decoration:none;
+  color: #010c35;
+}
+/* Formating member title */
+p.membertitle{
+color: #c00; 
+text-transform: uppercase;
+}
+
+li.text {
+  text-align: left;
+  font-size: 14pt;
+}
+p.member-text {
+  text-align: left;
+  margin: 0px;
+  font-size: 14pt;
+}
+p.member-date {
+  text-align: right;
+  font-weight: bold;
+  margin: 0px;
+}
+/* column to set the Team Member paragraph in the left side of page*/
+.clmtext-member {
+  float: left;
+  text-align: justify;
+  max-width: 60%;
+}
+/* Formatting the Team Member images in the right side of page */
+.image-member{
+  float: right;
+  display: block;
+  max-width: 40%;
+ }
+
+ 
+
+/* End if formating the Service and team member pages by Fariba. */
+ /*######################################################################################################################################*/

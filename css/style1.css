@@ -66,10 +66,10 @@ border-bottom: 3px solid #061147;
 h1.title{
   color: #061147;
   font-size: 60px;
-  font-weight: 120px;
-  text-align: center;
   text-transform: uppercase;
+  text-align: center;
 }
+
 .list{
   text-indent: 50px;
 }
