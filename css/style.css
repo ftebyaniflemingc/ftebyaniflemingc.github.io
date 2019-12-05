@@ -433,3 +433,26 @@ margin: 0px;
 
 /* End if formating the Service and team member pages by Fariba. */
  /*######################################################################################################################################*/
+
+/*By Richard Liu*/
+
+/*Product header style*/
+.productHeader {
+	background-color: gray;
+	text-align: center;
+	color: white;
+	font-size: 50px;
+	padding: 20px;}
+
+/*Product section style*/
+article {
+	padding-top: 30px;
+	padding-left: 50px;
+	text-align: left;}
+
+/*Footer style in Products*/
+footer {
+	background-color: gray;
+	text-align: center;
+	color: white;
+	padding-top: 30px;}
