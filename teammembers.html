@@ -61,8 +61,10 @@
           <!-- image source: http://www.giscloud.com/manual/map-editor-manual/gis-analysis/ -->
           <img src="images/GIS1.png" alt="GIS1">
         </div>
-        
-        <div class="clmtext-member" >
+        <!-- each block has the same sorce of css code and same html code. clmtxt-member in first block has 581.750px width while the other blocks are 559.969. 
+        I tried to debug it by using F12 and compared all codes. There was no resonable reson for this difference. 
+        So, I add an extra padding-left by id "#vpadd" tag to solve the problem -->
+        <div class="clmtext-member" id="vapp">
           <h2> <a href="http://userpages.flemingc.on.ca/~kchehbou/geom101/a2/" class="active" target="_blank">Kamel Chehboun </a></h2>
           <p class="membertitle">Executive Vice President</p>         
           <p><a href="mailto:Kamel.Chehboun@flemingcollege.ca" class="active">Kamel.Chehboun@flemingcollege.ca</a></p>
