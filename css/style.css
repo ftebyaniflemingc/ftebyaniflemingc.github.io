@@ -508,11 +508,6 @@ p.member-date {
 
 /* ---------- Career & News/Events Pages  By Gowsigan Sritharan---------- */
 
-/* Set font style for entire webpages */
-body{
-  background-color: transparent;
-  font-family: "Calibri", Tahoma, Verdana, sans-serif;
-}
 
 /* Align title of webpage towards the centre */
 div.Car-Title{
