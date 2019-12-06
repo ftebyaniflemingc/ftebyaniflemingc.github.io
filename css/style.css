@@ -445,11 +445,17 @@ margin: 0px;
 	padding: 20px;}
 
 /*Nav bar*/
-#producttopnav a {
+nav {
+	background-color: blue;}
+
+.producttopnav a {
 	display: inline-block;
 	text-align: center;
 	padding: 20px;
 	color: white;}
+
+.producttopnav a: hover {
+	background color: black;}
 
 /*Product section style*/
 article {
