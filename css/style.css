@@ -101,8 +101,6 @@ p.d {
   margin: 0px;
   padding: 10px;
 }
-
-
 /*######################################################################################################################################*/
 /* Format the Service and team member pages in two columns left side for images and right column for text. 
 I got the idea from the following website: https://www.sphericalgrape.com/gis-services.html 
@@ -131,14 +129,12 @@ Code by Fariba*/
   max-width: 100%;
  }
 
-
 /*----- HOME Page: By Kamel. Header Banner Design with two panels, the left panel containg the company's logo on the right of the slide show */
 
 /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_three_columns */
 * {
     box-sizing: border-box;
 }
-
 .row img {
 	width: 100%;
 }
@@ -272,9 +268,7 @@ a {
 .pagefootermenu {
 list-style-type: none;
 }
-
 /* ---------- HOME PAGE: End of Footer Section: By Kamel---------- */
-
 
 /*######################################################################################################################################*/
 /*-------CONTACTS PAGE: By Kamel----------*/
@@ -308,7 +302,6 @@ list-style-type: none;
 	margin-top:25px;
 	padding-bottom:30px;
 }
-
 
 form{
 	border-style: none;
@@ -347,10 +340,6 @@ fieldset{
 	font:20px sans-serif;
 
 }
-
-
-
-
 	
 .button2{
 	border: none;
@@ -428,7 +417,6 @@ fieldset{
 /*--- https://www.w3schools.com/css/css_rwd_mediaqueries.asp ---*/
 @media only screen and (max-width: 968px) {
 
-
   [class*="boxes_testi"] {
 
      width: 100%;
@@ -440,9 +428,6 @@ fieldset{
 
 /* End of Testimonials Page: By Kamel */
 /*######################################################################################################################################*/
-
-
-
 
 /*######################################################################################################################################*/
 /* Format the Service and team member pages in two columns left side for images and right column for text. 
@@ -517,9 +502,6 @@ p.member-date {
   display: block;
   max-width: 40%;
  }
-
-
-
 
 /* End if formating the Service and team member pages by Fariba.-- */
  /*######################################################################################################################################*/
@@ -694,6 +676,89 @@ div.MajGISOrg{
 /* End format of careers & news/events pages. Completed by Gowsigan Sritharan. */
  /*######################################################################################################################################*/
 
+/* ---------- Career & News/Events Pages  By Gowsigan Sritharan---------- */
+
+/* Set font style for entire webpages */
+body{
+  background-color: transparent;
+  font-family: "Calibri", Tahoma, Verdana, sans-serif;
+}
+
+/* Align title of webpage towards the centre */
+div.Car-Title{
+  font-size: 25px;
+  text-align: center;
+  color: #061147
+  }
+
+h2.gow{
+  color: #061147;
+}
+
+div.CareerOpportunities{
+  color: #101113;
+}
+
+/*Set a border around this section */
+div.EmployeeBenefits {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  border: 5px double black;
+  padding: 5px;
+  margin: 25px;
+}
+
+/* Forms a border arond this section, to be placed on the right side of webpage */
+div.Apply{
+  width: 400px;
+  border: 5px double black;
+  padding: 20px;
+  margin: 0px;
+}
+
+/* Align title of webpage towards the centre */
+div.News-Title{
+  font-size: 25px;
+  text-align: center;
+  color: #061147
+}
+
+/* Bold the career title name */
+p.Eve{
+  font-weight: bold;
+}
+
+/* Change color of "Inquiries" title to match general color scheme */
+div.Help{
+  color: #061147
+}
+
+/* Set the text color of Inquiries section to black*/
+p.Hlp{
+  color: black
+  
+}
+
+/* Set a border around this section*/
+div.Help {
+  width: 300px;
+  padding: 3px;
+  border: 3px solid black;
+  margin: 0px;
+}
+
+div.MajGISOrg{
+  width: 245px;
+  padding: 3px;
+  border: 3px solid black;
+  margin: 0px;
+}
+
+/* End format of careers & news/events pages. Completed by Gowsigan Sritharan. */
+ /*######################################################################################################################################*/
 
 
->>>>>>> acc4bdb7a179fa74cb7f5ef18e9491d7d3371891
+
+>>>>>> acc4bdb7a179fa74cb7f5ef18e9491d7d3371891
