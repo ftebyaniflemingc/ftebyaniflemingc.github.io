@@ -470,6 +470,16 @@ article {
 	padding-left: 50px;
 	text-align: left;}
 
+.picticon1 {
+	float: left;
+	width: 10%;
+	height: 100px;}
+
+.picticon1descript {
+	float: left;
+	width: 90%;
+	height: 100px;}
+
 /*Footer style in Products*/
 footer {
 	background-color: gray;
