@@ -880,7 +880,19 @@ p.MajGIS{
         text-color: black
       }
 
+div.Help {
+  width: 300px;
+  padding: 3px;
+  border: 3px solid black;
+  margin: 0px;
+}
 
+div.MajGISOrg{
+  width: 245px;
+  padding: 3px;
+  border: 3px solid black;
+  margin: 0px;
+}
 
 
 
