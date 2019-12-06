@@ -449,13 +449,15 @@ margin: 0px;
 	background-color: blue;}
 
 .producttopnav a {
-	display: inline-block;
+	display: inline-block; /*my solution to nav links hover flowing over links while in mobile view*/
 	text-align: center;
 	padding: 20px;
 	color: white;}
 
 .producttopnav a:hover {
 	background-color: black;}
+.producttopnav a:active {
+	background-color: lightgray;}
 
 /*Product section style*/
 article {
