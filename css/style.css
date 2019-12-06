@@ -479,14 +479,15 @@ article {
 	width: 30%;
 	height: 100px;
 	padding: 20px;
-	margin-right: 50px;}
+	margin-right: 80px;
+	background-color: lightgray;}
 
 .picticon1descript {
 	float: left;
 	width: 30%;
 	height: 100px;
 	padding: 20px;
-	margin-left: 50px;
+	margin-left: 80px;
 	background-color: lightgray;}
 
 /*Footer style in Products*/
