@@ -493,3 +493,90 @@ footer {
 	text-align: center;
 	color: white;
 	padding: 30px;}
+
+
+/* ---------- Career & News/Events Pages  By Gowsigan Sritharan---------- */
+
+/* Set font style for entire webpages */
+body{
+  background-color: transparent;
+  font-family: "Calibri", Tahoma, Verdana, sans-serif;
+}
+
+/* Align title of webpage towards the centre */
+div.Car-Title{
+  font-size: 25px;
+  text-align: center;
+  color: #061147
+  
+}
+
+h2{
+  color: #061147;
+}
+
+div.CareerOpportunities{
+  color: #101113;
+}
+
+/*Set a border around this section */
+div.EmployeeBenefits {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  border: 5px double black;
+  padding: 5px;
+  margin: 25px;
+}
+
+/* Forms a border arond this section, to be placed on the right side of webpage */
+div.Apply{
+  width: 400px;
+  border: 5px double black;
+  padding: 20px;
+  margin: 0px;
+}
+
+/* Align title of webpage towards the centre */
+div.News-Title{
+  font-size: 25px;
+  text-align: center;
+  color: #061147
+}
+
+/* Bold the career title name */
+p.Eve{
+  font-weight: bold;
+}
+
+/* Change color of "Inquiries" title to match general color scheme */
+div.Help{
+  color: #061147
+}
+
+/* Set the text color of Inquiries section to black*/
+p.Hlp{
+  color: black
+  
+}
+
+/* Set a border around this section*/
+div.Help {
+  width: 300px;
+  padding: 3px;
+  border: 3px solid black;
+  margin: 0px;
+}
+
+div.MajGISOrg{
+  width: 245px;
+  padding: 3px;
+  border: 3px solid black;
+  margin: 0px;
+}
+
+/* End format of careers & news/events pages. Completed by Gowsigan Sritharan. */
+ /*######################################################################################################################################*/
+
+
