@@ -200,7 +200,7 @@ https://www.w3schools.com/html/html_responsive.asp*/
 	clear:both;
 }
 .partners {
-	position: relative;
+	position: fixed;
 }
 .fpanel {
 	float: left;
