@@ -73,6 +73,12 @@ code source: https://stackoverflow.com/questions/30690199/how-do-i-prevent-the-l
   background-color: #1e90ff;
 }
 
+h1.title{
+  color: #061147;
+  font-size: 60px;
+  text-transform: uppercase;
+  text-align: center;
+  }
 #team-tilte{
   white-space:nowrap;
   text-overflow:ellipsis;
@@ -194,7 +200,7 @@ https://www.w3schools.com/html/html_responsive.asp*/
 	clear:both;
 }
 .partners {
-	padding-left: 110px;
+	padding-left: 150px;
 }
 .fpanel {
 	float: left;
@@ -469,13 +475,6 @@ code source: https://stackoverflow.com/questions/30690199/how-do-i-prevent-the-l
   color:  #fafbff;
   text-decoration: underline;
 }
-
-h1.title{
-  color: #061147;
-  font-size: 60px;
-  text-transform: uppercase;
-  text-align: center;
-  }
 
 
 
