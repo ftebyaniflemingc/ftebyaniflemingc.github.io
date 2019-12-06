@@ -587,15 +587,15 @@ div.MajGISOrg{
   border: 3px solid black;
   margin: 0px;
 }
-
+/* Set text color to black for the Latest News & Releases Section*/
 p.Rel{
   color: black
 }
-
+/* Set text color to black for the Blogs & Forums Section*/
 p.Blg{
   color: black
 }
-
+/* Set text color to black for the Major GIS Organizations Section*/
 p.MajGIS{
   color: black
 }
