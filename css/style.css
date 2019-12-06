@@ -456,7 +456,7 @@ margin: 0px;
 
 .producttopnav a:hover {
 	background-color: black;}
-.producttopnav a:active {
+.producttopnav a.active {
 	background-color: lightgray;}
 
 /*Product section style*/
