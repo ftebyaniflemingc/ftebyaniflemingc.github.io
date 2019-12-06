@@ -458,7 +458,8 @@ nav.producttopnav a:hover {
 	background-color: black;}
 
 nav.producttopnav a.active {
-	background-color: lightgray;}
+	background-color: lightgray;
+	color: black;}
 
 /*Product section style*/
 article {
