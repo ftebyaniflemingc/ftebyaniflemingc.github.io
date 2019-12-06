@@ -445,18 +445,19 @@ margin: 0px;
 	padding: 20px;}
 
 /*Nav bar*/
-.producttopnav {
+nav.producttopnav {
 	background-color: blue;}
 
-.producttopnav a {
+nav.producttopnav a {
 	display: inline-block; /*my solution to nav links hover flowing over links while in mobile view*/
 	text-align: center;
 	padding: 20px;
 	color: white;}
 
-.producttopnav a:hover {
+nav.producttopnav a:hover {
 	background-color: black;}
-.producttopnav a.active {
+
+nav.producttopnav a.active {
 	background-color: lightgray;}
 
 /*Product section style*/
