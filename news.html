@@ -14,8 +14,47 @@
         <!-- Set up the menu bar. Code based on www.w3schools.com/ -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 </head>
+<body>
+	  
+ <!--By Kamel: HOME PAGE; Slideshow banner-->
+	<div class="row">
+		<div class="panel1">
+			<img src="images/WLogo.png" alt="">			
+		</div>
+  
+		<div class="panel2">
+			<div class="banner">
+				<img class="slidesshow" alt="" src="images/Banner1_5thGIS.png">
+				<img class="slidesshow" alt="" src="images/Banner2_5thGIS.png">
+				<img class="slidesshow" alt="" src="images/Banner3_5thGIS.png">
+				<img class="slidesshow" alt="" src="images/Banner4_5thGIS.png">
 
+	  
+			<script src="scripts/slideshow.js"></script>
+			</div>
+		</div>
+  
+	</div>
+    <!-- Top menu bar, the codes source: https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_black 
+          done by Fariba-->
+		  <!--Resonsive Design id="mytopnav" added by Kamel: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_topnav-->
+    <div class="topnav" id="mytopnav">
+	   	<a class="active" href="index.html">Home</a>
+      	<a href="teammembers.html">Team Members</a>
+      	<a href="services.html">Services</a>
+     	<a href="products.html">Products</a>
+		<a href="training.html">Training</a>                                                        
+		<a href="testimonials.html">Testimonials</a>                                                                                                                 
+    	<a href="contact.html">Contact</a>
+    	<a href="partners.html">Partners</a>	       
+		<a href="careers.html">Careers</a>
+		<a href="news.html">News</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()"> <em class="fa fa-bars"></em></a>
+		<script src="scripts/mytopnav.js"></script>
+	</div>
+ <!-- Banner Ends -->
 
+<!-- Formatting the body section by Gowsian --> 
 <div class = "News-Title">
         <h1 class="Main-T" id = "News-Title">News</h1>
 </div>    
@@ -93,9 +132,7 @@
         <!-- image source: http://www.dexafrica.com/services/geospatial-services/gis-training-and-support/ -->
         <div class = "Img1"><img src="Image9.jpg" alt="Work" width="330" height="250"></div>    
 
-
 </div>
-
 
 <div class = "Channels">
         <h2 class="gow" class = "Chn">Blogs & Forums</h2>
@@ -106,8 +143,7 @@
             <p class = "Blg"><a href="https://www.cdc.gov/gis/blogs-forums.htm"> - GIS at CDC Blog & Forum</a></p> 
             <p class = "Blg"><a href="https://www.gislounge.com/gis-forums/"> - GIS Lounge Forum</a></p> 
             <p class = "Blg"><a href="https://www.gislounge.com/geographic-information-system-blogs-geoblogs/"> - GIS Lounge Blog</a></p> 
-            
-
+         
 </div>       
 
 <div class = "Newsletter Subscription">
@@ -138,3 +174,40 @@
 
 
 <!--End of News Page. Done by Gowsigan Sritharan-->
+       <!-- FOOTER SECTION Done by Kamel -->
+<div id="footer">
+
+	<div class="fpanel">
+		<h2>The 5th GIS</h2>
+	
+		<div class="logo">
+			<a  href="http://www.linkedin.com/in/the5thGIS"> <img src="images/linkedin-logo-png-11.png"  alt="LinkedIN"></a>
+			<a  href="http://www.facebook.com/public/the5thGIS"> <img src="images/facebook-6.png" alt="facebook"></a>
+			<a href="Terms.doc" target="_blank">Terms </a>
+			<a href="Privacy.doc" target="_blank">Privacy </a>
+			<a>@2019</a>
+		</div>
+  </div>
+	<!-- The script part done by Fariba-->
+	<div class="fpanel">
+		<h2>TORONTO</h2>
+		<p id="toronto"></p>
+		<script src="scripts/toronto.js"></script>		
+	</div>
+
+	<div class="fpanel">
+		<h2>OTTAWA</h2>
+		<p id="ottawa">Ottawa</p>
+		<script src="scripts/ottawa.js"></script>		
+	</div>
+	<div class="fpanel">
+		<h2>MONTREAL</h2>
+		<p id="montreal">Address</p>
+		<script src="scripts/mont.js"></script>		
+	</div>
+
+</div>
+
+<!-- END OF FOOTER SECTION, Done by Kamel -->
+<body>
+        </html>
