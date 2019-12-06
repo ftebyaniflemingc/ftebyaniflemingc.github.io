@@ -199,8 +199,8 @@ https://www.w3schools.com/html/html_responsive.asp*/
 	height:95px;
 	clear:both;
 }
-.partners {
-	marging-left: 350px;
+.partners img {
+	padding-left: 350px;
 }
 .fpanel {
 	float: left;
