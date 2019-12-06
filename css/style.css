@@ -476,19 +476,17 @@ article {
 
 .picticon1 {
 	float: right;
-	width: 30%;
+	width: 50%;
 	height: 100px;
 	padding: 20px;
-	margin-right: 50px;
-	background-color: lightgray;}
+	margin-right: 50px;}
 
 .picticon1descript {
 	float: left;
-	width: 30%;
+	width: 50%;
 	height: 100px;
 	padding: 20px;
-	margin-left: 80px;
-	background-color: lightgray;}
+	margin-left: 50px;}
 
 /*Footer style in Products*/
 footer {
