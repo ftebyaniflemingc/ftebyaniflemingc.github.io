@@ -9,23 +9,63 @@
   <!-- Set up the menu bar. Code based on www.w3schools.com/ -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Load the stylesheet -->
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/style1.css">
 </head>
 <body>
 <!--########################################################################################################################## -->
 <!-- Formatting the teammember.html file, the title in the center and content incloding images and paragraph in two columns and 
   in the center of page-->
+ <!--By Kamel: HOME PAGE; Slideshow banner-->
+ <div class="row">
+  <div class="panel1">
+    <img src="images/WLogo.png" alt="">			
+  </div>
+
+  <div class="panel2">
+    <div class="banner">
+      <img class="slidesshow" alt="" src="images/Banner1_5thGIS.png">
+      <img class="slidesshow" alt="" src="images/Banner2_5thGIS.png">
+      <img class="slidesshow" alt="" src="images/Banner3_5thGIS.png">
+      <img class="slidesshow" alt="" src="images/Banner4_5thGIS.png">
   
+    <script src="scripts/slideshow.js"></script>
+    </div>
+  </div>
+
+</div>
+  <!-- Top menu bar, the codes source: https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_black 
+        done by Fariba-->
+    <!--Resonsive Design id="mytopnav" added by Kamel: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_topnav-->
+  <div class="topnav" id="mytopnav">
+     <a class="active" href="index.html">Home</a>
+      <a href="teammembers.html">Team Members</a>
+      <a href="services.html">Services</a>
+     <a href="products.html">Products</a>
+  <a href="training.html">Training</a>                                                        
+  <a href="testimonials.html">Testimonials</a>                                                                                                                 
+    <a href="contact.html">Contact</a>
+    <a href="partners.html">Partners</a>	       
+  <a href="careers.html">Careers</a>
+  <a href="news.html">News</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
+  <script src="scripts/mytopnav.js"></script>
+</div>
+<!-- Banner Ends -->
+
   <h1 class="title" id="team-tilte">  Our Team Members </h1>
   <div class="tmmbr">
-      <div class="clm-member">
+       
+    <div class="clm-member">
+      <!-- I both section and div to create two columns. Both had the same design. So, in this page I preffered to use <div> -->
         <div class="image-member">
           <!-- image source: http://www.giscloud.com/manual/map-editor-manual/gis-analysis/ -->
-          <img src="images/GIS1.png" alt="GIS">
+          <img src="images/GIS1.png" alt="GIS1">
         </div>
-        <div class="clmtext-member">
-          <h2> <a href="http://userpages.flemingc.on.ca/~kchehbou/geom101/a2/" class="active" target="_blank"> 
-              Kamel Chehboun </a></h2>
+        <!-- each block has the same sorce of css code and same html code. clmtxt-member in first block has 581.750px width while the other blocks are 559.969. 
+        I tried to debug it by using F12 and compared all codes. There was no resonable reson for this difference. 
+        So, I add an extra padding-left by id "#vpadd" tag to solve the problem -->
+        <div class="clmtext-member" id="vpadd">
+          <h2> <a href="http://userpages.flemingc.on.ca/~kchehbou/geom101/a2/" class="active" target="_blank">Kamel Chehboun </a></h2>
           <p class="membertitle">Executive Vice President</p>         
           <p><a href="mailto:Kamel.Chehboun@flemingcollege.ca" class="active">Kamel.Chehboun@flemingcollege.ca</a></p>
           <p class="member-text">Diploma in GIS Application Specialist from Sir Sanford Fleming College, ON</p>
@@ -36,11 +76,12 @@
           <p class="member-date">1993</p>
         </div> 
       </div>
+      <!-- A short line seperates blocks -->
       <hr class="line">  
       <div class="clm-member">
         <div class="image-member">
           <!-- image source: http://www.giscloud.com/manual/map-editor-manual/gis-analysis/ -->
-          <img src="images/GIS2.png" alt="GIS">
+          <img src="images/GIS2.png" alt="GIS2">
         </div>  
         <div class="clmtext-member">
           <h2><a href="http://userpages.flemingc.on.ca/~ftebyani/geom101/a2/" class="active" target="_blank"> Fariba Tebyanian</a></h2>
@@ -53,13 +94,12 @@
           <p class="member-text">Master in Transportation from South Carolina State University, SC</p>
           <p class="member-date">2010</p>
           </div> 
-        
         </div>  
     <hr class="line">  
     <div class="clm-member">
       <div class="image-member">
         <!-- image source: http://www.giscloud.com/manual/map-editor-manual/gis-analysis/ -->
-        <img  src="images/GIS3.png" alt="GIS">
+        <img  src="images/GIS3.png" alt="GIS3">
       </div>
         <div class="clmtext-member">
           <h2>Richard Liu</h2>
@@ -73,7 +113,7 @@
       <div class="clm-member">
         <div class="image-member">
             <!-- image source: http://www.giscloud.com/manual/map-editor-manual/gis-analysis/ -->
-            <img  src="images/GIS4.png" alt="GIS">
+            <img  src="images/GIS4.png" alt="GIS4">
         </div>    
         <div class="clmtext-member">
           <h2>Gowsigan Sritharan</h2>
@@ -89,7 +129,7 @@
       <div class="clm-member">
         <div class="image-member">
           <!-- image source: http://www.giscloud.com/manual/map-editor-manual/gis-analysis/ -->
-          <img src="images/GIS5.png" alt="GIS">
+          <img src="images/GIS5.png" alt="GIS5">
         </div>
           <div class="clmtext-member">
             <h2>Adepoju Faderin</h2>
@@ -99,8 +139,47 @@
               <p class="member-date">2020</p>
           </div> 
       </div>   
-      
+        <!-- special characters  source: https://dev.w3.org/html5/html-author/charref-->
+    <div id="becenter">
+        <a class="button" href="#Top">&#10595;</a>
+        <a class="button" href="ftebyflemingc.github.io/">&#10594;</a>
+      </div>
     </div>
-   
+  <!-- FOOTER SECTION Done by Kamel -->
+<div id="footer">
+
+	<div class="fpanel">
+		<h2>The 5th GIS</h2>
+	
+		<div class="logo">
+			<a  href="http://www.linkedin.com/in/the5thGIS"> <img src="images/linkedin-logo-png-11.png"  alt="LinkedIN"></a>
+			<a  href="http://www.facebook.com/public/the5thGIS"> <img src="images/facebook-6.png" alt="facebook"></a>
+			<a href="Terms.doc" target="_blank">Terms </a>
+			<a href="Privacy.doc" target="_blank">Privacy </a>
+			<a>@2019</a>
+		</div>
+  </div>
+	<!-- The script part done by Fariba-->
+	<div class="fpanel">
+		<h2>TORONTO</h2>
+		<p id="toronto"></p>
+		<script src="scripts/toronto.js"></script>		
+	</div>
+
+	<div class="fpanel">
+		<h2>OTTAWA</h2>
+		<p id="ottawa">Ottawa</p>
+		<script src="scripts/ottawa.js"></script>		
+	</div>
+	<div class="fpanel">
+		<h2>MONTREAL</h2>
+		<p id="montreal">Address</p>
+		<script src="scripts/mont.js"></script>		
+	</div>
+
+</div>
+
+<!-- END OF FOOTER SECTION, Done by Kamel -->
+
   </body>
 </html>
