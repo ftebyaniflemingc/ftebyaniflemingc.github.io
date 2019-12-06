@@ -470,6 +470,13 @@ code source: https://stackoverflow.com/questions/30690199/how-do-i-prevent-the-l
   text-decoration: underline;
 }
 
+h1.title{
+  color: #061147;
+  font-size: 60px;
+  text-transform: uppercase;
+  text-align: center;
+  }
+
 
 
 
