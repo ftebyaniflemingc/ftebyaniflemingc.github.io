@@ -452,7 +452,8 @@ nav.producttopnav a {
 	display: inline-block; /*my solution to nav links hover flowing over links while in mobile view*/
 	text-align: center;
 	padding: 20px;
-	color: white;}
+	color: white;
+	text-decoration: none;}
 
 nav.producttopnav a:hover {
 	background-color: black;}
