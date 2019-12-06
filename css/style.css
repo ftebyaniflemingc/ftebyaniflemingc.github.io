@@ -133,6 +133,7 @@ Code by Fariba*/
 /*KAMEL CODING: SUB-SECTIONS OF THE HOME PAGE + CONTACT PAGE + TESTIMONIALS PAGE.*/
 /*######################################################################################################################################*/
 
+/*#####################################################################################################*/
 /*----- HOME Page: By Kamel. Header Banner Design with two panels, the left panel containg the company's logo on the right of the slide show */
 /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_three_columns */
 * {
@@ -156,9 +157,10 @@ Code by Fariba*/
     clear: both;
 }
 /*----- HOME Page: By Kamel. End of Header Banner Design------------------*/
-/*######################################################################################################################################*/
+/*#####################################################################################################*/
 
-/*######################################################################################################################################*/
+
+/*#####################################################################################################*/
 /*----- HOME Page: By Kamel. Menu Bar Section> Media queries to stack vertically the menu bar on smaller screens
 https://www.w3schools.com/html/html_responsive.asp*/
 
@@ -184,9 +186,9 @@ https://www.w3schools.com/html/html_responsive.asp*/
   }
 }
 /*----- HOME Page: By Kamel. End of code to stack vertically the menu bar on smaller screens ---*/
-/*######################################################################################################################################*/
+/*#####################################################################################################*/
 
-/*######################################################################################################################################*/
+/*#####################################################################################################*/
 /* ---------- HOME PAGE: By Kamel. Footer Section with 4 panels of equal size: ---------- */
 #footer {
 	bottom: 0;
@@ -254,11 +256,11 @@ a {
 .pagefootermenu {
 list-style-type: none;
 }
+/*#####################################################################################################*/
 /* ---------- HOME PAGE: End of Footer Section: By Kamel---------- */
 
 /*######################################################################################################################################*/
 /*######################################################################################################################################*/
-
 /*-------CONTACTS PAGE: By Kamel----------*/
 
 .cont_header {
@@ -282,7 +284,6 @@ list-style-type: none;
 	margin-top:25px;
 	margin-bottom:25px;
 	font-weight: bold;
-
 }
 
 .contact-h3 {
@@ -326,9 +327,7 @@ fieldset{
 	padding:0 0 20px 0;
 	margin-bottom:0%;
 	font:20px sans-serif;
-
 }
-	
 .button2{
 	border: none;
     outline: 0;
@@ -391,7 +390,6 @@ fieldset{
   line-height: 20px;
 }
 
-
 .auth_testi h4   {
   font-size: 16px;
   margin: 0;
@@ -402,7 +400,7 @@ fieldset{
   font-style: italic;
   margin-top: 5px;
 }
-/*######################################################################################################################################*/
+/*########################################################################################*/
 /*---By Kamel: Stacking vertcally the three boxes when they do no longer fit horizontally when screen getting smaller*/
 
 /*--- https://www.w3schools.com/css/css_rwd_mediaqueries.asp ---*/
@@ -416,11 +414,6 @@ fieldset{
 /* End of Testimonials Page: By Kamel */
 /*######################################################################################################################################*/
 /*END OF KAMEL CODING: SUB-SECTIONS OF THE HOME PAGE + CONTACT PAGE + TESTIMONIALS PAGE.*/
-
-
-
-
-
 
 /*#####################################################################################################*/
 /*Authors: Fariba Tebyanian, Kamel Chehbun, Richard Liu, Gowsigan Sritharan, and Adepoju Faderin */
@@ -880,19 +873,7 @@ p.MajGIS{
         text-color: black
       }
 
-div.Help {
-  width: 300px;
-  padding: 3px;
-  border: 3px solid black;
-  margin: 0px;
-}
 
-div.MajGISOrg{
-  width: 245px;
-  padding: 3px;
-  border: 3px solid black;
-  margin: 0px;
-}
 
 
 
