@@ -521,15 +521,17 @@ div.Car-Title{
   color: #061147
   }
 
+/* Set the color of the "Why work for us?" Title to navy blue */
 h2.gow{
   color: #061147;
 }
 
+/* Set the careeropportunities text color to black*/
 div.CareerOpportunities{
   color: #101113;
 }
 
-/*Set a border around this section */
+/*Set a border around the Employee Benefits section */
 div.EmployeeBenefits {
   position: fixed;
   bottom: 0;
@@ -540,7 +542,7 @@ div.EmployeeBenefits {
   margin: 25px;
 }
 
-/* Forms a border arond this section, to be placed on the right side of webpage */
+/* Forms a border arond the Applicatgion section, to be placed on the right side of webpage */
 div.Apply{
   width: 400px;
   border: 5px double black;
@@ -578,6 +580,7 @@ div.Help {
   margin: 0px;
 }
 
+/* Set a border around the Major GIS Organizations Section*/
 div.MajGISOrg{
   width: 245px;
   padding: 3px;
