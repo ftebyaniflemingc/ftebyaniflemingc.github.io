@@ -446,7 +446,8 @@ margin: 0px;
 
 /*Nav bar*/
 nav.producttopnav {
-	background-color: blue;}
+	background-color: blue;
+	text-decoration: none;}
 
 nav.producttopnav a {
 	display: inline-block; /*my solution to nav links hover flowing over links while in mobile view*/
