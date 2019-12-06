@@ -1,15 +1,6 @@
 <<<<<<< HEAD
 /*#####################################################################################################*/
-/*Authors: 
-
-
-
-
-
-
-
-
-Tebyanian, Kamel Chehboun, Richard Liu, Gowsigan Sritharan, and Adepoju Faderin */
+/*Authors: Fariba Tebyanian, Kamel Chehboun, Richard Liu, Gowsigan Sritharan, and Adepoju Faderin */
 /*#####################################################################################################*/
 /* Format body of the page. The source of font-family was found here: https://gist.github.com/renyi/877176*/
 body{
@@ -138,8 +129,15 @@ Code by Fariba*/
   max-width: 100%;
  }
 
-/*----- HOME Page: By Kamel. Header Banner Design with two panels, the left panel containg the company's logo on the right of the slide show */
+/*######################################################################################################################################*/
+/*######################################################################################################################################*/
+/*######################################################################################################################################*/
+KAMEL CODING: SUB-SECTIONS OF THE HOME PAGE + CONTACT PAGE + TESTIMONIALS PAGE.
+/*######################################################################################################################################*/
+/*######################################################################################################################################*/
+/*######################################################################################################################################*/
 
+/*----- HOME Page: By Kamel. Header Banner Design with two panels, the left panel containg the company's logo on the right of the slide show */
 /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_three_columns */
 * {
     box-sizing: border-box;
@@ -147,7 +145,6 @@ Code by Fariba*/
 .row img {
 	width: 100%;
 }
-
 .panel1 {
     float: left;
     width: 10%;
@@ -156,16 +153,16 @@ Code by Fariba*/
     float: left;
     width: 90%;
 }
-
 /* Clear floats after the columns */
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
-
 /*----- HOME Page: By Kamel. End of Header Banner Design------------------*/
+/*######################################################################################################################################*/
 
+/*######################################################################################################################################*/
 /*----- HOME Page: By Kamel. Menu Bar Section> Media queries to stack vertically the menu bar on smaller screens
 https://www.w3schools.com/html/html_responsive.asp*/
 
@@ -176,8 +173,7 @@ https://www.w3schools.com/html/html_responsive.asp*/
     display: block;
   }
 }
-
-  
+ 
   @media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
@@ -191,13 +187,12 @@ https://www.w3schools.com/html/html_responsive.asp*/
     text-align: left;
   }
 }
-/*----- HOME Page: By Kamel. End of code to stack vertically the menu bar on smaller screens
-
+/*----- HOME Page: By Kamel. End of code to stack vertically the menu bar on smaller screens ---*/
 /*######################################################################################################################################*/
 
+/*######################################################################################################################################*/
 /* ---------- HOME PAGE: By Kamel. Footer Section with 4 panels of equal size: ---------- */
 #footer {
-
 	bottom: 0;
 	width: 100%;
 	background-color: #0737f4;
@@ -208,7 +203,6 @@ https://www.w3schools.com/html/html_responsive.asp*/
 	height:95px;
 	clear:both;
 }
-
 .partners {
 	padding-left: 110px;
 }
@@ -219,16 +213,13 @@ https://www.w3schools.com/html/html_responsive.asp*/
 	border-right: 1px solid #1e90ff;
 	padding-left: 10px;
 	padding-right: 10px;
-
 }
-
 .fpanel h2 {
 	color: #010c35;
 	font-family: Georgia,serif;
 	font-size: 16px;
 	letter-spacing: 1.8px;
 }
-
 .fpanel1 {
     float: left;
     width: 10%;
@@ -236,7 +227,6 @@ https://www.w3schools.com/html/html_responsive.asp*/
 	padding-left: 10px;
 	padding-right: 20px;
 	line-height:16px;
-
 }
 .fpanel2 {
     float: left;
@@ -246,22 +236,15 @@ https://www.w3schools.com/html/html_responsive.asp*/
 	padding-left: 10px;
 	padding-right: 20px;
 	line-height:16px;
-
 }
-
-
 .fpanel p {
 	font-size: 10px;
 }
-
 .logo a {
 	text-decoration: none;
 }
-
 .logo a:hover {
-
   text-decoration: underline;
-
 }
 .logo {
 	word-spacing: 10px;
@@ -269,17 +252,17 @@ https://www.w3schools.com/html/html_responsive.asp*/
   white-space:nowrap;
   text-overflow:ellipsis;
 }
-
 a {
 	color: white;
 }
-
 .pagefootermenu {
 list-style-type: none;
 }
 /* ---------- HOME PAGE: End of Footer Section: By Kamel---------- */
 
 /*######################################################################################################################################*/
+/*######################################################################################################################################*/
+
 /*-------CONTACTS PAGE: By Kamel----------*/
 
 .cont_header {
@@ -371,7 +354,9 @@ fieldset{
 
 /* End of Contact Page: By Kamel */
 /*######################################################################################################################################*/
+/*######################################################################################################################################*/
 
+/*######################################################################################################################################*/
 /*######################################################################################################################################*/
 /* Testimonials Page: By Kamel */
 
@@ -422,20 +407,28 @@ fieldset{
   margin-top: 5px;
 }
 
+/*######################################################################################################################################*/
 /*---By Kamel: Stacking vertcally the three boxes when they do no longer fit horizontally when screen getting smaller*/
+
 /*--- https://www.w3schools.com/css/css_rwd_mediaqueries.asp ---*/
 @media only screen and (max-width: 968px) {
 
   [class*="boxes_testi"] {
 
      width: 100%;
-
   }
-
 }
-/*------------------------------------*/
-
 /* End of Testimonials Page: By Kamel */
+/*######################################################################################################################################*/
+/*######################################################################################################################################*/
+
+
+/*######################################################################################################################################*/
+/*######################################################################################################################################*/
+/*######################################################################################################################################*/
+END OF KAMEL CODING: SUB-SECTIONS OF THE HOME PAGE + CONTACT PAGE + TESTIMONIALS PAGE.
+/*######################################################################################################################################*/
+/*######################################################################################################################################*/
 /*######################################################################################################################################*/
 
 /*######################################################################################################################################*/
@@ -515,192 +508,7 @@ p.member-date {
 /* End if formating the Service and team member pages by Fariba.-- */
  /*######################################################################################################################################*/
 
-/*######################################################################################################################################*/
-/* Format the Service and team member pages in two columns left side for images and right column for text. 
-I got the idea from the following website: https://www.sphericalgrape.com/gis-services.html 
-Code ~Fariba*/
-/* Formatting the main page (body) services.html page */
-.services {
- margin: 20px auto;
- width: 984px;
- padding: 25px;
- justify-content: center;
-  }
 
-  /* Formatting the main page (body) in teammembers.html page */
-.tmmbr {
-  margin: 20px auto;
-  width: 1000px;
-  padding: 25px;
-  
-}
-/* Two unequal columns in a line */
-.frow::after{
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.clm {
-  padding: 50px 2px;
-  overflow:hidden;
-  height: 500px;
- }
- /* Formatting single paragraph in services page*/
-.prgtext {
-  margin: 25px 0px 50px 0px;
-  text-align: justify;
-  box-shadow: 5px 5px #999999;
-  border-radius: 5px;
-  padding: 25px 25px 100px 25px;
-  text-overflow:ellipsis;
-}
-
-/* column to set the paragraph in services page*/
-.clmtext {
-  float: right;
-  text-align: justify;
-  width: 55%;
-  box-shadow: 5px 5px #999999;
-  border-radius: 5px;
-  padding: 9px 15px 0px 25px;
-  text-overflow:ellipsis;
-}
-/* column to set the paragraph in services page*/
-.clmimg{
-  width: 32%;
-  margin: 0px;
-  padding: 0px;
-  position: relative;
-  padding-right: 25px;
-  float: left;
-}
-/* Formatting the images in services page*/
-.image{
-  display: block;
-  width: 100%;
-  height: 100%;
-  white-space: nowrap;
- }
- 
- /* Formatting a line between member block. Code source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_style_hr*/ 
-   
-hr.line{
-  margin-top: 50px;
-  margin-bottom: 50px;
-  border-top: 1px solid  #010c35;
-  max-width: 40%;  
-}
-/* Formatting the link to remove underline link and different color  */
-.active{
-  text-decoration:none;
-  color: #010c35;
-}
-/* Formatting member title */
-p.membertitle{
-color: #c00; 
-text-transform: uppercase;
-
-}
-
-li.text {
-  text-align: left;
-  font-size: 14pt;
-}
-p.member-text {
-  text-align: left;
-  margin: 0px;
-  font-size: 14pt;
-}
-p.member-date {
-  text-align: right;
-  font-weight: bold;
-  margin: 0px;
-}
-/* column to set the Team Member paragraph in the left side of page*/
-.clm-member{
-margin: 0px;
-}
-
-/* Formatting the Team Member images in the right side of page */
- .clm-member {
-  padding: 50px 2px;
-  overflow:hidden;
-  
- }
-
- .image-member{
-  float: left;
-  display: block;
-  width: 36.5%;
-  position: relative;
- }
- .clmtext-member {
-  float: right;
-  text-align: justify;
-  max-width: 63%;
-  } 
-/* just a paddinf-keft for a first block in Team member page. */
-#vpadd{
-  padding-left: 35px;
-}
-
-/* Formatting TOP BACK HOME button */
-.button{
-  background-color: #061147;
-  display: inline-block;
-  cursor: pointer;
-  border: none;
-  color: #ffdf00;
-  padding: 10px;
-  font-size: 25px;
-  margin: 0px 25px 0px 25px;
-  
-}
-#becenter{
-  display: flex;
-  justify-content: center;
-    
-}
-
-
-/* To format each paragraph content in Service and Team Member pages. Code ~Fariba */
-p.p {
-  float: left;
-  margin: 0px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-indent: 50px;
-  font-size: 16pt;
-}
-p.d {
-  text-align: right;
-  font-weight: bold;
-  margin: 0px;
-  padding: 10px;
-}
- 
-/* Style the paragraph */
-* {
-	box-sizing: border-box; 
-}
-
-h1.title{
-  color: #061147;
-  font-size: 60px;
-  text-transform: uppercase;
-  text-align: center;
-  padding-bottom: 50px;
-  
-  }
-#team-tilte{
-  white-space:nowrap;
-  text-overflow:ellipsis;
-  
-}
-
-/* End df formatting the Service and team member pages by Fariba. */
- /*######################################################################################################################################*/
 
 
 >>>>>> acc4bdb7a179fa74cb7f5ef18e9491d7d3371891
