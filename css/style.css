@@ -1,10 +1,10 @@
 /*#####################################################################################################*/
 /*Authors: Fariba Tebyanian, Kamel Chehbun, Richard Liu, Gowsigan Sritharan, and Adepoju Faderin */
 /*#####################################################################################################*/
-/* Format body of the page. The source of font-family was found here: https://gist.github.com/renyi/877176 ~Faariba*/
+/* Format body of the page. The source of font-family was found here: https://gist.github.com/renyi/877176*/
 body{
   background-color: transparent;
-  font-family: "Calibri", Tahoma, Verdana, sans-serif;
+  font-family: "Calibri", Tahoma, Geneva, Verdana, sans-serif;
 }
 .topbanner {
 padding: 20px 50px;
@@ -102,8 +102,36 @@ p.d {
 }
 
 
-/* ----------By Kamel: Home page------------
-/* By Kamel: Design the header banner with two panels, the left panel containg the company's logo on the right and the right one the slide show */
+/*######################################################################################################################################*/
+/* Format the Service and team member pages in two columns left side for images and right column for text. 
+I got the idea from the following website: https://www.sphericalgrape.com/gis-services.html 
+Code by Fariba*/
+.service {
+ text-align: center;
+ margin: auto;
+ max-width: 60%;
+ padding: 25px;
+ }
+/* Two unequal columns in a line */
+.clm {
+  padding: 15px;
+  overflow:hidden;
+  }
+/* column to set the paragraph*/
+.clmtext {
+  float: right;
+  text-align: left;
+}
+
+/* Formatting the images */
+.image{
+  float: left;
+  display: block;
+  max-width: 100%;
+ }
+
+
+/*----- HOME Page: By Kamel. Header Banner Design with two panels, the left panel containg the company's logo on the right of the slide show */
 
 /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_three_columns */
 * {
@@ -130,9 +158,9 @@ p.d {
     clear: both;
 }
 
-/* ---------- Home Page: By Kamel---------- */
+/*----- HOME Page: By Kamel. End of Header Banner Design------------------*/
 
-/*By Kamel: Menu Bar: Media queries to stack vertically the menu bar on smaller screens
+/*----- HOME Page: By Kamel. Menu Bar Section> Media queries to stack vertically the menu bar on smaller screens
 https://www.w3schools.com/html/html_responsive.asp*/
 
 @media screen and (max-width: 600px) {
@@ -157,11 +185,11 @@ https://www.w3schools.com/html/html_responsive.asp*/
     text-align: left;
   }
 }
+/*----- HOME Page: By Kamel. End of code to stack vertically the menu bar on smaller screens
 
-/* ---------- HOME PAGE: By Kamel---------- */
+/*######################################################################################################################################*/
 
-/* ---------- Footer Section with 4 panels of equal size: By Kamel---------- */
-
+/* ---------- HOME PAGE: By Kamel. Footer Section with 4 panels of equal size: ---------- */
 #footer {
 
 	bottom: 0;
@@ -172,10 +200,12 @@ https://www.w3schools.com/html/html_responsive.asp*/
 	letter-spacing: 2px;
 	font-size: 12px;
 	height:95px;
+	clear:both;
 }
 
-
-/* Create footer panels that floats next to each other */
+.partners {
+	padding-left: 110px;
+}
 .fpanel {
 	float: left;
     width: 25%;
@@ -229,7 +259,6 @@ https://www.w3schools.com/html/html_responsive.asp*/
 }
 .logo {
 	word-spacing: 10px;
-	position: center;
   padding-left: 20px;
   white-space:nowrap;
   text-overflow:ellipsis;
@@ -243,136 +272,204 @@ a {
 list-style-type: none;
 }
 
-/*CONTACTS PAGE: contact us page*/
-@import url(https://fonts.googleapis.com/css?family=Cardo|Lato:700,400,400italic);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:100);
-.header {
+/* ---------- HOME PAGE: End of Footer Section: By Kamel---------- */
+
+
+/*######################################################################################################################################*/
+/*-------CONTACTS PAGE: By Kamel----------*/
+
+.cont_header {
 	float: right;
-	padding: 25px;
+	width: 40%;
 }
 
-div.background {
-	padding-bottom: 20%;
-	padding-left: 20%;
-	padding-right: 20%;
+.cont_background {
+	float: left;
+	width: 60%;
+	padding-left:150px;
 }
+
+.containcon {
+ width:100%;
+}
+
+.contact-h2 {
+	line-height: 50px;
+	font:25px sans-serif;
+	margin-top:25px;
+	margin-bottom:25px;
+	font-weight: bold;
+
+}
+
+.contact-h3 {
+	font:23px sans-serif;
+	margin-top:25px;
+	padding-bottom:30px;
+}
+
 
 form{
-	max-width: 500px;
-	margin: 0 10px 50px;
 	border-style: none;
 }
 
 span{
 	display:block;
+	padding-bottom: 20px;
 }
 
-.labell{
+label{
 	display:block;
-	margin:10px 0 5px 20px;
 	border-style: none;
 	text-indent: -10px;
 	font:20px sans-serif;
+	font-style: oblique;
+	padding-bottom:50px;
+
+
 }
 input{
-	width:250px;
-	margin: 10px 0 0 20px;
-	height: 30px;
+	width:450px;
+	height: 50px;
+	font:10px sans-serif;
+
 }
 textarea{
-	width:250px;
-	margin:0 0 0 30px;
-	height: 120px;
+	width:450px;
+	height: 200px;
+	font:20px sans-serif;
 }
 fieldset{
 	border:none;
 	padding:0 0 20px 0;
 	margin-bottom:0%;
-}
-.labels{
-	margin-top:20px;
+	font:20px sans-serif;
 
 }
 
+
+
+
+	
 .button2{
 	border: none;
     outline: 0;
     display: inline-block;
     padding: 5px;
-    width:300px;
+    width:200px;
 	color:white;
 	background: #4682B4;
 	height: 50px;
-	margin-bottom:0;
 	font:20px sans-serif;
 	border-radius: 8px;
 	text-align: center;
 	cursor: pointer;
+	text-align:center;
+	margin-left: 125px;
+
+	
 }
+
+/* End of Contact Page: By Kamel */
+/*######################################################################################################################################*/
+
+/*######################################################################################################################################*/
+/* Testimonials Page: By Kamel */
+
+.Box_Back_testi   {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.header_testi {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.header_testi h2  {
+  font-size: 30px;
+  font-weight: 300;
+  color: #00008B;
+}
+
+/* testimonial boxes */
+.boxes_testi   {
+  display: inline-block;
+  width: 33%;
+  padding: 20px 30px;
+}
+.cont_testi   {
+  background: #E6E6FA;
+  margin-top: 0px;
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 15px;
+  height: 130px;
+  display:block;
+  overflow-y:scroll;
+  font-style: oblique;
+  font-family: Helvetica,sans-cherif;
+  line-height: 20px;
+}
+
+
+.auth_testi h4   {
+  font-size: 16px;
+  margin: 0;
+  padding-top:15px;
+}
+.auth_testi h3 {
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+/*---By Kamel: Stacking vertcally the three boxes when they do no longer fit horizontally when screen getting smaller*/
+/*--- https://www.w3schools.com/css/css_rwd_mediaqueries.asp ---*/
+@media only screen and (max-width: 968px) {
+
+
+  [class*="boxes_testi"] {
+
+     width: 100%;
+
+  }
+
+}
+/*------------------------------------*/
+
+/* End of Testimonials Page: By Kamel */
+/*######################################################################################################################################*/
+
+
+
 
 /*######################################################################################################################################*/
 /* Format the Service and team member pages in two columns left side for images and right column for text. 
 I got the idea from the following website: https://www.sphericalgrape.com/gis-services.html 
 Code ~Fariba*/
-.services {
- margin: 20px auto;
- width: 1200px;
+.contain {
+ text-align: left;
+ margin: auto;
+ max-width: 70%;
  padding: 25px;
-  }
-.tmmbr {
-  margin: 20px auto;
-  width: 1000px;
-  padding: 25px;
-  
-}
+ }
 /* Two unequal columns in a line */
-.frow::after{
-  content: "";
-  display: table;
-  clear: both;
-}
-
 .clm {
   padding: 50px 2px;
   overflow:hidden;
-  height: 500px;
+  
  }
- /* Formating single paragraph*/
-.prgtext {
-  margin: 25px 0px 50px 0px;
-  text-align: justify;
-  box-shadow: 5px 5px #999999;
-  border-radius: 5px;
-  padding: 25px 25px 100px 25px;
-  text-overflow:ellipsis;
-}
-
-
 /* column to set the paragraph*/
 .clmtext {
   float: right;
   text-align: justify;
-  width: 55%;
-  box-shadow: 5px 5px #999999;
-  border-radius: 5px;
-  padding: 9px 15px 0px 25px;
-  text-overflow:ellipsis;
-}
-/* column to set the paragraph*/
-.clmimg{
-  width: 32%;
-  margin: 0px;
-  padding: 0px;
-  position: relative;
-  padding-right: 25px;
-  float: left;
+  max-width: 60%;
 }
 /* Formatting the images */
 .image{
+  float: left;
   display: block;
-  width: 100%;
-  height: 100%;
-  white-space: nowrap;
+  max-width: 40%;
  }
  /* Formating a line between member block. Code source: */ 
      
@@ -408,175 +505,22 @@ p.member-date {
   margin: 0px;
 }
 /* column to set the Team Member paragraph in the left side of page*/
-.clm-member{
-margin: 0px;
-}
-
-/* Formatting the Team Member images in the right side of page */
- .clm-member {
-  padding: 50px 2px;
-  overflow:hidden;
-  
- }
-
- .image-member{
+.clmtext-member {
   float: left;
-  display: block;
-  width: 36.5%;
-  position: relative;
- }
- .clmtext-member {
-  float: right;
   text-align: justify;
-  max-width: 63%;
-} 
+  max-width: 60%;
+}
+/* Formatting the Team Member images in the right side of page */
+.image-member{
+  float: right;
+  display: block;
+  max-width: 40%;
+ }
+
+ 
 
 /* End if formating the Service and team member pages by Fariba. */
  /*######################################################################################################################################*/
 
-/*By Richard Liu*/
-
-/*Product header style*/
-.productHeader {
-	background-color: gray;
-	text-align: center;
-	color: white;
-	font-size: 50px;
-	padding: 20px;}
-
-/*Nav bar*/
-nav.producttopnav {
-	background-color: blue;
-	text-decoration: none;}
-
-nav.producttopnav a {
-	display: inline-block; /*my solution to nav links hover flowing over links while in mobile view*/
-				/*idea inspired from https://www.evarigisconsulting.com/ display: method in creating navigation links*/
-	text-align: center;
-	padding: 20px;
-	color: white;
-	text-decoration: none;}
-
-nav.producttopnav a:hover {
-	background-color: black;}
-
-nav.producttopnav a.active {
-	background-color: lightgray;
-	color: black;}
-
-/*Product section style*/
-article {
-	padding-top: 30px;
-	padding-left: 50px;
-	text-align: left;}
-
-.GISitem {
-	text-align: center;
-	margin-top: 200px;}
-
-.picticon1 {
-	float: right;
-	width: 40%;
-	height: 100px;
-	padding: 20px;}
-
-.picticon1descript {
-	float: left;
-	width: 40%;
-	height: 100px;
-	padding: 50px;}
-
-/*Footer style in Products*/
-footer {
-	clear: left;
-	background-color: gray;
-	text-align: center;
-	color: white;
-	padding: 30px;}
-
-
-/* ---------- Career & News/Events Pages  By Gowsigan Sritharan---------- */
-
-/* Set font style for entire webpages */
-body{
-  background-color: transparent;
-  font-family: "Calibri", Tahoma, Verdana, sans-serif;
-}
-
-/* Align title of webpage towards the centre */
-div.Car-Title{
-  font-size: 25px;
-  text-align: center;
-  color: #061147
-  
-}
-
-h2{
-  color: #061147;
-}
-
-div.CareerOpportunities{
-  color: #101113;
-}
-
-/*Set a border around this section */
-div.EmployeeBenefits {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 400px;
-  border: 5px double black;
-  padding: 5px;
-  margin: 25px;
-}
-
-/* Forms a border arond this section, to be placed on the right side of webpage */
-div.Apply{
-  width: 400px;
-  border: 5px double black;
-  padding: 20px;
-  margin: 0px;
-}
-
-/* Align title of webpage towards the centre */
-div.News-Title{
-  font-size: 25px;
-  text-align: center;
-  color: #061147
-}
-
-/* Bold the career title name */
-p.Eve{
-  font-weight: bold;
-}
-
-/* Change color of "Inquiries" title to match general color scheme */
-div.Help{
-  color: #061147
-}
-
-/* Set the text color of Inquiries section to black*/
-p.Hlp{
-  color: black
-  
-}
-
-/* Set a border around this section*/
-div.Help {
-  width: 300px;
-  padding: 3px;
-  border: 3px solid black;
-  margin: 0px;
-}
-
-div.MajGISOrg{
-  width: 245px;
-  padding: 3px;
-  border: 3px solid black;
-  margin: 0px;
-}
-
-/* End format of careers & news/events pages. Completed by Gowsigan Sritharan. */
- /*######################################################################################################################################*/
-
+/*######################################################################################################################################*/
 
