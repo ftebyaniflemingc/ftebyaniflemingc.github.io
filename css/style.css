@@ -200,7 +200,7 @@ https://www.w3schools.com/html/html_responsive.asp*/
 	clear:both;
 }
 .partners {
-	padding-left: 300px;
+	padding-left: 600px;
 }
 .fpanel {
 	float: left;
@@ -875,7 +875,10 @@ h1.title{
  /*######################################################################################################################################*/
 
 
-
+/* Gowsigans Code. */
+p.MajGIS{
+        text-color: black
+      }
 
 
 
