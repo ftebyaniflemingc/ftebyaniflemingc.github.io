@@ -470,18 +470,25 @@ article {
 	padding-left: 50px;
 	text-align: left;}
 
+.GISitem {
+	text-align: center;
+	margin-top: 200px;}
+
 .picticon1 {
-	float: left;
+	float: right;
 	width: 10%;
-	height: 100px;}
+	height: 100px;
+	padding: 20px;}
 
 .picticon1descript {
 	float: left;
 	width: 90%;
-	height: 100px;}
+	height: 100px;
+	padding: 20px;}
 
 /*Footer style in Products*/
 footer {
+	clear: left;
 	background-color: gray;
 	text-align: center;
 	color: white;
