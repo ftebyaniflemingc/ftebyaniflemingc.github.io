@@ -121,7 +121,9 @@ Code by Fariba*/
   float: right;
   text-align: left;
 }
-
+#vapp{
+padding-left: 35px;
+}
 /* Formatting the images */
 .image{
   float: left;
