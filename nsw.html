@@ -7,7 +7,7 @@
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #dmap {
+      #map {
         height: 100%;
       }
       /* Optional: Makes the sample page fill the window. */
@@ -19,11 +19,11 @@
     </style>
   </head>
   <body>
-    <div id="dmap"></div>
+    <div id="map"></div>
     <script>
-      var vmap;
+      var map;
       function initMap() {
-        vmap = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
           zoom: 8
         });
