@@ -24,8 +24,8 @@
 
       function myMap() {
 
-        var map = new google.maps.Map(document.getElementById('idmap'), {
-          zoom: 6,
+        var vmap = new google.maps.Map(document.getElementById('idmap'), {
+          zoom: 5,
           center: {lat: 41.899850, lng: 12.494104}
         });
 
@@ -44,7 +44,7 @@
         });
 
         // Add a marker clusterer to manage the markers.
-        var markerCluster = new MarkerClusterer(map, markers,
+        var markerCluster = new MarkerClusterer(vmap, markers,
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       }
       var locations = [
