@@ -19,12 +19,12 @@
     </style>
   </head>
   <body>
-    <div id="map"></div>
+    <div id="idmap"></div>
     <script>
 
-      function initMap() {
+      function myMap() {
 
-        var map = new google.maps.Map(document.getElementById('map'), {
+        var map = new google.maps.Map(document.getElementById('idmap'), {
           zoom: 3,
           center: {lat: -28.024, lng: 140.887}
         });
@@ -76,7 +76,7 @@
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHMFkBkUUlt-kMq_5HNy5Jo5_5B2wCY5c&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHMFkBkUUlt-kMq_5HNy5Jo5_5B2wCY5c&callback=myMap">
     </script>
   </body>
 </html>
