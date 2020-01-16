@@ -12,7 +12,7 @@
   <body>
     <h3>My Google Maps Demo</h3>
     <!--The div element for the map -->
-    <div id="map"></div>
+    <div id="mapid"></div>
     <script>
 // Initialize and add the map
 function myMap() {
@@ -20,7 +20,7 @@ function myMap() {
   var SanCataldo = {lat: 40.389286, lng: 18.303479};
   // The map, centered at Uluru
   var vmap = new google.maps.Map(
-      document.getElementById('map'), {zoom: 3, center: SanCataldo});
+      document.getElementById('mapid'), {zoom: 3, center: SanCataldo});
   // The marker, positioned at Uluru
   var marker = new google.maps.Marker({position: SanCataldo, map: vmap});
 }
