@@ -4,7 +4,7 @@
     <style>
        /* Set the size of the div element that contains the map */
       #map {
-        height: 800px;  /* The height is 400 pixels */
+        height: 100%;  /* The height is 400 pixels */
         width: 100%;  /* The width is the width of the web page */
        }
     </style>
@@ -17,12 +17,12 @@
 // Initialize and add the map
 function myMap() {
   // The location of Uluru
-  var uluru = {lat: 40.389286, lng: 18.303479};
+  var SanCataldo = {lat: 40.389286, lng: 18.303479};
   // The map, centered at Uluru
   var vmap = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
+      document.getElementById('map'), {zoom: 4, center: SanCataldo});
   // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: vmap});
+  var marker = new google.maps.Marker({position: SanCataldo, map: vmap});
 }
     </script>
     <!--Load the API from the specified URL
