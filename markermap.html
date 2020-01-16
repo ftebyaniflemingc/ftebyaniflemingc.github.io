@@ -22,8 +22,8 @@ function myMap() {
   var vmap = new google.maps.Map(
       document.getElementById('map'), {zoom: 8, center: SanCataldo});
   // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: SanCataldo, map: vmap});
-  var vlabel = new google.maps.MarkerLabel({color: yellow, fontFamily: "Arial Blue", text: "San Cataldo"});
+  var marker = new google.maps.Marker({position: SanCataldo, map: vmap, label: {text: '!'}});
+
 }
     </script>
     <!--Load the API from the specified URL
