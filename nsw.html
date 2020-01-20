@@ -8,7 +8,7 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #dmap {
-        height: 680px;
+        height: 800px;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -22,14 +22,14 @@
     <div id="dmap" style="height: 100%;"></div>
     <script>
       var map;
-      function initMap() {
+      function myMap() {
         map = new google.maps.Map(document.getElementById('dmap'), {
-          center: {lat: -34.397, lng: 150.644},
+          center: {lat: 83.149313, lng: -35.222101},
           zoom: 6
         });
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAO-P1kTYGgQd9XAIS3M1mnfftx0NGEQuw&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHMFkBkUUlt-kMq_5HNy5Jo5_5B2wCY5c&callback=myMap"
     async defer></script>
   </body>
 </html>
