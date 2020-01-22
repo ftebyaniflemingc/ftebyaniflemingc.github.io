@@ -63,16 +63,7 @@
           zoom: 2.5,
            mapTypeId: 'terrain'
         }); 
-        
-         for (var fly in crashmap){
-        
-          var marker = new google.maps.Marker({
-          position: crashmap[fly].center,
-          title: crashmap[fly].flight
-          });
-          }
-         
-        
+                
         // showing the number of fatalities with circle size
       for (var crash in crashmap) {
           // Add the circle for this city to the map.
@@ -88,6 +79,15 @@
             radius: Math.sqrt(crashmap[crash].fatality) * 20000
           });
         }
+        
+         for (var fly in crashmap){
+        
+          var marker = new google.maps.Marker({
+          position: crashmap[fly].center,
+          title: crashmap[fly].flight
+          });
+          }
+         
       marker.setMap(thismap);
       }
        
