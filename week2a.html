@@ -1,0 +1,129 @@
+!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>First Practical Lab Week1A</title>
+    
+    <style>
+    body{
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      }
+      * {   box-sizing: border-box;
+        }   
+  #topbanner{
+  height: 199px;
+    width: 1529px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 219px;
+  background-color: lightgray;  
+    border-bottom: solid 3px red;
+      }
+      
+  .sidebanner{
+  height: 100%;
+  width: 219px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #606060;
+  font-size: 19px;
+  font-weight: normal;
+  line-height: 300%;
+    padding: 19px;
+  
+    }
+  .sidebanner a {
+   color: white;
+   text-decoration: none;
+  display: block;   
+  
+}
+.sidebanner a:hover {
+  background-color: lightgray;
+  color: black;
+}
+
+.content {
+  margin-top: 249px;
+  margin-left: 259px; 
+}   
+      h1{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: #606060;
+    }
+      h2{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: left;
+    color: #111;
+    }
+    
+      #links{
+      padding-top: 199px;
+      }
+      .galary {
+    display: block;
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #7ec584;
+    background-color: #fafdfa;
+    max-width: 100%;
+    max-height: 100%;
+      }
+      p.t {
+    padding-top: 5px;
+    padding-bottom: 29px;
+    font-size: 15px;
+    text-align: center;
+    font-style: italic;
+    font-family: Georgia;
+}
+    </style>
+  </head>
+  <body>
+  
+  <div class="sidebanner" id="links">
+ 
+  <a href="https://ftebyaniflemingc.github.io/fpl.html" >Home   </a>
+  <a href="https://ftebyaniflemingc.github.io/week1a.html" >Week 1/A</a>
+  <a href="https://ftebyaniflemingc.github.io/week1b.html" >Week 1/B</a>
+  <a href="https://ftebyaniflemingc.github.io/week2a.html" >Week 2/A</a>
+  <a href="https://ftebyaniflemingc.github.io/week2b.html" >Week 1/B</a>
+    
+
+   </div>
+    
+      <div id ="topbanner">
+    <h1> First Practical Lab</h1>
+    <h1> GEOM 99 </h1>
+      </div>
+    <div class="content">
+      <h2><a href="https://developers.google.com/maps/gmp-get-started" target="_blank">Google Maps as a Development Platform</a> </h2>
+      <h3><a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="_blank"> A. Create the items from the<em> Overview </em>example </h3>
+      <img  class="galary" src="images/OverviewMap.png"  alt="Baku">
+	<p class="t">This map has centered Baku city the capital of in Azarbaijan and the Caspian Sea.</p>
+	    <p class="t"><a href="https://ftebyaniflemingc.github.io/Amap.html" target="_blank">Click here to reach the <em>Overview Map</em></a></p>
+	
+	<h3><a href="https://developers.google.com/maps/documentation/directions/start" target="_blank"> B. Create the items from the<em> Direction</em> example </h3>
+      <img  class="galary" src="images/direction.png"  alt="Direction">
+	<p class="t">THis direction is from my address to the Fleming College, Frost Campus in Lindsay</p>
+	    <p class="t"><a href="https://maps.googleapis.com/maps/api/directions/json?origin=1569+norwill+cres+oshawa+on+canada&destination=frost+campus+fleming&key=AIzaSyAO-P1kTYGgQd9XAIS3M1mnfftx0NGEQuw" target="_blank">Click here to reach the<em> Direction </em>example Map</a></p>
+	
+	<h3><a href="https://developers.google.com/maps/documentation/directions/start" target="_blank"> C. Create the items from the Place example </h3>
+      <img  class="galary" src="images/places.png"  alt="Places">
+	<p class="t">In this example, an uncompleted address was searched in radius of 10000000 m around my hy place (1569 Norwill cres). by the script. The locations with same street number and name were found.</p>
+	    <p class="t"><a href="https://maps.googleapis.com/maps/api/place/textsearch/json?query=123+king+street&location=43.938,-78.875&radius=10000000&key=AIzaSyAHMFkBkUUlt-kMq_5HNy5Jo5_5B2wCY5c" target="_blank">Click here to reach the <em> Place </em> example</a></p>
+    
+	      
+	      </div>
+  
+  </body>
+  </html>
+  
