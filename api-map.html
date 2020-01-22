@@ -52,21 +52,21 @@
         var iran = {lat: 35.672, lng: 50.967};
         var thismap = new google.maps.Map(document.getElementById('dmap'), {
           center: iran,
-          zoom: 3,
+          zoom: 2.5,
            mapTypeId: 'terrain'
         }); 
         
       for (var crash in crashmap) {
           // Add the circle for this city to the map.
           var cityCircle = new google.maps.Circle({
-            strokeColor: '#FF0000',
-            strokeOpacity: 0.8,
+            strokeColor: '#800080',
+            strokeOpacity: 1,
             strokeWeight: 2,
-            fillColor: '#FF0000',
-            fillOpacity: 0.35,
+            fillColor: '#800088',
+            fillOpacity: 0.25,
             map: thismap,
             center: crashmap[crash].center,
-            radius: Math.sqrt(crashmap[crash].fatality) * 50000
+            radius: Math.sqrt(crashmap[crash].fatality) * 10000
           });
         }
       }
