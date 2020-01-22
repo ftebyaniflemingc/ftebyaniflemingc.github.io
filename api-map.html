@@ -22,38 +22,38 @@
        iran: {
           center: {lat: 35.672, lng: 50.967},
           fatality: 176,
-         flight: "752"
+         flight: "Flight - PS-752"
         },
        Almaty: {
           center: {lat: 43.374, lng: 76.766},
           fatality: 12, 
-         flight: "F100"
+         flight: "Flight UP-F100"
          
         },
        Bishoftu: {
           center: {lat: 8.756, lng: 38.984},
           fatality: 157,
-          flight: "AVJ"
+          flight: "Flight ET-AVJ"
         },
         Boufarik: {
           center: {lat: 36.608, lng: 2.919},
           fatality: 257, 
-          flight: "WIP"
+          flight: "Flight 7TWIP"
         }/*
         jakarta: {
            center: {lat: -6.181, lng: 106.858},
           fatality: 189,
-          flight: "PKE"
+          flight: "Flight PK-PKE"
         }
         semirom: {
           center: {lat: 31.054, lng: 51.654},
           fatality: 66,
-          flight: "ATS"
+          flight: "Flight EP-ATS"
         }
         Havana: {
           center: {lat: 23.078, lng: -82.339},
           population: 112,
-          flight: "UHZ"
+          flight: "Flight XA-UHZ"
         }*/
       }
       function myMap() {
@@ -79,7 +79,7 @@
             radius: Math.sqrt(crashmap[crash].fatality) * 20000
           });
         }
-        
+        //trying to show the flight number 
          for (var fly in crashmap){
         
           var marker = new google.maps.Marker({
