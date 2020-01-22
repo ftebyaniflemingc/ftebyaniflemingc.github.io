@@ -35,8 +35,8 @@
           center: {lat: 36.608, lng: 2.919},
           fatality: 257
         }
-        Indonesia: {
-          center: {lat: -6.181, lng: 106.858},
+        jakarta: {
+           center: {lat: 6.181, lng: 106.858},
           fatality: 189
         }
         semirom: {
@@ -44,19 +44,32 @@
           fatality: 66
         }
         Havana: {
-          center: {lat: 23.078, lng: -82.339},
+          center: {lat: 23.078, lng: 82.339},
           population: 112
         }
       }
       function myMap() {
         var iran = {lat: 35.672, lng: 50.967};
-        var map = new google.maps.Map(document.getElementById('dmap'), {
+        var thismap = new google.maps.Map(document.getElementById('dmap'), {
           center: iran,
           zoom: 2,
            mapTypeId: 'terrain'
-        });
+        }); 
+        /*
+      for (var crash in crashmap) {
+          // Add the circle for this city to the map.
+          var cityCircle = new google.maps.Circle({
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35,
+            map: thismap,
+            center: crashmap[city].center,
+            radius: Math.sqrt(crashmap[city].fatality) * 500
+          });
+        }*/
       }
-      
       
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHMFkBkUUlt-kMq_5HNy5Jo5_5B2wCY5c&callback=myMap"
