@@ -22,10 +22,12 @@
        iran: {
           center: {lat: 35.672, lng: 50.967},
           fatality: 176
+         flight: 'PS752'
         },
        Almaty: {
           center: {lat: 43.374, lng: 76.766},
           fatality: 12
+         
         },
        Bishoftu: {
           center: {lat: 8.756, lng: 38.984},
@@ -55,6 +57,12 @@
           zoom: 2.5,
            mapTypeId: 'terrain'
         }); 
+        var marker = new google.maps.Marker({
+    position: center,
+    title: flight
+});
+
+marker.setMap(map);
         
       for (var crash in crashmap) {
           // Add the circle for this city to the map.
