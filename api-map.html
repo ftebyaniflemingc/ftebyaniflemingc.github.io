@@ -57,13 +57,18 @@
           zoom: 2.5,
            mapTypeId: 'terrain'
         }); 
-        var marker = new google.maps.Marker({
-    position: center,
-    title: flight
-});
+        
+        
+          for (var fly in crashmap){
+        
+          var marker = new google.maps.Marker({
+          position: crashmap[fly].center,
+          title: flight
+          });
+          }
 
 marker.setMap(map);
-        
+        // showing the number of fatalities with circle size
       for (var crash in crashmap) {
           // Add the circle for this city to the map.
           var cityCircle = new google.maps.Circle({
