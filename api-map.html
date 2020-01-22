@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A map using the Google Maps JavaScript API</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      #dmap {
+        height: 800px;
+      }
+     html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="dmap"></div>
+    <script>
+      var crashmap = {
+       PS752: {
+          center: {lat: 35.672, lng: 50.967},
+          fatality: 176
+        },
+        Z9-2100: {
+          center: {lat: 43.374, lng: 76.766},
+          fatality: 12
+        },
+       ET-AVJ: {
+          center: {lat: 8.756, lng: 38.984},
+          fatality: 157
+        },
+        7T-WIP: {
+          center: {lat: 36.608, lng: 2.919},
+          fatality: 257
+        }
+        PK-LQP: {
+          center: {lat: -6.181, lng: 106.858},
+          fatality: 189
+        }
+        EP-ATS: {
+          center: {lat: 31.054, lng: 51.654},
+          fatality:56
+        }
+        XA-UHZ: {
+          center: {lat: 23.078, lng: -82.339},
+          population: 112
+        }
+      }
+      function myMap() {
+        var iran = {lat: 35.672, lng: 50.967};
+        var map = new google.maps.Map(document.getElementById('dmap'), {
+          center: iran,
+          zoom: 2,
+           mapTypeId: 'terrain'
+        });
+      }
+      
+      
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHMFkBkUUlt-kMq_5HNy5Jo5_5B2wCY5c&callback=myMap"
+    async defer></script>
+  </body>
+</html>
