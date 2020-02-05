@@ -45,7 +45,7 @@ require([
 
   var simpleMarkerSymbol = {
    // type: "simple-marker",
-   color: [0,150,50],  // 
+   color: [0,150,50],  // Change the point symbol to a dark green dot with a 2px width outline.
    outline: {
      color: [255, 255, 255], // white
      width: 2
@@ -65,10 +65,12 @@ require([
   // Create a line geometry
   var simpleLineSymbol = {
      type: "simple-line",
-     color: [226, 119, 40], // orange
-     width: 2
-   };
+     color: [255,0,0], // Change the line symbol to a red dashed line.
+     width: 2,
+    style: "dash"
+    };
 
+   
    var polyline = {
      type: "polyline",
      paths: [
@@ -96,15 +98,16 @@ require([
      [-118.808558110679, 34.0035027131376]
    ]
   };
-
+    
+  
   var simpleFillSymbol = {
-   type: "simple-fill",
-   color: [227, 139, 79, 0.8],  // orange, opacity 80%
-   outline: {
-     color: [255, 255, 255],
-     width: 1
-   }
-  };
+  color: [50,100,255,.5],
+            outline: {
+              color: [50, 100, 255], //Change the polygon symbol to a blue, diagonal-fill, 50% transparent fill color.
+              width: 1
+            },
+              style: "backward-diagonal"
+     };
 
   var polygonGraphic = new Graphic({
    geometry: polygon,
