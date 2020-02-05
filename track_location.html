@@ -20,8 +20,9 @@
           "esri/views/MapView",
           "esri/widgets/Locate",
           "esri/widgets/Track",
-          "esri/Graphic"
-        ], function(Map, MapView, Locate, Track, Graphic) {
+          "esri/Graphic",
+          "esri/widgets/Compass"
+      ], function(Map, MapView, Locate, Track, Graphic, Compass) {
 
         var map = new Map({
           basemap: "streets-navigation-vector"
@@ -61,6 +62,13 @@
         });
         view.ui.add(track, "top-left");
 
+          var compass = new Compass({
+          view: view
+        });
+
+        // adds the compass to the top left corner of the MapView
+        view.ui.add(compass, "top-left");
+        
       });
     </script>
   </head>
