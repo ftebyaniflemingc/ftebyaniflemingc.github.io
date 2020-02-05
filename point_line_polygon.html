@@ -39,6 +39,14 @@ require([
   var graphicsLayer = new GraphicsLayer();
   map.add(graphicsLayer);  
   
+   // create a circle
+    var circleGeometry = new Circle({
+    center: [-118.80657463861, 34.000593060889],
+    radius: 30,
+      geodesic: true,
+   radiusUnit: Units.MILES
+  });
+  
   // Create a point
    var point = {
    type: "point",
@@ -130,13 +138,7 @@ require([
       };
 
   
-    // create a circle
-    var circleGeometry = new Circle({
-    center: [-118.80657463861, 34.000593060889],
-    radius: 30,
-    geodesic: true,
-    radiusUnit: Units.MILES
-  });
+   
   
       // Create attributes
       var attributes = {
