@@ -21,9 +21,9 @@ require([
       "esri/Graphic",
       "esri/layers/GraphicsLayer",
       "esri/geometry/Circle", 
-      "esri/units"
+      "esri/Units"
     ], 
-        function(Map, MapView, Graphic, GraphicsLayer, Circle) {
+        function(Map, MapView, Graphic, GraphicsLayer, Circle, Units) {
  
    var map = new Map({
     basemap: "topo-vector"
@@ -59,12 +59,6 @@ require([
   var pointGraphic = new Graphic({
    geometry: point,
    symbol: simpleMarkerSymbol
-  });
-    // create a circle
-    var circleGeometry = new Circle({
-    center: [-118.80657463861, 34.000593060889],
-    radius: 30,
-    geodesic: true
   });
   
   graphicsLayer.add(pointGraphic);
@@ -135,6 +129,15 @@ require([
         }
       };
 
+  
+    // create a circle
+    var circleGeometry = new Circle({
+    center: [-118.80657463861, 34.000593060889],
+    radius: 30,
+    geodesic: true,
+    radiusUnit: Units.MILES
+  });
+  
       // Create attributes
       var attributes = {
         Name: "My point",  // The name of the
