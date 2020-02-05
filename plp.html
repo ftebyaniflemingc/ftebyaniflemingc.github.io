@@ -39,15 +39,7 @@
     
   var graphicsLayer = new GraphicsLayer();
   map.add(graphicsLayer);  
-  
-    // create a circle
-  var circleGeometry = new Circle({
-    center: [-118.717778, 34.104452],
-    radius: 3000,
-    geodesic: true,
-    radiusUnit: Units.MILES
-    });  
-    
+      
   // Create a point
    var point = {
    type: "point",
@@ -72,6 +64,13 @@
   
   graphicsLayer.add(pointGraphic);
       
+     // create a circle
+  var circleGeometry = new Circle({
+    center: [-118.717778, 34.104452],
+    radius: 25,
+    geodesic: true,
+    radiusUnit: Units.MILES
+    });    
       
   // Create a line geometry
   var simpleLineSymbol = {
