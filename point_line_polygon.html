@@ -67,8 +67,7 @@ require([
      width: 2,
     style: "dash"
     };
-
-   
+  
    var polyline = {
      type: "polyline",
      paths: [
@@ -96,7 +95,6 @@ require([
      [-118.808558110679, 34.0035027131376]
    ]
   };
-     
   var simpleFillSymbol = {
   color: [50,100,255,.5],
             outline: {
@@ -128,7 +126,6 @@ require([
         }
       };
 
-      //*** ADD ***//
       // Create attributes
       var attributes = {
         Name: "My point",  // The name of the
@@ -139,7 +136,6 @@ require([
         title: "{Name}",
         content: "I am located at <b>{Location}</b>."
       };
-
       var pointGraphic = new Graphic({
         geometry: point,
         symbol: simpleMarkerSymbol,
@@ -147,7 +143,6 @@ require([
         attributes: attributes,
         popupTemplate: popupTemplate
       });
-
       graphicsLayer.add(pointGraphic);
   
   // Add a blue location pin
