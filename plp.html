@@ -29,9 +29,10 @@
   "esri/views/MapView", 
   "esri/Graphic", 
   "esri/layers/GraphicsLayer", 
-  "esri/geometry/Circle"
+  "esri/geometry/Circle",
+    "esri/Units"
   
-  ],    function(Map, MapView, Graphic, GraphicsLayer, Circle) { 
+  ],    function(Map, MapView, Graphic, GraphicsLayer, Circle, Units) { 
  
    var map = new Map({
     basemap: "topo-vector"
@@ -46,9 +47,9 @@
      // create a circle
   var circleGeometry = new Circle({
     center: [-118.806, 34.00059],
-    radius: 3000,
+    radius: 30,
     geodesic: true,
-   // radiusUnit: Units.MILES
+    radiusUnit: Units.MILES
   });
     
   var graphicsLayer = new GraphicsLayer();
