@@ -44,14 +44,17 @@ require([
   };
 
   var simpleMarkerSymbol = {
-   type: "simple-marker",
-   color: [226, 119, 40],  // orange
+   // type: "simple-marker",
+   color: [0,150,50],  // 
    outline: {
      color: [255, 255, 255], // white
-     width: 1
-   }
+     width: 2
+   },
+    size: 10
   };
 
+ 
+  
   var pointGraphic = new Graphic({
    geometry: point,
    symbol: simpleMarkerSymbol
