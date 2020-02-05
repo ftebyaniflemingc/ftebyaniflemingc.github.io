@@ -15,15 +15,15 @@
 <script src="https://js.arcgis.com/4.13/"></script>
   
   <script>
-require([
-      "esri/Map",
-      "esri/views/MapView",
-      "esri/Graphic",
-      "esri/layers/GraphicsLayer",
-      "esri/geometry/Circle", 
-      "esri/Units"
-    ], 
-        function(Map, MapView, Graphic, GraphicsLayer, Circle, Units) {
+     
+require([ 
+  "esri/Map", 
+  "esri/views/MapView", 
+  "esri/Graphic", 
+  "esri/layers/GraphicsLayer", 
+  "esri/geometry/Circle", 
+  "esri/Units"
+  ],    function(Map, MapView, Graphic, GraphicsLayer, Circle, Units) {
  
    var map = new Map({
     basemap: "topo-vector"
@@ -35,17 +35,16 @@ require([
     center: [-118.80500,34.02700],
     zoom: 11
   });
-  
+     // create a circle
+   var circleGeometry = new Circle({
+     center: [-118.80657463861, 34.000593060889],
+     radius: 30,
+     geodesic: true,
+     radiusUnit: Units.MILES
+   });
+    
   var graphicsLayer = new GraphicsLayer();
   map.add(graphicsLayer);  
-  
-   // create a circle
-    var circleGeometry = new Circle({
-    center: [-118.80657463861, 34.000593060889],
-    radius: 30,
-      geodesic: true,
-   radiusUnit: Units.MILES
-  });
   
   // Create a point
    var point = {
@@ -153,7 +152,6 @@ require([
       var pointGraphic = new Graphic({
         geometry: point,
         symbol: simpleMarkerSymbol,
-        //*** ADD ***//
         attributes: attributes,
         popupTemplate: popupTemplate
       });
@@ -195,12 +193,10 @@ require([
          }
        }
      });
-
      graphicsLayer.add(textGraphic);
 
-  
-  
-});</script>
+});
+  </script>
 </head>
 <body>
   <div id="viewDiv"></div>
