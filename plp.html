@@ -62,13 +62,7 @@
   });
   
   graphicsLayer.add(pointGraphic);
-      
-     // create a circle
-  var circleGeometry = new Circle({
-    center: [-118.717778, 34.104452],
-    radius: 2500
-        
-    });    
+         
       
   // Create a line geometry
   var simpleLineSymbol = {
@@ -136,6 +130,14 @@
         }
       };
 
+     
+     // create a circle
+  var circleGeometry = new Circle({
+    center: [-118.717778, 34.104452],
+    radius: 2500
+        
+    });
+    
       // Create attributes
       var attributes = {
         Name: "My point",  // The name of the
