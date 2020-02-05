@@ -16,14 +16,6 @@
   
   <script>
      
-/*require([ 
-  "esri/Map", 
-  "esri/views/MapView", 
-  "esri/Graphic", 
-  "esri/layers/GraphicsLayer" 
- 
-  ],    function(Map, MapView, Graphic, GraphicsLayer) { */
- 
   require([ 
   "esri/Map", 
   "esri/views/MapView", 
@@ -44,15 +36,7 @@
     center: [-118.80500,34.02700],
     zoom: 11
   });
-     // create a circle
-  var circleGeometry = new Circle({
-    center: [-118.717778, 34.104452],
-    radius: 3000,
-    geodesic: true,
-    radiusUnit: Units.MILES
-    
-  });
-    
+        
   var graphicsLayer = new GraphicsLayer();
   map.add(graphicsLayer);  
   
@@ -145,7 +129,14 @@
           width: 1
         }
       };
-
+ // create a circle
+  var circleGeometry = new Circle({
+    center: [-118.717778, 34.104452],
+    radius: 3000,
+    geodesic: true,
+    radiusUnit: Units.MILES
+    
+  });
       // Create attributes
       var attributes = {
         Name: "My point",  // The name of the
