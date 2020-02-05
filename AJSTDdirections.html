@@ -26,8 +26,9 @@
     require([
         "esri/Map",
         "esri/views/MapView",
-        "esri/widgets/Directions"
-      ], function(Map, MapView, Directions) {
+        "esri/widgets/Directions",
+      "esri/symbols/SimpleMarkerSymbol"
+      ], function(Map, MapView, Directions, SimpleMarkerSymbol) {
 
       var map = new Map({
         basemap: "streets-navigation-vector"
@@ -50,6 +51,28 @@
       });
       
      view.ui.add(directions, "top-right");
+      
+      function createStopSymbol(color, size) {
+          return new SimpleMarkerSymbol({
+            style: "simple-marker",
+            size: size,
+            outline: {
+              width: "2px",
+              color: "white"
+            },
+            color: color
+          });
+        }
+
+         // Stop symbols
+        directions.stopSymbols.first = createStopSymbol("green","14px");
+        directions.stopSymbols.middle = createStopSymbol("black","10px");
+        directions.stopSymbols.last = createStopSymbol("red","14px");
+
+        // Route symbol
+        directions.routeSymbol.width = "2";
+        directions.routeSymbol.color = [0, 0, 0, 0.75];
+        directions.routeSymbol.style = "short-dot";
       
     });
   </script>
