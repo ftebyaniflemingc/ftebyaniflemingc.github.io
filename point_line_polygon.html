@@ -19,10 +19,12 @@ require([
       "esri/Map",
       "esri/views/MapView",
       "esri/Graphic",
-      "esri/layers/GraphicsLayer"
-    ], function(Map, MapView, Graphic, GraphicsLayer) {
-  
-  var map = new Map({
+      "esri/layers/GraphicsLayer",
+      "esri/geometry/Circle", 
+      "esri/units"
+    ], function(Map, MapView, Graphic, GraphicsLayer, Circle, Units) {
+ 
+   var map = new Map({
     basemap: "topo-vector"
   });
     
@@ -30,7 +32,7 @@ require([
     container: "viewDiv",  
     map: map,
     center: [-118.80500,34.02700],
-    zoom: 13
+    zoom: 11
   });
   
   var graphicsLayer = new GraphicsLayer();
@@ -58,6 +60,12 @@ require([
    symbol: simpleMarkerSymbol
   });
 
+    var circleGeometry = new Circle({
+    center: [-118.80657463861, 34.000593060889],
+    radius: 3000,
+    geodesic: true
+  });
+  
   graphicsLayer.add(pointGraphic);
   
   // Create a line geometry
