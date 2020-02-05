@@ -20,10 +20,18 @@ require([
   "esri/Map", 
   "esri/views/MapView", 
   "esri/Graphic", 
+  "esri/layers/GraphicsLayer" 
+ 
+  ],    function(Map, MapView, Graphic, GraphicsLayer) {
+ 
+/*  require([ 
+  "esri/Map", 
+  "esri/views/MapView", 
+  "esri/Graphic", 
   "esri/layers/GraphicsLayer", 
   "esri/geometry/Circle", 
   "esri/Units"
-  ],    function(Map, MapView, Graphic, GraphicsLayer, Circle, Units) {
+  ],    function(Map, MapView, Graphic, GraphicsLayer, Circle, Units) { */
  
    var map = new Map({
     basemap: "topo-vector"
@@ -36,12 +44,12 @@ require([
     zoom: 11
   });
      // create a circle
-   var circleGeometry = new Circle({
-     center: [-118.80657463861, 34.000593060889],
-     radius: 30,
-     geodesic: true,
-     radiusUnit: Units.MILES
-   });
+   //var circleGeometry = new Circle({
+   //  center: [-118.80657463861, 34.000593060889],
+  //   radius: 30,
+  //   geodesic: true,
+   //  radiusUnit: Units.MILES
+ //  });
     
   var graphicsLayer = new GraphicsLayer();
   map.add(graphicsLayer);  
