@@ -33,22 +33,22 @@
       });
 
         // National feature layer
-      var NationalparksLayer = new FeatureLayer({
+      var parksLayer = new FeatureLayer({
         url: "https://gis.saskatchewan.ca/arcgis/rest/services/Parks/MapServer/0"
       });
-      map.add(NationalparksLayer, 0);
+      map.add(parksLayer, 0);
             
       // Provincial feature layer
-      var proparksLayer = new FeatureLayer({
+      var parksLayer = new FeatureLayer({
         url: "https://gis.saskatchewan.ca/arcgis/rest/services/Parks/MapServer/1"
       });
-      map.add(proparksLayer, 1);
+      map.add(parksLayer, 1);
 
         // Recreational feature layer
-      var recparksLayer = new FeatureLayer({
+      var parksLayer = new FeatureLayer({
         url: "https://gis.saskatchewan.ca/arcgis/rest/services/Parks/MapServer/2"
       });
-      map.add(recparksLayer, 2);
+      map.add(parksLayer, 2);
       
         // Protected Area feature layer
       var proAreaparksLayer = new FeatureLayer({
