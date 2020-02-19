@@ -56,7 +56,31 @@
       });
       map.add(proAreaparksLayer, 3);
       
+      / Authority feature layer
+      var proAreaparksLayer = new FeatureLayer({
+        url: "https://gis.saskatchewan.ca/arcgis/rest/services/Parks/MapServer/4"
+      });
+      map.add(proAreaparksLayer, 4);
+     
+      // Historic Site feature layer
+      var proAreaparksLayer = new FeatureLayer({
+        url: "https://gis.saskatchewan.ca/arcgis/rest/services/Parks/MapServer/5"
+      });
+      map.add(proAreaparksLayer, 5);
       
+      
+      // Regional Parks feature layer
+      var proAreaparksLayer = new FeatureLayer({
+        url: "https://gis.saskatchewan.ca/arcgis/rest/services/Parks/MapServer/6"
+      });
+      map.add(proAreaparksLayer, 6);
+      
+      
+      // Park/Sports Field feature layer
+      var proAreaparksLayer = new FeatureLayer({
+        url: "https://gis.saskatchewan.ca/arcgis/rest/services/Parks/MapServer/7"
+      });
+      map.add(proAreaparksLayer, 7);
     });
   </script>
 </head>
