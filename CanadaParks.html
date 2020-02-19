@@ -29,7 +29,7 @@
         container: "viewDiv",  
         map: map,
         center: [-97.118937,49.875464], 
-        zoom: 6           
+        zoom: 3           
       });
 /*
         // Trailheads feature layer (points)
@@ -37,22 +37,22 @@
         url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0"
       });
 
-      map.add(trailheadsLayer);
+      map.add(trailheadsLayer); */
       
-      // Trails feature layer (lines)
-      var trailsLayer = new FeatureLayer({
-        url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails/FeatureServer/0"
+      // Forestry feature layer (lines)
+      var forestLayer = new FeatureLayer({
+        url: "https://gisappl.saskatchewan.ca/Geocortex/Essentials/EXT/Rest/sites/HABISask/map/mapservices/23/layers/0"
       });
 
-      map.add(trailsLayer, 0);
-*/
+      map.add(forestLayer, 0);
+
       // National Parks and open spaces (polygons)
       var parksLayer = new FeatureLayer({
         url: "https://gisappl.saskatchewan.ca/Geocortex/Essentials/EXT/Rest/sites/HABISask/map/mapservices/10/layers/0"
       });
 
       map.add(parksLayer, 0);
-      
+      /*
        // Provinces Parks and open spaces (polygons)
       var parksLayer = new FeatureLayer({
         url: "https://gisappl.saskatchewan.ca/Geocortex/Essentials/EXT/Rest/sites/HABISask/map/mapservices/10/layers/1"
@@ -60,8 +60,7 @@
 
       map.add(parksLayer, 1);
       
-         map.add(parksLayer, 0);
-      
+              
        //  Parks and open spaces (polygons)
       var parksLayer = new FeatureLayer({
         url: "https://gisappl.saskatchewan.ca/Geocortex/Essentials/EXT/Rest/sites/HABISask/map/mapservices/10/layers/2"
@@ -74,7 +73,7 @@
         url: "https://gisappl.saskatchewan.ca/Geocortex/Essentials/EXT/Rest/sites/HABISask/map/mapservices/10/layers/3"
       });
 
-      map.add(parksLayer, 3);
+      map.add(parksLayer, 3); */
 
     });
   </script>
