@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>ArcGIS JavaScript Tutorials: Add layers to a map</title>
+  <title>ArcGIS JavaScript: CAnada Parks</title>
   <style>
     html, body, #viewDiv {
       padding: 0;
@@ -45,7 +45,7 @@
       });
 
       map.add(trailsLayer, 0);
-*/
+
       // National Parks and open spaces (polygons)
       var parksLayer = new FeatureLayer({
         url: "https://gisappl.saskatchewan.ca/Geocortex/Essentials/EXT/Rest/sites/HABISask/map/mapservices/10/layers/0"
@@ -75,7 +75,7 @@
       });
 
       map.add(parksLayer, 3);
-*/
+
     });
   </script>
 </head>
