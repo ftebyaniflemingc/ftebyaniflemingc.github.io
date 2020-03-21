@@ -1,9 +1,10 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Geom99: Add ArcGIS Map Service source</title>
+<title>Geom99: Add ArcGIS Map Service source - Projected Fix</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
 <link href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css" rel="stylesheet" />
@@ -15,6 +16,8 @@
 <body>
 <div id="map"></div>
 <script>
+	// Modified example from this source: https://docs.mapbox.com/mapbox-gl-js/example/wms/
+	// Be sure to insert your OWN mapbox token.
 	mapboxgl.accessToken = 'pk.eyJ1IjoiZnRlYnlhbmkiLCJhIjoiY2s4MHhsMW1tMDVtbTNocHFwd2R4M21kNyJ9.pV3zTrxyF9wWb4NchtVokg';
     var map = new mapboxgl.Map({
         container: 'map',
@@ -27,7 +30,7 @@
         map.addSource('wms-test-source', {
             'type': 'raster',
             'tiles': [
-                'https://luna.flemingcollege.ca/arcgis/rest/services/Geom99/ftebyaniCanadaPro/MapServer/export?bbox={bbox-epsg-3857}&bboxSR=102100&layers=show%3A0&layerDefs=&size=256%2C256&imageSR=102100&historicMoment=&format=png32&transparent=true&dpi=96&time=&layerTimeOptions=&dynamicLayers=&gdbVersion=&mapScale=&rotation=&datumTransformations=&layerParameterValues=&mapRangeValues=&layerRangeValues=&f=image'
+                'https://luna.flemingcollege.ca/arcgis/rest/services/Geom99on/ftebyaniCanadaMap/MapServer/export?bbox={bbox-epsg-3857}&bboxSR=102100&layers=show%3A0&layerDefs=&size=256%2C256&imageSR=102100&historicMoment=&format=png32&transparent=true&dpi=96&time=&layerTimeOptions=&dynamicLayers=&gdbVersion=&mapScale=&rotation=&datumTransformations=&layerParameterValues=&mapRangeValues=&layerRangeValues=&f=image'
             ],
             'tileSize': 256
         });
