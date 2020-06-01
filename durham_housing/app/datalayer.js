@@ -5,14 +5,14 @@
     ], function(Map, MapView, FeatureLayer) {
       
       var map = new Map({
-        basemap: "topo-vector"
+        basemap: "gray-vector"
       });
 
       var view = new MapView({
         container: "viewDiv",  
         map: map,
         center: [-78.871866,43.914656],
-        zoom: 10           
+        zoom: 9           
       });
 
         // CensusTracs feature layer (points)
