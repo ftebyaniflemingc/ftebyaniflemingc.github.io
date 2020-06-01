@@ -12,7 +12,7 @@
         container: "viewDiv",  
         map: map,
         center: [-78.871866,43.914656],
-        zoom: 9           
+        zoom: 11           
       });
 
         // CensusTracs feature layer (points)
