@@ -16,25 +16,25 @@
       });
 
         // CensusTracs feature layer (points)
-      var trailheadsLayer = new FeatureLayer({
+    //  var trailheadsLayer = new FeatureLayer({
         //url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0"
-        url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0"
-      });
+     //   url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0"
+    //  });
 
-      map.add(trailheadsLayer);
+    //  map.add(trailheadsLayer);
       
       // Trails feature layer (lines)
-      var trailsLayer = new FeatureLayer({
-        url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails/FeatureServer/0"
-      });
+    //  var trailsLayer = new FeatureLayer({
+//        url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails/FeatureServer/0"
+//      });
 
-      map.add(trailsLayer, 0);
+//      map.add(trailsLayer, 0);
 
       // Parks and open spaces (polygons)
-      var parksLayer = new FeatureLayer({
+//      var parksLayer = new FeatureLayer({
         url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Parks_and_Open_Space/FeatureServer/0"
-      });
+//      });
 
-      map.add(parksLayer, 0);
+  //    map.add(parksLayer, 0);
 
-    });
+//    });
