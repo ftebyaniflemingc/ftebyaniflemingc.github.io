@@ -17,10 +17,9 @@
       });
 
         // CensusTracs feature layer (polygon)
-  //    var year19Layer = new FeatureLayer({
-        //url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0"
-   //     url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region/FeatureServer/0"
-   //   });
+      var year19Layer = new FeatureLayer({
+      url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region/FeatureServer/0"
+      });
 
   //    map.add(year19Layer);
       
