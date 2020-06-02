@@ -16,10 +16,10 @@
       });
 
         // CensusTracs feature layer (points)
-    //  var trailheadsLayer = new FeatureLayer({
+      var year19Layer = new FeatureLayer({
         //url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0"
-     //   url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0"
-    //  });
+        url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region/FeatureServer/0"
+      });
 
     //  map.add(trailheadsLayer);
       
@@ -32,7 +32,7 @@
 
       // Parks and open spaces (polygons)
 //      var parksLayer = new FeatureLayer({
-        url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Parks_and_Open_Space/FeatureServer/0"
+      //  url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Parks_and_Open_Space/FeatureServer/0"
 //      });
 
   //    map.add(parksLayer, 0);
