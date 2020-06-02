@@ -52,4 +52,10 @@
       map.add(year15Layer);
     });
 
+// CensusTracs feature Year 2014 layer (polygon)
+      var year14Layer = new FeatureLayer({
+      url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/5"
+      });
 
+      map.add(year14Layer);
+    });
