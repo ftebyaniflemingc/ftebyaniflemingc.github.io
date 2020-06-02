@@ -2,7 +2,7 @@
       "esri/Map",
       "esri/views/MapView",
       "esri/layers/FeatureLayer"
-    ], function(Map, MapView, FeatureLayer) {
+    ], function(Map, MapView, FeatureLayer)  {
       
       var map = new Map({
         basemap: "gray-vector"
@@ -79,4 +79,4 @@
       });
       map.add(year10Layer);
 
- );
+  };
