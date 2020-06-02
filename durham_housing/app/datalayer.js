@@ -15,15 +15,15 @@
         zoom: 11           
       });
 
-        // CensusTracs feature layer (points)
+        // CensusTracs feature layer (polygon)
       var year19Layer = new FeatureLayer({
         //url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0"
         url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region/FeatureServer/0"
       });
 
-    //  map.add(trailheadsLayer);
+      map.add(year19Layer);
       
-      // Trails feature layer (lines)
+      //  feature layer (polygon)
     //  var trailsLayer = new FeatureLayer({
 //        url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails/FeatureServer/0"
 //      });
