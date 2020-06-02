@@ -2,7 +2,10 @@
       "esri/Map",
       "esri/views/MapView",
       "esri/layers/FeatureLayer"
-    ], function(Map, MapView, FeatureLayer)  {
+      "esri/widgets/Legend", //Adding Legend to the application
+      "esri/widgets/LayerList",
+      "esri/widgets/Feature"
+    ], function(Map, MapView, FeatureLayer, Legend, LayerList, Feature)  {
       
       var map = new Map({
         basemap: "gray-vector"
