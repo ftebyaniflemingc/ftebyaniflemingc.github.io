@@ -58,6 +58,7 @@
       });
 
       map.add(year14Layer);
+    });
 
 // CensusTracs feature Year 2013 layer (polygon)
       var year13Layer = new FeatureLayer({
