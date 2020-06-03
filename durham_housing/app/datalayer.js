@@ -24,7 +24,7 @@ require([
         });
             //set the extent on the view
         var extent = new Extent({
-            -78.510, ymax: 43.840, xmin: -79.270, ymin: 44.076
+           xmax: -78.510, ymax: 43.840, xmin: -79.270, ymin: 44.076
        // spatialReference: new SpatialReference ({ "wkid": 32617 })
    //   });
    });
