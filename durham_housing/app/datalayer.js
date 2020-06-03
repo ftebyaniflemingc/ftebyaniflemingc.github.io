@@ -8,7 +8,7 @@ require([
      // "esri/widgets/LayerList",
   //    "esri/widgets/Feature",
     
-    ], function(Map, MapView, FeatureLayer, Extent)  {
+    ], function(Map, MapView, FeatureLayer, Extent, SpatialReference)  {
       
   //Map view set up
   
@@ -25,7 +25,7 @@ require([
             //set the extent on the view
         var extent = new Extent({
            xmax: -78.627, ymax: 44.072, xmin: -79.145, ymin: 43.775,
-        spatialReference: new esri.SpatialReference {"wkid": 102100 }
+        spatialReference: new esri.SpatialReference ({"wkid": 102100 })
       });
         
 
