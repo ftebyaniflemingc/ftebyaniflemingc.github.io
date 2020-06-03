@@ -8,7 +8,7 @@ require([
      // "esri/widgets/LayerList",
   //    "esri/widgets/Feature",
     
-    ], function(Map, MapView, FeatureLayer)  {
+    ], function(Map, MapView, FeatureLayer, Wxtent)  {
       
   //Map view set up
   
@@ -21,7 +21,7 @@ require([
         map: webmap,
         //center: [-78.871866,43.914656],
         zoom: 10
-      
+        });
             //set the extent on the view
         var extent = new esri.geometry.Extent({
             xmax: -78.510,
