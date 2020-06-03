@@ -2,8 +2,8 @@
 require([
       "esri/Map",
       "esri/views/MapView",
-      "esri/layers/FeatureLayer"
-     // "esri/geometry/Extent",
+      "esri/layers/FeatureLayer".
+      "esri/geometry/Extent"
       //"esri/SpatialReference"
     //  "esri/widgets/Legend", //to define Legend
      // "esri/widgets/LayerList",
