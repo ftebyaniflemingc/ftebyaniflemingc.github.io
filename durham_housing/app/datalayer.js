@@ -3,7 +3,7 @@ require([
       "esri/Map",
       "esri/views/MapView",
       "esri/layers/FeatureLayer"
-     // "esri/geometry/Extent"
+      "esri/geometry/Extent"
       //"esri/SpatialReference"
      // "esri/widgets/LayerList",
   //    "esri/widgets/Feature",
@@ -19,15 +19,15 @@ require([
       var view = new MapView({
         container: "mapid",  
         map: webmap,
-        center: [-78.871866,43.914656],
+        //center: [-78.871866,43.914656],
         zoom: 10
       
             //set the extent on the view
-        //  var extent = new esri.geometry.Extent({
-          //  xmax: -78.510,
-          //  ymax: 43.840,
-          //  xmin: -79.270,
-          //  ymin: 44.076,
+        var extent = new esri.geometry.Extent({
+            xmax: -78.510,
+            ymax: 43.840,
+            xmin: -79.270,
+            ymin: 44.076
        // spatialReference: new SpatialReference ({ "wkid": 32617 })
    //   });
    });
