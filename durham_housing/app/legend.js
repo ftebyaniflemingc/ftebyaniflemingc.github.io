@@ -11,6 +11,19 @@ require([
     view.ui.add(titleDiv, "top-right");
     view.ui.add(legend, "bottom-right");
        
+  /*
+ var  = new titleDiv({ view: view });
+  view.ui.add(titleDiv, "top-right");
+        view.ui.add(
+          new Expand({view: view, content: new Legend({
+              view: view
+            })
+          }), "top-right"
+        );
+ */ 
+     
+       
+  
       
     
   
