@@ -3,12 +3,12 @@ require([
       "esri/Map",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
-      "esri/geometry/Extent",
-      "esri/SpatialReference"
+   //   "esri/geometry/Extent",
+  //    "esri/SpatialReference"
      // "esri/widgets/LayerList",
   //    "esri/widgets/Feature",
     
-    ], function(Map, MapView, FeatureLayer, Extent, SpatialReference)  {
+    ], function(Map, MapView, FeatureLayer)  {
       
   //Map view set up
   
@@ -19,14 +19,14 @@ require([
       var view = new MapView({
         container: "mapid",  
         map: webmap,
-        //center: [-78.871866,43.914656],
+        center: [-78.871866,43.914656],
         zoom: 10
         });
             //set the extent on the view
-        var extent = new Extent({
-           xmax: -78.627, ymax: 44.072, xmin: -79.145, ymin: 43.775,
-        spatialReference: new esri.SpatialReference ({"wkid": 102100 })
-      });
+        //var extent = new Extent({
+          // xmax: -78.627, ymax: 44.072, xmin: -79.145, ymin: 43.775,
+        //spatialReference: new esri.SpatialReference ({"wkid": 102100 })
+      //});
         
 
    
