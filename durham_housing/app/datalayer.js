@@ -2,7 +2,7 @@
 require([
       "esri/Map",
       "esri/views/MapView",
-      "esri/layers/FeatureLayer"
+      "esri/layers/FeatureLayer",
       "esri/geometry/Extent"
       //"esri/SpatialReference"
      // "esri/widgets/LayerList",
