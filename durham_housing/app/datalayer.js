@@ -6,6 +6,7 @@ require([
       "esri/widgets/Legend", //Adding Legend to the application
       "esri/widgets/LayerList",
       "esri/widgets/Feature",
+      
       "esri/views/ui/DefaultUI"
     ], function(Map, MapView, FeatureLayer, Legend, LayerList, Feature, DefaultUI)  {
     
@@ -19,7 +20,16 @@ require([
         container: "mapid",  
         map: map,
         center: [-78.871866,43.914656],
-        zoom: 10           
+        zoom: 10
+            //view.extent = new Extent({
+            //xmin: -78.452,
+            //ymin: 43.741,
+            //xmax: -79.265,
+            //ymax: 44.076,
+       // "spatialReference": {
+     //   "wkid": 32617,
+       //  "latestWkid": 32617
+       //   }
       });
   //Legend & Title setup
     var titleDivWidget = new titleDiv({ view: view });
@@ -28,8 +38,7 @@ require([
     view.ui.add(titleDiv, "top-right");
     view.ui.add(legend, "bottom-right");
        
-        
-  
+      
     
   /*
  var  = new titleDiv({ view: view });
@@ -105,7 +114,7 @@ require([
       });
       map.add(year10Layer);
 
- 
+ /*
 
 // Query Feature Layer
 
@@ -146,5 +155,5 @@ require([
           }
         });
       }
-
+*/
      });
