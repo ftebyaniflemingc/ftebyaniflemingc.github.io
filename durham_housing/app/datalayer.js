@@ -14,15 +14,16 @@ require([
     
   //Map view set up
   
-      var map = new Map({
+      var webmap = new WeMap({
         basemap: "gray-vector"
       });
 
       var view = new MapView({
         container: "mapid",  
-        map: map,
-        //center: [-78.871866,43.914656],
+        map: webmap,
+        center: [-78.871866,43.914656],
         zoom: 10
+      });
             //set the extent on the view
             view.extent = new Extent({
             xmin: -78.510,
