@@ -7,8 +7,7 @@ require([
       //"esri/SpatialReference"
      // "esri/widgets/LayerList",
   //    "esri/widgets/Feature",
-   
-    //], function(Map, MapView, FeatureLayer, Extent, SpatialReference, Legend, LayerList, Feature, DefaultUI)  {
+    
     ], function(Map, MapView, FeatureLayer)  {
       
   //Map view set up
