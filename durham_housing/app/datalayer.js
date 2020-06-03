@@ -16,11 +16,12 @@ require([
   //Map view set up
   
       var webmap = new Map({
-        basemap: "gray-vector"
+        container: "mapid",  
+            basemap: "gray-vector"
       });
 
       var view = new MapView({
-        container: "mapid",  
+       
         map: webmap,
         center: [-78.871866,43.914656],
         zoom: 10
