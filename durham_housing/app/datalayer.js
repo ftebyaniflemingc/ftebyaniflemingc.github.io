@@ -3,7 +3,7 @@ require([
       "esri/Map",
       "esri/views/MapView",
       "esri/layers/FeatureLayer"
-      "esri/widgets/Legend", //Adding Legend to the application
+      "esri/widgets/Legend", 
       "esri/widgets/LayerList",
       "esri/widgets/Feature",
       
