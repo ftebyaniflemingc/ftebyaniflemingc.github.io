@@ -6,8 +6,8 @@ require([
       "esri/widgets/Legend", //Adding Legend to the application
       "esri/widgets/LayerList",
       "esri/widgets/Feature",
-      "esri/widgets/Expand"
-    ], function(Map, MapView, FeatureLayer, Legend, LayerList, Feature, Expand)  {
+      "esri/views/ui/DefaultUI"
+    ], function(Map, MapView, FeatureLayer, Legend, LayerList, Feature, DefaultUI)  {
     
   //Map view set up
   
