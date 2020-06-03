@@ -1,23 +1,46 @@
-  require([
+
+require([
       "esri/Map",
       "esri/views/MapView",
       "esri/layers/FeatureLayer"
       "esri/widgets/Legend", //Adding Legend to the application
       "esri/widgets/LayerList",
-      "esri/widgets/Feature"
-    ], function(Map, MapView, FeatureLayer, Legend, LayerList, Feature)  {
-      
+      "esri/widgets/Feature",
+      "esri/widgets/Expand"
+    ], function(Map, MapView, FeatureLayer, Legend, LayerList, Feature, Expand)  {
+    
+  //Map view set up
+  
       var map = new Map({
         basemap: "gray-vector"
       });
 
       var view = new MapView({
-        //container: "viewDiv",  
         container: "mapid",  
         map: map,
         center: [-78.871866,43.914656],
         zoom: 10           
       });
+  //Legend & Title setup
+    var titleDivWidget = new titleDiv({ view: view });
+    var legendWidget = new legend({view: view,});
+
+    view.ui.add(titleDiv, "top-right");
+    view.ui.add(legend, "bottom-right");
+       
+        
+  
+    
+  /*
+ var  = new titleDiv({ view: view });
+  view.ui.add(titleDiv, "top-right");
+        view.ui.add(
+          new Expand({view: view, content: new Legend({
+              view: view
+            })
+          }), "top-right"
+        );
+  */
 
         // CensusTracs feature Year 2019 layer (polygon)
       var year19Layer = new FeatureLayer({
