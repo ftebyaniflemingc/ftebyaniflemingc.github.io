@@ -69,7 +69,7 @@ require([
      map.add(year14Layer);
     
    // CensusTracs feature Year 2013 layer (polygon)
-      var year1Layer = new FeatureLayer({
+      var year13Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/6"
       });
       map.add(year13Layer);
