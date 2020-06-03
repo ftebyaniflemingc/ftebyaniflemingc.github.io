@@ -82,7 +82,7 @@
       });
       map.add(year10Layer);
 
-  });
+ 
 
 // Query Feature Layer
 
@@ -123,3 +123,5 @@
           }
         });
       }
+
+     });
