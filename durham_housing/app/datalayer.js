@@ -4,8 +4,8 @@ require([
       "esri/views/MapView",
       "esri/layers/FeatureLayer"
     //  "esri/widgets/Legend", //to define Legend
-      "esri/widgets/LayerList",
-      "esri/widgets/Feature",
+     // "esri/widgets/LayerList",
+  //    "esri/widgets/Feature",
       
       "esri/views/ui/DefaultUI"
     ], function(Map, MapView, FeatureLayer, Legend, LayerList, Feature, DefaultUI)  {
