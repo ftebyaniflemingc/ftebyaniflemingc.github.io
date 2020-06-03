@@ -5,11 +5,9 @@ require([
       "esri/layers/FeatureLayer",
      // "esri/geometry/Extent"
       //"esri/SpatialReference"
-    //  "esri/widgets/Legend", //to define Legend
      // "esri/widgets/LayerList",
   //    "esri/widgets/Feature",
-      
-    //  "esri/views/ui/DefaultUI"
+   
     //], function(Map, MapView, FeatureLayer, Extent, SpatialReference, Legend, LayerList, Feature, DefaultUI)  {
     ], function(Map, MapView, FeatureLayer)  {
       
@@ -34,28 +32,7 @@ require([
        // spatialReference: new SpatialReference ({ "wkid": 32617 })
    //   });
    });
-  //Legend & Title setup
-      // var titleDivWidget = new titleDiv({ view: view });
-      // var legendWidget = new legend({view: view,});
-      //content.classList.add("esri-widget");
-      
-      //  view.ui.add(titleDiv, "top-right");
-       //  view.ui.add(legend, "bottom-right");
        
-      
-    
-      
-  /*
- var  = new titleDiv({ view: view });
-  view.ui.add(titleDiv, "top-right");
-        view.ui.add(
-          new Expand({view: view, content: new Legend({
-              view: view
-            })
-          }), "top-right"
-        );
- */ 
-
         // CensusTracs feature Year 2019 layer (polygon)
       var year19Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9"
@@ -74,7 +51,6 @@ require([
       });
       map.add(year17Layer);
     
-
     // CensusTracs feature Year 2016 layer (polygon)
       var year16Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/3"
@@ -86,7 +62,6 @@ require([
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/4"
       });
     map.add(year15Layer);
-  
 
 // CensusTracs feature Year 2014 layer (polygon)
       var year14Layer = new FeatureLayer({
@@ -100,7 +75,6 @@ require([
       });
       map.add(year13Layer);
     
-
 // CensusTracs feature Year 2012 layer (polygon)
       var year12Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/7"
@@ -119,47 +93,4 @@ require([
       });
       map.add(year10Layer);
  });
- 
-/*
-// Query Feature Layer
-
-// Client-side queries 
-      function queryFeatureLayerView(point, distance, spatialRelationship, sqlExpression) {
-        // Add the layer if it is missing
-        if (!map.findLayerById(featureLayer.id)) {
-          featureLayer.outFields = ["*"];
-          map.add(featureLayer,0);
-        }
-
-        / Set up the query
-        var query = {
-          geometry: point,
-          distance: distance,
-          spatialRelationship: spatialRelationship,
-          outFields: ["*"],
-          returnGeometry: true,
-          where: sqlExpression
-        };
-        // Wait for the layerview to be ready and then query features
-        view.whenLayerView(featureLayer).then(function(featureLayerView) {
-          if (featureLayerView.updating) {
-            var handle = featureLayerView.watch("updating", function(isUpdating){
-              if (!isUpdating) {
-                // Execute the query
-                featureLayerView.queryFeatures(query).then(function(result) {
-                  addGraphics(result)
-                });
-                handle.remove();
-              }
-            });
-          } else {
-            // Execute the query
-            featureLayerView.queryFeatures(query).then(function(result) {
-              addGraphics(result);
-            });
-          }
-        });
-      }
-*/
-  
     
