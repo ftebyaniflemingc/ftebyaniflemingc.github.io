@@ -8,7 +8,7 @@ require([
      // "esri/widgets/LayerList",
   //    "esri/widgets/Feature",
     
-    ], function(Map, MapView, FeatureLayer, Wxtent)  {
+    ], function(Map, MapView, FeatureLayer, Extent)  {
       
   //Map view set up
   
