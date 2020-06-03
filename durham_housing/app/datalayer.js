@@ -32,11 +32,11 @@ require([
        //   }
       });
   //Legend & Title setup
-    var titleDivWidget = new titleDiv({ view: view });
-    var legendWidget = new legend({view: view,});
+      // var titleDivWidget = new titleDiv({ view: view });
+      // var legendWidget = new legend({view: view,});
 
-    view.ui.add(titleDiv, "top-right");
-    view.ui.add(legend, "bottom-right");
+       //  view.ui.add(titleDiv, "top-right");
+       //  view.ui.add(legend, "bottom-right");
        
       
     
@@ -113,7 +113,7 @@ require([
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9"
       });
       map.add(year10Layer);
-
+ });
  /*
 
 // Query Feature Layer
@@ -156,4 +156,4 @@ require([
         });
       }
 */
-     });
+    
