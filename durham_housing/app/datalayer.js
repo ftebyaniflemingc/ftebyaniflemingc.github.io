@@ -22,9 +22,9 @@ require([
         center: [-78.871866,43.914656],
         zoom: 10
             //view.extent = new Extent({
-            //xmin: -78.452,
-            //ymin: 43.741,
-            //xmax: -79.265,
+            //xmin: -78.510,
+            //ymin: 43.840,
+            //xmax: -79.270,
             //ymax: 44.076,
        // "spatialReference": {
      //   "wkid": 32617,
@@ -34,8 +34,9 @@ require([
   //Legend & Title setup
       // var titleDivWidget = new titleDiv({ view: view });
       // var legendWidget = new legend({view: view,});
-
-       //  view.ui.add(titleDiv, "top-right");
+      //content.classList.add("esri-widget");
+      
+      //  view.ui.add(titleDiv, "top-right");
        //  view.ui.add(legend, "bottom-right");
        
       
