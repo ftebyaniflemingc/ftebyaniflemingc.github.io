@@ -3,7 +3,7 @@ require([
       "esri/Map",
       "esri/views/MapView",
       "esri/layers/FeatureLayer"
-      "esri/widgets/Legend", 
+    //  "esri/widgets/Legend", //to define Legend
       "esri/widgets/LayerList",
       "esri/widgets/Feature",
       
