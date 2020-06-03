@@ -30,9 +30,7 @@ require([
             ymin: 43.840,
             xmax: -79.270,
             ymax: 44.076,
-        spatialReference: new SpatialReference ({
-            "wkid": 32617
-         })
+       // spatialReference: new SpatialReference ({ "wkid": 32617 })
       });
   //Legend & Title setup
       // var titleDivWidget = new titleDiv({ view: view });
