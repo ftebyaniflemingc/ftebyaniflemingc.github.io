@@ -1,12 +1,8 @@
 require([
-      "esri/Map",
-      "esri/views/MapView",
-      "esri/views/legend"  
-   
-    ], function(Map, MapView, Legend)  {
+       "esri/widgets/Legend"
+    ], function(Legend)  {
       
-  
-    
+     
   //Legend & Title setup
     var titleDivWidget = new titleDiv({ view: view });
     var legendWidget = new legend({view: view,});
