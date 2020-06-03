@@ -2,7 +2,7 @@
 require([
       "esri/Map",
       "esri/views/MapView",
-      "esri/layers/FeatureLayer",
+    //  "esri/layers/FeatureLayer",
      // "esri/geometry/Extent"
       //"esri/SpatialReference"
      // "esri/widgets/LayerList",
@@ -31,7 +31,7 @@ require([
        // spatialReference: new SpatialReference ({ "wkid": 32617 })
    //   });
    });
-       
+/*
         // CensusTracs feature Year 2019 layer (polygon)
       var year19Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9"
@@ -90,6 +90,6 @@ require([
       var year10Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9"
       });
-      map.add(year10Layer);
+      map.add(year10Layer); */
  });
     
