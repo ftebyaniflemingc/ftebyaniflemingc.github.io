@@ -15,7 +15,7 @@ require([
       
   //Map view set up
   
-      var webmap = new WeMap({
+      var webmap = new WebMap({
         basemap: "gray-vector"
       });
 
