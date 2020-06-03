@@ -24,15 +24,16 @@ require([
         map: webmap,
         center: [-78.871866,43.914656],
         zoom: 10
-      });
+      
             //set the extent on the view
-          //  view.extent = new Extent({
-          //  xmin: -78.510,
-          //  ymin: 43.840,
-          //  xmax: -79.270,
-          //  ymax: 44.076,
+          var extent = new Extent({
+            xmin: -78.510,
+            ymin: 43.840,
+            xmax: -79.270,
+            ymax: 44.076,
        // spatialReference: new SpatialReference ({ "wkid": 32617 })
-      //});
+      });
+   });
   //Legend & Title setup
       // var titleDivWidget = new titleDiv({ view: view });
       // var legendWidget = new legend({view: view,});
