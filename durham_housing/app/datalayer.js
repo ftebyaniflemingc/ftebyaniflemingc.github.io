@@ -7,7 +7,7 @@ require([
      // "esri/widgets/LayerList",
   //    "esri/widgets/Feature",
       
-      "esri/views/ui/DefaultUI"
+    //  "esri/views/ui/DefaultUI"
     ], function(Map, MapView, FeatureLayer, Legend, LayerList, Feature, DefaultUI)  {
     
   //Map view set up
