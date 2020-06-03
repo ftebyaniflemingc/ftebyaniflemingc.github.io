@@ -2,13 +2,15 @@
 require([
       "esri/Map",
       "esri/views/MapView",
-      "esri/layers/FeatureLayer"
+      "esri/layers/FeatureLayer",
+      "esri/geometry/Extent",
+      "esri/SpatialReference"
     //  "esri/widgets/Legend", //to define Legend
      // "esri/widgets/LayerList",
   //    "esri/widgets/Feature",
       
     //  "esri/views/ui/DefaultUI"
-    ], function(Map, MapView, FeatureLayer, Legend, LayerList, Feature, DefaultUI)  {
+    ], function(Map, MapView, FeatureLayer, Extent, SpatialReference, Legend, LayerList, Feature, DefaultUI)  {
     
   //Map view set up
   
@@ -19,17 +21,16 @@ require([
       var view = new MapView({
         container: "mapid",  
         map: map,
-        center: [-78.871866,43.914656],
+        //center: [-78.871866,43.914656],
         zoom: 10
-            //view.extent = new Extent({
-            //xmin: -78.510,
-            //ymin: 43.840,
-            //xmax: -79.270,
-            //ymax: 44.076,
-       // "spatialReference": {
-     //   "wkid": 32617,
-       //  "latestWkid": 32617
-       //   }
+            view.extent = new Extent({
+            xmin: -78.510,
+            ymin: 43.840,
+            xmax: -79.270,
+            ymax: 44.076,
+        "spatialReference": {
+        "wkid": 32617,
+         }
       });
   //Legend & Title setup
       // var titleDivWidget = new titleDiv({ view: view });
