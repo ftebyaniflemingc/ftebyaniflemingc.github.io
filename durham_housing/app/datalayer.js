@@ -10,8 +10,9 @@ require([
   //    "esri/widgets/Feature",
       
     //  "esri/views/ui/DefaultUI"
-    ], function(Map, MapView, FeatureLayer, Extent, SpatialReference, Legend, LayerList, Feature, DefaultUI)  {
-    
+    //], function(Map, MapView, FeatureLayer, Extent, SpatialReference, Legend, LayerList, Feature, DefaultUI)  {
+    ], function(Map, MapView, FeatureLayer, Extent)  {
+      
   //Map view set up
   
       var webmap = new WeMap({
