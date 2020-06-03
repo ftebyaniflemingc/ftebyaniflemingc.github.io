@@ -32,7 +32,7 @@ require([
           //  xmin: -79.270,
           //  ymin: 44.076,
        // spatialReference: new SpatialReference ({ "wkid": 32617 })
-      });
+   //   });
    });
   //Legend & Title setup
       // var titleDivWidget = new titleDiv({ view: view });
