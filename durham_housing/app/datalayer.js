@@ -54,7 +54,7 @@ require([
       var year16Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/3"
       });
-      //map.add(year16Layer);
+      map.add(year16Layer);
     
    //  CensusTracs feature Year 2015 layer (polygon)
       var year15Layer = new FeatureLayer({
