@@ -25,9 +25,12 @@ require([
             //set the extent on the view
         var extent = new Extent({
            xmax: -78.627, ymax: 44.072, xmin: -79.145, ymin: 43.775,
-        spatialReference: new SpatialReference ({ "wkid": 102100 })
+        spatialReference: new esri.SpatialReference ("wkid": 102100 )
    //   });
    });
+        
+
+   
 
         // CensusTracs feature Year 2019 layer (polygon)
       var year19Layer = new FeatureLayer({
