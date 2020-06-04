@@ -1,25 +1,22 @@
 require([
-        "require",
-        
-        "esri/core/promiseUtils",
         "esri/widgets/Legend",
         "esri/widgets/Home",
         "esri/widgets/Fullscreen",
         "esri/widgets/Slider",
         "esri/widgets/Expand"
-      ], function(require, promiseUtils, Legend, Home, Fullscreen, Slider,Expand
+      ], function(Legend, Home, Fullscreen, Slider,Expand
       ) {
 
 view.ui.empty("top-left");
 
         var applicationDiv = document.getElementById("applicationDiv");
-        var sliderValue = document.getElementById("sliderValue");
-        var playButton = document.getElementById("playButton");
-        var titleDiv = document.getElementById("titleDiv");
+        var tmValue = document.getElementById("tmValue");
+        var playPause = document.getElementById("playPause");
+        var title = document.getElementById("title");
         var animation = null;
 
-        var slider = new Slider({
-          container: "slider",
+        var timeLine = new Slider({
+          container: "Time Line",
           min: 0,
           max: 100,
           values: [50],
@@ -27,32 +24,32 @@ view.ui.empty("top-left");
           visibleElements: {
             rangeLabels: true
           },
-          labelFormatFunction: function(value, type) {
-            if (type === "min") {
-              return "Contested";
+          labelFormatFunction: function(value, year) {
+            if (year === "min") {
+              return "2010";
             }
-            if (type === "max") {
-              return "Landslide";
+            if (year === "max") {
+              return "2019";
             }
             return value;
           }
         });
 
-        function inputHandler(event) {
+        function inputHandler(date) {
           stopAnimation();
-          setGapValue(parseInt(event.value));
+          setGapValue(parseInt(date.value));
         }
         slider.on("thumb-drag", inputHandler);
 
-        playButton.addEventListener("click", function() {
-          if (playButton.classList.contains("toggled")) {
+        playPause.addEventListener("click", function() {
+          if (playPause.classList.contains("toggled")) {
             stopAnimation();
           } else {
             startAnimation();
           }
         });
 
-        view.ui.add(titleDiv, "top-left");
+        view.ui.add(title, "top-left");
         view.ui.add(
           new Expand({
             view: view,
