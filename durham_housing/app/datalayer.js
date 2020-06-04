@@ -1,6 +1,6 @@
 
 require([
-      "esri/Map",
+      "esri/WebMap",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
    //   "esri/geometry/Extent",
@@ -8,11 +8,11 @@ require([
      // "esri/widgets/LayerList",
   //    "esri/widgets/Feature",
     
-    ], function(Map, MapView, FeatureLayer)  {
+    ], function(WebMap, MapView, FeatureLayer)  {
       
   //Map view set up
   
-      var webmap = new Map({
+      var webmap = new WebMap({
         basemap: "gray-vector"
       });
 
