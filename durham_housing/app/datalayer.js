@@ -33,12 +33,9 @@ require([
           constraints: {
             snapToZoom: false
           },
-          extent: {
-             xmax: -78.627, 
-             ymax: 44.072, 
-             xmin: -79.145, 
-             ymin: 43.775
-          }
+         center: [-78.871866,43.914656],
+         zoom: 10
+  
         });
 
       
