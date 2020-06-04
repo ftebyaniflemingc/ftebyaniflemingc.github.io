@@ -93,7 +93,7 @@ view.ui.empty("top-left");
         var home = new HomeButton({
                 map: map
         }, "HomeButton");
-        homr.startup();
+        home.startup();
                
 //Add the widget to the top right of screen
         view.ui.add(homeB,  position: "top-right")
