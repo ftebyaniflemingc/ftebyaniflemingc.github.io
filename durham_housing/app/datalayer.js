@@ -14,11 +14,8 @@ require([
   
       var layer = new FeatureLayer({
           url:
-            "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/WebLayer2/FeatureServer,
-          // don't show precincts that didn't record any votes
-          definitionExpression: "(SumOfUnits > 0) ,
-          title: "South Durham Region Housing"
-        });
+            "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/WebLayer2/FeatureServer"
+               });
 
         var view = new MapView({
           map: new WebMap({
