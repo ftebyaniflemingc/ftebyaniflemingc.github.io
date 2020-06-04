@@ -12,16 +12,48 @@ require([
       
   //Map view set up
   
-      var webmap = new WebMap({
-        basemap: "gray-vector"
-      });
-
-      var view = new MapView({
-        container: "mapid",  
-        map: webmap,
-        center: [-78.871866,43.914656],
-        zoom: 10
+      var layer = new FeatureLayer({
+          url:
+            "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/WebLayer2/FeatureServer,
+          // don't show precincts that didn't record any votes
+          definitionExpression: "(SumOfUnits > 0) ,
+          title: "South Durham Region Housing"
         });
+
+        var view = new MapView({
+          map: new WebMap({
+            basemap: {
+              portalItem: {
+                id: "3582b744bba84668b52a16b0b6942544"
+              }
+            },
+            layers: [layer]
+          }),
+          container: "mapid",
+          constraints: {
+            snapToZoom: false
+          },
+          extent: {
+             xmax: -78.627, 
+             ymax: 44.072, 
+             xmin: -79.145, 
+             ymin: 43.775
+          }
+        });
+
+      
+     // var webmap = new WebMap({
+     //   basemap: "gray-vector"
+     // });
+
+      //var view = new MapView({
+      //  container: "mapid",  
+      //  map: webmap,
+      //  center: [-78.871866,43.914656],
+      //  zoom: 10
+      //  });
+      
+      
             //set the extent on the view
         //var extent = new Extent({
           // xmax: -78.627, ymax: 44.072, xmin: -79.145, ymin: 43.775,
@@ -29,7 +61,7 @@ require([
       //});
         
 
-   
+ /*  
 
         // CensusTracs feature Year 2019 layer (polygon)
       var year19Layer = new FeatureLayer({
@@ -89,6 +121,6 @@ require([
       var year10Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9"
       });
-      webmap.add(year10Layer); 
+      webmap.add(year10Layer); */
  });
     
