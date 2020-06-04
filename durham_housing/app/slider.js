@@ -1,54 +1,62 @@
 require([
+        
         "esri/widgets/Legend",
         "esri/widgets/Home",
         "esri/widgets/Fullscreen",
-        "esri/widgets/Slider",
+        "esri/widgets/TimeSlider",
         "esri/widgets/Expand"
-      ], function(Legend, Home, Fullscreen, Slider,Expand
+      ], function(Legend, Home, Fullscreen, TimeSlider,Expand
       ) {
 
 view.ui.empty("top-left");
 
-        var applicationDiv = document.getElementById("applicationDiv");
+        var fulls = document.getElementById("fulls");
         var tmValue = document.getElementById("tmValue");
         var playPause = document.getElementById("playPause");
         var title = document.getElementById("title");
         var animation = null;
+       
+        //----------------Time Slider----------
+        
+        // source codes: JavaScript - Time Slider
+        //https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TimeSlider.html
+        // Time slider to update layerView filtering - time windoe by year
+        const timerStart = new Date();
+        const timerEnd = new Date();
+        timerStart.setYear(timerStart.getYear() - 2);
+        const timerStartDefault = new Date();
+        timerStartDefault.setMonth(timerEnd.getMonth() -12);
 
-        var timeLine = new Slider({
-          container: "Time Line",
-          min: 0,
-          max: 100,
-          values: [50],
-          step: 0.25,
-          visibleElements: {
-            rangeLabels: true
-          },
-          labelFormatFunction: function(value, year) {
-            if (year === "min") {
-              return "2010";
-            }
-            if (year === "max") {
-              return "2019";
-            }
-            return value;
-          }
+        var timeSlider = new TimeSlider({
+         container: "timeSlider",
+         mode: "time-window"
+         
         });
+        view.ui.add(timeSlider, "manual");
 
-        function inputHandler(date) {
-          stopAnimation();
-          setGapValue(parseInt(date.value));
-        }
-        slider.on("thumb-drag", inputHandler);
+      // wait until the layer view is loaded
+      let timeLayerView;
+     view.whenLayerView(layers).then(function(layVi) {
+       timeLayerView = layVi;
+      const fullTimeExtent = layers.timeInfo.fullTimeExtent;
+      const start = fullTimeExtent.start;
 
-        playPause.addEventListener("click", function() {
-          if (playPause.classList.contains("toggled")) {
-            stopAnimation();
-          } else {
-            startAnimation();
-          }
-        });
+    // set up time slider properties based on layer timeInfo
+      timeSlider.fullTimeExtent = fullTimeExtent;
+      timeSlider.values = [start];
+      timeSlider.stops = {
+       interval: layers.timeInfo.interval
+     };
+   });
 
+    timeSlider.watch("timeExtent", function(value){
+    // update layer view filter to reflect current timeExtent
+    timeLayerView.filter = {
+    timeExtent: value
+    };
+   });   
+        
+        
         view.ui.add(title, "top-left");
         view.ui.add(
           new Expand({
@@ -68,7 +76,7 @@ view.ui.empty("top-left");
         view.ui.add(
           new Fullscreen({
             view: view,
-            element: applicationDiv
+            element: fulls
           }),
           "top-right"
         );
