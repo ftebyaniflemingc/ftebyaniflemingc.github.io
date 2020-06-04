@@ -133,11 +133,11 @@ require([
         });
 });
 
-      
+/*      
       var webmap = new WebMap({
         basemap: "gray-vector"
       });
-/*
+
       var view = new MapView({
         container: "mapid",  
         map: webmap,
