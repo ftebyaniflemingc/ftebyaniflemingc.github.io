@@ -1,4 +1,4 @@
-
+/*
 require([
       "esri/WebMap",
       "esri/views/MapView",
@@ -34,18 +34,57 @@ require([
          zoom: 10
   
         });
+});
+*/
+
+require([
+      "esri/WebMap",
+      "esri/views/MapView",
+      "esri/layers/FeatureLayer",
+   //   "esri/geometry/Extent",
+  //    "esri/SpatialReference"
+     // "esri/widgets/LayerList",
+  //    "esri/widgets/Feature",
+    
+    ], function(WebMap, MapView, FeatureLayer)  {
+      
+  //Map view set up
+  
+      var layer = new FeatureLayer({
+          url:
+            "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer"
+               });
+
+        var view = new MapView({
+          map: new WebMap({
+            basemap: {
+              portalItem: {
+                id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a"
+              }
+            },
+            layers: [layer]
+          }),
+          container: "mapid",
+          constraints: {
+            snapToZoom: false
+          },
+         center: [-78.871866,43.914656],
+         zoom: 10
+  
+        });
+});
 
       
-     // var webmap = new WebMap({
-     //   basemap: "gray-vector"
-     // });
+      var webmap = new WebMap({
+        basemap: "gray-vector"
+      });
 
-      //var view = new MapView({
-      //  container: "mapid",  
-      //  map: webmap,
-      //  center: [-78.871866,43.914656],
-      //  zoom: 10
-      //  });
+      var view = new MapView({
+        container: "mapid",  
+        map: webmap,
+        center: [-78.871866,43.914656],
+        zoom: 10
+        });
       
       
             //set the extent on the view
@@ -55,7 +94,7 @@ require([
       //});
         
 
- /*  
+ 
 
         // CensusTracs feature Year 2019 layer (polygon)
       var year19Layer = new FeatureLayer({
@@ -115,6 +154,6 @@ require([
       var year10Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9"
       });
-      webmap.add(year10Layer); */
+      webmap.add(year10Layer); 
  });
     
