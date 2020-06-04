@@ -8,13 +8,8 @@
     )  {
     
 // Testing the HomeButton
-        var map = new Map("map", {
-                center: [-78.871866,43.914656],
-                zoom: 10
-        });
-                
         var home = new HomeButton({
-                map: map,
+                map: mapid,
                 visible: true // show the buttom
         }, "HomeButton");
         home.startup();
