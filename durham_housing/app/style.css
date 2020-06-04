@@ -23,3 +23,10 @@ html, body{
   height: 40px;
   text-align: center;
   }
+
+#HomeButton {
+  position: absolute;
+  top: 95px;
+  left: 20px;
+  z-index: 50;
+}
