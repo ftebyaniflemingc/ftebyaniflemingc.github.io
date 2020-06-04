@@ -1,13 +1,13 @@
 require([
-        
+        "esri/views/ui/DefaultUI"
         "esri/widgets/Legend",
         "esri/widgets/Home",
         "esri/widgets/Fullscreen",
         "esri/widgets/TimeSlider",
         "esri/widgets/Expand"
-      ], function(Legend, Home, Fullscreen, TimeSlider,Expand
+      ], function(DefaultUI, Legend, Home, Fullscreen, TimeSlider,Expand
       ) {
-
+/*
 view.ui.empty("top-left");
 
         var fulls = document.getElementById("fulls");
@@ -55,7 +55,7 @@ view.ui.empty("top-left");
     timeExtent: value
     };
    });   
-     
+     */
     //------------Title, Home, and Full Screen Widgets -----------
         
         view.ui.add(
