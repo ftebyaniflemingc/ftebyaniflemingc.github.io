@@ -93,7 +93,7 @@ require([
         //spatialReference: new esri.SpatialReference ({"wkid": 102100 })
       //});
         
-
+/*
  
 
         // CensusTracs feature Year 2019 layer (polygon)
@@ -157,3 +157,4 @@ require([
       webmap.add(year10Layer); 
  });
     
+*/
