@@ -3,12 +3,14 @@ require([
       "esri/WebMap",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
+      "dojo/dom",
+      "dojo/domReady!"
    //   "esri/geometry/Extent",
   //    "esri/SpatialReference"
      // "esri/widgets/LayerList",
   //    "esri/widgets/Feature",
     
-    ], function(WebMap, MapView, FeatureLayer)  {
+    ], function(WebMap, MapView, FeatureLayer, dom)  {
       
   //Map view set up
    var webmap = new WebMap({
