@@ -17,61 +17,63 @@ require([
     //  var layer = new FeatureLayer({
       //    url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer"               });
 
-       // CensusTracs feature Year 2019 layer (polygon)
+       // CensusTracs feature Year 2010 layer (polygon)
       var year10Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9"
+      definitionExpression: "(CT > 0) AND (SumOfUnits > 0)",
+          title: ""
       });
       webmap.add(year10Layer);
       
-        // CensusTracs feature Year 2018 layer (polygon)
+        // CensusTracs feature Year 2011 layer (polygon)
       var year11Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/8"
       });
       webmap.add(year11Layer);
     
-    // CensusTracs feature Year 2017 layer (polygon)
+    // CensusTracs feature Year 2012 layer (polygon)
       var year12Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/7"
       });
       webmap.add(year12Layer);
     
-    // CensusTracs feature Year 2016 layer (polygon)
+    // CensusTracs feature Year 2013 layer (polygon)
       var year13Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/6"
       });
       webmap.add(year13Layer);
     
-   //  CensusTracs feature Year 2015 layer (polygon)
+   //  CensusTracs feature Year 2014 layer (polygon)
       var year14Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/5"
       });
     webmap.add(year14Layer);
 
-// CensusTracs feature Year 2014 layer (polygon)
+// CensusTracs feature Year 2015 layer (polygon)
       var year15Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/4"
       });
      webmap.add(year15Layer);
     
-   // CensusTracs feature Year 2013 layer (polygon)
+   // CensusTracs feature Year 2016 layer (polygon)
       var year16Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/3"
       });
       webmap.add(year16Layer);
     
-// CensusTracs feature Year 2012 layer (polygon)
+// CensusTracs feature Year 2017 layer (polygon)
       var year17Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/2"
       });
       webmap.add(year17Layer);
     
-// CensusTracs feature Year 2011 layer (polygon)
+// CensusTracs feature Year 2018 layer (polygon)
       var year18Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/1"
       });
       webmap.add(year18Layer);
 
-    // CensusTracs feature Year 2010 layer (polygon)
+    // CensusTracs feature Year 2019 layer (polygon)
       var year19Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/0"
       });
