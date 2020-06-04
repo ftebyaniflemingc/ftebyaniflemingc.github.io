@@ -16,7 +16,7 @@ html, body{
 #titleId { 
  
   padding: 5px;
-  
+  position: absolute;
   font-size: 20pt;
   font-weight: normal;
   width: 50%;
