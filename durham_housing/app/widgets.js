@@ -55,34 +55,41 @@ view.ui.empty("top-left");
     timeExtent: value
     };
    });   
+     
+    //------------Title, Home, and Full Screen Widgets -----------
         
+        view.ui.add(
+                title, "top-left"
+        );
         
-        view.ui.add(title, "top-left");
         view.ui.add(
           new Expand({
-            view: view,
-            content: new Legend({
+            view: view, content: new Legend({
               view: view
             })
           }),
-          "top-left"
+          position: "top-right"
         );
-        view.ui.add(
-          new Home({
-            view: view
-          }),
-          "top-left"
-        );
-        view.ui.add(
-          new Fullscreen({
-            view: view,
-            element: fulls
-          }),
-          "top-right"
-        );
+//Home Button 
+        var homeB = new Home({
+            view: view;
+        }):         
+//Add the widget to the top right of screen
+        view.ui.add(homeB,  position: "top-right")
 
-        // When the layerview is available, setup hovering interactivity
-        view.whenLayerView(layer).then(setupHoverTooltip);
+//FullScreen Button                 
+       var fulls = new Fullscreen({
+           view: view
+         });
+        view.ui.add(fulls, "top-right");
+                
+//Zoom Button
+        var view = new MapView({
+            container: "viewDiv",
+            map: webmap
+        });
 
-        // Starts the application by visualizing a gap of 50% between the two candidates
-        setGapValue(50);
+        var zoom = new Zoom({
+           view: view
+        });
+                
