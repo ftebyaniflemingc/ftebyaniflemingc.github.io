@@ -20,7 +20,7 @@ require([
        // CensusTracs feature Year 2010 layer (polygon)
       var year10Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9",
-      definitionExpression: "(CT > 0) AND (SumOfUnits > 0)",
+      definitionExpression: "(SumOfUnits > 0)",
           title: "The numbers of units in census tract"
       });
       webmap.add(year10Layer);
