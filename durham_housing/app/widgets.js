@@ -91,7 +91,8 @@ view.ui.empty("top-left");
         });
                 
         var home = new HomeButton({
-                map: map
+                map: map,
+                visible: true // show the buttom
         }, "HomeButton");
         home.startup();
                
