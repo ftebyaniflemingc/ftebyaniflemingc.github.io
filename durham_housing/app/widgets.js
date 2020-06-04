@@ -8,14 +8,7 @@ require([
         "dojo/domReady!"
       ], function(DefaultUI, Legend, Home, Fullscreen, TimeSlider,Expand
       ) {
-        //--- Testing HomeButton
-        require([
-      "esri/map", 
-      "esri/dijit/HomeButton",
-      "dojo/domReady!"
-    ], function(
-      Map, HomeButton
-    )  {
+      
 /*
 view.ui.empty("top-left");
 
@@ -84,17 +77,6 @@ view.ui.empty("top-left");
             view: view;
         }): 
         
-// Testing the HomeButton
-        var map = new Map("map", {
-                center: [-78.871866,43.914656],
-                zoom: 10
-        });
-                
-        var home = new HomeButton({
-                map: map,
-                visible: true // show the buttom
-        }, "HomeButton");
-        home.startup();
                
 //Add the widget to the top right of screen
         view.ui.add(homeB,  position: "top-right")
