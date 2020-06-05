@@ -3,7 +3,8 @@ require([
       "esri/WebMap",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
-       "esri/widgets/Home",
+      "esri/widgets/Home", 
+      "wsri/widgets/Fullscreen",
       "dojo/dom",
       "dojo/domReady!"
    //   "esri/geometry/Extent",
@@ -11,7 +12,7 @@ require([
      // "esri/widgets/LayerList",
   //    "esri/widgets/Feature",
     
-    ], function(WebMap, MapView, FeatureLayer, Home, dom)  {
+    ], function(WebMap, MapView, FeatureLayer, Home, Fullscreen, dom)  {
       
   //Map view set up
    var webmap = new WebMap({
@@ -113,6 +114,14 @@ require([
                               
 //Add the widget to the top right of screen
         view.ui.add(homeB,  "top-right")
+
+      //FullScreen Button                 
+       var fulls = new Fullscreen({
+           map: webmap,
+            visible: true //show the button
+         });
+        view.ui.add(fulls, "top-right");
+                
 
 });
 
