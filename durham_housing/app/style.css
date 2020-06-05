@@ -21,7 +21,8 @@ html, body{
   font-family: "Arial Unicode MS";
   position: absolute;
   top: 10px;
-  widtht: 45%;
+  widtht: 50%;
+  left: 25%;
   text-align: center;   
 }
 #timeSlider{
