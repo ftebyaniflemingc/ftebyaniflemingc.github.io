@@ -14,15 +14,10 @@ html, body{
 }
 
 #titleId { 
- 
   padding: 5px;
-  
-  font-size: 20pt;
+  font-size: 20px;
   font-weight: normal;
-  width: 50%;
-  height: 40px;
-  
-  }
+   }
 .esri-widget__heading {
   color: $heading_color; // #323232;
   font-weight: $font-weight__heading; // 600;
