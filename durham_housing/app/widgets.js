@@ -60,18 +60,7 @@ view.ui.empty("top-left");
      */
     //------------Title, Home, and Full Screen Widgets -----------
         
-        view.ui.add(
-                title, "top-left"
-        );
         
-        view.ui.add(
-          new Expand({
-            view: view, content: new Legend({
-              view: view
-            })
-          }),
-          position: "top-right"
-        );
 //Home Button 
         var homeB = new Home({
             view: view;
