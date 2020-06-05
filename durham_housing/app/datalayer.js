@@ -5,6 +5,7 @@ require([
       "esri/layers/FeatureLayer",
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen",
+      "esri/widgets/Legend",
       "dojo/dom",
       "dojo/domReady!"
    //   "esri/geometry/Extent",
@@ -12,7 +13,7 @@ require([
      // "esri/widgets/LayerList",
   //    "esri/widgets/Feature",
     
-    ], function(WebMap, MapView, FeatureLayer, Home, Fullscreen, dom)  {
+    ], function(WebMap, MapView, FeatureLayer, Home, Fullscreen, Legend, dom)  {
       
   //Map view set up
    var webmap = new WebMap({
@@ -122,6 +123,38 @@ require([
          }, "Fullscreen");
         view.ui.add(fulls, "top-right");
                 
+      //----------------Time Slider----------
+        
+        // source codes: JavaScript - Time Slider
+        //https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TimeSlider.html
+        // Time slider to update layerView filtering - time windoe by year
+        const timerStart = new Date();
+        const timerEnd = new Date();
+        timerStart.setYear(timerStart.getYear() - 2);
+        const timerStartDefault = new Date();
+        timerStartDefault.setMonth(timerEnd.getMonth() -12);
+
+        var timeSlider = new TimeSlider({
+         container: "timeSlider",
+         mode: "time-window"
+         
+        });
+        view.ui.add(timeSlider, "manual");
+
+      // wait until the layer view is loaded
+      let timeLayerView;
+     view.whenLayerView(layers).then(function(layVi) {
+       timeLayerView = layVi;
+      const fullTimeExtent = layers.timeInfo.fullTimeExtent;
+      const start = fullTimeExtent.start;
+
+    // set up time slider properties based on layer timeInfo
+      timeSlider.fullTimeExtent = fullTimeExtent;
+      timeSlider.values = [start];
+      timeSlider.stops = {
+       interval: layers.timeInfo.interval
+     };
+      
 
 });
 
