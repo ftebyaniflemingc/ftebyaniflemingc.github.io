@@ -13,7 +13,7 @@ require([
    //   "esri/geometry/Extent",
   //    "esri/SpatialReference"
          
-    ], function(WebMap, MapView, FeatureLayer, LayerView, Home, Fullscreen, TimeSlider, Legend, dom)  {
+    ], function(WebMap, MapView, FeatureLayer, LayerView, Home, Fullscreen, TimeSlider, Legend)  {
       
   //Map view set up
    var webmap = new WebMap({
@@ -164,7 +164,7 @@ require([
          }); timeSlider.watch
 
             }); //const timeSlider
-         timeSlider.set({ loop. false,
+         timeSlider.set({ loop: false,
                          PlayRate: 10
                         });
          timeSlider.play();  
