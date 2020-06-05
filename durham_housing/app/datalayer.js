@@ -136,7 +136,7 @@ require([
 
         var timeSlider = new TimeSlider({
          container: "timeSlider",
-         mode: "time-window",
+         mode: "time-window", //shows temporal data that falls within a given time range
          visible: true //show the Slider
          }, "TimeSlider");
          
