@@ -181,11 +181,11 @@ require([
         visible: true //shows the Slider
          }, "TimeSlider");
             
-        view.ui.add(timeSlider, "manual");
+        MapView.ui.add(timeSlider, "manual");
 
         let timeLayerView;
        
-        view.whenLayerView(lys).then(function (lysview) {
+        MapView.whenLayerView(lys).then(function (lysview) {
         timeLayerView = lysview;
 
         const fullTimeExtent = lys.timeInfo.fullTimeExtent;
