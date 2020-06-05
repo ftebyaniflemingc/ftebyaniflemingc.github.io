@@ -137,10 +137,10 @@ require([
         var timeSlider = new TimeSlider({
          container: "timeSlider",
          mode: "time-window",
-         visible: true //show the button
+         visible: true //show the Slider
          }, "TimeSlider");
          
-        });
+        //});
         view.ui.add(timeSlider, "manual");
 
       // wait until the layer view is loaded
