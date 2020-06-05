@@ -151,7 +151,7 @@ require([
            start: layers.timeInfo.fullTimeExtent.start, 
            end: layers.timeInfo.fullTimeExtent.end 
              } //timeExtent
-           }); // function(layersview)
+           
 
          view.ui.add(timeSlider, "manual");
       
@@ -166,6 +166,7 @@ require([
                          PlayRate: 10
                         });
          timeSlider.play();  
+      }); // function(layersview)
       
       /*  
       const timerStart = new Date();
