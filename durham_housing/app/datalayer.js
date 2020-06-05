@@ -97,7 +97,7 @@ require([
                //   id: "a37abf36893f42bbaccb0cef64fb28ab"
               }
             },
-            layers: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
+            lys: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
           }),
           container: "mapid",
           constraints: {
@@ -139,19 +139,19 @@ require([
         view.ui.add(timeSlider, "manual");
 
         let timeLayerView;
-        layers: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer];
-        view.whenLayerView(layers).then(function (layersview) {
-        timeLayerView = layersview;
+       
+        view.whenLayerView(lys).then(function (lysview) {
+        timeLayerView = lysview;
 
-        const fullTimeExtent = layers.timeInfo.fullTimeExtent;
+        const fullTimeExtent = las.timeInfo.fullTimeExtent;
         const start = fullTimeExtent.start;
         timeSlider.fullTimeExtent = fullTimeExtent;
               timeSlider.valuses = [start];
               timeSlider.stops = {
-              interval: layers.timeInfoe.interval
+              interval: lys.timeInfoe.interval
            };
             // layertimeExtent: {
-         //  start: layers.timeInfo.fullTimeExtent.start, 
+         //  start: lys.timeInfo.fullTimeExtent.start, 
          //  end:s.timeInfo.fullTimeExtent.end 
          //    }; //timeExtent
            // view.ui.add(timeSlider, "manual");
@@ -167,7 +167,7 @@ require([
                          PlayRate: 10
                         });
          timeSlider.play();  
-      }); // function(layersview)
+      }); // function(lysview)
       
       /*  
       const timerStart = new Date();
@@ -188,10 +188,10 @@ require([
       // wait until the layer view is loaded
       let timeLayerView;
       
-     view.whenLayerView(layers).then(function(layView) {
+     view.whenLayerView(lys).then(function(layView) {
        timeLayerView = layView;
      
-      const fullTimeExtent = layers.timeInfo.fullTimeExtent;
+      const fullTimeExtent = las.timeInfo.fullTimeExtent;
       const start = fullTimeExtent.start;
      });
 
@@ -199,7 +199,7 @@ require([
       timeSlider.fullTimeExtent = fullTimeExtent;
       timeSlider.values = [start];
       timeSlider.stops = {
-       interval: layers.timeInfo.interval
+       interval: lys.timeInfo.interval
      };
       
 */
