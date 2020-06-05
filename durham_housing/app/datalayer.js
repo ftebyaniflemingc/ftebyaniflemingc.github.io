@@ -199,6 +199,6 @@ require([
        interval: layers.timeInfo.interval
      };
       
-/*
+*/
 });
 
