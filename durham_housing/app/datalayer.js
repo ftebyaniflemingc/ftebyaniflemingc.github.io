@@ -140,15 +140,15 @@ require([
 
             let timeLayerView;
 
-           view.whenLayerView(Featurelayer).then(function (layersview) {
+           view.whenLayerView(layers).then(function (layersview) {
            timeLayerView = layersview;
 
-           const fullTimeExtent = Featurelayer.timeInfo.fullTimeExtent;
+           const fullTimeExtent = layers.timeInfo.fullTimeExtent;
            const start = fullTimeExtent.start;
            timeSlider.fullTimeExtent = fullTimeExtent;
                  timeSlider.valuses = [start];
                  timeSlider.stops = {
-            interval: Featurelayer.timeInfoe.interval
+            interval: layers.timeInfoe.interval
            };
             // layertimeExtent: {
          //  start: layers.timeInfo.fullTimeExtent.start, 
