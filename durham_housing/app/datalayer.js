@@ -5,16 +5,15 @@ require([
       "esri/layers/FeatureLayer",
       "esri/views/layers/LayerView",
       "esri/widgets/Home", 
-      "esri/widgets/Fullscreen",
+      "esri/widgets/Fullscreen", 
+      "esri/widgets/TimeSlider",
       "esri/widgets/Legend",
       "dojo/dom",
       "dojo/domReady!"
    //   "esri/geometry/Extent",
   //    "esri/SpatialReference"
-     // "esri/widgets/LayerList",
-  //    "esri/widgets/Feature",
-    
-    ], function(WebMap, MapView, FeatureLayer, LayerView, Home, Fullscreen, Legend, dom)  {
+         
+    ], function(WebMap, MapView, FeatureLayer, LayerView, Home, Fullscreen, timeSlider, Legend, dom)  {
       
   //Map view set up
    var webmap = new WebMap({
