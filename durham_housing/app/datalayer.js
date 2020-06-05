@@ -151,14 +151,12 @@ require([
            start: layers.timeInfo.fullTimeExtent.start, 
            end: layers.timeInfo.fullTimeExtent.end 
              } //timeExtent
-           
-
-        // view.ui.add(timeSlider, "manual");
+           // view.ui.add(timeSlider, "manual");
       
           // current timeExtent by updating timeLayerView filter
          timeSlider.watch("timeExtent", function (date) {  
          timeLayerView.filter = {
-         timeExtent: date
+         "timeExtent": date
           }; //timeLayerView
          }); //function(date)
 
