@@ -120,7 +120,7 @@ require([
            map: webmap,
             visible: true //show the button
          }, "Fullscreen");
-        view.ui.add(fulls, "top-right");
+        view.ui.add(fulls, "top-left");
                 
 
 });
