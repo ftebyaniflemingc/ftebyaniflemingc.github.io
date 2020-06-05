@@ -4,9 +4,9 @@ require([
         "esri/widgets/Home",
         "esri/widgets/Fullscreen",
         "esri/widgets/TimeSlider",
-        "esri/widgets/Expand"
+        "esri/widgets/Expand",
         "dojo/domReady!"
-      ], function(DefaultUI, Legend, Home, Fullscreen, TimeSlider,Expand
+      ], function(DefaultUI, Legend, Home, Fullscreen, TimeSlider,Expand, dom
       ) {
       
 /*
@@ -63,9 +63,10 @@ view.ui.empty("top-left");
         
 //Home Button 
         var homeB = new Home({
-            view: view;
-        }): 
-        
+            visible: true //show the button
+                view: view;
+           }, "Home");
+               
                
 //Add the widget to the top right of screen
         view.ui.add(homeB,  position: "top-right")
