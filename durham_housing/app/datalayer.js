@@ -119,7 +119,7 @@ require([
        var fulls = new Fullscreen({
            map: webmap,
             visible: true //show the button
-         }"Fullscreen");
+         }, "Fullscreen");
         view.ui.add(fulls, "top-right");
                 
 
