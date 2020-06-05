@@ -136,8 +136,8 @@ require([
 
         var timeSlider = new TimeSlider({
          container: "timeSlider",
-         mode: "time-window"
-            visible: true //show the button
+         mode: "time-window",
+         visible: true //show the button
          }, "TimeSlider");
          
         });
