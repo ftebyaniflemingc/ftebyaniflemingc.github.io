@@ -107,8 +107,9 @@ require([
         });
       //Home Button 
         var homeB = new Home({
+            map: webmap,
             visible: true //show the button
-           }, "Home");
+            }, "Home");
                               
 //Add the widget to the top right of screen
         view.ui.add(homeB,  "top-right")
