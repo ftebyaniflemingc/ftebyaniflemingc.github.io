@@ -143,20 +143,23 @@ require([
            view.whenLayerView(layers).then(function (layersview) {
            timeLayerView = layersview;
 
-           timeSlider.fullTimeExtent = layers.timeInfo.fullTimeExtent;
-           timeSlider.stops = {
-            interval: {value: 1, unit: "months"
-            },
-            timeExtent: {
-           start: layers.timeInfo.fullTimeExtent.start, 
-           end: layers.timeInfo.fullTimeExtent.end 
-             } //timeExtent
+           const fullTimeExtent = layers.timeInfo.fullTimeExtent;
+           const start = fullTimeExtent.start;
+           timeSlider.fullTimeExtent = fullTimeExtent;
+                 timeSlider.valuses = [start];
+                 timeSlider.stops = {
+            interval: layers.timeInfoe.interval
+           };
+            // layertimeExtent: {
+         //  start: layers.timeInfo.fullTimeExtent.start, 
+         //  end:s.timeInfo.fullTimeExtent.end 
+         //    }; //timeExtent
            // view.ui.add(timeSlider, "manual");
       
           // current timeExtent by updating timeLayerView filter
          timeSlider.watch("timeExtent", function (date) {  
          timeLayerView.filter = {
-         "timeExtent": date
+         timeExtent: date
           }; //timeLayerView
          }); //function(date)
 
