@@ -16,13 +16,19 @@ html, body{
 #titleId { 
  
   padding: 5px;
-  position: absolute;
+  
   font-size: 20pt;
   font-weight: normal;
   width: 50%;
   height: 40px;
-  text-align: center;
+  
   }
+.esri-widget__heading {
+  color: $heading_color; // #323232;
+  font-weight: $font-weight__heading; // 600;
+  margin: 0 0 0.5rem 0;
+}
+
 
 #HomeButton {
   position: absolute;
