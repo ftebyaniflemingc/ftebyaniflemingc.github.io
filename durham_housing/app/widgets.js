@@ -1,12 +1,12 @@
 require([
         "esri/views/ui/DefaultUI"
-        "esri/widgets/Legend",
+       // "esri/widgets/Legend",
         "esri/widgets/Home",
         "esri/widgets/Fullscreen",
         "esri/widgets/TimeSlider",
         "esri/widgets/Expand",
         "dojo/domReady!"
-      ], function(DefaultUI, Legend, Home, Fullscreen, TimeSlider,Expand, dom
+      ], function(DefaultUI, Home, Fullscreen, TimeSlider,Expand, dom
       ) {
       
 /*
