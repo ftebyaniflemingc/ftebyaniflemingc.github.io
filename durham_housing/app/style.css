@@ -27,10 +27,3 @@ html, body{
 
 
 }
-
-#HomeButton {
-  position: absolute;
-  top: 95px;
-  left: 90px;
-  z-index: 50;
-}
