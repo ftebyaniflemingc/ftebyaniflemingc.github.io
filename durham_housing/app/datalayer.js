@@ -131,24 +131,24 @@ require([
         // Time slider to update layerView filtering 
    
       const timeSlider = new TimeSlider({
-                container: "timeSlider",
-                mode: "instant", //shows 
-         visible: true //shows the Slider
+        container: "timeSlider",
+        mode: "instant", //shows 
+        visible: true //shows the Slider
          }, "TimeSlider");
             
-            view.ui.add(timeSlider, "manual");
+        view.ui.add(timeSlider, "manual");
 
-            let timeLayerView;
+        let timeLayerView;
+        FeatureLayer: layers;
+        view.whenLayerView(layers).then(function (layersview) {
+        timeLayerView = layersview;
 
-           view.whenLayerView(layers).then(function (layersview) {
-           timeLayerView = layersview;
-
-           const fullTimeExtent = layers.timeInfo.fullTimeExtent;
-           const start = fullTimeExtent.start;
-           timeSlider.fullTimeExtent = fullTimeExtent;
-                 timeSlider.valuses = [start];
-                 timeSlider.stops = {
-            interval: layers.timeInfoe.interval
+        const fullTimeExtent = layers.timeInfo.fullTimeExtent;
+        const start = fullTimeExtent.start;
+        timeSlider.fullTimeExtent = fullTimeExtent;
+              timeSlider.valuses = [start];
+              timeSlider.stops = {
+              interval: layers.timeInfoe.interval
            };
             // layertimeExtent: {
          //  start: layers.timeInfo.fullTimeExtent.start, 
