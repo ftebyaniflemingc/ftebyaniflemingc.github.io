@@ -11,7 +11,7 @@ require([
      // "esri/widgets/LayerList",
   //    "esri/widgets/Feature",
     
-    ], function(WebMap, MapView, FeatureLayer, Home dom)  {
+    ], function(WebMap, MapView, FeatureLayer, Home, dom)  {
       
   //Map view set up
    var webmap = new WebMap({
