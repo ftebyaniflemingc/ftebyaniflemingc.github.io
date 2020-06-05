@@ -153,7 +153,7 @@ require([
              } //timeExtent
            
 
-         view.ui.add(timeSlider, "manual");
+        // view.ui.add(timeSlider, "manual");
       
           // current timeExtent by updating timeLayerView filter
          timeSlider.watch("timeExtent", function (date) {  
