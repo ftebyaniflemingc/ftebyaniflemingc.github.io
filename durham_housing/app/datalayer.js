@@ -3,6 +3,7 @@ require([
       "esri/WebMap",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
+      "esri/views/layers/LayerView",
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen",
       "esri/widgets/Legend",
@@ -13,7 +14,7 @@ require([
      // "esri/widgets/LayerList",
   //    "esri/widgets/Feature",
     
-    ], function(WebMap, MapView, FeatureLayer, Home, Fullscreen, Legend, dom)  {
+    ], function(WebMap, MapView, FeatureLayer, LayerView, Home, Fullscreen, Legend, dom)  {
       
   //Map view set up
    var webmap = new WebMap({
@@ -143,10 +144,12 @@ require([
 
       // wait until the layer view is loaded
       let timeLayerView;
-     view.whenLayerView(layers).then(function(layVi) {
-       timeLayerView = layVi;
+     view.whenLayerView(layers).then(function(layView) {
+       timeLayerView = layView;
+     
       const fullTimeExtent = layers.timeInfo.fullTimeExtent;
       const start = fullTimeExtent.start;
+     
 
     // set up time slider properties based on layer timeInfo
       timeSlider.fullTimeExtent = fullTimeExtent;
