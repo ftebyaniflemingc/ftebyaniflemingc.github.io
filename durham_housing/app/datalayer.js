@@ -108,7 +108,7 @@ require([
       //Home Button 
         var homeB = new Home({
             visible: true //show the button
-                view: view;
+                
            }, "Home");
                
                
