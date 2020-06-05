@@ -128,12 +128,12 @@ require([
       
         // source codes: JavaScript - Time Slider
         //https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TimeSlider.html
-        // Time slider to update layerView filtering - time windoe by year
+        // Time slider to update layerView filtering 
    
       const timeSlider = new TimeSlider({
                 container: "timeSlider",
                 mode: "instant", //shows 
-         visible: true //show the Slider
+         visible: true //shows the Slider
          }, "TimeSlider");
             
             view.ui.add(timeSlider, "manual");
@@ -151,8 +151,7 @@ require([
            start: layers.timeInfo.fullTimeExtent.start, 
            end: layers.timeInfo.fullTimeExtent.end 
              } //timeExtent
-          } //timeSlider.stops
-          }); ////view.whenLayerView
+           }); // function(layersview)
 
          view.ui.add(timeSlider, "manual");
       
@@ -161,9 +160,8 @@ require([
          timeLayerView.filter = {
          timeExtent: date
           }; //timeLayerView
-         }); timeSlider.watch
+         }); //function(date)
 
-            }); //const timeSlider
          timeSlider.set({ loop: false,
                          PlayRate: 10
                         });
