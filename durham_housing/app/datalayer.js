@@ -4,7 +4,7 @@ require([
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
       "esri/widgets/Home", 
-      "wsri/widgets/Fullscreen",
+      "esri/widgets/Fullscreen",
       "dojo/dom",
       "dojo/domReady!"
    //   "esri/geometry/Extent",
@@ -120,7 +120,7 @@ require([
            map: webmap,
             visible: true //show the button
          }, "Fullscreen");
-        view.ui.add(fulls, "top-left");
+        view.ui.add(fulls, "top-right");
                 
 
 });
