@@ -149,7 +149,7 @@ require([
      
       const fullTimeExtent = layers.timeInfo.fullTimeExtent;
       const start = fullTimeExtent.start;
-     
+     });
 
     // set up time slider properties based on layer timeInfo
       timeSlider.fullTimeExtent = fullTimeExtent;
