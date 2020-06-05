@@ -113,7 +113,7 @@ require([
             }, "Home");
                               
 //Add the widget to the top right of screen
-        view.ui.add(homeB,  "top-right")
+        view.ui.add(homeB,  "top-right");
 
       //FullScreen Button                 
        var fulls = new Fullscreen({
