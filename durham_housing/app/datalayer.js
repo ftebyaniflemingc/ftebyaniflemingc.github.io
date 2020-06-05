@@ -139,7 +139,7 @@ require([
         view.ui.add(timeSlider, "manual");
 
         let timeLayerView;
-        FeatureLayer: layers;
+        layers: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer];
         view.whenLayerView(layers).then(function (layersview) {
         timeLayerView = layersview;
 
