@@ -101,7 +101,7 @@ require([
           }),
           container: "mapid",
           constraints: {
-            snapToZoom: false
+            snapToZoom: true
           },
          center: [-78.871866,43.914656],
          zoom: 10
@@ -130,41 +130,44 @@ require([
         //https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TimeSlider.html
         // Time slider to update layerView filtering - time windoe by year
    
-      var timeSlider = new TimeSlider({
+      const timeSlider = new TimeSlider({
                 container: "timeSlider",
-                mode: "time-window", //shows temporal data that falls within a given time range
+                mode: "instant", //shows 
          visible: true //show the Slider
          }, "TimeSlider");
             
             view.ui.add(timeSlider, "manual");
 
-            let timeLayerView; //blank
-            view.whenLayerView(layer).then(function (layerView) {
-                timeLayerView = layerView;
+            let timeLayerView;
 
-                var start = new Date(2009, 12, 31)
-                var end = new Date(2019, 12, 31)
+           view.whenLayerView(layers).then(function (layersview) {
+           timeLayerView = layersview;
 
-                timeSlider.fullTimeExtent = {
-                    start: start,
-                    end: end
-                }
+           timeSlider.fullTimeExtent = layers.timeInfo.fullTimeExtent;
+           timeSlider.stops = {
+            interval: {value: 1, unit: "months"
+            },
+            timeExtent: {
+           start: layers.timeInfo.fullTimeExtent.start, 
+           end: layers.timeInfo.fullTimeExtent.end 
+             } //timeExtent
+          } //timeSlider.stops
+          }); ////view.whenLayerView
 
-                timeSlider.values = end;
-
-
-            });
-
-            timeSlider.watch("timeExtent", function (value) {
-                // update layer view filter to reflect current timeExtent
-                console.log(value)
-                timeLayerView.filter = {
-                    timeExtent: value
-                };
-            });
-
- 
+         view.ui.add(timeSlider, "manual");
       
+          // current timeExtent by updating timeLayerView filter
+         timeSlider.watch("timeExtent", function (date) {  
+         timeLayerView.filter = {
+         timeExtent: date
+          }; //timeLayerView
+         }); timeSlider.watch
+
+            }); //const timeSlider
+         timeSlider.set({ loop. false,
+                         PlayRate: 10
+                        });
+         timeSlider.play();  
       
       /*  
       const timerStart = new Date();
