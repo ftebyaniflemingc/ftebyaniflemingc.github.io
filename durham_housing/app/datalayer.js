@@ -3,6 +3,7 @@ require([
       "esri/WebMap",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
+       "esri/widgets/Home",
       "dojo/dom",
       "dojo/domReady!"
    //   "esri/geometry/Extent",
@@ -10,7 +11,7 @@ require([
      // "esri/widgets/LayerList",
   //    "esri/widgets/Feature",
     
-    ], function(WebMap, MapView, FeatureLayer, dom)  {
+    ], function(WebMap, MapView, FeatureLayer, Home dom)  {
       
   //Map view set up
    var webmap = new WebMap({
@@ -104,5 +105,15 @@ require([
          zoom: 10
   
         });
+      //Home Button 
+        var homeB = new Home({
+            visible: true //show the button
+                view: view;
+           }, "Home");
+               
+               
+//Add the widget to the top right of screen
+        view.ui.add(homeB,  position: "top-right")
+
 });
 
