@@ -108,12 +108,10 @@ require([
       //Home Button 
         var homeB = new Home({
             visible: true //show the button
-                
            }, "Home");
-               
-               
+                              
 //Add the widget to the top right of screen
-        view.ui.add(homeB,  position: "top-right")
+        view.ui.add(homeB,  "top-right")
 
 });
 
