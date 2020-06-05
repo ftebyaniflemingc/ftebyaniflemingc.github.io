@@ -137,7 +137,6 @@ require([
         var timeSlider = new TimeSlider({
          container: "timeSlider",
          mode: "time-window"
-                map: webmap,
             visible: true //show the button
          }, "TimeSlider");
          
