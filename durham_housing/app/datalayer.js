@@ -125,14 +125,53 @@ require([
                 
       //----------------Time Slider----------
         
+      
         // source codes: JavaScript - Time Slider
         //https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TimeSlider.html
         // Time slider to update layerView filtering - time windoe by year
-        const timerStart = new Date();
+   
+      var timeSlider = new TimeSlider({
+                container: "timeSlider",
+                mode: "time-window", //shows temporal data that falls within a given time range
+         visible: true //show the Slider
+         }, "TimeSlider");
+            
+            view.ui.add(timeSlider, "manual");
+
+            let timeLayerView; //blank
+            view.whenLayerView(layer).then(function (layerView) {
+                timeLayerView = layerView;
+
+                var start = new Date(2009, 12, 31)
+                var end = new Date(2019, 12, 31)
+
+                timeSlider.fullTimeExtent = {
+                    start: start,
+                    end: end
+                }
+
+                timeSlider.values = end;
+
+
+            });
+
+            timeSlider.watch("timeExtent", function (value) {
+                // update layer view filter to reflect current timeExtent
+                console.log(value)
+                timeLayerView.filter = {
+                    timeExtent: value
+                };
+            });
+
+ 
+      
+      
+      /*  
+      const timerStart = new Date();
         const timerEnd = new Date();
         timerStart.setYear(timerStart.getYear() - 2);
         const timerStartDefault = new Date();
-        timerStartDefault.setMonth(timerEnd.getMonth() -12);
+        timerStartDefault.setMonth(timerEnd.getMonth() -12); 
 
         var timeSlider = new TimeSlider({
          container: "timeSlider",
@@ -141,10 +180,11 @@ require([
          }, "TimeSlider");
          
         //});
-        view.ui.add(timeSlider, "manual");
+        view.ui.add(timeSlider, "buttom-middle");
 
       // wait until the layer view is loaded
       let timeLayerView;
+      
      view.whenLayerView(layers).then(function(layView) {
        timeLayerView = layView;
      
@@ -159,6 +199,6 @@ require([
        interval: layers.timeInfo.interval
      };
       
-
+/*
 });
 
