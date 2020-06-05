@@ -13,7 +13,7 @@ require([
    //   "esri/geometry/Extent",
   //    "esri/SpatialReference"
          
-    ], function(WebMap, MapView, FeatureLayer, LayerView, Home, Fullscreen, timeSlider, Legend, dom)  {
+    ], function(WebMap, MapView, FeatureLayer, LayerView, Home, Fullscreen, TimeSlider, Legend, dom)  {
       
   //Map view set up
    var webmap = new WebMap({
