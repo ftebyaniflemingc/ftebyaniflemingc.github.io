@@ -8,12 +8,13 @@ require([
       "esri/widgets/Fullscreen", 
       "esri/widgets/TimeSlider",
       "esri/widgets/Legend",
+      "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
    //   "esri/geometry/Extent",
   //    "esri/SpatialReference"
          
-    ], function(WebMap, MapView, FeatureLayer, LayerView, Home, Fullscreen, TimeSlider, Legend)  {
+    ], function(WebMap, MapView, FeatureLayer, LayerView, Home, Fullscreen, TimeSlider, Legend, PopupTemplate)  {
       
   //Map view set up
    var webmap = new WebMap({
