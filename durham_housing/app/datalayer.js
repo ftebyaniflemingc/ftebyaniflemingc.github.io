@@ -92,7 +92,7 @@ require([
                //   id: "a37abf36893f42bbaccb0cef64fb28ab"
               }
             },
-       lys.FeatureLayer: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
+       lys: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
           
           }),
           container: "mapid",
@@ -137,15 +137,15 @@ require([
 
         let timeLayerView;
            
-      view.whenLayerView(lys.FeatureLayer).then(function (lysview) {
+      view.whenLayerView(lys).then(function (lysview) {
         timeLayerView = lysview;
       
-        const fullTimeExtent = lys.FeatureLayer.timeInfo.fullTimeExtent;
+        const fullTimeExtent = lys.timeInfo.fullTimeExtent;
         const start = fullTimeExtent.start;
         timeSlider.fullTimeExtent = fullTimeExtent;
               timeSlider.valuses = [start];
               timeSlider.stops = {
-              interval: lys.FeatureLayer.timeInfo.interval
+              interval: lys.timeInfo.interval
            };
             // layertimeExtent: {
          //  start: lys.timeInfo.fullTimeExtent.start, 
