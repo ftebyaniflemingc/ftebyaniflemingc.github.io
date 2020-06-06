@@ -40,9 +40,9 @@ require([
          {id: 7, title: "Year2012", visible: true}, 
          {id: 8, title: "Year2011", visible: true},
          {id: 9, title: "Year2010", visible: true}],
-  webmap.add(layer);
+  
   }); //FeatureLayer
-
+webmap.add(layer: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
   
       
       /*
