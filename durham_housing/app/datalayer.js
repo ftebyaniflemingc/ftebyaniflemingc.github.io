@@ -82,7 +82,7 @@ require([
       var year19Layer = new FeatureLayer({
             url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/0"
             });
-      webmap.addMany(year10Layer, year11Layer, year12Layer, year13Layer, year14Layer, year16Layer, year16Layer, year17Layer, year18Layer, year19Layer); 
+     // webmap.addMany(year10Layer, year11Layer, year12Layer, year13Layer, year14Layer, year16Layer, year16Layer, year17Layer, year18Layer, year19Layer); 
  
       //using web map by Esri as basemap
         var myview = new MapView({
