@@ -20,9 +20,56 @@ require([
    var webmap = new WebMap({    
    });
 
-         //  var layer = new FeatureLayer({
-      //    url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer"});
+       var layer = new FeatureLayer({
+         url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
+             sublayers:[
+       id: 0,
+       title: "Year19"
+       visible: true
+     }, {
+       id: 1,
+       title: "Year18"
+       visible: true
+     }, {
+       id: 2,
+       title: "Year17"
+       visible: true
+     }, {
+       id: 3,
+       title: "Year16"
+       visible: true
+     }
+       id: 4,
+       title: "Year15"
+       visible: true
+     }, {
+       id: 5,
+       title: "Year14"
+       visible: true
+     }, {
+       id: 6,
+       title: "Year13"
+       visible: true
+     }, {
+       id: 7,
+       title: "Year12"
+       visible: true
+     },{
+       id: 8
+       title: "Year11"
+       visible: true
+     }{
+       id: 9,
+       title: "Year10"
+       visible: true
+     }                                  
+   ]
+  });
 
+  webmap.add(layer);
+
+       });
+/*
        // CensusTracs feature Year 2010 layer (polygon)
       const year10Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9",
@@ -91,7 +138,7 @@ require([
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/0",
             title: "Year19"
             });
-   // webmap.add(year19Layer, 0);
+   // webmap.add(year19Layer, 0);*/
      webmap.layers.addMany([
        year10Layer, year11Layer, year12Layer, year13Layer, year14Layer, year15Layer, year16Layer, year17Layer, year18Layer, year19Layer
                              ]);
@@ -149,15 +196,15 @@ require([
 
         let timeLayerView;
            
-       myview.whenLayerView(layers).then(function (lysview) {
+       myview.whenLayerView(layer).then(function (lysview) {
         timeLayerView = lysview;
       
-        const fullTimeExtent = lys.timeInfo.fullTimeExtent;
+        const fullTimeExtent = layer.timeInfo.fullTimeExtent;
         const start = fullTimeExtent.start;
         timeSlider.fullTimeExtent = fullTimeExtent;
               timeSlider.valuses = [start];
               timeSlider.stops = {
-              interval: lys.timeInfo.interval
+              interval: layer.timeInfo.interval
            };
             // layertimeExtent: {
          //  start: lys.timeInfo.fullTimeExtent.start, 
