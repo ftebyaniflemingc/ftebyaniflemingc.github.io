@@ -26,6 +26,7 @@ require([
   var layer = new FeatureLayer({ 
          portalItem: { // autocasts as new PortalItem()
     id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a",
+         
         //url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
          popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2010_CTNAME}",       // Show attribute value
@@ -42,7 +43,7 @@ require([
          {id: 7, title: "Year2012", visible: true}, 
          {id: 8, title: "Year2011", visible: true},
          {id: 9, title: "Year2010", visible: true}],
-  
+         }
   }); //FeatureLayer
 webmap.add(layer);
   
