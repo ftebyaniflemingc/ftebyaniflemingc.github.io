@@ -1,4 +1,5 @@
 require([
+      "require"
       "esri/WebMap",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
@@ -8,8 +9,8 @@ require([
       "esri/widgets/TimeSlider",
       "esri/widgets/Legend",
       "esri/PopupTemplate",
-     // "dojo/dom",
-     // "dojo/domReady!"
+      "dojo/dom",
+      "dojo/domReady!"
    //   "esri/geometry/Extent",
   //    "esri/SpatialReference"
          
@@ -17,7 +18,7 @@ require([
       
   //Map view set up
    var webmap = new WebMap({
-   //      basemap: "gray-vector" 
+    
    });
 
          //  var layer = new FeatureLayer({
