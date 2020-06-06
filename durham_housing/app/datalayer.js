@@ -15,12 +15,12 @@ require([
   //    "esri/SpatialReference"
          
     ], function(WebMap, MapView, FeatureLayer, LayerView, Home, Fullscreen, TimeSlider, Legend, PopupTemplate)  {
-/*      
+    
   //Map view set up
    var webmap = new WebMap({    
 });   
  
-           
+/*             
 
        // CensusTracs feature Year 2010 layer (polygon)
       const year10Layer = new FeatureLayer({
