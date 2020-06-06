@@ -15,13 +15,13 @@ require([
   //    "esri/SpatialReference"
          
     ], function(WebMap, MapView, FeatureLayer, LayerView, Home, Fullscreen, TimeSlider, Legend, PopupTemplate)  {
-      
+/*      
   //Map view set up
    var webmap = new WebMap({    
 });   
  
            
-/*
+
        // CensusTracs feature Year 2010 layer (polygon)
       const year10Layer = new FeatureLayer({
       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9",
@@ -92,24 +92,6 @@ require([
             });
    // webmap.add(year19Layer, 0);*/
 
-      //using web map by Esri as basemap
-        var myview = new MapView({
-          webmap: new WebMap({
-            basemap: { portalItem: { 
-                    id: "3582b744bba84668b52a16b0b6942544"
-               //   id: "a37abf36893f42bbaccb0cef64fb28ab"
-              }
-            },
-                 
-      //lys: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
-          
-          }),
-          container: "mapid",
-          constraints: {snapToZoom: true
-          },
-         center: [-78.871866,43.914656], zoom: 10
-  
-        });
        var layer = new FeatureLayer({
          url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
              sublayers:[
@@ -127,6 +109,27 @@ require([
 
   webmap.add(layer);
 
+        //using web map by Esri as basemap
+        var myview = new MapView({
+          webmap: new WebMap({
+            basemap: { portalItem: { 
+                    id: "3582b744bba84668b52a16b0b6942544"
+               //   id: "a37abf36893f42bbaccb0cef64fb28ab"
+              }
+            },
+                 
+      //lys: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
+   layers: [layer]       
+          }),
+          container: "mapid",
+          constraints: {snapToZoom: true
+          },
+         center: [-78.871866,43.914656], zoom: 10
+  
+        });
+    
+      
+      
       var popupTemplate = new PopupTemplate({
             title: "{CensusBoundary2019_CTNAME}",    // Show attribute value
             content: "<p>The census boundary has {infilling2019_csv_SumOfUnits} housing starts.</p>"   // Display text in pop-up
