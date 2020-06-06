@@ -91,8 +91,7 @@ require([
                //   id: "a37abf36893f42bbaccb0cef64fb28ab"
               }
             },
-          //lys: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
-           lys: ["year19Layer", "year18Layer", "year17Layer", "year16Layer", "year15Layer", "year14Layer", "year13Layer", "year12Layer", "year11Layer", "year10Layer"]
+          lys: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
           }),
           container: "mapid",
           constraints: {snapToZoom: true
@@ -100,11 +99,11 @@ require([
          center: [-78.871866,43.914656], zoom: 10
   
         });
-      /*
+      
       var popupTemplate = new PopupTemplate({
             title: "{CensusBoundary2019_CTNAME}",    // Show attribute value
             content: "<p>The census boundary has {infilling2019_csv_SumOfUnits} housing starts.</p>"   // Display text in pop-up
-      }); */
+      }); 
       
       //Home Button 
         var homeB = new Home({
