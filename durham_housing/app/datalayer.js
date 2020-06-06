@@ -181,7 +181,7 @@ require([
         visible: true //shows the Slider
          }, "TimeSlider");
             
-        View.ui.add(timeSlider, "manual");
+        view.ui.add(timeSlider, "manual");
 
         let timeLayerView;
        
