@@ -23,6 +23,29 @@ require([
             center: [-78.871866,43.914656],
             zoom: 10
       }); //mapview
+     
+      //-------------Renderers------
+      
+      var Rend19 = {
+          type: "simple", // autocasts as new SimpleRenderer()
+                    
+         label: "Year2019"
+       };
+        
+      var Rend18 = {
+          type: "simple", label: "Year2018"
+       };
+        
+      
+      var Rend17 = {
+          type: "simple", label: "Year2017"
+       };
+      
+      var Rend16 = {
+          type: "simple", label: "Year201"
+       };
+  //-------FeatureLayers ----
+        
   var layer = new FeatureLayer({ 
          portalItem: { // autocasts as new PortalItem()
     id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a",
@@ -30,26 +53,27 @@ require([
         //url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
          
              sublayers:[
-       /*  {id: 0, title: "Year2019", visible: true, 
-          renderer: "Year2019Rebderer", 
+        {id: 0, title: "Year2019", visible: true, 
+          renderer: Rend19, 
          popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2019_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
-         }, */
-         {id: 1, title: "Year2018", visible: true, renderer: "Year2018Rebderer",
+         }, 
+         {id: 1, title: "Year2018", visible: true, 
+          renderer: Rend18,
           popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2018_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2018_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          }, 
-         {id: 2, title: "Year2017", visible: true, renderer: "Year2017Rebderer",
+         {id: 2, title: "Year2017", visible: true, renderer: Rend17,
           popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2017_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2017_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          }, 
-         {id: 3, title: "Year2016", visible: true, renderer: "Year2016Rebderer",
+         {id: 3, title: "Year2016", visible: true, renderer: Rend16",
           popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
