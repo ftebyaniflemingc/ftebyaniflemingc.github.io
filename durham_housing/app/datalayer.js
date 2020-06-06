@@ -42,7 +42,7 @@ require([
        };
       
       var Rend16 = {
-          type: "simple", label: "Year201"
+          type: "simple", label: "Year2016"
        };
   //-------FeatureLayers ----
         
@@ -67,13 +67,15 @@ require([
                   content: "The census boundary has {infilling2018_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          }, 
-         {id: 2, title: "Year2017", visible: true, renderer: Rend17,
+         {id: 2, title: "Year2017", visible: true, 
+          renderer: Rend17,
           popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2017_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2017_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          }, 
-         {id: 3, title: "Year2016", visible: true, renderer: Rend16",
+         {id: 3, title: "Year2016", visible: true, 
+          renderer: Rend16,
           popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
