@@ -108,9 +108,6 @@ require([
             title: "Year19"
             });
    // webmap.add(year19Layer, 0);*/
-     webmap.layers.addMany([
-       year10Layer, year11Layer, year12Layer, year13Layer, year14Layer, year15Layer, year16Layer, year17Layer, year18Layer, year19Layer
-                             ]);
 
       //using web map by Esri as basemap
         var myview = new MapView({
