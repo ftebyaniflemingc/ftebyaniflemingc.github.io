@@ -181,7 +181,7 @@ require([
         visible: true //shows the Slider
          }, "TimeSlider");
             
-        MapView.ui.add(timeSlider, "manual");
+        View.ui.add(timeSlider, "manual");
 
         let timeLayerView;
        
