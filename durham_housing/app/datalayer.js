@@ -86,7 +86,7 @@ require([
  
       //using web map by Esri as basemap
         var view = new MapView({
-          map: new WebMap({
+          webmap: new WebMap({
             basemap: { portalItem: { 
                     id: "3582b744bba84668b52a16b0b6942544"
                //   id: "a37abf36893f42bbaccb0cef64fb28ab"
