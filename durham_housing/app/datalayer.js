@@ -19,8 +19,9 @@ require([
   //Map view set up
    var webmap = new WebMap({
    //      basemap: "gray-vector" 
-   });
-    //  var layer = new FeatureLayer({
+
+
+         //  var layer = new FeatureLayer({
       //    url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer"});
 
        // CensusTracs feature Year 2010 layer (polygon)
@@ -104,7 +105,7 @@ require([
             title: "{CensusBoundary2019_CTNAME}",    // Show attribute value
             content: "<p>The census boundary has {infilling2019_csv_SumOfUnits} housing starts.</p>"   // Display text in pop-up
       }); 
-      
+   });      
       //Home Button 
         var homeB = new Home({
             map: webmap,
