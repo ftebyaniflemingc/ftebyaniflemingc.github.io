@@ -57,8 +57,8 @@ require([
         //url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
          
              sublayers:[
-        {id: 0,  
-         //visible: true, 
+                   {id: 9, title: "Year2010", visible: true},
+        {id: 0, visible: true, 
           renderer: Rend19, 
          popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2019_CTNAME}",       // Show attribute value
@@ -90,8 +90,8 @@ require([
          {id: 5, title: "Year2014", visible: true}, 
          {id: 6, title: "Year2013", visible: true}, 
          {id: 7, title: "Year2012", visible: true}, 
-         {id: 8, title: "Year2011", visible: true},
-         {id: 9, title: "Year2010", visible: true}],
+         {id: 8, title: "Year2011", visible: true}
+         ],
          }
   }); //FeatureLayer
 webmap.add(layer);
