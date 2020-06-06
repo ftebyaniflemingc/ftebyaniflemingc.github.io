@@ -27,24 +27,26 @@ require([
       //-------------Renderers------
       
       var Rend19 = {
-          type: "simple", // autocasts as new SimpleRenderer()
-            symbol: {type: "simple-marker",  color: {a: 1, b: 200, g: 0, r: 0}, style: "circle"},     
+       //   type: "simple", // autocasts as new SimpleRenderer()
+        //    symbol: {type: "simple-marker",  color: {a: 1, b: 200, g: 0, r: 0}, style: "circle"},     
          label: "Year2019"
        };
         
       var Rend18 = {
-          type: "simple", 
-             symbol: {type: "simple-marker",  color: {a: 1, b: 250, g: 1, r: 1}, style: "circle"},     
+         // type: "simple", 
+         //    symbol: {type: "simple-marker",  color: {a: 1, b: 250, g: 1, r: 1}, style: "circle"},     
             label: "Year2018"
        };
         
       
       var Rend17 = {
-          type: "simple", label: "Year2017"
+          //type: "simple", 
+            label: "Year2017"
        };
       
       var Rend16 = {
-          type: "simple", label: "Year2016"
+          //type: "simple", 
+            label: "Year2016"
        };
   //-------FeatureLayers ----
         
@@ -55,7 +57,8 @@ require([
         //url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
          
              sublayers:[
-        {id: 0,  visible: true, 
+        {id: 0,  
+         //visible: true, 
           renderer: Rend19, 
          popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2019_CTNAME}",       // Show attribute value
