@@ -33,7 +33,7 @@ require([
       //   {id: 6, title: "Year2013", visible: true}, 
       //   {id: 7, title: "Year2012", visible: true}, 
       //   {id: 8, title: "Year2011", visible: true}, 
-     //    {id: 9, title: "Year2010", visible: true}]
+         {id: 9, title: "Year2010", visible: true}]
   });
 
   webmap.add(layer);
