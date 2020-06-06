@@ -1,6 +1,6 @@
 require([
       
-      "esri/WebMap"
+      "esri/WebMap",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
       "esri/views/layers/LayerView",
@@ -25,7 +25,8 @@ require([
 
        // CensusTracs feature Year 2010 layer (polygon)
       const year10Layer = new FeatureLayer({
-      url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9"
+      url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9",
+            title: "Year10"
             });
      // webmap.layers.add(year10Layer, 9);
       
