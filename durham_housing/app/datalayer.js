@@ -26,7 +26,7 @@ require([
       }); //mapview
      
       //-------------Renderers------
-      
+    /*  
       var Rend19 = {
        //   type: "simple", // autocasts as new SimpleRenderer()
         //    symbol: {type: "simple-marker",  color: {a: 1, b: 200, g: 0, r: 0}, style: "circle"},     
@@ -48,7 +48,7 @@ require([
       var Rend16 = {
           //type: "simple", 
             label: "Year2016"
-       };
+       };*/
   //-------FeatureLayers ----
         
   var layer = new FeatureLayer({ 
@@ -60,28 +60,28 @@ require([
              sublayers:[
                   
         {id: 0, visible: true, 
-          renderer: Rend19, 
+         
          popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2019_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          }, 
          {id: 1, visible: true, 
-          renderer: Rend18,
+         
           popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2018_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2018_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          }, 
          {id: 2, visible: true, 
-          renderer: Rend17,
+         
           popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2017_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2017_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          }, 
          {id: 3, visible: true, 
-          renderer: Rend16,
+         
           popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
