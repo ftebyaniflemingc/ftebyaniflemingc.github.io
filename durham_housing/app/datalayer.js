@@ -21,7 +21,23 @@ require([
             center: [-78.871866,43.914656],
             zoom: 10
       });
-  
+  var layer = new FeatureLayer({
+         url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
+             sublayers:[
+         {id: 0, title: "Year2019", visible: true}, 
+         {id: 1, title: "Year2018", visible: true}, 
+         {id: 2, title: "Year2017", visible: true}, 
+         {id: 3, title: "Year2016", visible: true}, 
+         {id: 4, title: "Year2015", visible: true}, 
+         {id: 5, title: "Year2014", visible: true}, 
+         {id: 6, title: "Year2013", visible: true}, 
+         {id: 7, title: "Year2012", visible: true}, 
+         {id: 8, title: "Year2011", visible: true}, 
+         {id: 9, title: "Year2010", visible: true}]
+  });
+
+  webmap.add(layer);
+      /*
       // CensusTracts Feature Layer, 2010 (polygon)
       var year10Layer = new FeatureLayer({
             url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9",
@@ -130,6 +146,6 @@ require([
                   content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
       });
-      webmap.add(year19Layer); 
+      webmap.add(year19Layer); */
  
 });
