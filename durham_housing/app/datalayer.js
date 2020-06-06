@@ -36,7 +36,7 @@ require([
          {id: 9, title: "Year2010", visible: true}]
   });
 
-  webmap.addMany(layer);
+  webmap.add(layer);
       
       /*
       // CensusTracts Feature Layer, 2010 (polygon)
