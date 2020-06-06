@@ -1,6 +1,6 @@
 require([
-      "require",
-      "esri/WebMap",
+      
+      "esri/WebMap"
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
       "esri/views/layers/LayerView",
@@ -17,76 +17,75 @@ require([
     ], function(WebMap, MapView, FeatureLayer, LayerView, Home, Fullscreen, TimeSlider, Legend, PopupTemplate)  {
       
   //Map view set up
-   var webmap = new WebMap({
-    
+   var webmap = new WebMap({    
    });
 
          //  var layer = new FeatureLayer({
       //    url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer"});
 
        // CensusTracs feature Year 2010 layer (polygon)
-      var year10Layer = new FeatureLayer({
-            url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9"
+      const year10Layer = new FeatureLayer({
+      url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9"
             });
-      webmap.layers.add(year10Layer, 9);
+     // webmap.layers.add(year10Layer, 9);
       
         // CensusTracs feature Year 2011 layer (polygon)
-      var year11Layer = new FeatureLayer({
-            url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/8"
+      const year11Layer = new FeatureLayer({
+      url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/8"
             });
    //  webmap.add(year11Layer, 8);
     
     // CensusTracs feature Year 2012 layer (polygon)
-      var year12Layer = new FeatureLayer({
-            url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/7"
+      const year12Layer = new FeatureLayer({
+      url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/7"
             });
      //webmap.add(year12Layer, 7);
     
     // CensusTracs feature Year 2013 layer (polygon)
-      var year13Layer = new FeatureLayer({
-            url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/6"
+      const year13Layer = new FeatureLayer({
+      url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/6"
             });
      //webmap.add(year13Layer, 6);
     
    //  CensusTracs feature Year 2014 layer (polygon)
-      var year14Layer = new FeatureLayer({
-            url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/5"
+      const year14Layer = new FeatureLayer({
+      url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/5"
             });
     //webmap.add(year14Layer, 5);
 
 // CensusTracs feature Year 2015 layer (polygon)
-      var year15Layer = new FeatureLayer({
-            url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/4"
+      const year15Layer = new FeatureLayer({
+      url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/4"
             });
    // webmap.add(year15Layer, 4);
     
    // CensusTracs feature Year 2016 layer (polygon)
-      var year16Layer = new FeatureLayer({
-            url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/3"
+      const year16Layer = new FeatureLayer({
+      url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/3"
             });
      //webmap.add(year16Layer, 3);
     
 // CensusTracs feature Year 2017 layer (polygon)
-      var year17Layer = new FeatureLayer({
-            url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/2"
+      const year17Layer = new FeatureLayer({
+      url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/2"
             });
      // webmap.add(year17Layer, 2);
     
 // CensusTracs feature Year 2018 layer (polygon)
-      var year18Layer = new FeatureLayer({
-            url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/1"
+      const year18Layer = new FeatureLayer({
+      url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/1"
              });
     // webmap.add(year18Layer, 1);
 
     // CensusTracs feature Year 2019 layer (polygon)
-      var year19Layer = new FeatureLayer({
-            url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/0"
+      const year19Layer = new FeatureLayer({
+      url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/0"
             });
    // webmap.add(year19Layer, 0);
-       webmap.layers.addMany([
-             year10Layer, year11Layer, year12Layer, year13Layer, year14Layer, year15Layer, year16Layer, year17Layer, year18Layer, year19Layer
-                             ]); 
- 
+     webmap.addMany([
+       year10Layer, year11Layer, year12Layer, year13Layer, year14Layer, year15Layer, year16Layer, year17Layer, year18Layer, year19Layer
+                             ])
+
       //using web map by Esri as basemap
         var myview = new MapView({
           webmap: new WebMap({
