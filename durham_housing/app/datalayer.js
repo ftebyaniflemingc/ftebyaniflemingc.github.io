@@ -34,9 +34,9 @@ require([
             },
              sublayers:[
          {id: 0, title: "Year2019", visible: true, renderer: "Year2019Rebderer"}, 
-         {id: 1, title: "Year2018", visible: true, renderer: "Year2019Rebderer"}, 
-         {id: 2, title: "Year2017", visible: true}, 
-         {id: 3, title: "Year2016", visible: true}, 
+         {id: 1, title: "Year2018", visible: true, renderer: "Year2018Rebderer"}, 
+         {id: 2, title: "Year2017", visible: true, renderer: "Year2017Rebderer"}, 
+         {id: 3, title: "Year2016", visible: true, renderer: "Year2016Rebderer"}, 
          {id: 4, title: "Year2015", visible: true}, 
          {id: 5, title: "Year2014", visible: true}, 
          {id: 6, title: "Year2013", visible: true}, 
