@@ -20,8 +20,8 @@ require([
 
         var layer = new FeatureLayer({
           url:
-            url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/0",
-          // don't show precincts that didn't record any votes
+            "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/0",
+           
          
           title: "Year2019"
         });
