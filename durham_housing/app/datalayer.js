@@ -69,7 +69,7 @@ require([
     
    //  CensusTracs feature Year 2014 layer (polygon)
       var year14Layer = new FeatureLayer({
-            url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/5"
+            url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/5",
             
             popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2014_CTNAME}",       // Show attribute value
