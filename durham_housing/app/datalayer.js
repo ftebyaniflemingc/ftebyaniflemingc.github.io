@@ -83,7 +83,9 @@ require([
             url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/0"
             });
    // webmap.add(year19Layer, 0);
-       webmap.layers.push([year10Layer, year11Layer, year12Layer, year13Layer, year14Layer, year16Layer, year16Layer, year17Layer, year18Layer, year19Layer]); 
+       webmap.layers.addMany([
+             year10Layer, year11Layer, year12Layer, year13Layer, year14Layer, year15Layer, year16Layer, year17Layer, year18Layer, year19Layer
+                             ]); 
  
       //using web map by Esri as basemap
         var myview = new MapView({
@@ -93,7 +95,7 @@ require([
                //   id: "a37abf36893f42bbaccb0cef64fb28ab"
               }
             },
-      lys: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
+      //lys: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
           
           }),
           container: "mapid",
