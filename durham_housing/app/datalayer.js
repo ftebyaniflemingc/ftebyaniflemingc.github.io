@@ -2,12 +2,13 @@ require([
       "esri/WebMap",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
+      "esri/layers/Layer",
       "esri/widgets/Legend",
         "esri/widgets/Expand",
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(WebMap, MapView, FeatureLayer, Legend, Expand)  {
+        function(WebMap, MapView, FeatureLayer, Layer, Legend, Expand)  {
     
       // Creates a WebMap instance
       var webmap = new WebMap({
@@ -91,7 +92,7 @@ require([
          {id: 6, title: "Year2013", visible: true}, 
          {id: 7, title: "Year2012", visible: true}, 
          {id: 8, title: "Year2011", visible: true},
-                    {id: 9, title: "Year2010", visible: true}
+         {id: 9, title: "Year2010", visible: true}
          ],
          }
   }); //FeatureLayer
