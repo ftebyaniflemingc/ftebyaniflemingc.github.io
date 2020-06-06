@@ -91,15 +91,13 @@ require([
                //   id: "a37abf36893f42bbaccb0cef64fb28ab"
               }
             },
-          lys: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
+          //lys: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
+           lys: ["year19Layer", "year18Layer", "year17Layer", "year16Layer", "year15Layer", "year14Layer", "year13Layer", "year12Layer", "year11Layer", "year10Layer"]
           }),
-               
           container: "mapid",
-          constraints: {
-            snapToZoom: true
+          constraints: {snapToZoom: true
           },
-         center: [-78.871866,43.914656],
-         zoom: 10
+         center: [-78.871866,43.914656], zoom: 10
   
         });
       /*
@@ -125,8 +123,7 @@ require([
         view.ui.add(fulls, "top-right");
                 
       //----------------Time Slider----------
-        
-      
+             
         // source codes: JavaScript - Time Slider
         //https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TimeSlider.html
         // Time slider to update layerView filtering 
@@ -136,12 +133,12 @@ require([
         mode: "instant", //shows 
         visible: true //shows the Slider
          }, "TimeSlider");
-            
+           
         view.ui.add(timeSlider, "manual");
 
         let timeLayerView;
        
-        MapView.whenLayerView(lys).then(function (lysview) {
+        view.whenLayerView(lys).then(function (lysview) {
         timeLayerView = lysview;
 
         const fullTimeExtent = lys.timeInfo.fullTimeExtent;
