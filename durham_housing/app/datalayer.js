@@ -21,117 +21,66 @@ require([
         basemap: "gray-vector"
       });
     //  var layer = new FeatureLayer({
-      //    url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer"               });
+      //    url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer"});
 
        // CensusTracs feature Year 2010 layer (polygon)
       var year10Layer = new FeatureLayer({
             url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9"
-          //  definitionExpression: "(SumOfUnits > 0)",
-            /*
-            popupTemplate.title {        // Enable a popup
-                  title: "{CensusBoundary2010_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2010_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }*/
-      });
+            });
       webmap.add(year10Layer);
       
         // CensusTracs feature Year 2011 layer (polygon)
       var year11Layer = new FeatureLayer({
             url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/8"
-            /*
-            popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2011_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2011_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }*/
-      });
+            });
       webmap.add(year11Layer);
     
     // CensusTracs feature Year 2012 layer (polygon)
       var year12Layer = new FeatureLayer({
             url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/7"
-            /*
-            popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2012_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2012_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }*/
-      });
+            });
       webmap.add(year12Layer);
     
     // CensusTracs feature Year 2013 layer (polygon)
       var year13Layer = new FeatureLayer({
-            url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/6",
-            /*
-            popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2013_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2013_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }*/
-      });
+            url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/6"
+            });
       webmap.add(year13Layer);
     
    //  CensusTracs feature Year 2014 layer (polygon)
       var year14Layer = new FeatureLayer({
             url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/5"
-            /*
-            popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2014_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2014_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }*/
-      });
+            });
     webmap.add(year14Layer);
 
 // CensusTracs feature Year 2015 layer (polygon)
       var year15Layer = new FeatureLayer({
             url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/4"
-            /*
-            popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2015_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2015_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }*/
-      });
+            });
      webmap.add(year15Layer);
     
    // CensusTracs feature Year 2016 layer (polygon)
       var year16Layer = new FeatureLayer({
             url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/3"
-            /*
-            popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }*/
-      });
+            });
       webmap.add(year16Layer);
     
 // CensusTracs feature Year 2017 layer (polygon)
       var year17Layer = new FeatureLayer({
             url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/2"
-            /*
-            popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2017_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2017_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }*/
-      });
+            });
       webmap.add(year17Layer);
     
 // CensusTracs feature Year 2018 layer (polygon)
       var year18Layer = new FeatureLayer({
             url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/1"
-            /*
-            popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2018_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2018_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }*/
-      });
+             });
       webmap.add(year18Layer);
 
     // CensusTracs feature Year 2019 layer (polygon)
       var year19Layer = new FeatureLayer({
             url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/0"
-            /*
-            popupTemplate: {        // Enable a popup
-                 title: "{CensusBoundary2019_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }*/
-      });
+            });
       webmap.add(year19Layer); 
  
       //using web map by Esri as basemap
@@ -144,11 +93,7 @@ require([
             },
           lys: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
           }),
-                //lys.PopupTemplate = {
-                // title:  "{CensusBoundary2019_CTNAME}",       // Show attribute value
-                // content: 
-                // "<p>The census boundary has {infilling2019_csv_SumOfUnits} housing starts.</p>"   // Display text in pop-up
-          //},
+               
           container: "mapid",
           constraints: {
             snapToZoom: true
@@ -157,11 +102,12 @@ require([
          zoom: 10
   
         });
-      
+      /*
       var popupTemplate = new PopupTemplate({
             title: "{CensusBoundary2019_CTNAME}",    // Show attribute value
             content: "<p>The census boundary has {infilling2019_csv_SumOfUnits} housing starts.</p>"   // Display text in pop-up
-      });
+      }); */
+      
       //Home Button 
         var homeB = new Home({
             map: webmap,
