@@ -8,8 +8,8 @@ require([
       "esri/widgets/TimeSlider",
       "esri/widgets/Legend",
       "esri/PopupTemplate",
-      "dojo/dom",
-      "dojo/domReady!"
+     // "dojo/dom",
+     // "dojo/domReady!"
    //   "esri/geometry/Extent",
   //    "esri/SpatialReference"
          
@@ -136,15 +136,15 @@ require([
 
         let timeLayerView;
            
-      view.whenLayerView().then(function (lysview) {
+      view.whenLayerView(view.lys).then(function (lysview) {
         timeLayerView = lysview;
       
-        const fullTimeExtent = lysview.timeInfo.fullTimeExtent;
+        const fullTimeExtent = view.lys.timeInfo.fullTimeExtent;
         const start = fullTimeExtent.start;
         timeSlider.fullTimeExtent = fullTimeExtent;
               timeSlider.valuses = [start];
               timeSlider.stops = {
-              interval: lysview.timeInfo.interval
+              interval: view.lys.timeInfo.interval
            };
             // layertimeExtent: {
          //  start: lys.timeInfo.fullTimeExtent.start, 
