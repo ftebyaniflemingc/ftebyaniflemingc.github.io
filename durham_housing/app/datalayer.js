@@ -22,7 +22,7 @@ require([
             map: webmap,    // The WebMap instance created above
             container: "mapid",
             center: [-78.871866,43.914656],
-            zoom: 10
+            zoom: 12
       }); //mapview
      
    
