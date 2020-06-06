@@ -31,7 +31,7 @@ require([
             popupTemplate.title {        // Enable a popup
                   title: "{CensusBoundary2010_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2010_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }/*
+            }*/
       });
       webmap.add(year10Layer);
       
@@ -42,7 +42,7 @@ require([
             popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2011_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2011_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }/*
+            }*/
       });
       webmap.add(year11Layer);
     
@@ -53,7 +53,7 @@ require([
             popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2012_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2012_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }/*
+            }*/
       });
       webmap.add(year12Layer);
     
@@ -64,7 +64,7 @@ require([
             popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2013_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2013_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }/*
+            }*/
       });
       webmap.add(year13Layer);
     
@@ -75,7 +75,7 @@ require([
             popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2014_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2014_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }/*
+            }*/
       });
     webmap.add(year14Layer);
 
@@ -86,7 +86,7 @@ require([
             popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2015_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2015_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }/*
+            }*/
       });
      webmap.add(year15Layer);
     
@@ -97,7 +97,7 @@ require([
             popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }/*
+            }*/
       });
       webmap.add(year16Layer);
     
@@ -108,7 +108,7 @@ require([
             popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2017_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2017_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }/*
+            }*/
       });
       webmap.add(year17Layer);
     
@@ -130,7 +130,7 @@ require([
             popupTemplate: {        // Enable a popup
                  title: "{CensusBoundary2019_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }/*
+            }*/
       });
       webmap.add(year19Layer); 
  
