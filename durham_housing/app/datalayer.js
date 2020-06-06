@@ -38,7 +38,7 @@ require([
        id= 3,
        title= "Year16",
        visible= true
-     }, (
+     }, {
        id= 4,
        title= "Year15",
        visible= true
