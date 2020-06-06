@@ -18,12 +18,7 @@ require([
     
   //Web Map  set up
    var webmap = new WebMap({  
-         basemap: { portalItem: { 
-                    id: "3582b744bba84668b52a16b0b6942544"
-               //   id: "a37abf36893f42bbaccb0cef64fb28ab"
-              }
-            },
-
+         
   });   
  
 /*             
@@ -118,12 +113,11 @@ require([
         //using web map by Esri as basemap
         var myview = new MapView({
           webmap: new WebMap({
-           // basemap: { portalItem: { 
-            //        id: "3582b744bba84668b52a16b0b6942544"}},
+         basemap: { portalItem: { 
+                    id: "3582b744bba84668b52a16b0b6942544"
                //   id: "a37abf36893f42bbaccb0cef64fb28ab"
-              
-            
-                 
+              }
+            },          
       //lys: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
    layers: [layer]       
           }),
