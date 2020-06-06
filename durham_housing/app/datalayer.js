@@ -24,14 +24,16 @@ require([
             zoom: 10
       }); //mapview
   var layer = new FeatureLayer({ 
-        url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
+         portalItem: { // autocasts as new PortalItem()
+    id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a",
+        //url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
          popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2010_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2010_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             },
              sublayers:[
-         {id: 0, title: "Year2019", visible: true, renderer: "Year2019Rebderer"}, 
-         {id: 1, title: "Year2018", visible: true, renderer: Year2019Rebderer}, 
+         {id: 0, title: "Year2019", visible: true}, 
+         {id: 1, title: "Year2018", visible: true}, 
          {id: 2, title: "Year2017", visible: true}, 
          {id: 3, title: "Year2016", visible: true}, 
          {id: 4, title: "Year2015", visible: true}, 
