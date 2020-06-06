@@ -22,41 +22,17 @@ require([
 
        var layer = new FeatureLayer({
          url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
-             sublayers:[{
-          id: 0, title: "Year19", visible: true
-     }, {id: 1, title: "Year18", visible: true}, 
-        {
-       id= 2,
-       title= "Year17",
-       visible= true
-     }, {
-       id= 3,
-       title= "Year16",
-       visible= true
-     }, {
-       id= 4,
-       title= "Year15",
-       visible= true
-     }, {
-       id= 5,
-       title= "Year14",
-       visible= true
-     }, {
-       id= 6,
-       title= "Year13",
-       visible= true
-     }, {
-       id= 7,
-       title= "Year12",
-       visible= true
-     },{
-       id= 8,
-       title= "Year11",
-       visible= true
-     }, {id= 9,
-       title= "Year10",
-       visible= true
-     }                                  
+             sublayers:[
+         {id: 0, title: "Year19", visible: true}, 
+         {id: 1, title: "Year18", visible: true}, 
+         {id: 2, title: "Year17", visible: true}, 
+         {id: 3, title: "Year16", visible: true}, 
+         {id: 4, title: "Year15", visible: true}, 
+         {id: 5, title: "Year14", visible: true}, 
+         {id: 6, title: "Year13", visible: true}, 
+         {id: 7, title: "Year12", visible: true}, 
+         {id: 8, title: "Year11", visible: true}, 
+         {id: 9, title: "Year10", visible: true}
    ]
   });
 
