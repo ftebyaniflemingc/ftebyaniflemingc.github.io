@@ -137,15 +137,15 @@ require([
 
         let timeLayerView;
            
-      view.whenLayerView(lys).then(function (lysview) {
+      view.whenLayerView(year10Layer).then(function (lysview) {
         timeLayerView = lysview;
       
-        const fullTimeExtent = lys.timeInfo.fullTimeExtent;
+        const fullTimeExtent = year10Layer.timeInfo.fullTimeExtent;
         const start = fullTimeExtent.start;
         timeSlider.fullTimeExtent = fullTimeExtent;
               timeSlider.valuses = [start];
               timeSlider.stops = {
-              interval: lys.timeInfo.interval
+              interval: year10Layer.timeInfo.interval
            };
             // layertimeExtent: {
          //  start: lys.timeInfo.fullTimeExtent.start, 
