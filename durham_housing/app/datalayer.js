@@ -1,4 +1,3 @@
-
 require([
       "esri/WebMap",
       "esri/views/MapView",
