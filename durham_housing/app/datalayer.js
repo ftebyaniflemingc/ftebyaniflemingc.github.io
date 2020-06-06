@@ -22,7 +22,7 @@ require([
             zoom: 10
       });
   var layer = new FeatureLayer({ 
-      //  url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
+        url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
              sublayers:[
          {id: 0, title: "Year2019", visible: true}, 
          {id: 1, title: "Year2018", visible: true}, 
