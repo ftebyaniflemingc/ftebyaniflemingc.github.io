@@ -149,7 +149,7 @@ require([
 
         let timeLayerView;
            
-       myview.whenLayerView(lys).then(function (lysview) {
+       myview.whenLayerView(layers).then(function (lysview) {
         timeLayerView = lysview;
       
         const fullTimeExtent = lys.timeInfo.fullTimeExtent;
