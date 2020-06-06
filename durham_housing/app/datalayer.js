@@ -16,9 +16,9 @@ require([
          
     ], function(WebMap, MapView, FeatureLayer, LayerView, Home, Fullscreen, TimeSlider, Legend, PopupTemplate)  {
     
-  //Map view set up
+  //Web Map  set up
    var webmap = new WebMap({    
-  
+  });   
  
 /*             
 
@@ -128,7 +128,7 @@ require([
   
         });
     
-});       
+    
       
       var popupTemplate = new PopupTemplate({
             title: "{CensusBoundary2019_CTNAME}",    // Show attribute value
