@@ -2,10 +2,12 @@ require([
       "esri/WebMap",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
+      "esri/widgets/Legend",
+        "esri/widgets/Expand",
       "dojo/dom",
       "dojo/domReady!"
     
-    ], function(WebMap, MapView, FeatureLayer)  {
+    ], function(WebMap, MapView, FeatureLayer, Legend, Expand)  {
     
       // Creates a WebMap instance
       var webmap = new WebMap({
@@ -15,7 +17,7 @@ require([
       });
       
       // Mapview, referencing WebMap instance
-      var view = new MapView({
+      var myview = new MapView({
             map: webmap,    // The WebMap instance created above
             container: "mapid",
             center: [-78.871866,43.914656],
@@ -23,6 +25,10 @@ require([
       });
   var layer = new FeatureLayer({ 
         url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
+         popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2010_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2010_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
              sublayers:[
          {id: 0, title: "Year2019", visible: true}, 
          {id: 1, title: "Year2018", visible: true}, 
@@ -148,5 +154,17 @@ require([
             }
       });
       webmap.add(year19Layer); */
+      //---------------Legend-------------
+      
+        const legend = new Expand({
+          content: new Legend({
+            view: myview,
+            style: "card" // other styles include 'classic'
+          }),
+          view: view,
+          expanded: true
+        });
+        myview.ui.add(legend, "bottom-right");
+      });
  
 });
