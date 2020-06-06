@@ -155,7 +155,7 @@ require([
         // source codes: JavaScript - Time Slider
         //https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TimeSlider.html
         // Time slider to update layerView filtering 
-   
+   /*
       const timeSlider = new TimeSlider({
         container: "timeSlider",
         mode: "instant", //shows 
