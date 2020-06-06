@@ -55,7 +55,7 @@ require([
        title= "Year12",
        visible= true
      },{
-       id= 8
+       id= 8,
        title= "Year11",
        visible= true
      }, {
