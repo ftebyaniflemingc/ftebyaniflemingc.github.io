@@ -1,14 +1,18 @@
+
+//---------------esri rquirements ---------------
 require([
       "esri/WebMap",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
       "esri/layers/Layer",
       "esri/widgets/Legend",
-        "esri/widgets/Expand",
+      "esri/widgets/Expand",
+      "esri/widgets/Home", 
+      "esri/widgets/Fullscreen", 
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(WebMap, MapView, FeatureLayer, Layer, Legend, Expand)  {
+        function(WebMap, MapView, FeatureLayer, Layer, Legend, Expand, Home, Fullscreen)  {
     
       // Creates a WebMap instance
       var webmap = new WebMap({
@@ -26,7 +30,7 @@ require([
       }); //mapview
      
    
-  //-------FeatureLayers ----
+  //---------------FeatureLayers---------------
         
   var layer = new FeatureLayer({ 
          portalItem: { // autocasts as new PortalItem()
@@ -97,7 +101,9 @@ require([
          }
   }); //FeatureLayer
 webmap.add(layer);
-      //---------------Legend-------------
+      
+      
+      //---------------Legend---------------
       
         const mylegend = new Expand({
           content: new Legend({
@@ -108,6 +114,24 @@ webmap.add(layer);
           expanded: true
         }); //Expand
         myview.ui.add(mylegend, "bottom-right");
+      
+       //---------------Home Button---------------
+        var homeB = new Home({
+            view: myview,
+            visible: true //show the button
+            }, "Home");
+                              
+//Add the widget to the top right of screen
+        myview.ui.add(homeB,  "top-right");
+
+      //---------------FullScreen Button---------------
+      
+       var fulls = new Fullscreen({
+           view: myview,
+            visible: true //show the button
+         }, "Fullscreen");
+        myview.ui.add(fulls, "top-right");
+                
       
  
 }); //require
