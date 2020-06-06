@@ -18,7 +18,7 @@ require([
     
   //Map view set up
    var webmap = new WebMap({    
-});   
+  
  
 /*             
 
@@ -128,7 +128,7 @@ require([
   
         });
     
-      
+});       
       
       var popupTemplate = new PopupTemplate({
             title: "{CensusBoundary2019_CTNAME}",    // Show attribute value
