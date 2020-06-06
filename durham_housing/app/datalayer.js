@@ -32,13 +32,12 @@ require([
          {id: 6, title: "Year13", visible: true}, 
          {id: 7, title: "Year12", visible: true}, 
          {id: 8, title: "Year11", visible: true}, 
-         {id: 9, title: "Year10", visible: true}
-   ]
+         {id: 9, title: "Year10", visible: true}]
   });
 
   webmap.add(layer);
 
-       });
+       
 /*
        // CensusTracs feature Year 2010 layer (polygon)
       const year10Layer = new FeatureLayer({
