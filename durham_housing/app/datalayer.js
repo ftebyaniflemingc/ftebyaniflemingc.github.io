@@ -33,7 +33,7 @@ require([
                   content: "The census boundary has {infilling2010_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             },
              sublayers:[
-         {id: 0, title: "Year2019", visible: true, renderer: Year2019Rebderer}, 
+         {id: 0, title: "Year2019", visible: true, renderer: "Year2019Rebderer"}, 
          {id: 1, title: "Year2018", visible: true, renderer: "Year2019Rebderer"}, 
          {id: 2, title: "Year2017", visible: true}, 
          {id: 3, title: "Year2016", visible: true}, 
