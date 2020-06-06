@@ -143,12 +143,12 @@ require([
               }
             },
           lys: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
-          lys.popupTemplate = {
+          }),
+              lys.popupTemplate = {
                  title:  "{CensusBoundary2019_CTNAME}",       // Show attribute value
                  content: 
                  "<p>The census boundary has {infilling2019_csv_SumOfUnits} housing starts.</p>"   // Display text in pop-up
-          }
-          }),
+          },
           container: "mapid",
           constraints: {
             snapToZoom: true
