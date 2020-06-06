@@ -119,7 +119,7 @@ require([
               }
             },          
       //lys: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
-   layers: [layer]       
+   //layers: [layer]       
           }),
           container: "mapid",
           constraints: {snapToZoom: true
