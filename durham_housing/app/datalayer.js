@@ -17,9 +17,7 @@ require([
     ], function(WebMap, MapView, FeatureLayer, LayerView, Home, Fullscreen, TimeSlider, Legend, PopupTemplate)  {
       
   //Map view set up
-   var webmap = new WebMap({
-        basemap: "gray-vector"
-      });
+   //var webmap = new WebMap({basemap: "gray-vector"  });
     //  var layer = new FeatureLayer({
       //    url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer"});
 
