@@ -53,28 +53,28 @@ require([
         //url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
          
              sublayers:[
-        {id: 0, title: "Year2019", visible: true, 
+        {id: 0,  visible: true, 
           renderer: Rend19, 
          popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2019_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          }, 
-         {id: 1, title: "Year2018", visible: true, 
+         {id: 1, visible: true, 
           renderer: Rend18,
           popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2018_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2018_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          }, 
-         {id: 2, title: "Year2017", visible: true, 
+         {id: 2, visible: true, 
           renderer: Rend17,
           popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2017_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2017_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          }, 
-         {id: 3, title: "Year2016", visible: true, 
+         {id: 3, visible: true, 
           renderer: Rend16,
           popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
