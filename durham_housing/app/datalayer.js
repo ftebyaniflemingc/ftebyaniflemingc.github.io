@@ -19,7 +19,7 @@ require([
   //Map view set up
    var webmap = new WebMap({
    //      basemap: "gray-vector" 
-
+   });
 
          //  var layer = new FeatureLayer({
       //    url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer"});
@@ -92,7 +92,7 @@ require([
                //   id: "a37abf36893f42bbaccb0cef64fb28ab"
               }
             },
-          lys: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
+       layer: [year19Layer, year18Layer, year17Layer, year16Layer, year15Layer, year14Layer, year13Layer, year12Layer, year11Layer, year10Layer]
           }),
           container: "mapid",
           constraints: {snapToZoom: true
@@ -100,12 +100,10 @@ require([
          center: [-78.871866,43.914656], zoom: 10
   
         });
-      
       var popupTemplate = new PopupTemplate({
             title: "{CensusBoundary2019_CTNAME}",    // Show attribute value
             content: "<p>The census boundary has {infilling2019_csv_SumOfUnits} housing starts.</p>"   // Display text in pop-up
-      }); 
-   });      
+       });      
       //Home Button 
         var homeB = new Home({
             map: webmap,
@@ -138,15 +136,15 @@ require([
 
         let timeLayerView;
        
-        view.whenLayerView(lys).then(function (lysview) {
+        view.whenLayerView(layer).then(function (lysview) {
         timeLayerView = lysview;
 
-        const fullTimeExtent = lys.timeInfo.fullTimeExtent;
+        const fullTimeExtent = layer.timeInfo.fullTimeExtent;
         const start = fullTimeExtent.start;
         timeSlider.fullTimeExtent = fullTimeExtent;
               timeSlider.valuses = [start];
               timeSlider.stops = {
-              interval: lys.timeInfo.interval
+              interval: layer.timeInfo.interval
            };
             // layertimeExtent: {
          //  start: lys.timeInfo.fullTimeExtent.start, 
