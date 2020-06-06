@@ -28,12 +28,14 @@ require([
       
       var Rend19 = {
           type: "simple", // autocasts as new SimpleRenderer()
-                    
+            symbol: {type: "simple-marker",  color: {a: 1, b: 200, g: 0, r: 0}, style: "circle"},     
          label: "Year2019"
        };
         
       var Rend18 = {
-          type: "simple", label: "Year2018"
+          type: "simple", 
+             symbol: {type: "simple-marker",  color: {a: 1, b: 250, g: 1, r: 1}, style: "circle"},     
+            label: "Year2018"
        };
         
       
