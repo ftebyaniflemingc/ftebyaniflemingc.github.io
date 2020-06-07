@@ -43,19 +43,19 @@ require([
   
         {id: 0, title: "Year2019", visible: true, 
                   popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2019_CTNAME}",       // Show attribute value
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }, definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2019_csv_Census_Tract > 0)"
          }, 
          {id: 1, title: "Year2018", visible: true, 
                   popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2018_CTNAME}",       // Show attribute value
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2018_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          }, 
          {id: 2, title: "Year2017", visible: true, 
                   popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2017_CTNAME}",       // Show attribute value
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2017_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          }, 
@@ -67,7 +67,7 @@ require([
          }, 
          {id: 4, title: "Year2015",  visible: true, 
                  popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2015_CTNAME}",       // Show attribute value
+                  title: "{CensusBoundary20166CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2015_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          }, 
@@ -79,7 +79,7 @@ require([
          }, 
          {id: 6, title: "Year2013",  visible: true, 
                  popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2013_CTNAME}",       // Show attribute value
+                  title: "{CensusBoundary20166CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2013_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          }, 
@@ -96,7 +96,7 @@ require([
             }},
          {id: 9, title: "Year2010",  visible: true, 
                  popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2010_CTNAME}",       // Show attribute value
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2010_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          }
