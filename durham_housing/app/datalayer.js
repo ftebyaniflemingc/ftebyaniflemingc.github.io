@@ -9,14 +9,13 @@ require([
       "esri/widgets/Expand",
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen", 
-      "esri/widgets/Zoom", 
       "esri/widgets/Search", 
       "esri/widgets/TimeSlider",
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(WebMap, MapView, FeatureLayer, Layer, Legend, Expand, Home, Fullscreen, Zoom, Search, TimeSlider, PopupTemplate ){
+        function(WebMap, MapView, FeatureLayer, Layer, Legend, Expand, Home, Fullscreen, Search, TimeSlider, PopupTemplate ){
     
       // Creates a WebMap instance
       var webmap = new WebMap({
@@ -151,13 +150,6 @@ webmap.add(layer);
          }, "Fullscreen");
         myview.ui.add(myfulls, {position: "top-right", index:2 });
                 
-      //---------------Zoom---------------
-      
-       var myzoom = new Zoom({
-           view: myview,
-            visible: true //show the button
-         }, "Zoom");
-        myview.ui.add(myzoom, {position: "top-right", index:3 });
       
       //---------------Search---------------
       
