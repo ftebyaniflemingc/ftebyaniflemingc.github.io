@@ -168,12 +168,13 @@ timeSlider.watch("timeExtent", function(value){
     timeExtent: value
   };
 });
+        //  current timeExtent by updaing layer view filter
 myview.ui.add(timeSlider, "manual");
-      timeSlider.watch("timeExtebt", function(value){
-            timeLayerView.filter = {
-                  timeExtent: value
-            };//filter
-      });//function(value)
+  timeSlider.watch("timeExtent", function (value) { 
+  timeLayerView.filter = {
+  timeExtent: value
+    };//filter
+   });//function(value)
       
       //---------------Time Play--------------- 
       
