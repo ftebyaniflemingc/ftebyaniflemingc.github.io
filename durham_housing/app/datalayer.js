@@ -14,24 +14,13 @@ require([
         ], 
         function(WebMap, MapView, FeatureLayer, Layer, Legend, Expand, TimeSlider, PopupTemplate ){
     
-      // Creates a WebMap instance
+      //---------------FeatureLayers---------------
+   // Creates a WebMap instance
       var webmap = new WebMap({
             portalItem: { //autocasts as new PortalItem()
                   id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a"
                   }
-      }); //webmap
-      
-      // Mapview, referencing WebMap instance
-      var myview = new MapView({
-            map: webmap,    // The WebMap instance created above
-            container: "mapid",
-            center: [-78.871866,43.914656],
-            zoom: 10
-      }); //mapview
-     
-   
-  //---------------FeatureLayers---------------
-           
+      }); //webmap           
       
   var layer = new FeatureLayer({ 
          portalItem: { // autocasts as new PortalItem()
@@ -115,6 +104,27 @@ require([
          }
   }); //FeatureLayer
 webmap.add(layer);
+  
+      
+   
+      
+      // Mapview, referencing WebMap instance
+      var myview = new MapView({
+            map: new webmap({    // The WebMap instance created above
+                  basemap:{
+                  portalItem: {
+                id: "3582b744bba84668b52a16b0b6942544"
+              }
+            },
+            layer: [layer]
+          }),
+            container: "mapid",
+            center: [-78.871866,43.914656],
+            zoom: 10
+      }); //mapview
+     
+   
+  
       
  /*
  var arcadeExpressionInfos = [{
