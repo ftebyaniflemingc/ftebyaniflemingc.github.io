@@ -14,7 +14,7 @@ require([
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(WebMap, MapView, FeatureLayer, Layer, Legend, Expand, Home, Fullscreen, TimeSlider, PopupTemplate {
+        function(WebMap, MapView, FeatureLayer, Layer, Legend, Expand, Home, Fullscreen, TimeSlider, PopupTemplate ){
     
       // Creates a WebMap instance
       var webmap = new WebMap({
@@ -136,48 +136,34 @@ webmap.add(layer);
                 
       
      //---------------Time Slider--------------- 
-      /*
-      // current timeExtent by updating timeLayerView filter
-         timeSlider.watch("timeExtent", function (date) {  
-         timeLayerView.filter = {
-         timeExtent: date
-          }; //timeLayerView
-         }); //function(date)
+      // Create a time slider to update layerView filter
+var timeSlider = new TimeSlider({
+  container: "timeSlider",
+  mode: "instant",
+});
+myview.ui.add(timeSlider, "manual");
 
-      
-      
-        
-      const timerStart = new Date();
-        const timerEnd = new Date();
-        timerStart.setYear(timerStart.getYear() - 2);
-        const timerStartDefault = new Date();
-        timerStartDefault.setMonth(timerEnd.getMonth() -12); 
-*/
-        var timeSlider = new TimeSlider({
-         container: "timeSlider",
-         mode: "time-window", //shows temporal data that falls within a given time range
-         visible: true //show the Slider
-         }, "TimeSlider");
-         
-        //});
-        view.ui.add(timeSlider, "buttom-middle");
+// wait until the layer view is loaded
+let timeLayerView;
+myview.whenLayerView(layer).then(function(mylv) {
+  timeLayerView = mylv;
+  const fullTimeExtent = layer.timeInfo.fullTimeExtent;
+  const start = fullTimeExtent.start;
 
-      // wait until the layer view is loaded
-      let timeLayerView;
-      
-     myview.whenLayerView(layer).then(function(layView) {
-       timeLayerView = layView;
-     
-      const fullTimeExtent = layer.timeInfo.fullTimeExtent;
-      const start = fullTimeExtent.start;
-     });
+  // set up time slider properties based on layer timeInfo
+  timeSlider.fullTimeExtent = fullTimeExtent;
+  timeSlider.values = [start];
+  timeSlider.stops = {
+    interval: layer.timeInfo.interval
+  };
+});
 
-    // set up time slider properties based on layer timeInfo
-      timeSlider.fullTimeExtent = fullTimeExtent;
-      timeSlider.values = [start];
-      timeSlider.stops = {
-       interval: lys.timeInfo.interval
-     };
+timeSlider.watch("timeExtent", function(value){
+  // update layer view filter to reflect current timeExtent
+  timeLayerView.filter = {
+    timeExtent: value
+  };
+});
       
       //---------------Time Play--------------- 
       
