@@ -17,7 +17,7 @@ require([
       // Creates a WebMap instance
       var webmap = new WebMap({
             portalItem: { //autocasts as new PortalItem()
-                  id: "3582b744bba84668b52a16b0b6942544"
+                  id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a"
                   }
       }); //webmap
       
@@ -26,7 +26,7 @@ require([
             map: webmap,    // The WebMap instance created above
             container: "mapid",
             center: [-78.871866,43.914656],
-            zoom: 11
+            zoom: 10
       }); //mapview
      
    
