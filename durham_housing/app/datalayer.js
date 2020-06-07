@@ -128,7 +128,7 @@ webmap.add(layer);
 */
       
       
-view.then(function() {
+myview.then(function() {
           // get the first layer in the collection of operational layers in the WebMap
           // when the resources in the MapView have loaded.
           var featureLayer = webmap.layers.getItemAt(0);
@@ -148,6 +148,8 @@ view.then(function() {
           // bottom right of the view.
           myview.ui.add(legend, "bottom-right");
         });
+      
+      
       //---------------FullScreen Button---------------
       
        var fulls = new Fullscreen({
