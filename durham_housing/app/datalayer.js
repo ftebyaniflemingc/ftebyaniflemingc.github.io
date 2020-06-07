@@ -211,7 +211,7 @@ webmap.add(layer);
           view: myview,
          style: "line",
          unit: "metric"
-       }"ScaleBar");
+       }, "ScaleBar");
       myview.ui.add(myscale, {position: "bottom-left"});
       
       
