@@ -38,13 +38,14 @@ require([
          portalItem: { // autocasts as new PortalItem()
          id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a",
       //url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
-            sublayers:[
+           
+               sublayers:[
   
         {id: 0, title: "Year2019", visible: true, 
                   popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2019_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            }
+            }, definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2019_csv_Census_Tract > 0)"
          }, 
          {id: 1, title: "Year2018", visible: true, 
                   popupTemplate: {        // Enable a popup
@@ -110,7 +111,7 @@ webmap.add(layer);
         const mylegend = new Expand({
           content: new Legend({
             view: myview,
-            style: 'card' // other styles include 'classic'
+            style: 'classic' // other styles include 'classic'
           }),
           view: myview,
           expanded: true
