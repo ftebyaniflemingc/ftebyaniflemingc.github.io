@@ -109,7 +109,7 @@ webmap.add(layer);
   // Mapview, referencing WebMap instance
       var myview = new MapView({
              // The WebMap instance created above
-            webmap: new webmap({ 
+            webmap:  webmap({ 
                   basemap:{  
                         portalItem:{id: "3582b744bba84668b52a16b0b6942544"
                     }
