@@ -9,12 +9,14 @@ require([
       "esri/widgets/Expand",
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen", 
+      "esri/widgets/Zoom", 
+      "esri/widgets/Search", 
       "esri/widgets/TimeSlider",
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(WebMap, MapView, FeatureLayer, Layer, Legend, Expand, Home, Fullscreen, TimeSlider, PopupTemplate ){
+        function(WebMap, MapView, FeatureLayer, Layer, Legend, Expand, Home, Fullscreen, Zoom, Search, TimeSlider, PopupTemplate ){
     
       // Creates a WebMap instance
       var webmap = new WebMap({
@@ -131,24 +133,41 @@ webmap.add(layer);
         myview.ui.add(mylegend, "bottom-right");
       
        //---------------Home Button---------------
-        var homeB = new Home({
+        var myhome = new Home({
             view: myview,
             visible: true //show the button
             }, "Home");
                               
 //Add the widget to the top right of screen
-        myview.ui.add(homeB,  "top-right");
+        myview.ui.add(myhome,  {position: "top-right", index:1 });
 
           
       
       //---------------FullScreen Button---------------
       
-       var fulls = new Fullscreen({
+       var myfulls = new Fullscreen({
            view: myview,
             visible: true //show the button
          }, "Fullscreen");
-        myview.ui.add(fulls, "top-right");
+        myview.ui.add(myfulls, {position: "top-right", index:2 });
                 
+      //---------------Zoom---------------
+      
+       var myzoom = new Zoom({
+           view: myview,
+            visible: true //show the button
+         }, "Zoom");
+        myview.ui.add(myzoom, {position: "top-right", index:3 });
+      
+      //---------------Search---------------
+      
+       var mysearch = new Search({
+           view: myview,
+            visible: true //show the button
+         }, "Search");
+        myview.ui.add(mysearch, {position: "top-right", index:3 });
+      
+      
       
      //---------------Time Slider--------------- 
       // Create a time slider to update layerView filter
