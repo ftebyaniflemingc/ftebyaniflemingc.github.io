@@ -22,6 +22,16 @@ require([
                   }
       }); //webmap           
       
+          // Mapview, referencing WebMap instance
+      var myview = new MapView({
+            map: webmap,    // The WebMap instance created above
+                  
+            container: "mapid",
+            center: [-78.871866,43.914656],
+            zoom: 10
+      
+            }); //mapview
+      
   var layer = new FeatureLayer({ 
          portalItem: { // autocasts as new PortalItem()
          id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a",
@@ -104,26 +114,6 @@ require([
          }
   }); //FeatureLayer
 webmap.add(layer);
-  
-      
-   
-      
-      // Mapview, referencing WebMap instance
-      var myview = new MapView({
-            map: webmap({    // The WebMap instance created above
-                  basemap:{
-                  portalItem: {
-                id: "3582b744bba84668b52a16b0b6942544"
-              }
-            },
-            layer: [layer]
-          }),
-            container: "mapid",
-            center: [-78.871866,43.914656],
-            zoom: 10
-      }); //mapview
-     
-   
   
       
  /*
