@@ -134,7 +134,7 @@ webmap.add(layer);
                 
       
      //---------------Time Slider--------------- 
-      
+      /*
       // current timeExtent by updating timeLayerView filter
          timeSlider.watch("timeExtent", function (date) {  
          timeLayerView.filter = {
@@ -144,7 +144,7 @@ webmap.add(layer);
 
       
       
-        /*
+        
       const timerStart = new Date();
         const timerEnd = new Date();
         timerStart.setYear(timerStart.getYear() - 2);
