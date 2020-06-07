@@ -1,7 +1,7 @@
 
 //---------------esri rquirements ---------------
 require([
-      "require"
+      "require",
       "esri/WebMap",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
