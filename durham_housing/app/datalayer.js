@@ -106,7 +106,7 @@ webmap.add(layer);
       
       
       //---------------Legend---------------
-      
+      /*
         const mylegend = new Expand({
           content: new Legend({
             view: myview,
@@ -125,7 +125,29 @@ webmap.add(layer);
                               
 //Add the widget to the top right of screen
         myview.ui.add(homeB,  "top-right");
+*/
+      
+      
+view.then(function() {
+          // get the first layer in the collection of operational layers in the WebMap
+          // when the resources in the MapView have loaded.
+          var featureLayer = webmap.layers.getItemAt(0);
 
+          var legend = new Legend({
+            view: myview,
+            layerInfos: [{
+              layer: featureLayer,
+              title: "Census Tract"
+            }]
+          });
+
+          // Finalize the creation of the legend widget.
+          legend.startup();
+
+          // Adds an instance of Legend widget to the
+          // bottom right of the view.
+          myview.ui.add(legend, "bottom-right");
+        });
       //---------------FullScreen Button---------------
       
        var fulls = new Fullscreen({
@@ -168,7 +190,7 @@ timeSlider.watch("timeExtent", function(value){
     timeExtent: value
   };
 });
-        //  current timeExtent by updaing layer view filter
+ //  current timeExtent by updaing layer view filter
 myview.ui.add(timeSlider, "manual");
   timeSlider.watch("timeExtent", function (value) { 
   timeLayerView.filter = {
