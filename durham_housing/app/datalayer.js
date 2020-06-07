@@ -133,5 +133,56 @@ webmap.add(layer);
         myview.ui.add(fulls, "top-right");
                 
       
+     //---------------Time Slider--------------- 
+      
+      // current timeExtent by updating timeLayerView filter
+         timeSlider.watch("timeExtent", function (date) {  
+         timeLayerView.filter = {
+         timeExtent: date
+          }; //timeLayerView
+         }); //function(date)
+
+      
+      
+        /*
+      const timerStart = new Date();
+        const timerEnd = new Date();
+        timerStart.setYear(timerStart.getYear() - 2);
+        const timerStartDefault = new Date();
+        timerStartDefault.setMonth(timerEnd.getMonth() -12); 
+*/
+        var timeSlider = new TimeSlider({
+         container: "timeSlider",
+         mode: "time-window", //shows temporal data that falls within a given time range
+         visible: true //show the Slider
+         }, "TimeSlider");
+         
+        //});
+        view.ui.add(timeSlider, "buttom-middle");
+
+      // wait until the layer view is loaded
+      let timeLayerView;
+      
+     myview.whenLayerView(layer).then(function(layView) {
+       timeLayerView = layView;
+     
+      const fullTimeExtent = layer.timeInfo.fullTimeExtent;
+      const start = fullTimeExtent.start;
+     });
+
+    // set up time slider properties based on layer timeInfo
+      timeSlider.fullTimeExtent = fullTimeExtent;
+      timeSlider.values = [start];
+      timeSlider.stops = {
+       interval: lys.timeInfo.interval
+     };
+      
+      //---------------Time Play--------------- 
+      
+   timeSlider.set({ loop: false,
+                         PlayRate: 10
+                        });
+         timeSlider.play();  
+      
  
 }); //require
