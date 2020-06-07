@@ -1,7 +1,5 @@
-
 //---------------esri rquirements ---------------
 require([
-      "require",
       "esri/WebMap",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
@@ -13,7 +11,7 @@ require([
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(require, WebMap, MapView, FeatureLayer, Layer, Legend, Expand, TimeSlider, PopupTemplate ){
+        function(WebMap, MapView, FeatureLayer, Layer, Legend, Expand, TimeSlider, PopupTemplate ){
     
       //---------------FeatureLayers---------------
    // Creates a WebMap instance
@@ -177,7 +175,8 @@ webmap.add(layer);
           view: myview,
           expanded: true
         }); //Expand
-        myview.ui.add(mylegend, {position: "bottom-right", index: 2});
+        myview.ui.add(mylegend, {position: "bottom-right", index: 2}
+         );
       
      //---------------Time Slider--------------- 
       // Create a time slider to update layerView filter
