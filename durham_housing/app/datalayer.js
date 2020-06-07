@@ -165,7 +165,7 @@ webmap.add(layer);
            view: myview,
             visible: true //show the button
          }, "Search");
-        myview.ui.add(mysearch, {position: "top-right", index:3 });
+        myview.ui.add(mysearch, {position: "top-left", index:3 });
       
       
       
