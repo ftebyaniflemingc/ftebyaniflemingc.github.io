@@ -137,9 +137,10 @@ webmap.add(layer);
       
      //---------------Time Slider--------------- 
       // Create a time slider to update layerView filter
-var timeSlider = new TimeSlider({
+const timeSlider = new TimeSlider({
   container: "timeSlider",
   mode: "time-window",
+      view: myview
 });
 myview.ui.add(timeSlider, "manual");
 
@@ -147,16 +148,19 @@ myview.ui.add(timeSlider, "manual");
 let timeLayerView;
 myview.whenLayerView(layer).then(function(mylv) {
   timeLayerView = mylv;
-  const fullTimeExtent = layer.timeInfo.fullTimeExtent;
-  const start = fullTimeExtent.start;
+// set up time slider properties based on layer timeInfo
+timeSlider.fullTimeExtent = layer.timeInfo.fullTimeExtent;
 
-  // set up time slider properties based on layer timeInfo
-  timeSlider.fullTimeExtent = fullTimeExtent;
-  timeSlider.values = [start];
   timeSlider.stops = {
-    interval: layer.timeInfo.interval
-  };
-});
+    interval: {
+          value: 1, unit: "years"
+    },
+        timeExtent:{
+              start: layer.timeInfo.fullTimeExtent.start,
+              end: layer.timeInfo.fullTimeExtent.end
+        }//timeExtent
+  }//timeSlider.stops
+});//function(mylv)
 
 timeSlider.watch("timeExtent", function(value){
   // update layer view filter to reflect current timeExtent
@@ -164,11 +168,17 @@ timeSlider.watch("timeExtent", function(value){
     timeExtent: value
   };
 });
+myview.ui.add(timeSlider, "manual");
+      timeSlider.watch("timeExtebt", function(value){
+            timeLayerView.filter = {
+                  timeExtent: value
+            }://filter
+      });//function(value)
       
       //---------------Time Play--------------- 
       
    timeSlider.set({ loop: false,
-                         PlayRate: 10
+                         PlayRate: 100
                         });
          timeSlider.play();  
       
