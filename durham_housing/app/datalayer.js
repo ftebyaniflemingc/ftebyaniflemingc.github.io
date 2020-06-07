@@ -9,10 +9,12 @@ require([
       "esri/widgets/Expand",
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen", 
+      "esri/widgets/TimeSlider",
+      "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(WebMap, MapView, FeatureLayer, Layer, Legend, Expand, Home, Fullscreen)  {
+        function(WebMap, MapView, FeatureLayer, Layer, Legend, Expand, Home, Fullscreen, TimeSlider, PopupTemplate {
     
       // Creates a WebMap instance
       var webmap = new WebMap({
