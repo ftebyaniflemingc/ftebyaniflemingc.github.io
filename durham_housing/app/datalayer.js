@@ -175,7 +175,7 @@ webmap.add(layer);
           view: myview,
           expanded: true
         }); //Expand
-        myview.ui.add(mylegend, "bottom-right");
+        myview.ui.add(mylegend, {position: "bottom-right", index: 2});
       
        //---------------Home Button---------------
         var myhome = new Home({
@@ -212,7 +212,7 @@ webmap.add(layer);
          style: "line",
          unit: "metric"
        }, "ScaleBar");
-      myview.ui.add(myscale, {position: "bottom-left"});
+      myview.ui.add(myscale, {position: "bottom-right", index: 1});
       
       
      //---------------Time Slider--------------- 
