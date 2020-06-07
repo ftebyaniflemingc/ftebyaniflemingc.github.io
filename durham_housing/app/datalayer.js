@@ -45,73 +45,73 @@ require([
   
         {id: 0, title: "Year2019", visible: true, 
          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2019_csv_Census_Tract > 0)",         
-         /*popupTemplate: {        // Enable a popup
+               popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }*/
+            }
          }, 
          {id: 1, title: "Year2018", visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2018_csv_Census_Tract > 0)",
-                  /*popupTemplate: {        // Enable a popup
+             popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2018_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            }*/
+            }
          }, 
          {id: 2, title: "Year2017", visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2017_csv_Census_Tract > 0)",
-             /*    popupTemplate: {        // Enable a popup
+               popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2017_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            }*/
+            }
          }, 
          {id: 3, title: "Year2016", visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2016_csv_Census_Tract > 0)",
-               /*  popupTemplate: {        // Enable a popup
+               popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            }*/
+            }
          }, 
          {id: 4, title: "Year2015",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2015_csv_Census_Tract > 0)",
-                /* popupTemplate: {        // Enable a popup
+               popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary20166CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2015_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            }*/
+            }
          }, 
          {id: 5, title: "Year2014",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2014_csv_Census_Tract > 0)",
-        /*          popupTemplate: {        // Enable a popup
+               popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2014_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2014_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            }*/
+            }
          }, 
          {id: 6, title: "Year2013",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2013_csv_Census_Tract > 0)",
-               /*  popupTemplate: {        // Enable a popup
+               popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary20166CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2013_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            }*/
+            }
          }, 
          {id: 7, title: "Year2012",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2012_csv_Census_Tract > 0)",
-            /*     popupTemplate: {        // Enable a popup
+               popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2012_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            }*/
+            }
          }, 
          {id: 8, title: "Year2011",  visible: true, 
           definitionExpression: "(CensusBoundary2011_CT> 0) AND (infilling2011_csv_Census_Tract > 0)",
-               /*  popupTemplate: {        // Enable a popup
+               popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2011_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2011_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            }*/
+            }
             },
          {id: 9, title: "Year2010",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2010_csv_Census_Tract > 0)",
-               /*  popupTemplate: {        // Enable a popup
+               popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2010_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            }*/
+            }
          }
          ],
          }
@@ -120,6 +120,18 @@ require([
   }); //FeatureLayer
       
 webmap.add(layer);
+      webmap.reorder(layer);
+ /*
+ var arcadeExpressionInfos = [{
+          name: "lethality-arcade",
+          title: "",
+          expression: document.getElementById("lethality-arcade").text
+        },
+        // Get Arcade expression returning the share of the total comprised
+        // by the predominant category
+      ];
+
+
       
  var template = {
         // autocasts as new PopupTemplate()
@@ -162,6 +174,8 @@ webmap.add(layer);
         expressionInfos: arcadeExpressionInfos
       };  
        layer.popupTemplate = template;
+       
+       */
       //---------------Legend---------------
       
         const mylegend = new Expand({
