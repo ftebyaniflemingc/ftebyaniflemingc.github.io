@@ -42,12 +42,14 @@ require([
                sublayers:[
   
         {id: 0, title: "Year2019", visible: true, 
-                  popupTemplate: {        // Enable a popup
+         definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2019_csv_Census_Tract > 0)",         
+         popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            }, definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2019_csv_Census_Tract > 0)"
+                  content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display text in pop-up
+            }
          }, 
          {id: 1, title: "Year2018", visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2018_csv_Census_Tract > 0)",
                   popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2018_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
@@ -127,29 +129,7 @@ webmap.add(layer);
 //Add the widget to the top right of screen
         myview.ui.add(homeB,  "top-right");
 
-      
-/*      
-myview.then(function() {
-          // get the first layer in the collection of operational layers in the WebMap
-          // when the resources in the MapView have loaded.
-          var featureLayer = webmap.layers.getItemAt(0);
-
-          var legend = new Legend({
-            view: myview,
-            layerInfos: [{
-              layer: featureLayer,
-              title: "Census Tract"
-            }]
-          });
-
-          // Finalize the creation of the legend widget.
-          legend.startup();
-
-          // Adds an instance of Legend widget to the
-          // bottom right of the view.
-          myview.ui.add(legend, "bottom-right");
-        }); */
-      
+          
       
       //---------------FullScreen Button---------------
       
@@ -174,6 +154,7 @@ let timeLayerView;
 myview.whenLayerView(layer).then(function(mylv) {
   timeLayerView = mylv;
 // set up time slider properties based on layer timeInfo
+      
 timeSlider.fullTimeExtent = layer.timeInfo.fullTimeExtent;
 
   timeSlider.stops = {
