@@ -113,7 +113,7 @@ webmap.add(layer);
                      portalItem:{
                         id: "3582b744bba84668b52a16b0b6942544"              
               }
-            }                  
+            },                
                   layers: [layer]
             }),
             container: "mapid",
