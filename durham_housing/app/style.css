@@ -26,9 +26,9 @@ html, body{
   text-align: center;   
 }
 #timeSlider{
-  width: 70%;
+  width: 50%;
   position: center;
-  left: 150px;
+  left: 350px;
   right: 150px;
   bottom: 20px;
 }
