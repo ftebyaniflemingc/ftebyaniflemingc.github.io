@@ -23,8 +23,8 @@ require([
       
   var layer = new FeatureLayer({ 
          portalItem: { // autocasts as new PortalItem()
-        // id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a",
-               id: "a9e79e4ea2a047d5b4f38a2b7d3de689",
+                    id: "a9e79e4ea2a047d5b4f38a2b7d3de689",
+                 // id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a",
       //url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
            
                sublayers:[
@@ -108,10 +108,14 @@ webmap.add(layer);
       
   // Mapview, referencing WebMap instance
       var myview = new MapView({
-            map: webmap,  // The WebMap instance created above
-           // ({ basemap:{  portalItem:{id: "3582b744bba84668b52a16b0b6942544"}}}),
+             // The WebMap instance created above
+            map: webmap({ 
+                  basemap:{  
+                        portalItem:{id: "3582b744bba84668b52a16b0b6942544"
+                    }
+                  },
                layers: [layer],
-            
+            }),
             container: "mapid",
             center: [-78.871866,43.914656],
             zoom: 10
