@@ -17,7 +17,7 @@ require([
       // Creates a WebMap instance
       var webmap = new WebMap({
             portalItem: { //autocasts as new PortalItem()
-                  id: "a9e79e4ea2a047d5b4f38a2b7d3de689"
+                  id: "3582b744bba84668b52a16b0b6942544"
                   }
       }); //webmap
       
@@ -26,7 +26,7 @@ require([
             map: webmap,    // The WebMap instance created above
             container: "mapid",
             center: [-78.871866,43.914656],
-            zoom: 12
+            zoom: 11
       }); //mapview
      
    
@@ -39,7 +39,7 @@ require([
       //url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
            
                sublayers:[
-           {id: 9, title: "Year2010",  visible: true, 
+         {id: 9, title: "Year2010",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2010_csv_Census_Tract > 0)",
                popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
@@ -54,42 +54,42 @@ require([
                   content: "The census boundary has {infilling2011_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
             },
-             {id: 7, title: "Year2012",  visible: true, 
+         {id: 7, title: "Year2012",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2012_csv_Census_Tract > 0)",
                popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2012_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          },
-                     {id: 6, title: "Year2013",  visible: true, 
+         {id: 6, title: "Year2013",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2013_csv_Census_Tract > 0)",
                popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary20166CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2013_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          },
-                     {id: 5, title: "Year2014",  visible: true, 
+         {id: 5, title: "Year2014",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2014_csv_Census_Tract > 0)",
                popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2014_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2014_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          },
-                     {id: 4, title: "Year2015",  visible: true, 
+         {id: 4, title: "Year2015",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2015_csv_Census_Tract > 0)",
                popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary20166CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2015_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          },
-                     {id: 3, title: "Year2016", visible: true, 
+         {id: 3, title: "Year2016", visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2016_csv_Census_Tract > 0)",
                popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          },
-                     {id: 2, title: "Year2017", visible: true, 
+         {id: 2, title: "Year2017", visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2017_csv_Census_Tract > 0)",
                popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
@@ -104,7 +104,7 @@ require([
                   content: "The census boundary has {infilling2018_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          },
-                               {id: 0, title: "Year2019", visible: true, 
+         {id: 0, title: "Year2019", visible: true, 
          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2019_csv_Census_Tract > 0)",         
                popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
