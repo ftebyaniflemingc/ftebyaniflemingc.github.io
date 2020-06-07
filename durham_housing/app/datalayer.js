@@ -106,11 +106,11 @@ webmap.add(layer);
       
       
       //---------------Legend---------------
-      /*
+      
         const mylegend = new Expand({
           content: new Legend({
             view: myview,
-            style: 'classic' // other styles include 'classic'
+            style: 'card' // other styles include 'classic'
           }),
           view: myview,
           expanded: true
@@ -125,9 +125,9 @@ webmap.add(layer);
                               
 //Add the widget to the top right of screen
         myview.ui.add(homeB,  "top-right");
-*/
+
       
-      
+/*      
 myview.then(function() {
           // get the first layer in the collection of operational layers in the WebMap
           // when the resources in the MapView have loaded.
@@ -147,7 +147,7 @@ myview.then(function() {
           // Adds an instance of Legend widget to the
           // bottom right of the view.
           myview.ui.add(legend, "bottom-right");
-        });
+        }); */
       
       
       //---------------FullScreen Button---------------
