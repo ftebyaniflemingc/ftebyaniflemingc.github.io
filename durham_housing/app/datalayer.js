@@ -172,7 +172,7 @@ myview.ui.add(timeSlider, "manual");
       timeSlider.watch("timeExtebt", function(value){
             timeLayerView.filter = {
                   timeExtent: value
-            }://filter
+            };//filter
       });//function(value)
       
       //---------------Time Play--------------- 
