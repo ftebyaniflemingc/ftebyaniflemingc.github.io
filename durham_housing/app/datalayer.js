@@ -10,12 +10,13 @@ require([
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen", 
       "esri/widgets/Search", 
+      "esri/widgets/ScaleBar"
       "esri/widgets/TimeSlider",
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(WebMap, MapView, FeatureLayer, Layer, Legend, Expand, Home, Fullscreen, Search, TimeSlider, PopupTemplate ){
+        function(WebMap, MapView, FeatureLayer, Layer, Legend, Expand, Home, Fullscreen, Search, ScaleBar, TimeSlider, PopupTemplate ){
     
       // Creates a WebMap instance
       var webmap = new WebMap({
@@ -204,6 +205,14 @@ webmap.add(layer);
          }, "Search");
         myview.ui.add(mysearch, {position: "top-left", index:3 });
       
+      //---------------Search---------------
+      
+      const myscale = new ScaleBar({
+          view: myview,
+         style: "line",
+         unit: "metric"
+       }"ScaleBar");
+      myview.ui.add(myscale, {position: "bottom-left"});
       
       
      //---------------Time Slider--------------- 
