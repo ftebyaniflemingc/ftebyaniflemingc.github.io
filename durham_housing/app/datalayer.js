@@ -128,22 +128,16 @@ webmap.add(layer);
         // Get Arcade expression returning the share of the total comprised
         // by the predominant category
       ];
-
-
       
  var template = {
         // autocasts as new PopupTemplate()
         title: "{CensusBoundary2016_CTNAME}", // Show attribute value
         content: [
-          {
-            type: "text",
-            text:
-              "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display text in pop-up
+          {type: "text",
+            text: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display text in pop-up
           },
-          {
-            type: "fields",
-            fieldInfos: [
-              {
+          {type: "fields",
+            fieldInfos: [{
                 fieldName: "Census_Tract",
                 label: "The Census Tract Per Year",
                 format: {
@@ -151,24 +145,20 @@ webmap.add(layer);
                   places: 0
                 }
               },
-              {
-                fieldName: "SumOfUnits",
+              {fieldName: "SumOfUnits",
                 label: "Som of Units Starts in the Year",
                 format: {
                   digitSeparator: true,
                   places: 0
                 }
               },
-              {
-                fieldName: "expression/lethality-arcade",
+              {fieldName: "expression/lethality-arcade",
                 format: {
                   digitSeparator: true,
                   places: 0
                 }
-              }
-            ]
-          }
-        ],
+              }]
+          }],
         expressionInfos: arcadeExpressionInfos
       };  
        layer.popupTemplate = template;
