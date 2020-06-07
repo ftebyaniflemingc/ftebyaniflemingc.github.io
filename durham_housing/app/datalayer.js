@@ -10,7 +10,7 @@ require([
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen", 
       "esri/widgets/Search", 
-      "esri/widgets/ScaleBar"
+      "esri/widgets/ScaleBar",
       "esri/widgets/TimeSlider",
       "esri/PopupTemplate",
       "dojo/dom",
