@@ -18,7 +18,7 @@ require([
    // Creates a WebMap instance
       var webmap = new WebMap({
             portalItem: { //autocasts as new PortalItem()
-                  id: "a37abf36893f42bbaccb0cef64fb28ab"
+                  id: "a9e79e4ea2a047d5b4f38a2b7d3de689"
                   
                   }
       }); //webmap           
@@ -36,7 +36,7 @@ require([
   var layer = new FeatureLayer({ 
          portalItem: { // autocasts as new PortalItem()
         // id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a",
-               id: "a37abf36893f42bbaccb0cef64fb28ab",
+               id: "a9e79e4ea2a047d5b4f38a2b7d3de689",
       //url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
            
                sublayers:[
