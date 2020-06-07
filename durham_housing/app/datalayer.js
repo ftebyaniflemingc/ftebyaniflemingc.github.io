@@ -139,7 +139,7 @@ webmap.add(layer);
       // Create a time slider to update layerView filter
 var timeSlider = new TimeSlider({
   container: "timeSlider",
-  mode: "instant",
+  mode: "time-window",
 });
 myview.ui.add(timeSlider, "manual");
 
