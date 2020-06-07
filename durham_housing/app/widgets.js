@@ -1,89 +1,70 @@
+
+//---------------esri rquirements ---------------
 require([
-        "esri/views/ui/DefaultUI"
-       // "esri/widgets/Legend",
-        "esri/widgets/Home",
-        "esri/widgets/Fullscreen",
-        "esri/widgets/TimeSlider",
-        "esri/widgets/Expand",
-        "dojo/domReady!"
-      ], function(DefaultUI, Home, Fullscreen, TimeSlider,Expand, dom
-      ) {
+      "esri/WebMap",
+      "esri/views/MapView",
+      "esri/widgets/Home", 
+      "esri/widgets/Fullscreen", 
+      "esri/widgets/Search", 
+      "esri/widgets/ScaleBar",
+      "dojo/dom",
+      "dojo/domReady!"
+        ], 
+        function(WebMap, MapView, Home, Fullscreen, Search, ScaleBar ){
+    
+      // Creates a WebMap instance
+      var webmap = new WebMap({
+            portalItem: { //autocasts as new PortalItem()
+                  id: "a9e79e4ea2a047d5b4f38a2b7d3de689"
+                  }
+      }); //webmap
       
-/*
-view.ui.empty("top-left");
-
-        var fulls = document.getElementById("fulls");
-        var tmValue = document.getElementById("tmValue");
-        var playPause = document.getElementById("playPause");
-        var title = document.getElementById("title");
-        var animation = null;
-       
-        //----------------Time Slider----------
-        
-        // source codes: JavaScript - Time Slider
-        //https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TimeSlider.html
-        // Time slider to update layerView filtering - time windoe by year
-        const timerStart = new Date();
-        const timerEnd = new Date();
-        timerStart.setYear(timerStart.getYear() - 2);
-        const timerStartDefault = new Date();
-        timerStartDefault.setMonth(timerEnd.getMonth() -12);
-
-        var timeSlider = new TimeSlider({
-         container: "timeSlider",
-         mode: "time-window"
+      // Mapview, referencing WebMap instance
+      var myview = new MapView({
+            map: webmap,    // The WebMap instance created above
+            container: "mapid",
+            center: [-78.871866,43.914656],
+            zoom: 12
+      }); //mapview
+     
          
-        });
-        view.ui.add(timeSlider, "manual");
-
-      // wait until the layer view is loaded
-      let timeLayerView;
-     view.whenLayerView(layers).then(function(layVi) {
-       timeLayerView = layVi;
-      const fullTimeExtent = layers.timeInfo.fullTimeExtent;
-      const start = fullTimeExtent.start;
-
-    // set up time slider properties based on layer timeInfo
-      timeSlider.fullTimeExtent = fullTimeExtent;
-      timeSlider.values = [start];
-      timeSlider.stops = {
-       interval: layers.timeInfo.interval
-     };
-   });
-
-    timeSlider.watch("timeExtent", function(value){
-    // update layer view filter to reflect current timeExtent
-    timeLayerView.filter = {
-    timeExtent: value
-    };
-   });   
-     */
-    //------------Title, Home, and Full Screen Widgets -----------
-        
-        
-//Home Button 
-        var homeB = new Home({
+       //---------------Home Button---------------
+        var myhome = new Home({
+            view: myview,
             visible: true //show the button
-                view: view;
-           }, "Home");
-               
-               
+            }, "Home");
+                              
 //Add the widget to the top right of screen
-        view.ui.add(homeB,  position: "top-right")
+        myview.ui.add(myhome,  {position: "top-right", index:1 });
 
-//FullScreen Button                 
-       var fulls = new Fullscreen({
-           view: view
-         });
-        view.ui.add(fulls, "top-right");
+          
+      
+      //---------------FullScreen Button---------------
+      
+       var myfulls = new Fullscreen({
+           view: myview,
+            visible: true //show the button
+         }, "Fullscreen");
+        myview.ui.add(myfulls, {position: "top-right", index:2 });
                 
-//Zoom Button
-        var view = new MapView({
-            container: "viewDiv",
-            map: webmap
-        });
-
-        var zoom = new Zoom({
-           view: view
-        });
-                
+      
+      //---------------Search---------------
+      
+       var mysearch = new Search({
+           view: myview,
+            visible: true //show the button
+         }, "Search");
+        myview.ui.add(mysearch, {position: "top-left", index:3 });
+      
+      //---------------Search---------------
+      
+      const myscale = new ScaleBar({
+          view: myview,
+         style: "line",
+         unit: "metric"
+       }, "ScaleBar");
+      myview.ui.add(myscale, {position: "bottom-right", index: 1});
+      
+      
+ 
+}); //require
