@@ -112,7 +112,7 @@ require([
          }
          ],
          }
-        renderer: renderer
+        
 
   }); //FeatureLayer
 webmap.add(layer);
