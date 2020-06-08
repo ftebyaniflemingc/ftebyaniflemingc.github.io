@@ -156,6 +156,18 @@ webmap.add(layer);
        }, "ScaleBar");
       myview.ui.add(myscale, {position: "bottom-right", index: 1});      
       
+      //---------------Legend---------------
+      
+        const mylegend = new Expand({
+          content: new Legend({
+            view: myview,
+            style: 'classic' // other styles include 'classic'
+          }),
+          view: myview,
+          expanded: true
+        }); //Expand
+        myview.ui.add(mylegend, "bottom-left"
+         );
  /*
  var arcadeExpressionInfos = [{
           name: "lethality-arcade",
@@ -201,18 +213,6 @@ webmap.add(layer);
        layer.popupTemplate = template;
        
        */
-      //---------------Legend---------------
-      
-        const mylegend = new Expand({
-          content: new Legend({
-            view: myview,
-            style: 'classic' // other styles include 'classic'
-          }),
-          view: myview,
-          expanded: true
-        }); //Expand
-        myview.ui.add(mylegend, "bottom-left"
-         );
       
      //---------------Time Slider--------------- 
       // Create a time slider to update layerView filter
@@ -250,7 +250,7 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
   timeSlider.stops = {
     interval: layer.timeInfo.interval
   };
-/*
+
  //  current timeExtent by updaing layer view filter
 myview.ui.add(timeSlider, "manual");
   timeSlider.watch("timeExtent", function (value) { 
@@ -258,7 +258,7 @@ myview.ui.add(timeSlider, "manual");
   timeExtent: value
     };//filter 
    });//function(value)
-      */
+
 });//function(mylv)
 
       //---------------Time Play--------------- 
