@@ -228,12 +228,11 @@ let timeLayerView;
 myview.whenLayerView(layer).then(function(mylv) {
   timeLayerView = mylv;
 // set up time slider properties based on layer timeInfo
-/*      
-timeSlider.fullTimeExtent = layer.timeInfo.fullTimeExtent;
 
-  timeSlider.stops = {
-    interval: {
-          value: 1, unit: "years"
+      
+const fullTimeExtent = layer.timeInfo.fullTimeExtent;
+/*      
+  timeSlider.stops = {interval: {value: 1, unit: "years"
     },
         timeExtent:{
               start: layer.timeInfo.fullTimeExtent.start,
@@ -241,15 +240,14 @@ timeSlider.fullTimeExtent = layer.timeInfo.fullTimeExtent;
         }//timeExtent
   }//timeSlider.stops 
      */
-const fullTimeExtent = layer.timeInfo.fullTimeExtent;
-  const start = fullTimeExtent.start;
-
+//  const start = fullTimeExtent.start;
   // set up time slider properties based on layer timeInfo
   timeSlider.fullTimeExtent = fullTimeExtent;
-  timeSlider.values = [start];
+  //timeSlider.values = [start];
   timeSlider.stops = {
     interval: layer.timeInfo.interval
   };
+});
 /*
  //  current timeExtent by updaing layer view filter
   timeSlider.watch("timeExtent", function (value) { 
