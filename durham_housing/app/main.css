@@ -34,9 +34,7 @@ html, body{
 }
 #main {
       padding: 10px;
-      font-weight: normal;
       text-align: center;
-      font-size:12px;
       position: absolute;
       right: 10px;
       bottom: 200px;
@@ -47,8 +45,9 @@ html, body{
     }
  #titleText {
       padding: 10px;
-      font-weight: normal;
+   font-family: "Tahoma";   
+   font-weight: normal;
       text-align: center;
-      font-size: 20px;
+      font-size: 12px;
     }
 
