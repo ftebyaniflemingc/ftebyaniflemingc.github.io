@@ -5,7 +5,8 @@ require([
       "esri/layers/FeatureLayer",
       "esri/layers/Layer",
       "esri/widgets/Home", 
-      "esri/widgets/Fullscreen", 
+      "esri/widgets/Fullscreen",
+      "esri/widgets/LayerList"
       "esri/widgets/Legend",
       "esri/widgets/Expand",
       "esri/widgets/TimeSlider",
@@ -13,7 +14,7 @@ require([
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(WebMap, MapView, FeatureLayer, Layer, Home, Fullscreen, ScaleBar, Legend, Expand, TimeSlider, PopupTemplate ){
+        function(WebMap, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, TimeSlider, PopupTemplate ){
     
       //---------------FeatureLayers---------------
    /// Creates a WebMap instance
