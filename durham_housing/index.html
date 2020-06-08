@@ -8,23 +8,25 @@
     <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css"/>
     <script src="https://js.arcgis.com/4.15/"></script>
 
-  <!--
+  
     <script>
       var locationPath = location.pathname.replace(/\/[^\/]+$/, "");
       window.dojoConfig = {
+        deps:['app/style'],
         packages: [
           {
             name: "app",
-            location: locationPath + "/app" 
+            location: locationPath + '/app',
+            main: 'style'
           }
         ]
       };
-    </script>. -->
-  
+    </script> 
+  <!--
     <script src="app/datalayer.js "></script> 
      <script src="app/widgets.js"></script> 
     <link rel="stylesheet" href="app/style.css">  
-    
+    -->
 </head>
 <body>
   <div id="mapid" >
