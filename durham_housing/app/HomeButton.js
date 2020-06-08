@@ -194,7 +194,7 @@ webmap.add(layer);
       //-------------------Layer List-------------------------------
       myview.when(function() {
             var layerList = new LayerList({
-                  view: myview
+                  view: myview,
                   visible: true // show the button
                   ], "Layers");
   
