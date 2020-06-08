@@ -191,15 +191,7 @@ webmap.add(layer);
          }, "Fullscreen");
         myview.ui.add(myfulls, {position: "top-right", index:2 });
                 
-      
-      //---------------Search---------------
-      
-       var mysearch = new Search({
-           view: myview,
-            visible: true //show the button
-         }, "Search");
-        myview.ui.add(mysearch, {position: "top-left", index:3 });
-      
+           
         //---------------Legend---------------
       
         const mylegend = new Expand({
