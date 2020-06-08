@@ -16,11 +16,12 @@ require([
       //---------------FeatureLayers---------------
    // Creates a WebMap instance
       var webmap = new WebMap({
-           // portalItem: { //autocasts as new PortalItem()
-             //     id: "a9e79e4ea2a047d5b4f38a2b7d3de689"                  
-               //   }
+           basemap: {
+            portalItem: { //autocasts as new PortalItem()
+                id: "3582b744bba84668b52a16b0b6942544"                  
+              }}
       }); //webmap           
-      /*
+      
   var layer = new FeatureLayer({ 
          portalItem: { // autocasts as new PortalItem()
                     id: "a9e79e4ea2a047d5b4f38a2b7d3de689",
@@ -105,17 +106,13 @@ require([
         
   }); //FeatureLayer
 webmap.add(layer); 
-      */
+      
   // Mapview, referencing WebMap instance
       var myview = new MapView({
              // The WebMap instance created above
-            webmap: new WebMap({ 
-                  basemap:{  
-                        portalItem:{id: "3582b744bba84668b52a16b0b6942544"
-                    }
-                  }
+            webmap: new WebMap,
+            //({  basemap:{ portalItem:{id: "3582b744bba84668b52a16b0b6942544" }}}),
                //layers: [layer],
-            }),
             container: "mapid",
             center: [-78.871866,43.914656],
             zoom: 10
@@ -180,7 +177,7 @@ webmap.add(layer);
         }); //Expand
         myview.ui.add(mylegend, {position: "bottom-right", index: 2}
          );
-      /*
+      
      //---------------Time Slider--------------- 
       // Create a time slider to update layerView filter
 const timeSlider = new TimeSlider({
@@ -235,5 +232,5 @@ myview.ui.add(timeSlider, "manual");
                         });
          timeSlider.play();  
       
- */
+ 
 }); //require
