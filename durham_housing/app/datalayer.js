@@ -235,5 +235,5 @@ myview.ui.add(timeSlider, "manual");
                         });
          timeSlider.play();  
       
- /*
+ */
 }); //require
