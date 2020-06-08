@@ -252,7 +252,6 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
   };
 
  //  current timeExtent by updaing layer view filter
-myview.ui.add(timeSlider, "manual");
   timeSlider.watch("timeExtent", function (value) { 
   timeLayerView.filter = {
   timeExtent: value
