@@ -15,16 +15,16 @@ require([
     
       //---------------FeatureLayers---------------
    // Creates a WebMap instance
-      var webmap = new WebMap({
-            portalItem: {
-            id: "a9e79e4ea2a047d5b4f38a2b7d3de689"
-            }
+   //   var webmap = new WebMap({
+    //        portalItem: {
+    //        id: "a9e79e4ea2a047d5b4f38a2b7d3de689"
+   //         }
            
       }); //webmap           
       // Mapview, referencing WebMap instance
       var myview = new MapView({
              // The WebMap instance created above
-            map: WebMap,
+            webmap: new WebMap,
             //({  basemap:{ portalItem:{id: "3582b744bba84668b52a16b0b6942544" }}}),
                //layers: [layer],
             container: "mapid",
