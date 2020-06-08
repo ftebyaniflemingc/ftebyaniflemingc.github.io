@@ -41,8 +41,8 @@ html, body{
       width:100px;
       }
     #logo {
-      border: 0px dotted gray;
-    }
+      padding: 25px;
+       }
  #titleText {
       padding: 10px;
    font-family: "Tahoma";   
