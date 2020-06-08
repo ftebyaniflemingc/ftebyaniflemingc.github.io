@@ -196,7 +196,7 @@ webmap.add(layer);
             var layerList = new LayerList({
                   view: myview,
                   visible: true // show the button
-                  ], "Layer");
+            }, "Layer");
   
             // Add widget to screen
             myview.ui.add(layerList, {position: "top-right", index:3});
