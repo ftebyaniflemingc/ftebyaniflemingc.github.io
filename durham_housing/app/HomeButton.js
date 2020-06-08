@@ -42,7 +42,7 @@ require([
                   content: "The census boundary has {infilling2010_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             },
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {  // set time interval to one month
               unit: "months",
               value: 1
@@ -54,7 +54,7 @@ require([
                   content: "The census boundary has {infilling2011_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             },
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: { 
               unit: "months",
               value: 1
@@ -66,7 +66,7 @@ require([
                   content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             },
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {
               unit: "months",
               value: 1
@@ -78,7 +78,7 @@ require([
                   content: "The census boundary has {infilling2013_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             },
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {
               unit: "months",
               value: 1
@@ -90,7 +90,7 @@ require([
                   content: "The census boundary has {infilling2014_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             },
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {
               unit: "months",
               value: 1
@@ -102,7 +102,7 @@ require([
                   content: "The census boundary has {infilling2015_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             },
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {
               unit: "months",
               value: 1
@@ -114,7 +114,7 @@ require([
                   content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             },
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {
               unit: "months",
               value: 1
@@ -126,7 +126,7 @@ require([
                   content: "The census boundary has {infilling2017_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             },
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {
                unit: "months",
               value: 1
@@ -139,7 +139,7 @@ require([
                   content: "The census boundary has {infilling2018_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             },
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {
               unit: "months",
               value: 1
@@ -151,7 +151,7 @@ require([
                   content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display text in pop-up
             },
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {
               unit: "months",
               value: 1
