@@ -157,7 +157,7 @@ webmap.add(layer);
       myview.ui.add(myscale, {position: "bottom-right", index: 1});      
       
       //---------------Legend---------------
-      /*
+      
         const mylegend = new Expand({
           content: new Legend({
             view: myview,
@@ -166,18 +166,7 @@ webmap.add(layer);
           view: myview,
           expanded: true,
                       
-        }); //Expand */
-       const mylegend = new Legend({
-          view: myview
-        });
-        const legendExpand = new Expand({
-          expandIconClass: "esri-icon-collection",
-          expandTooltip: "Legend",
-          view: myview,
-          expanded: true,
-          content: mylegend,
-          expanded: false
-        });
+        }); //Expand 
         myview.ui.add(mylegend, "bottom-left"
          );
  /*
