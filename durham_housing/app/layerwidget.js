@@ -173,7 +173,7 @@ webmap.add(layer);
         const legendExpand = new Expand({
           expandIconClass: "esri-icon-collection",
           expandTooltip: "Legend",
-          view: view,
+          view: myview,
           expanded: true,
           content: mylegend,
           expanded: false
@@ -236,12 +236,11 @@ const timeSlider = new TimeSlider({
 myview.ui.add(timeSlider, "manual");
 
 // wait until the layer view is loaded
-//let timeLayerView;
+let timeLayerView;
 myview.whenLayerView(layer).then(function(mylv) {
-  //timeLayerView = mylv;
+  timeLayerView = mylv;
 // set up time slider properties based on layer timeInfo
-
-      
+   
 const fullTimeExtent = layer.timeInfo.fullTimeExtent;
 /*      
   timeSlider.stops = {interval: {value: 1, unit: "years"
@@ -252,22 +251,13 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
         }//timeExtent
   }//timeSlider.stops 
      */
-//  const start = fullTimeExtent.start;
+  const start = fullTimeExtent.start;
   // set up time slider properties based on layer timeInfo
   timeSlider.fullTimeExtent = fullTimeExtent;
-  //timeSlider.values = [start];
+  timeSlider.values = [start];
   timeSlider.stops = {
     interval: layer.timeInfo.interval
   };
-
-/*
- //  current timeExtent by updaing layer view filter
-  timeSlider.watch("timeExtent", function (value) { 
-  timeLayerView.filter = {
-  timeExtent: value
-    };//filter 
-   });//function(value) */
-
 });//function(mylv)
 
       //---------------Time Play--------------- 
