@@ -180,7 +180,7 @@ webmap.add(layer);
         }); //Expand
         myview.ui.add(mylegend, {position: "bottom-right", index: 2}
          );
-      
+      /*
      //---------------Time Slider--------------- 
       // Create a time slider to update layerView filter
 const timeSlider = new TimeSlider({
@@ -195,7 +195,7 @@ let timeLayerView;
 myview.whenLayerView(layer).then(function(mylv) {
   timeLayerView = mylv;
 // set up time slider properties based on layer timeInfo
-      /*
+      
 timeSlider.fullTimeExtent = layer.timeInfo.fullTimeExtent;
 
   timeSlider.stops = {
@@ -206,7 +206,7 @@ timeSlider.fullTimeExtent = layer.timeInfo.fullTimeExtent;
               start: layer.timeInfo.fullTimeExtent.start,
               end: layer.timeInfo.fullTimeExtent.end
         }//timeExtent
-  }//timeSlider.stops */
+  }//timeSlider.stops 
      
 const fullTimeExtent = layer.timeInfo.fullTimeExtent;
   const start = fullTimeExtent.start;
@@ -235,5 +235,5 @@ myview.ui.add(timeSlider, "manual");
                         });
          timeSlider.play();  
       
- 
+ /*
 }); //require
