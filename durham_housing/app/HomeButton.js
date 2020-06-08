@@ -179,7 +179,7 @@ webmap.add(layer);
             }, "Home");
                               
 //Add the widget to the top right of screen
-        myview.ui.add(myhome,  {position: "top-right", index:1 });
+        myview.ui.add(myhome,  {position: "top-left", index:1 });
 
           
       
@@ -189,8 +189,18 @@ webmap.add(layer);
            view: myview,
             visible: true //show the button
          }, "Fullscreen");
-        myview.ui.add(myfulls, {position: "top-right", index:2 });
+        myview.ui.add(myfulls, {position: "top-left", index:2 });
                 
+      
+      //-------------------Layer List-------------------------------
+      myview.when(function() {
+            var layerList = new LayerList({
+                  view: view
+            )};
+  
+            // Add widget to screen
+            myview.ui.add(layerList, "top-right");
+      });
            
         //---------------Legend---------------
       
