@@ -224,9 +224,9 @@ const timeSlider = new TimeSlider({
 myview.ui.add(timeSlider, "manual");
 
 // wait until the layer view is loaded
-let timeLayerView;
+//let timeLayerView;
 myview.whenLayerView(layer).then(function(mylv) {
-  timeLayerView = mylv;
+  //timeLayerView = mylv;
 // set up time slider properties based on layer timeInfo
 
       
