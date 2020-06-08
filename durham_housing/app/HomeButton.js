@@ -194,7 +194,7 @@ webmap.add(layer);
       //-------------------Layer List-------------------------------
       myview.when(function() {
             var layerList = new LayerList({
-                  view: view
+                  view: myview
                   visible: true // show the button
                   ], "Layers");
   
@@ -235,16 +235,15 @@ webmap.add(layer);
         myview.whenLayerView(layer).then(function(mylv) {
           layerView = mylv;
 
-          // start time of the time slider - 5/25/2019
+          // start time of the time slider from layer Year2010 first date: 2009/12/31
           const start = new Date(2009, 12, 31);
-          // set time slider's full extent to
-          // 5/25/5019 - until end date of layer's fullTimeExtent
+          // set time slider's full extent to 2019/12/31 - until end date of layer's fullTimeExtent
           mytimeSlider.fullTimeExtent = {
             start: start,
             end: layer.timeInfo.fullTimeExtent.end
           };
 
-          // We will be showing earthquakes with one day interval
+          // TimeSlider shows the sum of units in any census tract with one month interval
           // when the app is loaded we will show earthquakes that
           // happened between 5/25 - 5/26.
           const end = new Date(start);
