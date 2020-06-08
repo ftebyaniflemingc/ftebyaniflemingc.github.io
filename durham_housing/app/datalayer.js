@@ -16,12 +16,23 @@ require([
       //---------------FeatureLayers---------------
    // Creates a WebMap instance
       var webmap = new WebMap({
-           basemap: {
-            portalItem: { //autocasts as new PortalItem()
-                id: "3582b744bba84668b52a16b0b6942544"                  
-              }}
+            portalItem: {
+            id: "a9e79e4ea2a047d5b4f38a2b7d3de689"
+            }
+           
       }); //webmap           
+      // Mapview, referencing WebMap instance
+      var myview = new MapView({
+             // The WebMap instance created above
+            map: WebMap,
+            //({  basemap:{ portalItem:{id: "3582b744bba84668b52a16b0b6942544" }}}),
+               //layers: [layer],
+            container: "mapid",
+            center: [-78.871866,43.914656],
+            zoom: 10
       
+            }); //mapview
+  
   var layer = new FeatureLayer({ 
          portalItem: { // autocasts as new PortalItem()
                     id: "a9e79e4ea2a047d5b4f38a2b7d3de689",
@@ -105,20 +116,7 @@ require([
          }
         
   }); //FeatureLayer
-webmap.add(layer); 
-      
-  // Mapview, referencing WebMap instance
-      var myview = new MapView({
-             // The WebMap instance created above
-            webmap: new WebMap,
-            //({  basemap:{ portalItem:{id: "3582b744bba84668b52a16b0b6942544" }}}),
-               //layers: [layer],
-            container: "mapid",
-            center: [-78.871866,43.914656],
-            zoom: 10
-      
-            }); //mapview
-      
+webmap.add(layer);    
       
  /*
  var arcadeExpressionInfos = [{
