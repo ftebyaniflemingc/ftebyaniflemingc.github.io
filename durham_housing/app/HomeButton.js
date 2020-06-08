@@ -196,10 +196,11 @@ webmap.add(layer);
       myview.when(function() {
             var layerList = new LayerList({
                   view: view
-            )};
+                  visible: true // show the button
+                  ], "Layers");
   
             // Add widget to screen
-            myview.ui.add(layerList, "top-right");
+            myview.ui.add(layerList, {position: "top-right", index:3});
       });
            
         //---------------Legend---------------
