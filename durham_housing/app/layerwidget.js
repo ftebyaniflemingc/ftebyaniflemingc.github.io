@@ -222,7 +222,7 @@ webmap.add(layer);
           stops: {
             interval: {
               value: 1,
-              unit: "hours"
+              unit: "months"
             }
           }
         });
@@ -271,6 +271,7 @@ webmap.add(layer);
             },
             excludedEffect: "grayscale(20%) opacity(12%)"
           };
+        });
       
       /*
       // Create a time slider to update layerView filter
