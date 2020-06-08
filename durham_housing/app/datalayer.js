@@ -20,7 +20,7 @@ require([
              //     id: "a9e79e4ea2a047d5b4f38a2b7d3de689"                  
                //   }
       }); //webmap           
-      
+      /*
   var layer = new FeatureLayer({ 
          portalItem: { // autocasts as new PortalItem()
                     id: "a9e79e4ea2a047d5b4f38a2b7d3de689",
@@ -105,7 +105,7 @@ require([
         
   }); //FeatureLayer
 webmap.add(layer); 
-      
+      */
   // Mapview, referencing WebMap instance
       var myview = new MapView({
              // The WebMap instance created above
