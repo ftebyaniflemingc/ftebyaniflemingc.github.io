@@ -228,7 +228,7 @@ let timeLayerView;
 myview.whenLayerView(layer).then(function(mylv) {
   timeLayerView = mylv;
 // set up time slider properties based on layer timeInfo
-      
+/*      
 timeSlider.fullTimeExtent = layer.timeInfo.fullTimeExtent;
 
   timeSlider.stops = {
@@ -240,7 +240,7 @@ timeSlider.fullTimeExtent = layer.timeInfo.fullTimeExtent;
               end: layer.timeInfo.fullTimeExtent.end
         }//timeExtent
   }//timeSlider.stops 
-     
+     */
 const fullTimeExtent = layer.timeInfo.fullTimeExtent;
   const start = fullTimeExtent.start;
 
