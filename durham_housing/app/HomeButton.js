@@ -222,7 +222,7 @@ webmap.add(layer);
         }); //Expand 
         myview.ui.add(mylegend, "bottom-left"
          );
- /*
+ 
      
       
      //---------------Time Slider--------------- 
