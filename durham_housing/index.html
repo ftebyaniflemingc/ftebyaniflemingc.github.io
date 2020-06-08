@@ -12,12 +12,12 @@
     <script>
       var locationPath = location.pathname.replace(/\/[^\/]+$/, "");
       window.dojoConfig = {
-        deps:['app/style'],
+        deps:['app/main'],
         packages: [
           {
             name: "app",
             location: locationPath + '/app',
-            main: 'style'
+            main: 'main'
           }
         ]
       };
@@ -25,7 +25,7 @@
   <!--
     <script src="app/datalayer.js "></script> 
      <script src="app/widgets.js"></script> 
-    <link rel="stylesheet" href="app/style.css">  
+    <link rel="stylesheet" href="app/main.css">  
     -->
 </head>
 <body>
