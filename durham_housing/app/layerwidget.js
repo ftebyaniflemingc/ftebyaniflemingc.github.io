@@ -211,7 +211,7 @@ webmap.add(layer);
           view: myview,
           expanded: true
         }); //Expand
-        myview.ui.add(mylegend, {position: "bottom-right", index: 2}
+        myview.ui.add(mylegend, "bottom-left"
          );
       
      //---------------Time Slider--------------- 
