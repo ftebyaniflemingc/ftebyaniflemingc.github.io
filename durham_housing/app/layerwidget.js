@@ -250,7 +250,7 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
   timeSlider.stops = {
     interval: layer.timeInfo.interval
   };
-
+/*
  //  current timeExtent by updaing layer view filter
 myview.ui.add(timeSlider, "manual");
   timeSlider.watch("timeExtent", function (value) { 
@@ -258,7 +258,7 @@ myview.ui.add(timeSlider, "manual");
   timeExtent: value
     };//filter 
    });//function(value)
-      
+      */
 });//function(mylv)
 
       //---------------Time Play--------------- 
