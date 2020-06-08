@@ -164,6 +164,8 @@ webmap.add(layer);
             style: 'classic' // other styles include 'classic'
           }),
           view: myview,
+          expanded: true,
+          content: mylegend,
           expanded: false
               
         }); //Expand
