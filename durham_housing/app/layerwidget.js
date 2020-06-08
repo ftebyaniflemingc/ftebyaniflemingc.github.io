@@ -6,7 +6,6 @@ require([
       "esri/layers/Layer",
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen", 
-      "esri/widgets/Search", 
       "esri/widgets/ScaleBar",
       "esri/widgets/Legend",
       "esri/widgets/Expand",
@@ -15,7 +14,7 @@ require([
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(WebMap, MapView, FeatureLayer, Layer, Home, Fullscreen, Search, ScaleBar, Legend, Expand, TimeSlider, PopupTemplate ){
+        function(WebMap, MapView, FeatureLayer, Layer, Home, Fullscreen, ScaleBar, Legend, Expand, TimeSlider, PopupTemplate ){
     
       //---------------FeatureLayers---------------
    /// Creates a WebMap instance
@@ -147,14 +146,6 @@ webmap.add(layer);
          }, "Search");
         myview.ui.add(mysearch, {position: "top-left", index:3 });
       
-      //---------------Search---------------
-      
-      const myscale = new ScaleBar({
-          view: myview,
-         style: "line",
-         unit: "metric"
-       }, "ScaleBar");
-      myview.ui.add(myscale, {position: "bottom-right", index: 1});      
       
       //---------------Legend---------------
       
