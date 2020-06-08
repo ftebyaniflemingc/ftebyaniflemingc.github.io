@@ -6,7 +6,6 @@ require([
       "esri/layers/Layer",
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen", 
-      "esri/widgets/ScaleBar",
       "esri/widgets/Legend",
       "esri/widgets/Expand",
       "esri/widgets/TimeSlider",
