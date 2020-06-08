@@ -226,7 +226,7 @@ webmap.add(layer);
             }
           }
         });
-        view.ui.add(mytimeSlider, "manual");
+        myview.ui.add(mytimeSlider, "manual");
 
         // wait till the layer view is loaded
         myview.whenLayerView(layer).then(function(mylv) {
