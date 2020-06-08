@@ -14,25 +14,22 @@ require([
         function(WebMap, MapView, FeatureLayer, Layer, Legend, Expand, TimeSlider, PopupTemplate ){
     
       //---------------FeatureLayers---------------
-   // Creates a WebMap instance
+   /// Creates a WebMap instance
       var webmap = new WebMap({
-    //        portalItem: {
-    //        id: "a9e79e4ea2a047d5b4f38a2b7d3de689"
-   //         }
-           
-      }); //webmap           
+            portalItem: { //autocasts as new PortalItem()
+                  id: "a9e79e4ea2a047d5b4f38a2b7d3de689",
+                  //id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a"
+                  }
+      }); //webmap
+      
       // Mapview, referencing WebMap instance
       var myview = new MapView({
-             // The WebMap instance created above
-            webmap: new WebMap,
-            //({  basemap:{ portalItem:{id: "3582b744bba84668b52a16b0b6942544" }}}),
-               //layers: [layer],
+            map: webmap,    // The WebMap instance created above
             container: "mapid",
             center: [-78.871866,43.914656],
             zoom: 10
-      
-            }); //mapview
-  
+      }); //mapview
+     
   var layer = new FeatureLayer({ 
          portalItem: { // autocasts as new PortalItem()
                     id: "a9e79e4ea2a047d5b4f38a2b7d3de689",
