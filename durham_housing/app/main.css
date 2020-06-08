@@ -32,6 +32,19 @@ html, body{
   right: 10px;
   bottom: 20px;
 }
+#main {
+      padding: 10px;
+      font-weight: normal;
+      text-align: center;
+      font-size:12px;
+      position: absolute;
+      right: 10px;
+      bottom: 200px;
+      width:100px;
+      }
+    #logo {
+      border: 0px dotted gray;
+    }
  #titleText {
       padding: 10px;
       font-weight: normal;
