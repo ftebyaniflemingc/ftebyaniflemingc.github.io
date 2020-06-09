@@ -10,11 +10,14 @@ require([
       "esri/widgets/Legend",
       "esri/widgets/Expand",
       "esri/widgets/TimeSlider",
+      "esri/core/watchUtils",
+      "esri/core/promiseUtils"
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(WebMap, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, TimeSlider, PopupTemplate ){
+        function(WebMap, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
+                  TimeSlider, watchUtils, promiseUtils, PopupTemplate ){
     let mytimeSlider, mychart;
       //---------------FeatureLayers---------------
    /// Creates a WebMap instance
@@ -50,22 +53,22 @@ require([
          {id: 0, title: "Year2019", visible: true, offset: 6}
           ];    
       
-      const layer = definitions.map(function(definition) {
+      const allayers = definitions.map(function(definition) {
           return tenLayers(definition);
         });
         // add the california fire layers
-        webmap.addMany(layer);
-      webmap.reorder(layer);
+        webmap.addMany(allayers);
+      webmap.reorder(allayers);
       
       // Ten instances of feature layers between 2010 - 2019
         function tenLayers(definition) {
-          const year = definition.year;
+          const newyear = definition.year;
 
           return new FeatureLayer({
             url: url + definition.id,
             timeOffset: {
               value: definition.offset,
-              unit: "years"
+              unit: "months"
             },
             outFields: ["*"],
             popupTemplate: {        // Enable a popup
@@ -74,6 +77,122 @@ require([
             }
           });//FeatureLayer
         }//tenLayer 
+      
+       // How to get Layer view of ten layers while layers are loading
+        const TenLayersView = function getLayerViews() {
+          return promiseUtils.tenLayers(
+            allayers.webmap(function(layer) {
+              return myview.whenLayerView(layer);
+            })//function(layer)
+          );//return
+        };//getLayerViews()
+      
+      
+      //timeSlider
+      
+        myview.when(function() {
+       
+          mytimeSlider = new TimeSlider({
+            container: "timeSlider",
+            view: myview,
+            fullTimeExtent: {
+              start: new Date(2019, 1, 1),
+              end: new Date(2019, 12, 31)
+            },
+            playRate: 100,
+            stops: {
+              interval: {
+                value: 1,
+                unit: "months"
+              }
+            }
+          });//mytimeSlider
+
+       // watch for time slider timeExtent change
+        mytimeSlider.watch("timeExtent", function() {
+          updateSumUnits();
+          });
+          myChart();
+        });
+      
+      
+          myview.whenLayerView(allayers[0]).then(function(mylv) {
+          watchUtils.whenFalseOnce(mylv, "updating", function() {updateSumUnits();
+          });
+        });
+      
+        // Sum of Units query requirements
+        const sumOfUnits = {onStatisticField: "SumOfUnits", outStatisticFieldName: "units_sum", statisticType: "sum"};
+        const CensusTract = {onStatisticField: "Census_Tract", outStatisticFieldName: "Census_counts", statisticType: "count"};
+        const year = {onStatisticField: "Date", outStatisticFieldName: "year", statisticType: "max"};
+        // my query
+        const myq = {outStatistics: 
+                     [sumOfUnits, CensusTract, year]
+        };
+
+      // Query setting using getQueryResults
+      const suq = function getQueryResults(mylvResult) {
+          return promiseUtils.tenYears(
+            mylvResult.webmap(function(result) {
+              
+              const mylv = result.value;
+
+                //  timeExtent will be loaded in the query object
+               
+                var thestart = new Date(mrtimeSlider.timeExtent.start);
+                var theend = new Date(metimeSlider.timeExtent.end);
+                thestart.setFullYear(thestart.getFullYear() - mylv.layer.timeOffset.value);
+                theend.setFullYear(theend.getFullYear() - mylv.layer.timeOffset.value);
+
+                myq.timeExtent = {
+                  start: thestart,
+                  end: theend};
+                // query feature from the layerviews 
+                return mylv.queryFeatures(myq).then(function(back) {
+                    return back.features[0].attributes;},
+                  function(next) {return promiseUtils.resolve(next);}//resole method of promise
+                );//function(back)
+              
+            })//function(result)
+          );//return promiseUtils.tenYears(
+        };//getQueryResults
+
+      function updateSumUnits() {
+          TenLayersView().then(function(mylvResult) {
+          suq(mylvResult).then(function(suqResult) {
+              YEARDiv.innerHTML = "";
+              let year;
+              let ctList = [];
+              let lblChart = [];
+              //sum of units query reslts
+              suqResult.map(function(result) {
+                 // extract the year and month from the date
+                 var thedate = new Date(result.value.year);
+                 var theyear = date.getFullYear();
+
+                // array of burnt acres sum returned in the query results
+                // for each layerview representing fires between 2014-2018
+                ctList.push(result.value.sumOfUnits.toFixed(2));
+
+                //chart labels will show the year and count of fires for that year
+                const hLable = year + ", " + result.value.CensusTract;
+                 lblChart.push(hLable);
+                
+              });//functio(result)
+        
+              mychart.data.datasets[0].data = ctList;
+              mychart.data.labels = lblChart;
+              mychart.update();
+              startYear = mytimeSlider.timeExtent.thestart.toLocaleString("default",{year:"long"});
+              endYear = mytimeSlider.timeExtent.theend.toLocaleString("default", {year:"long"});
+              YEARDiv.innerHTML = "<b> YEAR: <span>" + startYear +  " - " +  endYear +  "</span></b>";
+            });
+          });
+        }
+
+                
+      
+      
       
        //---------------Home Button---------------
         var myhome = new Home({
