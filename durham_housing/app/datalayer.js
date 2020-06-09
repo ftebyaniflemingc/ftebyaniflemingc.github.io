@@ -251,7 +251,7 @@ require([
         myview.ui.add(chex, {position: "top-left", index:3 });
       
       function newChart() {
-          Chart.defaults.global.defaultFontColor = "#858585";
+          Chart.defaults.global.defaultFontColor = '#85858';
           mychart = new Chart(chFrame.getContext("2d"), {
             type: "line",
             data: {
