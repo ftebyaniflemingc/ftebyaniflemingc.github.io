@@ -100,11 +100,11 @@ require([
               start: new Date(2019, 1, 1),
               end: new Date(2019, 12, 31)
             },
-            playRate: 100,
+            playRate: 1000,
             stops: {
               interval: {
                 value: 1,
-                unit: "months"
+                unit: "years"
               }
             }
           });//mytimeSlider
@@ -133,10 +133,14 @@ require([
 
       // Query setting using getQueryResults
       const suq = function getQueryResults(mylvResult) {
-          return promiseUtils.EachAlways(
-            mylvResult.map(function(result) {
-              
-              const mylv = result.value;
+          return promiseUtils.eachAlways(mylvResult.map(function(final) {
+              //reject if there is any error in the result
+                if (final.error) {
+                return promiseUtils.resolve(final.error);
+              }
+              // The results of the Promise are returned in the value property
+              else {
+              const mylv = final.value;
 
                 //  timeExtent will be loaded in the query object
                
@@ -154,7 +158,7 @@ require([
                   function(next) {return promiseUtils.resolve(next);}//resole method of promise
                 );//function(back)
               
-            })//function(result)
+            })//function(final)
           );//return promiseUtils.tenYears(
         };//getQueryResults
 
