@@ -231,7 +231,7 @@ webmap.add(layer);
         myview.whenLayerView(layer).then(function(mylv) {
           layerView = mylv;
           // starts time of the time slider from layer Year2010 first date: 2009/12/31
-          const start = new Date(2009, 12, 31);
+          const start = new Month(2009, 12);
           // sets time slider's full extent to 2019/12/31 - until end date of layer's fullTimeExtent
           mytimeSlider.fullTimeExtent = {
             start: start,
