@@ -209,15 +209,16 @@ webmap.add(layer);
           expanded: true,
         }); //Expand 
         myview.ui.add(mylegend, "bottom-left");
-      /*
+      
      //---------------Time Slider--------------- 
     const mytimeSlider = new TimeSlider({
           container: "timeSlider",
+          mode: "time-window",
           playRate: 100,  
           view: myview
         });//mytimeSlider
         myview.ui.add(mytimeSlider, "manual");
-        // wait till the layer view is loaded
+/*        // wait till the layer view is loaded
         myview.whenLayerView(layer).then(function(mylv) {
           const layerView = mylv;
 
