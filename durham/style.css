@@ -1,0 +1,29 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* Sets the order */
+#myview {
+  height: 100%;
+  width: 100%;
+  flex: 1 1 auto;
+  order: 1;
+}
+
+#HomeButton {
+    position: absolute;
+    top: 95px;
+    left: 20px;
+    z-index: 50;
+}
+
+.footer-bottom {
+    border-top: 1px solid #606060;
+    padding: 25px 0;
+    margin-top: 35px;
+    font-size: 0.95em;
+    line-height: 2em;
+}
