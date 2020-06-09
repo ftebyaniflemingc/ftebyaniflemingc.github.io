@@ -175,50 +175,34 @@ webmap.add(layer);
       
      //---------------Time Slider--------------- 
       // Create a time slider to update layerView filter
-const timeSlider = new TimeSlider({
+
+var timeSlider = new TimeSlider({
   container: "timeSlider",
-  mode: "time-window",
-      view: myview
+  mode: "cumulative-from-start",
 });
 myview.ui.add(timeSlider, "manual");
 
-myview.whenLayerView(layer).then(function(lv) {
-layerView = lv;
-const start = layer.timeInfo.fullTimeExtent.start;
-timeSlider.fullTimeExtent = {
-start: layer.timeInfo.fullTimeExtent.start,
-end: layer.timeInfo.fullTimeExtent.end
-};
-const theend = new Date(start);
-var year = theend.getFullYear();
-var month = theend.getMonth();
-var day = theend.getDate();
-var next_yr = new Date(year + 1, month, day)
+// wait until the layer view is loaded
+let timeLayerView;
+myview.whenLayerView(layer).then(function(mylv) {
+  timeLayerView = mylv;
+  const fullTimeExtent = layer.timeInfo.fullTimeExtent;
+  const mystart = fullTimeExtent.start;
 
-timeSlider.values = [start, next_yr];
-timeSlider.createStopsByInterval(
-timeSlider.fullTimeExtent,
-{
-value: 1,
-unit: "years"
-}
-);
-
+  // set up time slider properties based on layer timeInfo
+  timeSlider.fullTimeExtent = fullTimeExtent;
+  timeSlider.values = [mystart];
+  timeSlider.stops = {
+    interval: layer.timeInfo.interval
+  };
 });
 
-timeSlider.watch("timeExtent", function(event) {
-
-layer.definitionExpression = "time <='"+timeSlider.timeExtent.end.getTime();
-layerView.effect = {
-filter: {
-timeExtent: timeSlider.timeExtent,
-geometry: myview.extent
-},
-excludedEffect: "grayscale(20%) opacity(12%)"
-};
-
+timeSlider.watch("timeExtent", function(value){
+  // update layer view filter to reflect current timeExtent
+  timeLayerView.filter = {
+    timeExtent: value
+  };
 });
-
       
       /*
 // wait until the layer view is loaded
