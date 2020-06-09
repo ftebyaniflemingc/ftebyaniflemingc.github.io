@@ -1,29 +1,45 @@
-html, body {
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-}
+   html, body, #mapid {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        
+      }
+      #timeSlider {
+        position: absolute;
+        left: 50px;
+        right: 50px;
+        bottom: 50px;
+      }
+      #info {
+        height: 380px;
+        padding: 10px;
+        width: 320px;
+        
+      }
+      #info span {
+        color: #ff642e;
+        font-size: 12pt;
+        font-weight: bolder;
+      }
 
-/* Sets the order */
-#myview {
-  height: 100%;
-  width: 100%;
-  flex: 1 1 auto;
-  order: 1;
-}
-
-#HomeButton {
-    position: absolute;
-    top: 95px;
-    left: 20px;
-    z-index: 50;
-}
-
-.footer-bottom {
-    border-top: 1px solid #606060;
-    padding: 25px 0;
-    margin-top: 35px;
-    font-size: 0.95em;
-    line-height: 2em;
-}
+       .esri-widget {
+        border: 1px solid #444;
+      }
+      .esri-ui-corner .esri-component.esri-widget--panel {
+        width: 120px;
+      }
+      .esri-legend__service {
+        padding: 0;
+        padding-top: 4px;
+      }
+      .esri-time-slider__layout--wide .esri-time-slider__time-extent,
+      .esri-time-slider__layout--compact .esri-time-slider__time-extent,
+      .esri-time-slider__layout--wide .esri-time-slider__min,
+      .esri-time-slider__layout--wide .esri-time-slider__max,
+      .esri-time-slider__layout--compact .esri-time-slider__min-date,
+      .esri-time-slider__layout--compact .esri-time-slider__max-date,
+      .esri-legend__layer-caption {
+        display: none;
+      }
+   
