@@ -24,8 +24,6 @@ require([
                   //id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a"
                   }
       }); //webmap
-      
-     
      
   var layer = new FeatureLayer({ 
          portalItem: { // autocasts as new PortalItem()
@@ -159,9 +157,7 @@ require([
                  
   }); //FeatureLayer
 webmap.add(layer);    
-  
-      
-      
+    
       // Mapview, referencing WebMap instance
       var myview = new MapView({
             map: webmap,    // The WebMap instance created above
@@ -180,8 +176,6 @@ webmap.add(layer);
                               
 //Add the widget to the top right of screen
         myview.ui.add(myhome,  {position: "top-left", index:1 });
-
-          
       
       //---------------FullScreen Button---------------
       
@@ -212,21 +206,19 @@ webmap.add(layer);
           }),
           view: myview,
           expanded: true,
-                      
         }); //Expand 
-        myview.ui.add(mylegend, "bottom-left"
-         );
+        myview.ui.add(mylegend, "bottom-left");
       
      //---------------Time Slider--------------- 
     const mytimeSlider = new TimeSlider({
           container: "timeSlider",
           playRate: 100,  
           view: myview
-        });
+        });//mytimeslider
         myview.ui.add(mytimeSlider, "manual");
         // wait till the layer view is loaded
         myview.whenLayerView(layer).then(function(mylv) {
-          layerView = mylv;
+          const layerView = mylv;
 
           // starts time of the time slider from layer Year2010 first date: 2009/12/31
             const thestart = layer.timeInfo.fullTimeExtent.start;       
