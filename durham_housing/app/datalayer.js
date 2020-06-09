@@ -11,7 +11,7 @@ require([
       "esri/widgets/Expand",
       "esri/widgets/TimeSlider",
       "esri/core/watchUtils",
-      "esri/core/promiseUtils"
+      "esri/core/promiseUtils",
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
