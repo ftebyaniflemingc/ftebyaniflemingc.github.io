@@ -32,19 +32,12 @@ html, body{
   right: 10px;
   bottom: 20px;
 }
-
-.esri-time-slider__time-extent,
-.esri-time-slider__min,
-.esri-time-slider__max,
-.esri-slider__tick.minorTick {
-    display: none !important;
-}
 #main {
       padding: 10px;
       text-align: center;
       position: absolute;
       right: 250px;
-      bottom: 200px;
+      bottom: 150px;
       width:100px;
       }
     #logo {
