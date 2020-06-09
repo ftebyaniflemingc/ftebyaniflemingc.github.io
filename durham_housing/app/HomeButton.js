@@ -240,9 +240,9 @@ webmap.add(layer);
 
           // TimeSlider shows the sum of units in any census tract with one month interval
           // when the app is loaded will show comulative units between 2010/01/01 - 2019/12/31
-          const end = new Date(start);
+          const end = new Month(start);
           // end of current time extent for time slider with one month interval
-          end.setDate(end.getDate() + 1);
+          end.setMonth(end.getMonth() + 1);
 
           // Values property show the first day in timeSlider
           mytimeSlider.values = [start, end];
