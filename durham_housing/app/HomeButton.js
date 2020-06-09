@@ -258,7 +258,7 @@ webmap.add(layer);
         mytimeSlider.watch("timeExtent", function() {
         
         // only show sum of units until the end of timeSlider's current date extent.
-        layer.definitionExpression = "time <= " + mytimeSlider.timeExtent.theend.geTime();
+        layer.definitionExpression = "Date <= " + mytimeSlider.timeExtent.theend.getDate();
 
        });//watch
       
