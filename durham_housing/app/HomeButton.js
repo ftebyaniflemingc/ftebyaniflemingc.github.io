@@ -254,15 +254,15 @@ webmap.add(layer);
               );//Interval
               });//mylv
 
-        // watch for time slider timeExtent change
+      
+/*     // watch for time slider timeExtent change
         mytimeSlider.watch("timeExtent", function() {
         
         // only show sum of units until the end of timeSlider's current date extent.
         layer.definitionExpression = "Date <= " + mytimeSlider.timeExtent.theend.getDate();
 
        });//watch
-      
-/*      
+         
       // Create a time slider to update layerView filter
 const timeSlider = new TimeSlider({
   container: "timeSlider",
