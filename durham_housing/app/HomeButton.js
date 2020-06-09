@@ -223,29 +223,29 @@ webmap.add(layer);
           const layerView = mylv;
 
           // starts time of the time slider from layer Year2010 first date: 2009/12/31
-            const thestart = layer.timeInfo.fullTimeExtent.start;       
+            const start = layer.timeInfo.fullTimeExtent.start;       
           //const thestart = new Date("12/31/2009, 7:00 PM");
           // sets time slider's full extent to 2019/12/31 - until end date of layer's fullTimeExtent
           mytimeSlider.fullTimeExtent = {
-            start: thestart,
+            start: start,
             end: layer.timeInfo.fullTimeExtent.end
           };
 
           // TimeSlider shows the sum of units in any census tract with one month interval
           // when the app is loaded will show comulative units between 2010/01/01 - 2019/12/31
-          const theend = new Date(thestart);
+          const end = new Date(start);
           
-         var year = theend.getFullYear();
-         var month = theend.getMonth();
-         var day = theend.getDate();
-         var ny = new Date(year + 1, month, day);
+         //var year = end.getFullYear();
+         //var month = end.getMonth();
+         //var day = end.getDate();
+         //var ny = new Date(year + 1, month, day);
 
           // end of current time extent for time slider with one month interval
           //theend.setYear(theend.getYear() + 1);
  
           // Values property show the first day in timeSlider
           //mytimeSlider.values = [thestart, theend];
-              mytimeSlider.values = [thestart, ny];
+              mytimeSlider.values = [start];
               mytimeSlider.createStopsByInterval(
               mytimeSlider.fullTimeExtent, {
              value: 1,
