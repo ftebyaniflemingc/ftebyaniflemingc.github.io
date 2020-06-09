@@ -214,7 +214,7 @@ webmap.add(layer);
           container: "timeSlider",
           playRate: 100,  
           view: myview
-        });//mytimeslider
+        });
         myview.ui.add(mytimeSlider, "manual");
         // wait till the layer view is loaded
         myview.whenLayerView(layer).then(function(mylv) {
@@ -236,25 +236,25 @@ webmap.add(layer);
          var year = theend.getFullYear();
          var month = theend.getMonth();
          var day = theend.getDate();
-         var next_yr = new Date(year + 1, month, day)
+         var ny = new Date(year + 1, month, day)
 
           // end of current time extent for time slider with one month interval
           //theend.setYear(theend.getYear() + 1);
  
           // Values property show the first day in timeSlider
           //mytimeSlider.values = [thestart, theend];
-              mytimeSlider.values = [thestart, next_yr];
+              mytimeSlider.values = [thestart, ny];
               mytimeSlider.createStopsByInterval(
               mytimeSlider.fullTimeExtent, {
              value: 1,
             unit: "years"
-            });//function(mylv)
+            });
 
         // watch for time slider timeExtent change
         mytimeSlider.watch("timeExtent", function() {
         
         // only show sum of units until the end of timeSlider's current date extent.
-        layer.definitionExpression = "time <= " + mytimeSlider.timeExtent.end.geTime();
+        layer.definitionExpression = "time <= " + mytimeSlider.timeExtent.theend.geTime();
 
        });//watch
       
