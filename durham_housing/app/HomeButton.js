@@ -220,11 +220,8 @@ webmap.add(layer);
      //---------------Time Slider--------------- 
     const mytimeSlider = new TimeSlider({
           container: "timeSlider",
-            stops: {
-            interval: {
-              value: 1,
-              unit: "months"
-           } }
+          playRate: 100,  
+          view: myview
         });
         myview.ui.add(mytimeSlider, "manual");
         // wait till the layer view is loaded
@@ -254,9 +251,9 @@ webmap.add(layer);
  
           // Values property show the first day in timeSlider
           //mytimeSlider.values = [thestart, theend];
-              timeSlider.values = [thestart, next_yr];
-              timeSlider.createStopsByInterval(
-              timeSlider.fullTimeExtent, {
+              mytimeSlider.values = [thestart, next_yr];
+              mytimeSlider.createStopsByInterval(
+              mytimeSlider.fullTimeExtent, {
              value: 1,
             unit: "years"
             });//function(mylv)
