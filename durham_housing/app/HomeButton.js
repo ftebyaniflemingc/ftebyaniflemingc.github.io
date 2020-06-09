@@ -176,6 +176,7 @@ webmap.add(layer);
                               
 //Add the widget to the top right of screen
         myview.ui.add(myhome,  {position: "top-left", index:1 });
+        
       
       //---------------FullScreen Button---------------
       
@@ -195,7 +196,7 @@ webmap.add(layer);
   
             // Add widget to screen
             myview.ui.add(layerList, {position: "top-right", index:3});
-      });
+      });//LayerList
            
         //---------------Legend---------------
       
@@ -208,13 +209,13 @@ webmap.add(layer);
           expanded: true,
         }); //Expand 
         myview.ui.add(mylegend, "bottom-left");
-      
+      /*
      //---------------Time Slider--------------- 
     const mytimeSlider = new TimeSlider({
           container: "timeSlider",
           playRate: 100,  
           view: myview
-        });
+        });//mytimeSlider
         myview.ui.add(mytimeSlider, "manual");
         // wait till the layer view is loaded
         myview.whenLayerView(layer).then(function(mylv) {
@@ -248,7 +249,7 @@ webmap.add(layer);
               mytimeSlider.fullTimeExtent, {
              value: 1,
             unit: "years"
-            });
+            });//mylv
 
         // watch for time slider timeExtent change
         mytimeSlider.watch("timeExtent", function() {
@@ -258,7 +259,7 @@ webmap.add(layer);
 
        });//watch
       
-      /*
+      
       // Create a time slider to update layerView filter
 const timeSlider = new TimeSlider({
   container: "timeSlider",
