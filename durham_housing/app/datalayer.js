@@ -81,7 +81,7 @@ require([
        // How to get Layer view of ten layers while layers are loading
         const TenLayersView = function getLayerViews() {
           return promiseUtils.tenLayers(
-            allayers.webmap(function(layer) {
+            allayers.map(function(layer) {
               return myview.whenLayerView(layer);
             })//function(layer)
           );//return
@@ -133,7 +133,7 @@ require([
       // Query setting using getQueryResults
       const suq = function getQueryResults(mylvResult) {
           return promiseUtils.tenYears(
-            mylvResult.webmap(function(result) {
+            mylvResult.map(function(result) {
               
               const mylv = result.value;
 
