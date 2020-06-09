@@ -182,6 +182,45 @@ const timeSlider = new TimeSlider({
 });
 myview.ui.add(timeSlider, "manual");
 
+myview.whenLayerView(layer).then(function(lv) {
+layerView = lv;
+const start = layer.timeInfo.fullTimeExtent.start;
+timeSlider.fullTimeExtent = {
+start: layer.timeInfo.fullTimeExtent.start,
+end: layer.timeInfo.fullTimeExtent.end
+};
+const theend = new Date(start);
+var year = theend.getFullYear();
+var month = theend.getMonth();
+var day = theend.getDate();
+var next_yr = new Date(year + 1, month, day)
+
+timeSlider.values = [start, next_yr];
+timeSlider.createStopsByInterval(
+timeSlider.fullTimeExtent,
+{
+value: 1,
+unit: "years"
+}
+);
+
+});
+
+timeSlider.watch("timeExtent", function(event) {
+
+layer.definitionExpression = "time <='"+timeSlider.timeExtent.end.getTime();
+layerView.effect = {
+filter: {
+timeExtent: timeSlider.timeExtent,
+geometry: myview.extent
+},
+excludedEffect: "grayscale(20%) opacity(12%)"
+};
+
+});
+
+      
+      /*
 // wait until the layer view is loaded
 let timeLayerView;
 myview.whenLayerView(layer).then(function(mylv) {
@@ -226,6 +265,6 @@ myview.ui.add(timeSlider, "manual");
                          PlayRate: 100
                         });
          timeSlider.play();  
-      
+      */
  
 }); //require
