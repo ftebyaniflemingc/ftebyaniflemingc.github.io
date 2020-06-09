@@ -253,14 +253,9 @@ webmap.add(layer);
         
         // only show sum of units until the end of timeSlider's current date extent.
         layer.definitionExpression =
-            "time <= " + mytimeSlider.timeExtent.end.getTime();
+            "Date <= " + mytimeSlider.timeExtent.end.getDate();
 
-          // now gray out earthquakes that happened before the time slider's current
-          // timeExtent... leaving footprint of earthquakes that already happened
-          //layerView.effect = {
-          //  filter: {timeExtent: mytimeSlider.timeExtent, geometry: myview.extent },
-          //  excludedEffect: "grayscale(20%) opacity(12%)"};
-        });//watch
+       });//watch
       
       /*
       // Create a time slider to update layerView filter
