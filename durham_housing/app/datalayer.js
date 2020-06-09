@@ -80,7 +80,8 @@ require([
       
        // How to get Layer view of ten layers while layers are loading
         const TenLayersView = function getLayerViews() {
-          return promiseUtils.tenLayers(
+          //promise method to wait for a number of promises to either resolve or reject.
+              return promiseUtils.eachAlways(
             allayers.map(function(layer) {
               return myview.whenLayerView(layer);
             })//function(layer)
@@ -132,7 +133,7 @@ require([
 
       // Query setting using getQueryResults
       const suq = function getQueryResults(mylvResult) {
-          return promiseUtils.tenYears(
+          return promiseUtils.EachAlways(
             mylvResult.map(function(result) {
               
               const mylv = result.value;
