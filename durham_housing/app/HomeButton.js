@@ -216,65 +216,51 @@ webmap.add(layer);
         }); //Expand 
         myview.ui.add(mylegend, "bottom-left"
          );
- 
-     
       
      //---------------Time Slider--------------- 
     const mytimeSlider = new TimeSlider({
           container: "timeSlider",
-          playRate: 50,
-          stops: {
+            stops: {
             interval: {
               value: 1,
               unit: "months"
-            }
-          }
+           } }
         });
         myview.ui.add(mytimeSlider, "manual");
-
         // wait till the layer view is loaded
         myview.whenLayerView(layer).then(function(mylv) {
           layerView = mylv;
-
-          // start time of the time slider from layer Year2010 first date: 2009/12/31
+          // starts time of the time slider from layer Year2010 first date: 2009/12/31
           const start = new Date(2009, 12, 31);
-          // set time slider's full extent to 2019/12/31 - until end date of layer's fullTimeExtent
+          // sets time slider's full extent to 2019/12/31 - until end date of layer's fullTimeExtent
           mytimeSlider.fullTimeExtent = {
             start: start,
             end: layer.timeInfo.fullTimeExtent.end
           };
 
           // TimeSlider shows the sum of units in any census tract with one month interval
-          // when the app is loaded we will show earthquakes that
-          // happened between 5/25 - 5/26.
+          // when the app is loaded will show comulative units between 2010/01/01 - 2019/12/31
           const end = new Date(start);
-          // end of current time extent for time slider
-          // showing earthquakes with one day interval
+          // end of current time extent for time slider with one month interval
           end.setDate(end.getDate() + 1);
 
-          // Values property is set so that timeslider
-          // widget show the first day. We are setting
-          // the thumbs positions.
+          // Values property show the first day in timeSlider
           mytimeSlider.values = [start, end];
-        });
+        });//function(mylv)
 
         // watch for time slider timeExtent change
         mytimeSlider.watch("timeExtent", function() {
-          // only show earthquakes happened up until the end of
-          // timeSlider's current time extent.
-          layer.definitionExpression =
+        
+        // only show sum of units until the end of timeSlider's current date extent.
+        layer.definitionExpression =
             "time <= " + mytimeSlider.timeExtent.end.getTime();
 
           // now gray out earthquakes that happened before the time slider's current
           // timeExtent... leaving footprint of earthquakes that already happened
-          layerView.effect = {
-            filter: {
-              timeExtent: mytimeSlider.timeExtent,
-              geometry: myview.extent
-            },
-            excludedEffect: "grayscale(20%) opacity(12%)"
-          };
-        });
+          //layerView.effect = {
+          //  filter: {timeExtent: mytimeSlider.timeExtent, geometry: myview.extent },
+          //  excludedEffect: "grayscale(20%) opacity(12%)"};
+        });//watch
       
       /*
       // Create a time slider to update layerView filter
