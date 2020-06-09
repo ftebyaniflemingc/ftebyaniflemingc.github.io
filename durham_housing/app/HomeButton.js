@@ -156,7 +156,8 @@ require([
          ]}    
                  
   }); //FeatureLayer
-webmap.add(layer);    
+webmap.add(layer);
+      webmap.reorder(layer);
     
       // Mapview, referencing WebMap instance
       var myview = new MapView({
