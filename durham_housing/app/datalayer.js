@@ -112,7 +112,7 @@ require([
         mytimeSlider.watch("timeExtent", function() {
           updateSumUnits();
           });
-          myChart();
+          newChart();
         });
       
       
@@ -160,7 +160,7 @@ require([
       function updateSumUnits() {
           TenLayersView().then(function(mylvResult) {
           suq(mylvResult).then(function(suqResult) {
-              YEARDiv.innerHTML = "";
+              YEAR.innerHTML = "";
               let year;
               let ctList = [];
               let lblChart = [];
@@ -170,11 +170,10 @@ require([
                  var thedate = new Date(result.value.year);
                  var theyear = date.getFullYear();
 
-                // array of burnt acres sum returned in the query results
-                // for each layerview representing fires between 2014-2018
+                // for each layerview representing units of houses between 2010-2019
                 ctList.push(result.value.sumOfUnits.toFixed(2));
 
-                //chart labels will show the year and count of fires for that year
+                //chart labels will show the year and count of house units for that year
                 const hLable = year + ", " + result.value.CensusTract;
                  lblChart.push(hLable);
                 
@@ -189,10 +188,6 @@ require([
             });
           });
         }
-
-                
-      
-      
       
        //---------------Home Button---------------
         var myhome = new Home({
@@ -235,6 +230,56 @@ require([
           expanded: true,
         }); //Expand 
         myview.ui.add(mylegend, "bottom-left");
+      
+      
+      const YEAR = document.getElementById("YEAR");
+        const chTitle = document.getElementById("chTitle");
+        const chFrame = document.getElementById("bar");
+        const chex = new Expand({
+          collapsedIconClass: "esri-icon-collapse",
+          expandIconClass: "esri-icon-expand",
+          expandTooltip: "Expand census tract and sum of units info",
+          view: myview,
+          contant: "chTitle",
+          expanded: true
+        });
+        myview.ui.add(chex, {position: "top-left", index:3 });
+      
+      function newChart() {
+          Chart.defaults.global.defaultFontColor = "#858585";
+          mychart = new Chart(chFrame.getContext("2d"), {
+            type: "line",
+            data: {
+              labels: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
+              datasets: [{data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}]
+            },
+            options: {responsive: false,legend: {position:"bottom"},
+              title: {display: true,
+                text: " Units of houses in sought Durham Region built by Year"},
+              scales: {
+                yAxes: [{  ticks: {beginAtZero: true,
+                      callback: function(value) {if (value % 1 === 0) {return value;} }  },
+                    gridLines: {zeroLineColor: "##858585",color: "#c2bebe" }}],
+                xAxes: [{gridLines: {zeroLineColor: "##858585",color: "#c2bebe"  }}]
+              },
+              tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                  //x lables by year and the number of units
+                          const unit_y = tooltipItem.xLabel.split(",");
+                    let customTooltip = [];
+                    customTooltip.push("Year: " + unit_y[0]);
+                    customTooltip.push("Units:" + unit_y[1]);
+                  //y lable by the census tracts
+                    customTooltip.push("CencusTract:" + tooltipItem.yLabel);
+                    return customTooltip;
+                  }
+                },//return
+                displayColors: false
+              }
+            }
+          });
+        }
       /*
      //---------------Time Slider--------------- 
     const mytimeSlider = new TimeSlider({
