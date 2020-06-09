@@ -230,8 +230,10 @@ webmap.add(layer);
         // wait till the layer view is loaded
         myview.whenLayerView(layer).then(function(mylv) {
           layerView = mylv;
+
           // starts time of the time slider from layer Year2010 first date: 2009/12/31
-          const thestart = new Date("12/31/2009, 7:00 PM");
+            const thestart = layer.timeInfo.fullTimeExtent.start;       
+          //const thestart = new Date("12/31/2009, 7:00 PM");
           // sets time slider's full extent to 2019/12/31 - until end date of layer's fullTimeExtent
           mytimeSlider.fullTimeExtent = {
             start: thestart,
@@ -240,20 +242,30 @@ webmap.add(layer);
 
           // TimeSlider shows the sum of units in any census tract with one month interval
           // when the app is loaded will show comulative units between 2010/01/01 - 2019/12/31
-          const end = new Month(thestart);
-          // end of current time extent for time slider with one month interval
-          end.setMonth(end.getMonth() + 1);
+          const theend = new Date(thestart);
+          
+         var year = theend.getFullYear();
+         var month = theend.getMonth();
+         var day = theend.getDate();
+         var next_yr = new Date(year + 1, month, day)
 
+          // end of current time extent for time slider with one month interval
+          //theend.setYear(theend.getYear() + 1);
+ 
           // Values property show the first day in timeSlider
-          mytimeSlider.values = [thestart, end];
-        });//function(mylv)
+          //mytimeSlider.values = [thestart, theend];
+              timeSlider.values = [thestart, next_yr];
+              timeSlider.createStopsByInterval(
+              timeSlider.fullTimeExtent, {
+             value: 1,
+            unit: "years"
+            });//function(mylv)
 
         // watch for time slider timeExtent change
         mytimeSlider.watch("timeExtent", function() {
         
         // only show sum of units until the end of timeSlider's current date extent.
-        layer.definitionExpression =
-            "date <= " + mytimeSlider.timeExtent.end.getDate();
+        layer.definitionExpression = "time <= " + mytimeSlider.timeExtent.end.geTime();
 
        });//watch
       
