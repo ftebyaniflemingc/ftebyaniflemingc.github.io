@@ -157,7 +157,7 @@ require([
                     return back.features[0].attributes;},
                   function(next) {return promiseUtils.resolve(next);}//resole method of promise
                 );//function(back)
-              
+              }//else
             })//function(final)
           );//return promiseUtils.tenYears(
         };//getQueryResults
