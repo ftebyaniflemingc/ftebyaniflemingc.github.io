@@ -249,8 +249,10 @@ webmap.add(layer);
               mytimeSlider.createStopsByInterval(
               mytimeSlider.fullTimeExtent, {
              value: 1,
-            unit: "years"
-            });//mylv
+             unit: "years"
+              }
+              );//Interval
+              });//mylv
 
         // watch for time slider timeExtent change
         mytimeSlider.watch("timeExtent", function() {
