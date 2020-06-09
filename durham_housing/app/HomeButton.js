@@ -218,7 +218,7 @@ webmap.add(layer);
           view: myview
         });//mytimeSlider
         myview.ui.add(mytimeSlider, "manual");
-/*        // wait till the layer view is loaded
+        // wait till the layer view is loaded
         myview.whenLayerView(layer).then(function(mylv) {
           const layerView = mylv;
 
@@ -238,7 +238,7 @@ webmap.add(layer);
          var year = theend.getFullYear();
          var month = theend.getMonth();
          var day = theend.getDate();
-         var ny = new Date(year + 1, month, day)
+         var ny = new Date(year + 1, month, day);
 
           // end of current time extent for time slider with one month interval
           //theend.setYear(theend.getYear() + 1);
@@ -260,7 +260,7 @@ webmap.add(layer);
 
        });//watch
       
-      
+/*      
       // Create a time slider to update layerView filter
 const timeSlider = new TimeSlider({
   container: "timeSlider",
