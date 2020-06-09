@@ -219,9 +219,11 @@ webmap.add(layer);
           view: myview
         });//mytimeSlider
         myview.ui.add(mytimeSlider, "manual");
-        // wait till the layer view is loaded
-        myview.whenLayerView(layer).then(function(mylv) {
-          const layerView = mylv;
+        
+      // wait till the layer view is loaded
+      let timeLayerView;  
+      myview.whenLayerView(layer).then(function(mylv) {
+          timeLayerView = mylv;
 
           // starts time of the time slider from layer Year2010 first date: 2009/12/31
             const thestart = layer.timeInfo.fullTimeExtent.start;       
