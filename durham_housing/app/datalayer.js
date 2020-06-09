@@ -38,134 +38,42 @@ require([
         const url =
           "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
         const definitions = [
-         {id: 9, title: "Year2010",  visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2010_csv_Census_Tract > 0)",
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2010_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            interval: {  // set time interval to one month
-              unit: "months",
-              value: 1
-            }}},
-         {id: 8, title: "Year2011",  visible: true, 
-          definitionExpression: "(CensusBoundary2011_CT> 0) AND (infilling2011_csv_Census_Tract > 0)",
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2011_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2011_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            interval: { 
-              unit: "months",
-              value: 1
-            }}},
-         {id: 7, title: "Year2012",  visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2012_csv_Census_Tract > 0)",
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2012_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            interval: {
-              unit: "months",
-              value: 1
-            }}},
-         {id: 6, title: "Year2013",  visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2013_csv_Census_Tract > 0)",
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary20166CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2013_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            interval: {
-              unit: "months",
-              value: 1
-            }}},
-         {id: 5, title: "Year2014",  visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2014_csv_Census_Tract > 0)",
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2014_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2014_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            interval: {
-              unit: "months",
-              value: 1
-            }}},
-         {id: 4, title: "Year2015",  visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2015_csv_Census_Tract > 0)",
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary20166CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2015_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            interval: {
-              unit: "months",
-              value: 1
-            }}},
-         {id: 3, title: "Year2016", visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2016_csv_Census_Tract > 0)",
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            interval: {
-              unit: "months",
-              value: 1
-            }}},
-         {id: 2, title: "Year2017", visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2017_csv_Census_Tract > 0)",
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2017_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            interval: {
-               unit: "months",
-              value: 1
-            }}},
-           
-         {id: 1, title: "Year2018", visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2018_csv_Census_Tract > 0)",
-             popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2018_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            interval: {
-              unit: "months",
-              value: 1
-            }}},
-         {id: 0, title: "Year2019", visible: true, 
-         definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2019_csv_Census_Tract > 0)",         
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            interval: {
-              unit: "months",
-              value: 1
-           }}}
+         {id: 9, title: "Year2010",  visible: true, offset: 0},
+         {id: 8, title: "Year2011",  visible: true, offset: 1},
+         {id: 7, title: "Year2012",  visible: true, offset: 2},
+         {id: 6, title: "Year2013",  visible: true, offset: 3},
+         {id: 5, title: "Year2014",  visible: true, offset: 4},
+         {id: 4, title: "Year2015",  visible: true, offset: 5},
+         {id: 3, title: "Year2016", visible: true, offset: 6},
+         {id: 2, title: "Year2017", visible: true, offset: 7},
+         {id: 1, title: "Year2018", visible: true, offset: 8},
+         {id: 0, title: "Year2019", visible: true, offset: 6}
           ];    
+      
       const layer = definitions.map(function(definition) {
-          return createLayer(definition);
+          return tenLayers(definition);
         });
         // add the california fire layers
         webmap.addMany(layer);
       webmap.reorder(layer);
+      
+      // Ten instances of feature layers between 2010 - 2019
+        function tenLayers(definition) {
+          const year = definition.year;
+
+          return new FeatureLayer({
+            url: url + definition.id,
+            timeOffset: {
+              value: definition.offset,
+              unit: "years"
+            },
+            outFields: ["*"],
+            popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display text in pop-up
+            }
+          });//FeatureLayer
+        }//tenLayer 
       
        //---------------Home Button---------------
         var myhome = new Home({
