@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>TimeSlider with timeOffset </title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+     <title>Souht Durham Region Housin(2010-2019)</title>
+<!--using Sass: many useful features such as variables, and functions -->    
+      
+    <link rel="stylesheet"href="https://js.arcgis.com/4.15/esri/themes/dark-red/main.css"/>
+    <script src="https://js.arcgis.com/4.15/"></script>
+     <link rel="stylesheet" href="style.css">  
+      <script >src="app/style.js" </script>
+  </head>
+
+  <body>
+    <div id="mapid"></div>
+    <div id="timeSlider"></div>
+    <div id="info" class="esri-widget">
+      <div class="esri-widget__heading">
+        <h4>Souht Durham Region Housing From 2010 to 2019 </h4>
+      </div>
+      <div id="month"></div>
+      <br />
+      <canvas
+        id="fireChart"
+        height="250"
+        width="300"
+        class="esri-widget"
+      ></canvas>
+    </div>
+  </body>
+</html>
