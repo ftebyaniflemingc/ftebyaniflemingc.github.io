@@ -57,8 +57,8 @@ require([
           return tenLayers(definition);
         });
         // add the california fire layers
-        webmap.addMany(allayers);
-      webmap.reorder(allayers);
+        mymap.addMany(allayers);
+      mymap.reorder(allayers);
       
        // How to get Layer view of ten layers while layers are loading
         const layerViewsEachAlways = function getLayerViews() {
