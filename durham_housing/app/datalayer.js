@@ -252,7 +252,7 @@ require([
       
       function newChart() {
             
-           mychart.defaults.global.defaultFontFamily = '"Lato",sans-serif';
+           mychart.global.defaultFontFamily = '"Lato",sans-serif';
            mychart.defaults.global.defaultFontSize = 8;
            mychart.defaults.global.defaultFontColor = 'white';
            mychart = new Chart(chFrame).getContext('2d'), {
