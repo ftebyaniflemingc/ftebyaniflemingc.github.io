@@ -261,6 +261,13 @@ require([
                   view: myview,
                   visible: true // show the button
             }, "Layer");
+            
+            layerListExpand = new Expand({
+                  expandIconClass: "esri-icon-layer-list",
+                  view: myview,
+                  content: layerList.domNode,
+                  expanded: false
+            });
   
             // Add widget to screen
             myview.ui.add(layerList, {position: "top-right", index:3});
