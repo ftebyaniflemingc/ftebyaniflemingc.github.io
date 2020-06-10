@@ -101,11 +101,11 @@ require([
               start: new Date(2009, 12, 31),
               end: new Date(2019, 12, 31)
             },
-            playRate: 100,
+            playRate: 1000,
             stops: {
               interval: {
                 value: 1,
-                unit: "months"
+                unit: "years"
               }
             }
           });//mytimeSlider
