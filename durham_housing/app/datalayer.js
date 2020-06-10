@@ -140,7 +140,8 @@ require([
                 if (final.error) {
                 return promiseUtils.resolve(final.error);              }
               // The results of the Promise are returned in the value property
-              else {            const mylv = final.value;
+              else {            
+                    const mylv = final.value;
                 //  timeExtent will be loaded in the query object
              
                 var thestart = new Date(mytimeSlider.timeExtent.start);
@@ -185,7 +186,7 @@ require([
             let date = new Date(result.value.year);
             let year = date.getFullYear();
            // for each layerview representing units of houses between 2010-2019
-            ctList.push(result.value.units_sum.toFixed(2));
+            ctList.push(result.value.Census_counts.toFixed(2));
             //chart labels will show the year and count of units for that year
             const label = year + ", " + result.value.CensusTract;
             lblChart.push(label);
