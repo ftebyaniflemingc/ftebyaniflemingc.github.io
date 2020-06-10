@@ -18,7 +18,7 @@ require([
         ], 
         function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
                   TimeSlider, WatchUtils, PromiseUtils, PopupTemplate ){
-    let mytimeSlider, mychart;
+    let mytimeSlider;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
       const mymap = new Map({
@@ -171,7 +171,7 @@ require([
             let date = new Date(result.value.year);
             let year = date.getFullYear();
            // for each layerview representing units of houses between 2010-2019
-            //ctList.push(result.value.units_sum.toFixed(2));
+            ctList.push(result.value.units_sum.toFixed(2));
             //chart labels will show the year and count of units for that year
             const label = year + ", " + result.value.CensusTract;
             lblChart.push(label);
