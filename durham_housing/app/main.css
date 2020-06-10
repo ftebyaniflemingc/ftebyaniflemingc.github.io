@@ -28,8 +28,8 @@ html, body{
 #timeSlider{
   width: 50%;
   position: center;
-  left: 450px;
-  right: 10px;
+  left: 50px;
+  right: 50px;
   bottom: 20px;
 }
 #chTitle {
