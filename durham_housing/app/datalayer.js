@@ -286,7 +286,7 @@ require([
                 displayColors: false
               }
             }
-          );
+           };
         }
       /*
      //---------------Time Slider--------------- 
