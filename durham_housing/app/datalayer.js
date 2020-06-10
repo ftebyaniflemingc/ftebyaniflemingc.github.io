@@ -157,7 +157,7 @@ require([
               let ctList = [];
               let lblChart = [];
           //sum of units query reslts
-          suqResult.map(function(result){
+          suqResult.mymap(function(result){
             
                 if (result.error) {
           return promiseUtils.resolve(result.error);
