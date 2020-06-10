@@ -95,16 +95,17 @@ require([
        
           mytimeSlider = new TimeSlider({
             container: "timeSlider",
+            mod: "cumulative-from-start",
             view: myview,
             fullTimeExtent: {
               start: new Date(2009, 12, 31),
               end: new Date(2019, 12, 31)
             },
-            playRate: 1000,
+            playRate: 100,
             stops: {
               interval: {
                 value: 1,
-                unit: "years"
+                unit: "months"
               }
             }
           });//mytimeSlider
