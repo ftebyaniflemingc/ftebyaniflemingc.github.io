@@ -239,7 +239,7 @@ require([
       
       const YEAR = document.getElementById("YEAR");
         const chTitle = document.getElementById("chTitle");
-        const chFrame = document.getElementById("bar");
+        const chFrame = document.getElementById("barchart");
         const chex = new Expand({
           collapsedIconClass: "esri-icon-collapse",
           expandIconClass: "esri-icon-expand",
@@ -256,7 +256,7 @@ require([
            mychart.defaults.global.defaultFontSize = 8;
            mychart.defaults.global.defaultFontColor = 'white';
            mychart = new Chart(chFrame).getContext('2d'), {
-            type: {"bar"},
+            type: "bar",
             data: {
               labels: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
               datasets: [{data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}]
