@@ -163,11 +163,17 @@ require([
 
       function updateSumUnits(){
      layerViewsEachAlways().then(function(mylvResult) {
-    // query each and every fire layerviews for stats and process the results
+    // query each and every sum of units layerviews for stats and process the results
     suq(mylvResult).then(function(suqResult){
       // fire stats query results are back. Loop through them and process.
-      suqResult.map(function(result){
-        if (result.error) {
+       monthDiv.innerHTML = "";
+              let month;
+              let ctList = [];
+              let lblChart = [];
+          //sum of units query reslts
+          suqResult.map(function(result){
+            
+                if (result.error) {
           return promiseUtils.resolve(result.error);
         }
         // The results of the Promise are returned in the value property
@@ -178,10 +184,9 @@ require([
             // extract the year and month from the date
             let date = new Date(result.value.year);
             let year = date.getFullYear();
-            // array of burnt acres sum returned in the query results
-            // for each layerview representing fires between 2014-2018
+           // for each layerview representing units of houses between 2010-2019
             ctList.push(result.value.acres_sum.toFixed(2));
-            //chart labels will show the year and count of fires for that year
+            //chart labels will show the year and count of units for that year
             const label = year + ", " + result.value.CensusTract;
             lblChart.push(label);
           }}
