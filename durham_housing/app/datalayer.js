@@ -50,7 +50,7 @@ require([
          {id: 3, title: "Year2016", visible: true, offset: 6},
          {id: 2, title: "Year2017", visible: true, offset: 7},
          {id: 1, title: "Year2018", visible: true, offset: 8},
-         {id: 0, title: "Year2019", visible: true, offset: 6}
+         {id: 0, title: "Year2019", visible: true, offset: 9}
           ];    
       
       const allayers = definitions.map(function(definition) {
