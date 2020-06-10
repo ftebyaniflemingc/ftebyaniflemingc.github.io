@@ -62,19 +62,19 @@ require([
       
       // Ten instances of feature layers between 2010 - 2019
         function tenLayers(definition) {
-          const newyear = definition.year;
+          const year = definition.year;
 
           return new FeatureLayer({
             url: url + definition.id,
             timeOffset: {
               value: definition.offset,
-              unit: "months"
+              unit: "years"
             },
             outFields: ["*"],
             popupTemplate: {        // Enable a popup
                   title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            }
+                  content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts in {Date}." 
+            }  // Display text in pop-up
           });//FeatureLayer
         }//tenLayer 
       
@@ -272,8 +272,8 @@ require([
         }); //Expand 
         myview.ui.add(mylegend, "bottom-left");
       
-      
-      const YEAR = document.getElementById("YEAR");
+      // Units chart section
+      const monthDiv = document.getElementById("monthDiv");
         const chTitle = document.getElementById("chTitle");
         const chFrame = document.getElementById("barchart");
         const chex = new Expand({
@@ -288,9 +288,9 @@ require([
       
       function newChart() {
             
-           //mychart.defaults.global.defaultFontFamily = '"Lato",sans-serif';
-          // mychart.defaults.global.defaultFontSize = 8;
-           //mychart.defaults.global.defaultFontColor = 'white';
+          mychart.defaults.global.defaultFontFamily = '"Lato",sans-serif';
+          mychart.defaults.global.defaultFontSize = 8;
+          mychart.defaults.global.defaultFontColor = 'white';
            mychart = new Chart(chFrame).getContext('2d'), {
             type: "bar",
             data: {
@@ -308,6 +308,7 @@ require([
               },
               tooltips: {
                     callbacks: {
+                      title: function(tooltipItem, data) {return"Units";},
                       label: function(tooltipItem, data) {
                   //x lables by year and the number of units
                           const unit_y = tooltipItem.xLabel.split(',');
