@@ -10,14 +10,14 @@ require([
       "esri/widgets/Legend",
       "esri/widgets/Expand",
       "esri/widgets/TimeSlider",
-      "esri/core/watchUtils",
-      "esri/core/promiseUtils",
+      "esri/core/WatchUtils",
+      "esri/core/PromiseUtils",
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
         function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
-                  TimeSlider, watchUtils, promiseUtils, PopupTemplate ){
+                  TimeSlider, WatchUtils, PromiseUtils, PopupTemplate ){
     let mytimeSlider, myChart;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
@@ -63,7 +63,7 @@ require([
        // How to get Layer view of ten layers while layers are loading
         const layerViewsEachAlways = function getLayerViews() {
           //promise method to wait for a number of promises to either resolve or reject.
-              return promiseUtils.eachAlways(
+              return PromiseUtils.eachAlways(
             allayers.map(function(layer) {
               return myview.whenLayerView(layer);
             })//function(layer)
@@ -100,7 +100,7 @@ require([
       
           //watchUtils will check for a property change and wait for layer view get updating and get the features
           myview.whenLayerView(allayers[0]).then(function(mylv) {
-          watchUtils.whenFalseOnce(mylv, "updating", function() {updateSumUnits();
+          WatchUtils.whenFalseOnce(mylv, "updating", function() {updateSumUnits();
           });
         });
       
@@ -116,10 +116,10 @@ require([
 
       // Query setting using getQueryResults
       const suq = function getQueryResults(layerViewsResults) {
-          return promiseUtils.eachAlways(layerViewsResults.map(function(result) {
+          return PromiseUtils.eachAlways(layerViewsResults.map(function(result) {
               //reject if there is any error in the result
                 if (result.error) {
-                return promiseUtils.resolve(result.error);              
+                return PromiseUtils.resolve(result.error);              
                 }
               // The results of the Promise are returned in the value property
               else {            
@@ -139,7 +139,7 @@ require([
                 return mylv.queryFeatures(myq).then(function(response) {
                     return response.features[0].attributes;
                 },
-                  function(e) {return promiseUtils.resolve(e);
+                  function(e) {return PromiseUtils.resolve(e);
                               }//resole method of promise
                 );//function(back)
               }//else
@@ -160,7 +160,7 @@ require([
           suqResult.map(function(result){
             
                 if (result.error) {
-          return promiseUtils.resolve(result.error);
+          return PromiseUtils.resolve(result.error);
         }
         // The results of the Promise are returned in the value property
         else {
