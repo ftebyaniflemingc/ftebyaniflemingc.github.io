@@ -34,7 +34,7 @@ require([
             map: webmap,    // The WebMap instance created above
             container: "mapid",
             center: [-78.871866,43.914656],
-            zoom: 11
+            zoom: 10
       }); //mapview
       
    // create ten new instances of feature layers based on the following definitions
