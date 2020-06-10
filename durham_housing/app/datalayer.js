@@ -251,7 +251,7 @@ require([
         myview.ui.add(chex, {position: "top-left", index:3 });
       
       function newChart() {
-            Chart.defaults.global.defaultFontFamily = '"Yanone Kaffesatz", sans-serif';
+            Chart.defaults.global.defaultFontFamily = 'Thhoma, sans-serif';
              Chart.defaults.global.defaultFontSize = 10;
             Chart.defaults.global.defaultFontColor = "white";
           mychart = new Chart(chFrame.getContext("2d"), {
