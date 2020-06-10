@@ -89,17 +89,19 @@ html, body {
   font-weight: $font-weight__heading; // 600;
   margin: 0 0 0.5rem 0;
 }
-
-/* Footer meant to emulate CMHC website: https://www.cmhc-schl.gc.ca/ */
-#Canada_logo img {
-    float: right;
-    width: 120px;
-    vertical-align: top;
-    margin-right: 40px;
-  
-.footer-bottom {
-    border-top: 1px solid #606060;
-    padding: 25px 0;
-    margin-top: 35px;
-    font-size: 0.95em;
-    line-height: 2em;
+.esri-ui-corner .esri-component.esri-widget--panel {
+        width: 120px;
+      }
+      .esri-legend__service {
+        padding: 0;
+        padding-top: 4px;
+      }
+      .esri-time-slider__layout--wide .esri-time-slider__time-extent,
+      .esri-time-slider__layout--compact .esri-time-slider__time-extent,
+      .esri-time-slider__layout--wide .esri-time-slider__min,
+      .esri-time-slider__layout--wide .esri-time-slider__max,
+      .esri-time-slider__layout--compact .esri-time-slider__min-date,
+      .esri-time-slider__layout--compact .esri-time-slider__max-date,
+      .esri-legend__layer-caption {
+        display: none;
+      }
