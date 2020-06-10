@@ -90,6 +90,13 @@ html, body {
   margin: 0 0 0.5rem 0;
 }
 
+/* Footer meant to emulate CMHC website: https://www.cmhc-schl.gc.ca/ */
+#Canada_logo img {
+    float: right;
+    width: 120px;
+    vertical-align: top;
+    margin-right: 40px;
+  
 .footer-bottom {
     border-top: 1px solid #606060;
     padding: 25px 0;
