@@ -92,7 +92,7 @@ require([
           });//mytimeSlider
 
        // watch for time slider timeExtent updating
-        mytimeSlider.watch("timeExtent", function() {
+        mytimeSlider.Watch("timeExtent", function() {
           updateSumUnits();
           });
           newChart();
@@ -171,7 +171,7 @@ require([
             let date = new Date(result.value.year);
             let year = date.getFullYear();
            // for each layerview representing units of houses between 2010-2019
-            ctList.push(result.value.units_sum.toFixed(2));
+            //ctList.push(result.value.units_sum.toFixed(2));
             //chart labels will show the year and count of units for that year
             const label = year + ", " + result.value.CensusTract;
             lblChart.push(label);
