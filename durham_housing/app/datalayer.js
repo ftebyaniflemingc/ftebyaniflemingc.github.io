@@ -63,7 +63,7 @@ require([
        // How to get Layer view of ten layers while layers are loading
         const layerViewsEachAlways = function getLayerViews() {
           //promise method to wait for a number of promises to either resolve or reject.
-              return promiseUtils.eachAlways(
+              return PromiseUtils.eachAlways(
             allayers.map(function(layer) {
               return myview.whenLayerView(layer);
             })//function(layer)
@@ -100,7 +100,7 @@ require([
       
           //watchUtils will check for a property change and wait for layer view get updating and get the features
           myview.whenLayerView(allayers[0]).then(function(mylv) {
-          watchUtils.whenFalseOnce(mylv, "updating", function() {updateSumUnits();
+          WatchUtils.whenFalseOnce(mylv, "updating", function() {updateSumUnits();
           });
         });
       
