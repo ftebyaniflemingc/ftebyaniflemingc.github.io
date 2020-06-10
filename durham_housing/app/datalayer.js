@@ -22,9 +22,9 @@ require([
       //---------------FeatureLayers---------------
    /// Creates a WebMap instance
       const webmap = new WebMap({
-          basemap: {
+          basemap: {//basemap source: https://www.arcgis.com/home/item.html?id=3582b744bba84668b52a16b0b6942544
             portalItem: {
-              id: "3582b744bba84668b52a16b0b6942544"
+              id: "3582b744bba84668b52a16b0b6942544" 
             }
           }
         });
@@ -41,16 +41,16 @@ require([
         const url =
           "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
         const definitions = [
-         {id: 9, title: "Year2010",  visible: true, offset: 0},
-         {id: 8, title: "Year2011",  visible: true, offset: 1},
-         {id: 7, title: "Year2012",  visible: true, offset: 2},
-         {id: 6, title: "Year2013",  visible: true, offset: 3},
-         {id: 5, title: "Year2014",  visible: true, offset: 4},
-         {id: 4, title: "Year2015",  visible: true, offset: 5},
-         {id: 3, title: "Year2016", visible: true, offset: 6},
-         {id: 2, title: "Year2017", visible: true, offset: 7},
-         {id: 1, title: "Year2018", visible: true, offset: 8},
-         {id: 0, title: "Year2019", visible: true, offset: 9}
+         {id: 9, title: "2010", visible: true, offset: 0},
+         {id: 8, title: "2011", visible: true, offset: 1},
+         {id: 7, title: "2012", visible: true, offset: 2},
+         {id: 6, title: "2013", visible: true, offset: 3},
+         {id: 5, title: "2014", visible: true, offset: 4},
+         {id: 4, title: "2015", visible: true, offset: 5},
+         {id: 3, title: "2016", visible: true, offset: 6},
+         {id: 2, title: "2017", visible: true, offset: 7},
+         {id: 1, title: "2018", visible: true, offset: 8},
+         {id: 0, title: "2019", visible: true, offset: 9}
           ];    
       
       const allayers = definitions.map(function(definition) {
@@ -59,24 +59,6 @@ require([
         // add the california fire layers
         webmap.addMany(allayers);
       webmap.reorder(allayers);
-      
-      // Ten instances of feature layers between 2010 - 2019
-        function tenLayers(definition) {
-          const year = definition.year;
-
-          return new FeatureLayer({
-            url: url + definition.id,
-            timeOffset: {
-              value: definition.offset,
-              unit: "years"
-            },
-            outFields: ["*"],
-            popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts in {Date}." 
-            }  // Display text in pop-up
-          });//FeatureLayer
-        }//tenLayer 
       
        // How to get Layer view of ten layers while layers are loading
         const layerViewsEachAlways = function getLayerViews() {
@@ -88,8 +70,7 @@ require([
           );//return
         };//getLayerViews()
       
-      
-      //timeSlider
+      //----------timeSlider----------
       
         myview.when(function() {
        
@@ -101,7 +82,7 @@ require([
               start: new Date(2009, 12, 31),
               end: new Date(2019, 12, 31)
             },
-            playRate: 1000,
+            playRate: 1500,
             stops: {
               interval: {
                 value: 1,
@@ -126,7 +107,7 @@ require([
         // Sum of Units query requirements
       
         const sumOfUnits = {onStatisticField: "Shape__Area", outStatisticFieldName: "units_sum", statisticType: "sum"};
-        const CensusTract = {onStatisticField: "SumOfUnits", outStatisticFieldName: "units_counts", statisticType: "count"};
+        const CensusTract = {onStatisticField: "{SumOfUnits}", outStatisticFieldName: "units_counts", statisticType: "count"};
         const year = {onStatisticField: "Date", outStatisticFieldName: "year", statisticType: "max"};
         // my query
         const myq = {outStatistics: 
@@ -135,13 +116,14 @@ require([
 
       // Query setting using getQueryResults
       const suq = function getQueryResults(mylvResult) {
-          return promiseUtils.eachAlways(mylvResult.map(function(final) {
+          return promiseUtils.eachAlways(mylvResult.map(function(result) {
               //reject if there is any error in the result
-                if (final.error) {
-                return promiseUtils.resolve(final.error);              }
+                if (result.error) {
+                return promiseUtils.resolve(result.error);              
+                }
               // The results of the Promise are returned in the value property
               else {            
-                    const mylv = final.value;
+                    const mylv = result.value;
                 //  timeExtent will be loaded in the query object
              
                 var thestart = new Date(mytimeSlider.timeExtent.start);
@@ -151,11 +133,14 @@ require([
 
                 myq.timeExtent = {
                   start: thestart,
-                  end: theend};
+                  end: theend
+                };
                 // query feature from the layerviews 
-                return mylv.queryFeatures(myq).then(function(back) {
-                    return back.features[0].attributes;},
-                  function(next) {return promiseUtils.resolve(next);}//resole method of promise
+                return mylv.queryFeatures(myq).then(function(response) {
+                    return response.features[0].attributes;
+                },
+                  function(e) {return promiseUtils.resolve(e);
+                              }//resole method of promise
                 );//function(back)
               }//else
             })//function(final)
@@ -186,55 +171,41 @@ require([
             let date = new Date(result.value.year);
             let year = date.getFullYear();
            // for each layerview representing units of houses between 2010-2019
-            ctList.push(result.value.sumOfUnits.toFixed(2));
+            ctList.push(result.value.units_sum.toFixed(2));
             //chart labels will show the year and count of units for that year
             const label = year + ", " + result.value.CensusTract;
             lblChart.push(label);
-          }}
-      });//functio(result)  
-      /*
-      function updateSumUnits() {
-          TenLayersView().then(function(mylvResult) {
-          suq(mylvResult).then(function(suqResult) {
-              YEAR.innerHTML = "";
-              let year;
-              let ctList = [];
-              let lblChart = [];
-              //sum of units query reslts
-              suqResult.map(function(result) {
-                 // extract the year and month from the date
-                 var thedate = new Date(result.value.year);
-                 var theyear = date.getFullYear();
-
-                // for each layerview representing units of houses between 2010-2019
-                ctList.push(result.value.sumOfUnits.toFixed(2));
-
-                //chart labels will show the year and count of house units for that year
-                const hLable = year + ", " + result.value.CensusTract;
-                 lblChart.push(hLable);
-                
-              });//functio(result)  
-              */
+          }//if
+        }//else
+      });//funct
       
                mychart.data.datasets[0].data = ctList;
                mychart.data.labels = lblChart;
                mychart.update();
-              startMonth = mytimeSlider.timeExtent.start.toLocaleString("default", { month: "long" });
-              endMonth = mytimeSlider.timeExtent.end.toLocaleString("default", { month: "long" });
+              var startMonth = mytimeSlider.timeExtent.start.toLocaleString("default", { month: "long" });
+              var endMonth = mytimeSlider.timeExtent.end.toLocaleString("default", { month: "long" });
               monthDiv.innerHTML = "<b> Month: <span>" + startMonth + " - " + endMonth + "</span></b>";
                   });
                });
               }  
-                /*
-              mychart.data.datasets[0].data = ctList;
-              mychart.data.labels = lblChart;
-              mychart.update();
-              startYear = mytimeSlider.timeExtent.thestart.toLocaleString("default",{year:"long"});
-              endYear = mytimeSlider.timeExtent.theend.toLocaleString("default", {year:"long"});
-              YEAR.innerHTML = "<b> YEAR: <span>" + startYear +  " - " +  endYear +  "</span></b>";
-            });
-          });
-        }*/
+            
+        // Ten instances of feature layers between 2010 - 2019
+        function tenLayers(definition) {
+          const year = definition.year;
+
+          return new FeatureLayer({
+            url: url + definition.id,
+            timeOffset: {
+              value: definition.offset,
+              unit: "years"
+            },
+            outFields: ["*"],
+            popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts in {Date}." 
+            }  // Display text in pop-up
+          });//FeatureLayer
+        }//tenLayer 
       
        //---------------Home Button---------------
         var myhome = new Home({
@@ -267,7 +238,7 @@ require([
       });//LayerList
            
         //---------------Legend---------------
-      
+      /*
         const mylegend = new Expand({
           content: new Legend({
             view: myview,
@@ -277,6 +248,19 @@ require([
           expanded: true,
         }); //Expand 
         myview.ui.add(mylegend, "bottom-left");
+      */
+      const layerInfos = allayers.webmap(function(layer, i) {
+          return {
+            title: "",
+            layer: layer
+          };
+        });
+        const mylegend = new Legend({
+          view: myview,
+          layerInfos: layerInfos
+        });
+        myview.ui.add(mylegend, "bottom-left");
+      
       
       // Units chart section
       const monthDiv = document.getElementById("monthDiv");
@@ -292,6 +276,7 @@ require([
         });
         myview.ui.add(chex, {position: "top-left", index:3 });
       
+      // create a bar chart to display sum of units for the given month and year.
       function newChart() {
           Chart.defaults.global.defaultFontFamily = '"Lato",sans-serif';
           Chart.defaults.global.defaultFontSize = 8;
