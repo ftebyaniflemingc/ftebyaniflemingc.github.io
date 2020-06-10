@@ -79,7 +79,7 @@ require([
         }//tenLayer 
       
        // How to get Layer view of ten layers while layers are loading
-        const TenLayersView = function getLayerViews() {
+        const layerViewsEachAlways = function getLayerViews() {
           //promise method to wait for a number of promises to either resolve or reject.
               return promiseUtils.eachAlways(
             allayers.map(function(layer) {
@@ -138,14 +138,11 @@ require([
           return promiseUtils.eachAlways(mylvResult.map(function(final) {
               //reject if there is any error in the result
                 if (final.error) {
-                return promiseUtils.resolve(final.error);
-              }
+                return promiseUtils.resolve(final.error);              }
               // The results of the Promise are returned in the value property
-              else {
-              const mylv = final.value;
-
+              else {            const mylv = final.value;
                 //  timeExtent will be loaded in the query object
-               
+             
                 var thestart = new Date(mytimeSlider.timeExtent.start);
                 var theend = new Date(mytimeSlider.timeExtent.end);
                 thestart.setFullYear(thestart.getFullYear() - mylv.layer.timeOffset.value);
@@ -164,6 +161,32 @@ require([
           );//return promiseUtils.tenYears(
         };//getQueryResults
 
+      function updateSumUnits(){
+     layerViewsEachAlways().then(function(mylvResult) {
+    // query each and every fire layerviews for stats and process the results
+    suq(mylvResult).then(function(suqResult){
+      // fire stats query results are back. Loop through them and process.
+      suqResult.map(function(result){
+        if (result.error) {
+          return promiseUtils.resolve(result.error);
+        }
+        // The results of the Promise are returned in the value property
+        else {
+          // if the stats query returned a year for the given layerview
+          // then process and update the chart
+          if (result.value.year !== null){
+            // extract the year and month from the date
+            let date = new Date(result.value.year);
+            let year = date.getFullYear();
+            // array of burnt acres sum returned in the query results
+            // for each layerview representing fires between 2014-2018
+            ctList.push(result.value.acres_sum.toFixed(2));
+            //chart labels will show the year and count of fires for that year
+            const label = year + ", " + result.value.CensusTract;
+            lblChart.push(label);
+          }}
+      });//functio(result)  
+      /*
       function updateSumUnits() {
           TenLayersView().then(function(mylvResult) {
           suq(mylvResult).then(function(suqResult) {
@@ -184,8 +207,19 @@ require([
                 const hLable = year + ", " + result.value.CensusTract;
                  lblChart.push(hLable);
                 
-              });//functio(result)
-        
+              });//functio(result)  
+              */
+      
+               mychart.data.datasets[0].data = ctList;
+               mychart.data.labels = lblChart;
+               mychart.update();
+              startMonth = mytimeSlider.timeExtent.start.toLocaleString("default", { month: "long" });
+              endMonth = mytimeSlider.timeExtent.end.toLocaleString("default", { month: "long" });
+              monthDiv.innerHTML = "<b> Month: <span>" + startMonth + " - " + endMonth + "</span></b>";
+                  });
+               });
+              }  
+                /*
               mychart.data.datasets[0].data = ctList;
               mychart.data.labels = lblChart;
               mychart.update();
@@ -194,7 +228,7 @@ require([
               YEAR.innerHTML = "<b> YEAR: <span>" + startYear +  " - " +  endYear +  "</span></b>";
             });
           });
-        }
+        }*/
       
        //---------------Home Button---------------
         var myhome = new Home({
@@ -290,63 +324,6 @@ require([
             }
            };
         }
-      /*
-     //---------------Time Slider--------------- 
-    const mytimeSlider = new TimeSlider({
-          container: "timeSlider",
-          mode: "time-window",
-          playRate: 100,  
-          view: myview
-        });//mytimeSlider
-        myview.ui.add(mytimeSlider, "manual");
-        
-      // wait till the layer view is loaded
-      let timeLayerView;  
-      myview.whenLayerView(layer).then(function(mylv) {
-          timeLayerView = mylv;
-
-          // starts time of the time slider from layer Year2010 first date: 2009/12/31
-            const thestart = layer.timeInfo.fullTimeExtent.start;       
-          //const thestart = new Date("12/31/2009, 7:00 PM");
-          // sets time slider's full extent to 2019/12/31 - until end date of layer's fullTimeExtent
-          mytimeSlider.fullTimeExtent = {
-            start: thestart,
-            end: layer.timeInfo.fullTimeExtent.end
-          };
-
-          // TimeSlider shows the sum of units in any census tract with one month interval
-          // when the app is loaded will show comulative units between 2010/01/01 - 2019/12/31
-          const theend = new Date(thestart);
-          
-         //var year = end.getFullYear();
-         //var month = end.getMonth();
-         //var day = end.getDate();
-         //var ny = new Date(year + 1, month, day);
-
-          // end of current time extent for time slider with one month interval
-          //theend.setYear(theend.getYear() + 1);
- 
-          // Values property show the first day in timeSlider
-          mytimeSlider.values = [thestart, theend];
-             // mytimeSlider.values = [thestart];
-              mytimeSlider.createStopsByInterval(
-              mytimeSlider.fullTimeExtent, {
-             value: 1,
-             unit: "years"
-              }
-              );//Interval
-              });//mylv
-
-      
-    // watch for time slider timeExtent change
-        mytimeSlider.watch("timeExtent", function() {
-        
-        // only show sum of units until the end of timeSlider's current date extent.
-        layer.definitionExpression = "Date <= " + mytimeSlider.timeExtent.theend.getDate();
-
-       });//watch
-         
      
-*/
- 
+     
 }); //require
