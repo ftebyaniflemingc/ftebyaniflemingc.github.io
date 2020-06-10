@@ -30,7 +30,7 @@ html, body{
   left: 50px;
   right: 50px;
   bottom: 20px;
-   position: absolute;
+   position: center;
 }
 #chTitle {
         height: 400px;
