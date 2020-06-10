@@ -97,7 +97,7 @@ require([
             container: "timeSlider",
             view: myview,
             fullTimeExtent: {
-              start: new Date(2019, 1, 1),
+              start: new Date(2009, 12, 31),
               end: new Date(2019, 12, 31)
             },
             playRate: 1000,
