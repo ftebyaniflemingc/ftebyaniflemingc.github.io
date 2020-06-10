@@ -32,6 +32,24 @@
     
 </head>
 <body>
+  <div id="loader" class="center"></div>
+  <!--- script source from https://www.geeksforgeeks.org/how-to-show-page-loading-div-until-the-page-has-finished-loading/ -->
+  <script>
+    document.onreadystatechange = function() {
+      if (document.readyState !== "complete") {
+        document.querySelector(
+          "body").style.visibilty = "hidden";
+        document.querySelector(
+          "loader").style.vdisplay = "visible";
+      } else {
+        document.querySelector(
+          "#loader").style.display = "none";
+        document.querySelector(
+          "body").style.visibility = "visible";
+      }
+    };
+  </script>
+  
   <div id="mapid" ></div>
       
   <div  id="titleId"> South Durham Region Housing Units From 2010 to 2019 </div>
