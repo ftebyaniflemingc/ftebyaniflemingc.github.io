@@ -144,8 +144,8 @@ require([
 
                 //  timeExtent will be loaded in the query object
                
-                var thestart = new Date(mrtimeSlider.timeExtent.start);
-                var theend = new Date(metimeSlider.timeExtent.end);
+                var thestart = new Date(mytimeSlider.timeExtent.start);
+                var theend = new Date(mytimeSlider.timeExtent.end);
                 thestart.setFullYear(thestart.getFullYear() - mylv.layer.timeOffset.value);
                 theend.setFullYear(theend.getFullYear() - mylv.layer.timeOffset.value);
 
