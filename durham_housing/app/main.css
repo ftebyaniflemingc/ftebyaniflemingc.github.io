@@ -61,4 +61,12 @@ html, body{
       text-align: center;
       font-size: 12px;
     }
-
+/* esri overrides */
+      .esri-widget {
+        border: 1px solid 4f4944;
+      }
+.esri-widget__heading {
+  color: $heading_color; // #323232;
+  font-weight: $font-weight__heading; // 600;
+  margin: 0 0 0.5rem 0;
+}
