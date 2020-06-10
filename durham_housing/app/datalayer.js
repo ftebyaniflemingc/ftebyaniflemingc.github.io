@@ -17,8 +17,8 @@ require([
       "dojo/domReady!"
         ], 
         function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
-                  TimeSlider, WatchUtils, PromiseUtils, PopupTemplate ){
-    let mytimeSlider;
+                  TimeSlider, watchUtils, promiseUtils, PopupTemplate ){
+    let mytimeSlider, myChart;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
       const mymap = new Map({
@@ -63,7 +63,7 @@ require([
        // How to get Layer view of ten layers while layers are loading
         const layerViewsEachAlways = function getLayerViews() {
           //promise method to wait for a number of promises to either resolve or reject.
-              return PromiseUtils.eachAlways(
+              return promiseUtils.eachAlways(
             allayers.map(function(layer) {
               return myview.whenLayerView(layer);
             })//function(layer)
@@ -100,26 +100,26 @@ require([
       
           //watchUtils will check for a property change and wait for layer view get updating and get the features
           myview.whenLayerView(allayers[0]).then(function(mylv) {
-          WatchUtils.whenFalseOnce(mylv, "updating", function() {updateSumUnits();
+          watchUtils.whenFalseOnce(mylv, "updating", function() {updateSumUnits();
           });
         });
       
         // Sum of Units query requirements
       
-        const sumOfUnits = {onStatisticField: "Shape__Area", outStatisticFieldName: "units_sum", statisticType: "sum"};
+        const sumOfUnits = {onStatisticField: "{Shape__Area}", outStatisticFieldName: "units_sum", statisticType: "sum"};
         const CensusTract = {onStatisticField: "{SumOfUnits}", outStatisticFieldName: "units_counts", statisticType: "count"};
-        const year = {onStatisticField: "Date", outStatisticFieldName: "year", statisticType: "max"};
+        const year = {onStatisticField: "{Date}", outStatisticFieldName: "year", statisticType: "max"};
         // my query
         const myq = {outStatistics: 
                      [sumOfUnits, CensusTract, year]
         };
 
       // Query setting using getQueryResults
-      const suq = function getQueryResults(mylvResult) {
-          return PromiseUtils.eachAlways(mylvResult.map(function(result) {
+      const suq = function getQueryResults(layerViewsResults) {
+          return promiseUtils.eachAlways(layerViewsResults.map(function(result) {
               //reject if there is any error in the result
                 if (result.error) {
-                return PromiseUtils.resolve(result.error);              
+                return promiseUtils.resolve(result.error);              
                 }
               // The results of the Promise are returned in the value property
               else {            
@@ -139,7 +139,7 @@ require([
                 return mylv.queryFeatures(myq).then(function(response) {
                     return response.features[0].attributes;
                 },
-                  function(e) {return PromiseUtils.resolve(e);
+                  function(e) {return promiseUtils.resolve(e);
                               }//resole method of promise
                 );//function(back)
               }//else
@@ -160,7 +160,7 @@ require([
           suqResult.map(function(result){
             
                 if (result.error) {
-          return PromiseUtils.resolve(result.error);
+          return promiseUtils.resolve(result.error);
         }
         // The results of the Promise are returned in the value property
         else {
