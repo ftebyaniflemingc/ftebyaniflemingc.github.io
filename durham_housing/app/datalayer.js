@@ -101,7 +101,7 @@ require([
               start: new Date(2009, 12, 31),
               end: new Date(2019, 12, 31)
             },
-            playRate: 1000,
+            playRate: 1500,
             stops: {
               interval: {
                 value: 1,
@@ -135,12 +135,13 @@ require([
 
       // Query setting using getQueryResults
       const suq = function getQueryResults(mylvResult) {
-          return promiseUtils.eachAlways(mylvResult.map(function(final) {
+          return promiseUtils.eachAlways(mylvResult.map(function(result) {
               //reject if there is any error in the result
-                if (final.error) {
-                return promiseUtils.resolve(final.error);              }
+                if (result.error) {
+                return promiseUtils.resolve(result.error);              }
               // The results of the Promise are returned in the value property
-              else {            const mylv = final.value;
+              else {            
+                    const mylv = result.value;
                 //  timeExtent will be loaded in the query object
              
                 var thestart = new Date(mytimeSlider.timeExtent.start);
@@ -152,9 +153,9 @@ require([
                   start: thestart,
                   end: theend};
                 // query feature from the layerviews 
-                return mylv.queryFeatures(myq).then(function(back) {
-                    return back.features[0].attributes;},
-                  function(next) {return promiseUtils.resolve(next);}//resole method of promise
+                return mylv.queryFeatures(myq).then(function(response) {
+                    return response.features[0].attributes;},
+                  function(e) {return promiseUtils.resolve(e);}//resolve method of promise
                 );//function(back)
               }//else
             })//function(final)
