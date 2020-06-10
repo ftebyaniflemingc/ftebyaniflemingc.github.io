@@ -110,20 +110,21 @@ require([
             }
           });//mytimeSlider
 
-       // watch for time slider timeExtent change
+       // watch for time slider timeExtent updating
         mytimeSlider.watch("timeExtent", function() {
           updateSumUnits();
           });
           newChart();
         });
       
-      
+          //watchUtils will check for a property change and wait for layer view get updating and get the features
           myview.whenLayerView(allayers[0]).then(function(mylv) {
           watchUtils.whenFalseOnce(mylv, "updating", function() {updateSumUnits();
           });
         });
       
         // Sum of Units query requirements
+      
         const sumOfUnits = {onStatisticField: "SumOfUnits", outStatisticFieldName: "units_sum", statisticType: "sum"};
         const CensusTract = {onStatisticField: "Census_Tract", outStatisticFieldName: "Census_counts", statisticType: "count"};
         const year = {onStatisticField: "Date", outStatisticFieldName: "year", statisticType: "max"};
@@ -190,7 +191,7 @@ require([
               mychart.update();
               startYear = mytimeSlider.timeExtent.thestart.toLocaleString("default",{year:"long"});
               endYear = mytimeSlider.timeExtent.theend.toLocaleString("default", {year:"long"});
-              YEARDiv.innerHTML = "<b> YEAR: <span>" + startYear +  " - " +  endYear +  "</span></b>";
+              YEAR.innerHTML = "<b> YEAR: <span>" + startYear +  " - " +  endYear +  "</span></b>";
             });
           });
         }
