@@ -300,7 +300,7 @@ require([
             data: {
                labels: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
               datasets: [{data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}]
-            },
+            },//data
             options: {responsive: false,legend: {position:"bottom"},
               title: {display: true,
                        text: " Units of houses in sought Durham Region built by Year"},
@@ -309,10 +309,10 @@ require([
                             callback: function(value) {if (value % 1 === 0) {return value;} }  },
                              gridLines: {zeroLineColor: '##858585',color: '#c2bebe' }}],
                      xAxes: [{gridLines: {zeroLineColor: '##858585',color: '#c2bebe' }}]
-              },
+              },//scales
               tooltips: {
                 callbacks: {
-                  title: function(tooltipItem, data) {return"Fire";},
+                  title: function(tooltipItem, data) {return"Units";},
                   label: function(tooltipItem, data) {
                     const unit_y = tooltipItem.xLabel.split(",");
                     let customTooltip = [];
@@ -320,13 +320,13 @@ require([
                     customTooltip.push("Units:" + unit_y[1]);
                     customTooltip.push("CencusTract:" + tooltipItem.yLabel);
                     return customTooltip;
-                  }
-                },//return
+                  }//lable
+                },//callback
                 displayColors: false
-              }
-            }
-          });
-        }
+              }//tooltips
+            }//mychart
+          //});
+        }//function
           
      
 }); //require
