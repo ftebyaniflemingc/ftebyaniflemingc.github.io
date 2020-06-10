@@ -27,10 +27,10 @@ html, body{
 }
 #timeSlider{
   width: 60%;
-  left: 50px;
+  left: 300px;
   right: 50px;
   bottom: 20px;
-   position: center;
+   position: absolute;
 }
 #chTitle {
         height: 400px;
