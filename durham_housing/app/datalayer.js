@@ -92,7 +92,7 @@ require([
           });//mytimeSlider
 
        // watch for time slider timeExtent updating
-        mytimeSlider.Watch("timeExtent", function() {
+        mytimeSlider.watch("timeExtent", function() {
           updateSumUnits();
           });
           newChart();
