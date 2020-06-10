@@ -101,7 +101,7 @@ require([
               start: new Date(2009, 12, 31),
               end: new Date(2019, 12, 31)
             },
-            playRate: 1500,
+            playRate: 1000,
             stops: {
               interval: {
                 value: 1,
@@ -135,13 +135,12 @@ require([
 
       // Query setting using getQueryResults
       const suq = function getQueryResults(mylvResult) {
-          return promiseUtils.eachAlways(mylvResult.map(function(result) {
+          return promiseUtils.eachAlways(mylvResult.map(function(final) {
               //reject if there is any error in the result
-                if (result.error) {
-                return promiseUtils.resolve(result.error);              }
+                if (final.error) {
+                return promiseUtils.resolve(final.error);              }
               // The results of the Promise are returned in the value property
-              else {            
-                    const mylv = result.value;
+              else {            const mylv = final.value;
                 //  timeExtent will be loaded in the query object
              
                 var thestart = new Date(mytimeSlider.timeExtent.start);
@@ -153,9 +152,9 @@ require([
                   start: thestart,
                   end: theend};
                 // query feature from the layerviews 
-                return mylv.queryFeatures(myq).then(function(response) {
-                    return response.features[0].attributes;},
-                  function(e) {return promiseUtils.resolve(e);}//resolve method of promise
+                return mylv.queryFeatures(myq).then(function(back) {
+                    return back.features[0].attributes;},
+                  function(next) {return promiseUtils.resolve(next);}//resole method of promise
                 );//function(back)
               }//else
             })//function(final)
@@ -186,7 +185,7 @@ require([
             let date = new Date(result.value.year);
             let year = date.getFullYear();
            // for each layerview representing units of houses between 2010-2019
-            ctList.push(result.value.acres_sum.toFixed(2));
+            ctList.push(result.value.units_sum.toFixed(2));
             //chart labels will show the year and count of units for that year
             const label = year + ", " + result.value.CensusTract;
             lblChart.push(label);
