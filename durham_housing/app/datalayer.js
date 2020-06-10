@@ -116,10 +116,10 @@ require([
 
       // Query setting using getQueryResults
       const suq = function getQueryResults(mylvResult) {
-          return promiseUtils.eachAlways(mylvResult.map(function(result) {
+          return PromiseUtils.eachAlways(mylvResult.map(function(result) {
               //reject if there is any error in the result
                 if (result.error) {
-                return promiseUtils.resolve(result.error);              
+                return PromiseUtils.resolve(result.error);              
                 }
               // The results of the Promise are returned in the value property
               else {            
@@ -139,7 +139,7 @@ require([
                 return mylv.queryFeatures(myq).then(function(response) {
                     return response.features[0].attributes;
                 },
-                  function(e) {return promiseUtils.resolve(e);
+                  function(e) {return PromiseUtils.resolve(e);
                               }//resole method of promise
                 );//function(back)
               }//else
@@ -160,7 +160,7 @@ require([
           suqResult.map(function(result){
             
                 if (result.error) {
-          return promiseUtils.resolve(result.error);
+          return PromiseUtils.resolve(result.error);
         }
         // The results of the Promise are returned in the value property
         else {
