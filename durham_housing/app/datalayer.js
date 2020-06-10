@@ -255,24 +255,24 @@ require([
            mychart.defaults.global.defaultFontFamily = '"Lato",sans-serif';
            mychart.defaults.global.defaultFontSize = 8;
            mychart.defaults.global.defaultFontColor = 'white';
-          let mychart = new Chart(chFrame).getContext('2d'), {
-            type: 'bar',
+           mychart = new Chart(chFrame).getContext('2d'), {
+            type: {"bar"},
             data: {
               labels: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
               datasets: [{data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}]
             },
             options: {responsive: false,legend: {position:'bottom'},
               title: {display: true,
-                text: " Units of houses in sought Durham Region built by Year"},
+                       text: " Units of houses in sought Durham Region built by Year"},
               scales: {
-                yAxes: [{  ticks: {beginAtZero: true,
-                      callback: function(value) {if (value % 1 === 0) {return value;} }  },
-                    gridLines: {zeroLineColor: '##858585',color: '#c2bebe' }}],
-                xAxes: [{gridLines: {zeroLineColor: '##858585',color: '#c2bebe' }}]
+                     yAxes: [{  ticks: {beginAtZero: true,
+                            callback: function(value) {if (value % 1 === 0) {return value;} }  },
+                             gridLines: {zeroLineColor: '##858585',color: '#c2bebe' }}],
+                     xAxes: [{gridLines: {zeroLineColor: '##858585',color: '#c2bebe' }}]
               },
               tooltips: {
-                callbacks: {
-                    label: function(tooltipItem, data) {
+                    callbacks: {
+                      label: function(tooltipItem, data) {
                   //x lables by year and the number of units
                           const unit_y = tooltipItem.xLabel.split(',');
                     let customTooltip = [];
