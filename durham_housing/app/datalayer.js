@@ -253,7 +253,7 @@ require([
       function newChart() {
             Chart.defaults.global.defaultFontFamily = '"Yanone Kaffesatz", sans-serif';
              Chart.defaults.global.defaultFontSize = 10;
-            Chart.defaults.global.defaultFontColor = #ecb6b6;
+            Chart.defaults.global.defaultFontColor = "white";
           mychart = new Chart(chFrame.getContext("2d"), {
             type: "line",
             data: {
