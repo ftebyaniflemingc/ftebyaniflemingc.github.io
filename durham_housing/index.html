@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Souht Durham Region Housin(2010-2019)</title>
+    <title>South Durham Region Housing (2010-2019)</title>
 <!--using Sass: many useful features such as variables, and functions -->    
     <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css"/>
     
@@ -56,20 +56,21 @@
     <div id="HomeButton"></div>
     <div id="layerList"></div>
     <div id="timeSlider"></div>
-    <div id="main">
-        <div id="titleText">
-           <nobr>Canada Mortgage and Housing Corporation (CMHC) &copy; <script src="app/copyright.js"></script></nobr>
-           <div id="logo">
-              <a href="https://www.cmhc-schl.gc.ca/en">
-              <img src="https://assets.cmhc-schl.gc.ca/sf/project/cmhc/home/csps_canadawordmark_blackred.png?rev=a8042423-97e6-487b-ade8-0b803c5b1ac1&h=58&w=240&la=en" alt="Canada" title>
-             </a>
-           </div>
-        </div>
-      </div>
+  
     <div id="chTitle" class="esri-widget"> 
       <div class="esri-widget__heading" > South Durham Region Housing Units 2010 to 2019 </div>
     <div id="monthDiv"></div>
       <br/> <canvas id="barchart" class="esri-widget" height="250" width="600"></canvas>
     </div>
+  <footer>
+    <div class="footer-bottom">
+      <span>Canada Mortgage and Housing Corporation (CMHC) &copy; <script src="app/copyright.js"></script></span>
+      <span id="Canada_logo">
+        <a href="https://www.cmhc-schl.gc.ca/en">
+          <img src="https://assets.cmhc-schl.gc.ca/sf/project/cmhc/home/csps_canadawordmark_blackred.png?rev=a8042423-97e6-487b-ade8-0b803c5b1ac1&h=58&w=240&la=en" alt="Canada" title>
+        </a>
+      </span>
+    </div>
+  </footer>
   </body>
 </html>
