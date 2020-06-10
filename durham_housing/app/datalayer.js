@@ -292,17 +292,16 @@ require([
         myview.ui.add(chex, {position: "top-left", index:3 });
       
       function newChart() {
-            
-          mychart.defaults.global.defaultFontFamily = '"Lato",sans-serif';
-          mychart.defaults.global.defaultFontSize = 8;
-          mychart.defaults.global.defaultFontColor = 'white';
-           mychart = new Chart(chFrame).getContext('2d'), {
+          Chart.defaults.global.defaultFontFamily = '"Lato",sans-serif';
+          Chart.defaults.global.defaultFontSize = 8;
+          Chart.defaults.global.defaultFontColor = 'white';
+          mychart = new Chart(chFrame).getContext("2d"), {
             type: "bar",
             data: {
-              labels: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
+               labels: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
               datasets: [{data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}]
             },
-            options: {responsive: false,legend: {position:'bottom'},
+            options: {responsive: false,legend: {position:"bottom"},
               title: {display: true,
                        text: " Units of houses in sought Durham Region built by Year"},
               scales: {
@@ -312,15 +311,13 @@ require([
                      xAxes: [{gridLines: {zeroLineColor: '##858585',color: '#c2bebe' }}]
               },
               tooltips: {
-                    callbacks: {
-                      title: function(tooltipItem, data) {return"Units";},
-                      label: function(tooltipItem, data) {
-                  //x lables by year and the number of units
-                          const unit_y = tooltipItem.xLabel.split(',');
+                callbacks: {
+                  title: function(tooltipItem, data) {return"Fire";},
+                  label: function(tooltipItem, data) {
+                    const unit_y = tooltipItem.xLabel.split(",");
                     let customTooltip = [];
-                    customTooltip.push('Year: ' + unit_y[0]);
-                    customTooltip.push('Units:' + unit_y[1]);
-                  //y lable by the census tracts
+                    customTooltip.push("Year: " + unit_y[0]);
+                    customTooltip.push("Units:" + unit_y[1]);
                     customTooltip.push("CencusTract:" + tooltipItem.yLabel);
                     return customTooltip;
                   }
@@ -328,8 +325,8 @@ require([
                 displayColors: false
               }
             }
-           };
+          });
         }
-     
+          
      
 }); //require
