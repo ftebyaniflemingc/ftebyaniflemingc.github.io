@@ -1,6 +1,6 @@
 //---------------esri rquirements ---------------
 require([
-      "esri/WebMap",
+      "esri/Map",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
       "esri/layers/Layer",
@@ -16,12 +16,12 @@ require([
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(WebMap, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
+        function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
                   TimeSlider, watchUtils, promiseUtils, PopupTemplate ){
     let mytimeSlider, mychart;
       //---------------FeatureLayers---------------
-   /// Creates a WebMap instance
-      const webmap = new WebMap({
+   /// Creates a Map instance
+      const mymap = new Map({
           basemap: {//basemap source: https://www.arcgis.com/home/item.html?id=3582b744bba84668b52a16b0b6942544
             portalItem: {
               id: "3582b744bba84668b52a16b0b6942544" 
@@ -29,9 +29,9 @@ require([
           }
         });
             
-      // Mapview, referencing WebMap instance
+      // Mapview, referencing Map instance
       const myview = new MapView({
-            map: webmap,    // The WebMap instance created above
+            map: mymap,    // The Map instance created above
             container: "mapid",
             center: [-78.871866,43.914656],
             zoom: 10
