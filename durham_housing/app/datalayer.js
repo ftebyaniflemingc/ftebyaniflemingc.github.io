@@ -295,7 +295,7 @@ require([
           Chart.defaults.global.defaultFontFamily = '"Lato",sans-serif';
           Chart.defaults.global.defaultFontSize = 8;
           Chart.defaults.global.defaultFontColor = 'white';
-          mychart = new Chart(chFrame).getContext("2d"), {
+          mychart = new Chart(chFrame.getContext("2d"), {
             type: "bar",
             data: {
                labels: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
@@ -324,8 +324,8 @@ require([
                 },//callback
                 displayColors: false
               }//tooltips
-            }//mychart
-          };
+            }//options
+          )};//mychart
         }//function
           
      
