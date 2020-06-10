@@ -251,10 +251,11 @@ require([
         myview.ui.add(chex, {position: "top-left", index:3 });
       
       function newChart() {
+            
            mychart.defaults.global.defaultFontFamily = '"Lato",sans-serif';
            mychart.defaults.global.defaultFontSize = 8;
            mychart.defaults.global.defaultFontColor = 'white';
-          mychart = new Chart(chFrame.getContext('2d'), {
+          let mychart = new Chart(chFrame).getContext('2d'), {
             type: 'bar',
             data: {
               labels: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
