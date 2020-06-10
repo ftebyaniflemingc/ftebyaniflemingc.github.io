@@ -125,8 +125,8 @@ require([
       
         // Sum of Units query requirements
       
-        const sumOfUnits = {onStatisticField: "SumOfUnits", outStatisticFieldName: "units_sum", statisticType: "sum"};
-        const CensusTract = {onStatisticField: "Census_Tract", outStatisticFieldName: "Census_counts", statisticType: "count"};
+        const sumOfUnits = {onStatisticField: "Shape__Area", outStatisticFieldName: "units_sum", statisticType: "sum"};
+        const CensusTract = {onStatisticField: "SumOfUnits", outStatisticFieldName: "Units_counts", statisticType: "count"};
         const year = {onStatisticField: "Date", outStatisticFieldName: "year", statisticType: "max"};
         // my query
         const myq = {outStatistics: 
@@ -186,7 +186,7 @@ require([
             let date = new Date(result.value.year);
             let year = date.getFullYear();
            // for each layerview representing units of houses between 2010-2019
-            ctList.push(result.value.Census_counts.toFixed(2));
+            ctList.push(result.value.units_sum.toFixed(2));
             //chart labels will show the year and count of units for that year
             const label = year + ", " + result.value.CensusTract;
             lblChart.push(label);
