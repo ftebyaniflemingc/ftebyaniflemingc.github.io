@@ -249,7 +249,7 @@ require([
         }); //Expand 
         myview.ui.add(mylegend, "bottom-left");
       */
-      const layerInfos = allayers.webmap(function(layer, i) {
+      const layerInfos = allayers.map(function(layer, i) {
           return {
             title: "",
             layer: layer
