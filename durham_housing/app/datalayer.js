@@ -17,7 +17,7 @@ require([
       "dojo/domReady!"
         ], 
         function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
-                  TimeSlider, watchUtils, promiseUtils, PopupTemplate ){
+                  TimeSlider, WatchUtils, PromiseUtils, PopupTemplate ){
     let mytimeSlider, mychart;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
@@ -157,7 +157,7 @@ require([
               let ctList = [];
               let lblChart = [];
           //sum of units query reslts
-          suqResult.mymap(function(result){
+          suqResult.map(function(result){
             
                 if (result.error) {
           return promiseUtils.resolve(result.error);
