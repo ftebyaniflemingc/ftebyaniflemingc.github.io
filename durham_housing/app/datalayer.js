@@ -41,16 +41,16 @@ require([
         const url =
           "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
         const definitions = [
-         {id: 9, title: "2010", visible: true, offset: 0},
-         {id: 8, title: "2011", visible: true, offset: 1},
-         {id: 7, title: "2012", visible: true, offset: 2},
-         {id: 6, title: "2013", visible: true, offset: 3},
-         {id: 5, title: "2014", visible: true, offset: 4},
-         {id: 4, title: "2015", visible: true, offset: 5},
-         {id: 3, title: "2016", visible: true, offset: 6},
-         {id: 2, title: "2017", visible: true, offset: 7},
-         {id: 1, title: "2018", visible: true, offset: 8},
-         {id: 0, title: "2019", visible: true, offset: 9}
+         {id: 9, title: 2010, visible: true, offset: 0},
+         {id: 8, title: 2011, visible: true, offset: 1},
+         {id: 7, title: 2012, visible: true, offset: 2},
+         {id: 6, title: 2013, visible: true, offset: 3},
+         {id: 5, title: 2014, visible: true, offset: 4},
+         {id: 4, title: 2015, visible: true, offset: 5},
+         {id: 3, title: 2016, visible: true, offset: 6},
+         {id: 2, title: 2017, visible: true, offset: 7},
+         {id: 1, title: 2018, visible: true, offset: 8},
+         {id: 0, title: 2019, visible: true, offset: 9}
           ];    
       
       const allayers = definitions.map(function(definition) {
@@ -179,9 +179,9 @@ require([
         }//else
       });//funct
       
-               mychart.data.datasets[0].data = ctList;
-               mychart.data.labels = lblChart;
-               mychart.update();
+               myChart.data.datasets[0].data = ctList;
+               myChart.data.labels = lblChart;
+               myChart.update();
               var startMonth = mytimeSlider.timeExtent.start.toLocaleString("default", { month: "long" });
               var endMonth = mytimeSlider.timeExtent.end.toLocaleString("default", { month: "long" });
               monthDiv.innerHTML = "<b> Month: <span>" + startMonth + " - " + endMonth + "</span></b>";
@@ -281,7 +281,7 @@ require([
           Chart.defaults.global.defaultFontFamily = '"Lato",sans-serif';
           Chart.defaults.global.defaultFontSize = 8;
           Chart.defaults.global.defaultFontColor = 'white';
-          mychart = new Chart(chFrame.getContext("2d"), {
+          myChart = new Chart(chFrame.getContext("2d"), {
             type: "bar",
             data: {
                labels: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
