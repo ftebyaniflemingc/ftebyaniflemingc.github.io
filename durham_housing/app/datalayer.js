@@ -325,7 +325,7 @@ require([
                 displayColors: false
               }//tooltips
             }//options
-          )};//mychart
+          });//mychart
         }//function
           
      
