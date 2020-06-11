@@ -145,16 +145,14 @@ require([
               color: "orange",
               outline: null
             },
-            visualVariables: [
-              {
+            visualVariables: [{
                 type: "size",
                 field: "SumOfUnits",
                 stops: [
                   {value: 1, size: "5px" },
                   {value: 25, Size: "15" },
                   {value: 50, size: "35" }
-                ]
-              },
+                ]},
               {
                 type: "color",
                 field: "Start_Year",
@@ -171,13 +169,12 @@ require([
                       {value: "2019", color: "#C53C06", label: "2019"}
                 ]
               }
-            ]
-          },
+            ]},
                      popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
                   content: "<p>has  {infilling2016_csv_SumOfUnits} housing starts in {Date}.</p>"
                   }  // Display text in pop-up 
-            ]
+           
           }
         });
                     
