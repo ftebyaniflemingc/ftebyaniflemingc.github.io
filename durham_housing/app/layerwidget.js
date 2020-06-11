@@ -10,15 +10,13 @@ require([
       "esri/widgets/Legend",
       "esri/widgets/Expand",
       "esri/widgets/TimeSlider",
-      "esri/core/watchUtils",
-      "esri/core/promiseUtils",
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
         function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
-                  TimeSlider, watchUtils, promiseUtils, PopupTemplate ){
-    let mytimeSlider, myChart;
+                  TimeSlider,  PopupTemplate ){
+    
       //---------------FeatureLayers---------------
    /// Creates a Map instance
       const mymap = new Map({
@@ -43,26 +41,96 @@ require([
           //    "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
       
       const definitions = [
-         {id: 9, title: 2010, visible: true, offset: 0, 
+         {id: 9, title: 2010, visible: true, 
+          timeInfo: {
+            startField: "Date", // name of the date field
+            interval: {unit: "years",value: 1}}, 
          popupTemplate: {       
                   title: "The census boundary: {infilling2010_csv_Census_Tract}",
                   content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
                   }  // Display text in pop-up 
          },
-         {id: 8, title: 2011, visible: true, offset: 1,
+         {id: 8, title: 2011, visible: true, 
+          timeInfo: {
+            startField: "Date", // name of the date field
+            interval: {unit: "years",value: 1}},
           popupTemplate: {       
                   title: "The census boundary: {infilling2011_csv_Census_Tract}",
                   content: "<p>has  {infilling2011_csv_SumOfUnits} housing starts in {Date}.</p>"
                   }  // Display text in pop-up 
          },
-         {id: 7, title: 2012, visible: true, offset: 2},
-         {id: 6, title: 2013, visible: true, offset: 3},
-         {id: 5, title: 2014, visible: true, offset: 4},
-         {id: 4, title: 2015, visible: true, offset: 5},
-         {id: 3, title: 2016, visible: true, offset: 6},
-         {id: 2, title: 2017, visible: true, offset: 7},
-         {id: 1, title: 2018, visible: true, offset: 8},
-         {id: 0, title: 2019, visible: true, offset: 9}
+         {id: 7, title: 2012, visible: true, 
+          timeInfo: {
+            startField: "Date", // name of the date field
+            interval: {unit: "years",value: 1}},  
+          popupTemplate: {       
+                  title: "The census boundary: {CensusBoundary2016_CT}",
+                  content: "<p>has  {infilling2012_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }  // Display text in pop-up 
+         },
+         {id: 6, title: 2013, visible: true, 
+          timeInfo: {
+            startField: "Date", // name of the date field
+            interval: {unit: "years",value: 1}},
+         popupTemplate: {       
+                  title: "The census boundary: {CensusBoundary2016_CT}",
+                  content: "<p>has  {infilling2013_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }  // Display text in pop-up 
+         },
+         {id: 5, title: 2014, visible: true, 
+          timeInfo: {
+            startField: "Date", // name of the date field
+            interval: {unit: "years",value: 1}},
+         popupTemplate: {       
+                  title: "The census boundary: {CensusBoundary2016_CT}",
+                  content: "<p>has  {infilling2014_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }  // Display text in pop-up 
+         },
+         {id: 4, title: 2015, visible: true, 
+          timeInfo: {
+            startField: "Date", // name of the date field
+            interval: {unit: "years",value: 1}},
+         popupTemplate: {       
+                  title: "The census boundary: {CensusBoundary2016_CT}",
+                  content: "<p>has  {infilling2015_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }  // Display text in pop-up 
+         },
+         {id: 3, title: 2016, visible: true, 
+          timeInfo: {
+            startField: "Date", // name of the date field
+            interval: {unit: "years",value: 1}},
+         popupTemplate: {       
+                  title: "The census boundary: {CensusBoundary2016_CT}",
+                  content: "<p>has  {infilling2016_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }  // Display text in pop-up 
+         },
+         {id: 2, title: 2017, visible: true, 
+          timeInfo: {
+            startField: "Date", // name of the date field
+            interval: {unit: "years",value: 1}},
+         popupTemplate: {       
+                  title: "The census boundary: {CensusBoundary2016_CT}",
+                  content: "<p>has  {infilling2017_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }  // Display text in pop-up 
+         },
+         {id: 1, title: 2018, visible: true, 
+          timeInfo: {
+            startField: "Date", // name of the date field
+            interval: {unit: "years",value: 1}},
+         popupTemplate: {       
+                  title: "The census boundary: {CensusBoundary2016_CT}",
+                  content: "<p>has  {infilling2018_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }  // Display text in pop-up 
+         },
+         {id: 0, title: 2019, visible: true, 
+          timeInfo: {
+            startField: "Date", // name of the date field
+            interval: {unit: "years",value: 1}},
+         popupTemplate: {       
+                  title: "The census boundary: {CensusBoundary2016_CT}",
+                  content: "<p>has  {infilling2019_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }  // Display text in pop-up 
+         }
           ];    
       
       const allayers = definitions.map(function(definition) {
