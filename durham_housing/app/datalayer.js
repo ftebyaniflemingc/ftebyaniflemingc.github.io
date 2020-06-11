@@ -160,7 +160,7 @@ require([
           suqResult.map(function(result){
             
                if (result.error) {
-          return PromiseUtils.resolve(result.error);
+          return promiseUtils.resolve(result.error);
         }
         // The results of the Promise are returned in the value property
         else {
