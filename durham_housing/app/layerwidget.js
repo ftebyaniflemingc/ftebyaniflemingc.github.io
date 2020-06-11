@@ -29,7 +29,7 @@ require([
       
       
    // create ten new instances of feature layers based on the following definitions
-        const allayers = new FeatureLayer({
+        var allayers = new FeatureLayer({
               portalItem: { 
                     id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a" 
             },
@@ -129,10 +129,8 @@ require([
           ]    
       });
       //const allayers = definitions.map(function(definition) {
-          
-        
       // add the california fire layers
-        mymap.add(allayers);
+        mymap.addMany(allayers);
     mymap.reorder(allayers);
     
       // Mapview, referencing Map instance
