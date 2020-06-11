@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="https://js.arcgis.com/4.15/"></script>
      
-    <link rel="stylesheet" href="app/main.css">  
+    <link rel="stylesheet" href="app/style.css">  
       <!--
     <script>
       var locationPath = location.pathname.replace(/\/[^\/]+$/, "");
@@ -39,6 +39,11 @@
     <div id="HomeButton"></div>
     <div id="layerList"></div>
     <div id="timeSlider"></div>
+  <div id="infoDiv" class="esri-widget">
+      <div><b>USGS Earthquakes</b></div>
+      <br />
+      <div id="statsDiv" class="esri-widget"></div>
+    </div>
  <!-- 
     <div id="chTitle" > 
       <div class="esri-widget__heading" > South Durham Region Housing Units 2010 to 2019 </div>
