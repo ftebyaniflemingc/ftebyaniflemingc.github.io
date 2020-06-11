@@ -126,7 +126,7 @@ require([
                   content: "<p>has  {infilling2019_csv_SumOfUnits} housing starts in {Date}.</p>"
                   }  // Display text in pop-up 
          }
-          ];    
+          ]    
       });
       //const allayers = definitions.map(function(definition) {
           
