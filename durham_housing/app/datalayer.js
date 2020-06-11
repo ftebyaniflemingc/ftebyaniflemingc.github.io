@@ -204,7 +204,7 @@ require([
             outFields: ["*"],
             popupTemplate: {        // Enable a popup
                   title: "$feature[CensusBoundary2016_CTNAME]",       // Show attribute value
-                  content: "The census boundary has+ + $feature[infilling2019_csv_SumOfUnits] + "housing starts in {Date}." 
+                  content: "The census boundary has", $feature["infilling2019_csv_SumOfUnits"], " housing starts in ", {"Date"}, "." 
             }  // Display text in pop-up
           });//FeatureLayer
         }//tenLayer 
