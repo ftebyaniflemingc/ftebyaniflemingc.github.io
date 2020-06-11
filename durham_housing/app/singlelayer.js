@@ -21,9 +21,8 @@ require([
    /// Creates a Map instance
      
     const mymap = new Map({
-     //     basemap: {//basemap source: https://www.arcgis.com/home/item.html?id=3582b744bba84668b52a16b0b6942544
-         //   portalItem: { id: "3582b744bba84668b52a16b0b6942544"  }    }
-           basemap: "dark-gray"
+         basemap: {//basemap source: https://www.arcgis.com/home/item.html?id=3582b744bba84668b52a16b0b6942544
+            portalItem: { id: "3582b744bba84668b52a16b0b6942544"  }    }
           
         });  
    // create ten new instances of feature layers based on the following definitions
@@ -131,7 +130,7 @@ require([
       timeInfo: {
             startField: "{Date}", // name of the date field
             interval: {unit: "months",value: 3}}, 
-        
+        /*
           renderer: {
             type: "simple",
             field: "SumOfUnits",
@@ -164,7 +163,7 @@ require([
                       {value: "2019", color: "#C53C06", label: "2019"}
                 ]
               }
-            ]},
+            ]}, */
                      popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
                   content: "<p>has  {infilling2016_csv_SumOfUnits} housing starts in {Date}.</p>"
