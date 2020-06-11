@@ -43,8 +43,18 @@ require([
           //    "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
       
       const definitions = [
-         {id: 9, title: 2010, visible: true, offset: 0},
-         {id: 8, title: 2011, visible: true, offset: 1},
+         {id: 9, title: 2010, visible: true, offset: 0, 
+         popupTemplate: {       
+                  title: "The census boundary: {infilling2010_csv_Census_Tract}",
+                  content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }  // Display text in pop-up 
+         },
+         {id: 8, title: 2011, visible: true, offset: 1,
+          popupTemplate: {       
+                  title: "The census boundary: {infilling2011_csv_Census_Tract}",
+                  content: "<p>has  {infilling2011_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }  // Display text in pop-up 
+         },
          {id: 7, title: 2012, visible: true, offset: 2},
          {id: 6, title: 2013, visible: true, offset: 3},
          {id: 5, title: 2014, visible: true, offset: 4},
@@ -203,10 +213,10 @@ require([
               unit: "years"
             },
             outFields: ["*"],
-            popupTemplate: {       
+           /* popupTemplate: {       
                   title: "The census boundary: {infilling2010_csv_Census_Tract}",
                   content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  }  // Display text in pop-up 
+                  }  // Display text in pop-up */
               //    content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts in {Date} ." 
             
           });//FeatureLayer
