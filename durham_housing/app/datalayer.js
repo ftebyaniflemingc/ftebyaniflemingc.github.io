@@ -42,8 +42,18 @@ require([
           "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
           //    "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
         const definitions = [
-         {id: 9, title: 2010, visible: true, offset: 0},
-         {id: 8, title: 2011, visible: true, offset: 1},
+         {id: 9, title: 2010, visible: true, offset: 0,
+         popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2010_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2010_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            }
+         },
+         {id: 8, title: 2011, visible: true, offset: 1,
+         popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2011_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2011_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            }
+         },
          {id: 7, title: 2012, visible: true, offset: 2},
          {id: 6, title: 2013, visible: true, offset: 3},
          {id: 5, title: 2014, visible: true, offset: 4},
@@ -202,14 +212,14 @@ require([
               unit: "years"
             },
             outFields: ["*"],
-            popupTemplate: {        // Enable a popup
+          /*  popupTemplate: {        // Enable a popup
                   title: [{type: "fields", fieldInfos: 
                            [{fieldName: "CensusBoundary2016_CTNAME", visible: true}]
                          }],
                           
                                                         //"{CTNAME}",       Show attribute value
                   content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts in {Date} ." 
-            }  // Display text in pop-up
+            }  // Display text in pop-up */
           });//FeatureLayer
         }//tenLayer 
       
