@@ -36,6 +36,7 @@ html, body {
         height: 400px;
         padding: 10px;
         width: 800px;
+        bottom: 250px;
          }
 #chTitle span {
         color: #ff642e;
