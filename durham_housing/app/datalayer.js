@@ -213,6 +213,10 @@ require([
               unit: "years"
             },
             outFields: ["*"],
+                 popupTemplate: {       
+                  title: "The census boundary: $feature{Census_Tract}",
+                  content: "<p>has  $feature{SumOfUnits} housing starts in {Date}.</p>"
+                  }  // Display text in pop-up 
            /* popupTemplate: {       
                   title: "The census boundary: {infilling2010_csv_Census_Tract}",
                   content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
