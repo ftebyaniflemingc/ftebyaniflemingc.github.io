@@ -206,7 +206,7 @@ require([
 
           allayers.queryFeatures(statQuery).then(function(result) {
               let htmls = [];
-              statsDiv.innerHTML = "";
+              monthDiv.innerHTML = "";
               if (result.error) {
                 return result.error;
               } else {
@@ -226,17 +226,15 @@ require([
                     ".<br/>";
 
                   if (htmls[0] == undefined) {
-                    statsDiv.innerHTML = yearHtml;
+                    monthDiv.innerHTML = yearHtml;
                   } else {
-                    statsDiv.innerHTML =
+                    monthDiv.innerHTML =
                       yearHtml + htmls[0] + htmls[1] + htmls[2] + htmls[3];
                   }
                 }
               }
             })
-            .catch(function(error) {
-              console.log(error);
-            });
+            //.catch(function(error) {console.log(error); });
         });
 
        const sumOfUnits = {onStatisticField: "Shape__Area", outStatisticFieldName: "units_sum", statisticType: "sum"};
