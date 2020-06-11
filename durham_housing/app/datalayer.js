@@ -204,14 +204,8 @@ require([
             },
             outFields: ["*"],
             popupTemplate: {        // Enable a popup
-                  title: [{type: "fields", fieldInfos: 
-                           [{fieldName: "CensusBoundary2016_CTNAME", visible: true}]
-                         }]
-                      },
-                  content:{
-                          [{type: "fields", fieldInfos: 
-                           [{fieldName: "SumOfUnits", visible: true}]
-                         }]
+                  title: "{Census_Tract}",
+                  content:{" {SumOfUnits}, {Date}"
                     }
                                                         //"{CTNAME}",       Show attribute value
               //    content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts in {Date} ." 
