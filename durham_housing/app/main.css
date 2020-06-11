@@ -28,6 +28,12 @@ html, body {
   left: 30px;
 }
 
+.appHeader .subHeaderTitle {
+  color: #CFCFCF;
+  font-size: small;
+  padding-left: 20px;
+}
+
 .appHeader .headerLogo,
 .appHeader .headerTitle {
   float: left;
