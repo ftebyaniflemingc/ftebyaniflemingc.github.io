@@ -31,10 +31,10 @@ require([
    // create ten new instances of feature layers based on the following definitions
         var allayers = new FeatureLayer({
               portalItem: { 
-                    id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a",
+                    id: "082b0c62b9694a1d9a473e39e1816479",
             
         //url:  "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/",
-        
+    /*    
       sublayers:[
          {id: 9, title: 2010, visible: true, 
           timeInfo: {
@@ -127,11 +127,62 @@ require([
                   }  // Display text in pop-up 
          }]    
          },
-      });
+      }); */
       //const allayers = definitions.map(function(definition) {
       // add the california fire layers
-        mymap.add(allayers);
-    mymap.reorder(allayers); 
+        
+                      title: "South Durham Houses Built During 2010 to 2019",
+          // set the CSVLayer's timeInfo based on the date field
+      timeInfo: {
+            startField: "{Date}", // name of the date field
+            interval: {unit: "months",value: 3}}, 
+        
+          renderer: {
+            type: "simple",
+            field: "SumOfUnits",
+            symbol: {
+              type: "simple-marker",
+              color: "orange",
+              outline: null
+            },
+            visualVariables: [
+              {
+                type: "size",
+                field: "SumOfUnits",
+                stops: [
+                  {value: 1, size: "5px" },
+                  {value: 25, Size: "15" },
+                  {value: 50, size: "35" }
+                ]
+              },
+              {
+                type: "color",
+                field: "Start_Year",
+                stops: [
+                  {value: "2010", color: "#F9C653", label: "2010"},
+                  {value: "2011", color: "#F8864D", label: "2011"},
+                  {value: "2012", color: "#C53C06", label: "2012"},
+                  {value: "2013", color: "#C53C06", label: "2013"},
+                      {value: "2014", color: "#C53C06", label: "2014"},
+                      {value: "2015", color: "#C53C06", label: "2015"},
+                      {value: "2016", color: "#C53C06", label: "2016"},
+                      {value: "2017", color: "#C53C06", label: "2017"},
+                      {value: "2018", color: "#C53C06", label: "2018"},
+                      {value: "2019", color: "#C53C06", label: "2019"}
+                ]
+              }
+            ]
+          },
+                     popupTemplate: {       
+                  title: "The census boundary: {CensusBoundary2016_CT}",
+                  content: "<p>has  {infilling2016_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }  // Display text in pop-up 
+            ]
+          }
+        });
+                    
+                    mymap.add(allayers);
+    
       
       // Mapview, referencing Map instance
       const myview = new MapView({
@@ -238,8 +289,8 @@ require([
             //.catch(function(error) {console.log(error); });
         });
 
-       const sumOfUnits = {onStatisticField: "Shape__Area", outStatisticFieldName: "units_sum", statisticType: "sum"};
-        const censusTract = {onStatisticField: "OBJECTID", outStatisticFieldName: "units_counts", statisticType: "count"};
+       const sumOfUnits = {onStatisticField: "SumOfUnits", outStatisticFieldName: "units_sum", statisticType: "sum"};
+        const censusTract = {onStatisticField: "CT", outStatisticFieldName: "units_counts", statisticType: "count"};
         const year = {onStatisticField: "Date", outStatisticFieldName: "year", statisticType: "max"};
         // my query
       //  const myq = {outStatistics: [sumOfUnits, censusTract, year]
