@@ -16,7 +16,7 @@ require([
         ], 
         function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
                   TimeSlider,  PopupTemplate ){
-    
+    let layerview;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
       const mymap = new Map({
@@ -36,10 +36,10 @@ require([
       }); //mapview
       
    // create ten new instances of feature layers based on the following definitions
-        const url =
-          "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
+        const allayers = new FeatureLayer({
+        url:  "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
           //    "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
-      
+        });
       const definitions = [
          {id: 9, title: 2010, visible: true, 
           timeInfo: {
