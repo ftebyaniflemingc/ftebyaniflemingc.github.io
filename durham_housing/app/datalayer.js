@@ -166,16 +166,16 @@ require([
         else {
           // if the stats query returned a year for the given layerview
           // then process and update the chart
-          if (result.value.year !== null){
+          //if (result.value.year !== null){
             // extract the year and month from the date
             let date = new Date(result.value.year);
             let year = date.getFullYear();
            // for each layerview representing units of houses between 2010-2019
-            //ctList.push(result.value.units_sum.toFixed(2));
+            ctList.push(result.value.units_sum.toFixed(2));
             //chart labels will show the year and count of units for that year
             const label = year + ", " + result.value.CensusTract;
             lblChart.push(label);
-          }//if
+          //}//if
         }//else
       });//funct
       
