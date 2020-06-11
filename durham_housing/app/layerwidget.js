@@ -126,7 +126,7 @@ require([
       
       //const allayers = definitions.map(function(definition) {
           
-        });
+        
       // add the california fire layers
   //      mymap.addMany(allayers);
     //  mymap.reorder(allayers);
