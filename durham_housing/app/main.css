@@ -7,10 +7,6 @@ html, body {
   color: #656565;
 }
 
-div {
-  display: block;
-}
-
 /* App Header */
 .appHeader {
   background: url("https://www.cmhc-schl.gc.ca/Content/project/cmhc/img/logo/CMHC_WordMark_EN.svg") repeat-x scroll left top #transparent;
