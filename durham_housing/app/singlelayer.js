@@ -20,11 +20,8 @@ require([
       //---------------FeatureLayers---------------
    /// Creates a Map instance
       const mymap = new Map({
-          basemap: {//basemap source: https://www.arcgis.com/home/item.html?id=3582b744bba84668b52a16b0b6942544
-            portalItem: {
-              id: "3582b744bba84668b52a16b0b6942544"
-            }
-          }
+     //     basemap: {//basemap source: https://www.arcgis.com/home/item.html?id=3582b744bba84668b52a16b0b6942544
+         //   portalItem: { id: "3582b744bba84668b52a16b0b6942544"  }    }
         });
       
      
