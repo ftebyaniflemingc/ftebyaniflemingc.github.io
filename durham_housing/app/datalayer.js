@@ -159,7 +159,7 @@ require([
           //sum of units query reslts
           suqResult.map(function(result){
             
-                if (result.error) {
+                /*if (result.error) {
           return PromiseUtils.resolve(result.error);
         }
         // The results of the Promise are returned in the value property
@@ -167,7 +167,7 @@ require([
           // if the stats query returned a year for the given layerview
           // then process and update the chart
           //if (result.value.year !== null){
-            // extract the year and month from the date
+            // extract the year and month from the date*/
             let date = new Date(result.value.year);
             let year = date.getFullYear();
            // for each layerview representing units of houses between 2010-2019
@@ -176,7 +176,7 @@ require([
             const label = year + ", " + result.value.CensusTract;
             lblChart.push(label);
           //}//if
-        }//else
+        //}//else
       });//funct
       
                myChart.data.datasets[0].data = ctList;
