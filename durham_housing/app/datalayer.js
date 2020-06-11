@@ -203,7 +203,8 @@ require([
             },
             outFields: ["*"],
             popupTemplate: {        // Enable a popup
-                  title: "{CTNAME}",       // Show attribute value
+                  title: [{type: "fields", fieldInfos: [{fieldName: "CTNAME", visible: true}], 
+                                                        //"{CTNAME}",       // Show attribute value
                   content: "The census boundary has {SumOfUnits} housing starts in {Date} ." 
             }  // Display text in pop-up
           });//FeatureLayer
