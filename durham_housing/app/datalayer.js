@@ -204,7 +204,8 @@ require([
             outFields: ["*"],
             popupTemplate: {        // Enable a popup
                   title: [{type: "fields", fieldInfos: 
-                           [{fieldName: "CTNAME", visible: true}],
+                           [{fieldName: "CTNAME", visible: true}]
+                         }],
                           
                                                         //"{CTNAME}",       Show attribute value
                   content: "The census boundary has {SumOfUnits} housing starts in {Date} ." 
