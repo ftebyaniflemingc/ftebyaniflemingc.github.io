@@ -1,17 +1,37 @@
-    
-    #mapid {
-        padding: 0;
-        margin: 0;
-        height: 100%;
-        width: 100%;
-      }
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
 
-      #timeSlider {
-        position: absolute;
-        left: 100px;
-        right: 100px;
-        bottom: 30px;
-      }
+/* Sets the order of the flexible */
+#mapid {
+  height: 100%;
+  width: 100%;
+  flex: 1 1 auto;
+  order: 1;
+}
+
+#titleId { 
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  font-size: 26px;
+  font-weight: normal;
+  font-family: "Arial Unicode MS";
+  position: absolute;
+  top: 10px;
+  width: 50%;
+  left: 25%;
+  text-align: center;   
+}
+#timeSlider{
+  width: 60%;
+  left: 3750px;
+  right: 350px;
+  bottom: 20px;
+   position: absolute;
+}
 
 #infoDiv {
         height: 200px;
