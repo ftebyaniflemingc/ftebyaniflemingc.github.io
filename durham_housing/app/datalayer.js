@@ -205,7 +205,7 @@ require([
             outFields: ["*"],
             popupTemplate: {       
                   title: "{Census_Tract}",
-                  content:{" {SumOfUnits}, {Date}"
+                  content:"{SumOfUnits}, {Date}"
                   }  // Display text in pop-up 
               //    content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts in {Date} ." 
             
