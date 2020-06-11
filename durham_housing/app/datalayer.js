@@ -203,8 +203,8 @@ require([
             },
             outFields: ["*"],
             popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts in {Date} ." 
+                  title: "{CTNAME}",       // Show attribute value
+                  content: "The census boundary has {SumOfUnits} housing starts in {Date} ." 
             }  // Display text in pop-up
           });//FeatureLayer
         }//tenLayer 
