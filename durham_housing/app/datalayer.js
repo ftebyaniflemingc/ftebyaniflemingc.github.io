@@ -195,9 +195,15 @@ require([
                myChart.data.datasets[0].data = ctList;
                myChart.data.labels = lblChart;
                myChart.update();
+             var startYear = mytimeSlider.timeExtent.start.toLocaleString("default", { year: "long" });
+             var endYear = mytimeSlider.timeExtent.end.toLocaleString("default", { year: "long" });
+              monthDiv.innerHTML = "<b> Year: <span>" + startYear + " - " + endYear + "</span></b>";
+          
+          /* 
               var startMonth = mytimeSlider.timeExtent.start.toLocaleString("default", { month: "long" });
-             var endMonth = mytimeSlider.timeExtent.end.toLocaleString("default", { month: "long" });
+              var endMonth = mytimeSlider.timeExtent.end.toLocaleString("default", { month: "long" });
               monthDiv.innerHTML = "<b> Month: <span>" + startMonth + " - " + endMonth + "</span></b>";
+              */
                   });
                });
               }  
