@@ -16,7 +16,7 @@ require([
         ], 
         function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
                   TimeSlider,  PopupTemplate ){
-    let layerview;
+    let layerView;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
       const mymap = new Map({
@@ -206,7 +206,7 @@ require([
 
           allayers.queryFeatures(statQuery).then(function(result) {
               let htmls = [];
-              monthDiv.innerHTML = "";
+              statsDiv.innerHTML = "";
               if (result.error) {
                 return result.error;
               } else {
@@ -226,9 +226,9 @@ require([
                     ".<br/>";
 
                   if (htmls[0] == undefined) {
-                    monthDiv.innerHTML = yearHtml;
+                    statsDiv.innerHTML = yearHtml;
                   } else {
-                    monthDiv.innerHTML =
+                    statsDiv.innerHTML =
                       yearHtml + htmls[0] + htmls[1] + htmls[2] + htmls[3];
                   }
                 }
