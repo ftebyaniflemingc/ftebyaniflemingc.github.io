@@ -31,8 +31,8 @@ require([
    // create ten new instances of feature layers based on the following definitions
         var allayers = new FeatureLayer({
               portalItem: { 
-                    id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a" 
-            },
+                    id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a",
+            
         //url:  "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/",
         
       sublayers:[
@@ -125,8 +125,8 @@ require([
                   title: "The census boundary: {CensusBoundary2016_CT}",
                   content: "<p>has  {infilling2019_csv_SumOfUnits} housing starts in {Date}.</p>"
                   }  // Display text in pop-up 
-         }
-          ]    
+         }]    
+         },
       });
       //const allayers = definitions.map(function(definition) {
       // add the california fire layers
