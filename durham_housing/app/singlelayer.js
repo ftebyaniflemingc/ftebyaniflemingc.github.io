@@ -121,7 +121,7 @@ require([
                   }  // Display text in pop-up 
          }]    
          },
-      }); */
+      }); 
       //const allayers = definitions.map(function(definition) {
       // add the california fire layers
         
@@ -130,7 +130,7 @@ require([
       timeInfo: {
             startField: "{Date}", // name of the date field
             interval: {unit: "months",value: 3}}, 
-        /*
+        
           renderer: {
             type: "simple",
             field: "SumOfUnits",
@@ -163,13 +163,13 @@ require([
                       {value: "2019", color: "#C53C06", label: "2019"}
                 ]
               }
-            ]}, */
+            ]}, 
                      popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
                   content: "<p>has  {infilling2016_csv_SumOfUnits} housing starts in {Date}.</p>"
                   }  // Display text in pop-up 
            
-          //}
+          //}*/
         });
                     
                     mymap.add(allayers);
