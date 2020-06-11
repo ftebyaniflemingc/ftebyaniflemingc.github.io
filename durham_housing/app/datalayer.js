@@ -39,8 +39,8 @@ require([
       
    // create ten new instances of feature layers based on the following definitions
         const url =
-          //"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
-              "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
+          "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
+          //    "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
         const definitions = [
          {id: 9, title: 2010, visible: true, offset: 0},
          {id: 8, title: 2011, visible: true, offset: 1},
@@ -203,8 +203,8 @@ require([
             },
             outFields: ["*"],
             popupTemplate: {        // Enable a popup
-                  title: "$feature[CensusBoundary2016_CTNAME]",       // Show attribute value
-                  content: "The census boundary has", $feature["infilling2019_csv_SumOfUnits"], " housing starts in ", {"Date"}, "." 
+                  title: {CensusBoundary2016_CTNAME},       // Show attribute value
+                  content: "The census boundary has" , {"infilling2019_csv_SumOfUnits"}, " housing starts in ", {"Date"}, "." 
             }  // Display text in pop-up
           });//FeatureLayer
         }//tenLayer 
