@@ -27,7 +27,7 @@ require([
           }
         });
       
-      
+      /*
    // create ten new instances of feature layers based on the following definitions
         var allayers = new FeatureLayer({
               portalItem: { 
@@ -131,8 +131,143 @@ require([
       //const allayers = definitions.map(function(definition) {
       // add the california fire layers
         mymap.addMany(allayers);
-    mymap.reorder(allayers);
+    mymap.reorder(allayers); */
     
+      
+  var allayers = new FeatureLayer({ 
+         portalItem: { // autocasts as new PortalItem()
+                    id: "a9e79e4ea2a047d5b4f38a2b7d3de689",
+                 // id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a",
+      //url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
+           
+               sublayers:[
+         {id: 9, title: "Year2010",  visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2010_csv_Census_Tract > 0)",
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2010_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            interval: {  // set time interval to one month
+              unit: "months",
+              value: 1
+            }}},
+         {id: 8, title: "Year2011",  visible: true, 
+          definitionExpression: "(CensusBoundary2011_CT> 0) AND (infilling2011_csv_Census_Tract > 0)",
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2011_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2011_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            interval: { 
+              unit: "months",
+              value: 1
+            }}},
+         {id: 7, title: "Year2012",  visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2012_csv_Census_Tract > 0)",
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2012_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            interval: {
+              unit: "months",
+              value: 1
+            }}},
+         {id: 6, title: "Year2013",  visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2013_csv_Census_Tract > 0)",
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary20166CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2013_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            interval: {
+              unit: "months",
+              value: 1
+            }}},
+         {id: 5, title: "Year2014",  visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2014_csv_Census_Tract > 0)",
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2014_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2014_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            interval: {
+              unit: "months",
+              value: 1
+            }}},
+         {id: 4, title: "Year2015",  visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2015_csv_Census_Tract > 0)",
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary20166CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2015_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            interval: {
+              unit: "months",
+              value: 1
+            }}},
+         {id: 3, title: "Year2016", visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2016_csv_Census_Tract > 0)",
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            interval: {
+              unit: "months",
+              value: 1
+            }}},
+         {id: 2, title: "Year2017", visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2017_csv_Census_Tract > 0)",
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2017_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            interval: {
+               unit: "months",
+              value: 1
+            }}},
+           
+         {id: 1, title: "Year2018", visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2018_csv_Census_Tract > 0)",
+             popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2018_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            interval: {
+              unit: "months",
+              value: 1
+            }}},
+         {id: 0, title: "Year2019", visible: true, 
+         definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2019_csv_Census_Tract > 0)",         
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display text in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            interval: {
+              unit: "months",
+              value: 1
+           }}}
+         ]}    
+                 
+  }); //FeatureLayer
+mymap.add(allayers);
+      mymap.reorder(allayers);
+      
       // Mapview, referencing Map instance
       const myview = new MapView({
             map: mymap,    // The Map instance created above
@@ -147,11 +282,11 @@ require([
         // data falls within time range
         const timeSlider = new TimeSlider({
           container: "timeSlider",
-          playRate: 50,
+          playRate: 1000,
           stops: {
             interval: {
               value: 1,
-              unit: "hours"
+              unit: "years"
             }
           }
         });
@@ -161,10 +296,10 @@ require([
         myview.whenLayerView(allayers).then(function(lv) {
           layerView = lv;
 
-          // start time of the time slider - 5/25/2019
+          // start time of the time slider - 2009/12/31
           const start = new Date(2009, 12, 31);
-          // set time slider's full extent to
-          // 5/25/5019 - until end date of layer's fullTimeExtent
+          // set time slider's full extent to 2019/12/31
+          // - until end date of layer's fullTimeExtent
           timeSlider.fullTimeExtent = {
             start: start,
             end: allayers.timeInfo.fullTimeExtent.end
