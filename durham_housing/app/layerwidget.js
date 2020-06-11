@@ -27,22 +27,15 @@ require([
           }
         });
       
-      // Mapview, referencing Map instance
-      const myview = new MapView({
-            map: mymap,    // The Map instance created above
-            container: "mapid",
-            center: [-78.871866,43.914656],
-            zoom: 10
-      }); //mapview
-
+      
    // create ten new instances of feature layers based on the following definitions
         const allayers = new FeatureLayer({
               portalItem: { 
                     id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a" 
-            }
+            },
         //url:  "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/",
-        });
-      const definitions = [
+        
+      sublayers:[
          {id: 9, title: 2010, visible: true, 
           timeInfo: {
             startField: "Date", // name of the date field
@@ -134,7 +127,7 @@ require([
                   }  // Display text in pop-up 
          }
           ];    
-      
+      });
       //const allayers = definitions.map(function(definition) {
           
         
@@ -142,6 +135,14 @@ require([
         mymap.add(allayers);
     mymap.reorder(allayers);
     
+      // Mapview, referencing Map instance
+      const myview = new MapView({
+            map: mymap,    // The Map instance created above
+            container: "mapid",
+            center: [-78.871866,43.914656],
+            zoom: 10
+      }); //mapview
+
        // create a new time slider widget
         // set other properties when the layer view is loaded
         // by default timeSlider.mode is "time-window" - shows
