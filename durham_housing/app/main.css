@@ -73,7 +73,6 @@ html, body {
 }
 //.esri-ui-corner .esri-component.esri-widget--panel { width: 120px; }
  .esri-legend__service {
-    width: 120px;
     padding: 0;
     padding-top: 4px;
     }
