@@ -289,7 +289,7 @@ require([
             }, "Layer");
   
             // Add widget to screen
-            myview.ui.add(layerList, {position: "top-right", index:3});
+            myview.ui.add(layerList, {position: "top-right", index:2});
       });//LayerList
      
 
@@ -304,18 +304,18 @@ require([
           }),
           expanded: false
         });
-        myview.ui.add(legendExpand, "top-left");
+        myview.ui.add(legendExpand, {position: "top-left", index:3 });
 
         const statsDiv = document.getElementById("statsDiv");
         const infoDiv = document.getElementById("infoDiv");
         const infoDivExpand = new Expand({
           collapsedIconClass: "esri-icon-collapse",
           expandIconClass: "esri-icon-expand",
-          expandTooltip: "Expand earthquakes info",
+          expandTooltip: "Expand Houses Built info",
           view: myview,
           content: infoDiv,
           expanded: true
         });
-        myview.ui.add(infoDivExpand, "top-right");
+        myview.ui.add(infoDivExpand, {position: "top-left", index:1 });
      
 }); //require
