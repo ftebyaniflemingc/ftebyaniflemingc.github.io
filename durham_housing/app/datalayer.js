@@ -106,9 +106,9 @@ require([
       
         // Sum of Units query requirements
       
-        const sumOfUnits = {onStatisticField: "{Shape__Area}", outStatisticFieldName: "units_sum", statisticType: "sum"};
-        const censusTract = {onStatisticField: "{SumOfUnits}", outStatisticFieldName: "units_counts", statisticType: "count"};
-        const year = {onStatisticField: "{Date}", outStatisticFieldName: "year", statisticType: "max"};
+        const sumOfUnits = {onStatisticField: "Shape__Area", outStatisticFieldName: "units_sum", statisticType: "sum"};
+        const censusTract = {onStatisticField: "SumOfUnits", outStatisticFieldName: "units_counts", statisticType: "count"};
+        const year = {onStatisticField: "Date", outStatisticFieldName: "year", statisticType: "max"};
         // my query
         const myq = {outStatistics: 
                      [sumOfUnits, censusTract, year]
