@@ -30,10 +30,7 @@ require([
      
    // create ten new instances of feature layers based on the following definitions
         var allayers = new FeatureLayer({
-              portalItem: { 
-                    id: "082b0c62b9694a1d9a473e39e1816479",
-            
-        //url:  "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/",
+                url:  "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/WebLayer2/FeatureServer/",
     /*    
       sublayers:[
          {id: 9, title: 2010, visible: true, 
@@ -131,7 +128,7 @@ require([
       //const allayers = definitions.map(function(definition) {
       // add the california fire layers
         
-                      title: "South Durham Houses Built During 2010 to 2019",
+       title: "South Durham Houses Built During 2010 to 2019",
           // set the CSVLayer's timeInfo based on the date field
       timeInfo: {
             startField: "{Date}", // name of the date field
