@@ -26,6 +26,15 @@ require([
             }
           }
         });
+      
+      // Mapview, referencing Map instance
+      const myview = new MapView({
+            map: mymap,    // The Map instance created above
+            container: "mapid",
+            center: [-78.871866,43.914656],
+            zoom: 10
+      }); //mapview
+
    // create ten new instances of feature layers based on the following definitions
         const allayers = new FeatureLayer({
               portalItem: { 
@@ -133,15 +142,6 @@ require([
         mymap.add(allayers);
     mymap.reorder(allayers);
     
-// Mapview, referencing Map instance
-      const myview = new MapView({
-            map: mymap,    // The Map instance created above
-            container: "mapid",
-            center: [-78.871866,43.914656],
-            zoom: 10
-      }); //mapview
-  
-      
        // create a new time slider widget
         // set other properties when the layer view is loaded
         // by default timeSlider.mode is "time-window" - shows
