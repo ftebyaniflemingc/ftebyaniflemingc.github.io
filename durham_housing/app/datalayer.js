@@ -203,12 +203,12 @@ require([
               unit: "years"
             },
             outFields: ["*"],
-            popupTemplate: {        // Enable a popup
+            popupTemplate: {       
                   title: "{Census_Tract}",
                   content:{" {SumOfUnits}, {Date}"
-                    
+                  }  // Display text in pop-up 
               //    content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts in {Date} ." 
-            }  // Display text in pop-up */
+            
           });//FeatureLayer
         }//tenLayer 
       
