@@ -20,6 +20,12 @@ require([
       //---------------FeatureLayers---------------
    /// Creates a Map instance
      
+    const mymap = new Map({
+     //     basemap: {//basemap source: https://www.arcgis.com/home/item.html?id=3582b744bba84668b52a16b0b6942544
+         //   portalItem: { id: "3582b744bba84668b52a16b0b6942544"  }    }
+           basemap: "dark-gray"
+          
+        });  
    // create ten new instances of feature layers based on the following definitions
         var allayers = new FeatureLayer({
                 url:  "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/WebLayer2/FeatureServer/",
@@ -168,18 +174,14 @@ require([
         });
                     
                     mymap.add(allayers);
-     const mymap = new Map({
-     //     basemap: {//basemap source: https://www.arcgis.com/home/item.html?id=3582b744bba84668b52a16b0b6942544
-         //   portalItem: { id: "3582b744bba84668b52a16b0b6942544"  }    }
-           basemap: "dark-gray",
-          layers: [allayers]
-        });
+     
       
       // Mapview, referencing Map instance
       const myview = new MapView({
             map: mymap,    // The Map instance created above
             container: "mapid",
             center: [-78.871866,43.914656],
+            layers: [allayers],
             zoom: 10
       }); //mapview
 
