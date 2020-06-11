@@ -22,7 +22,7 @@ require([
       const mymap = new WebMap({
           basemap: {//basemap source: https://www.arcgis.com/home/item.html?id=3582b744bba84668b52a16b0b6942544
             portalItem: {
-              id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a"
+              id: "3582b744bba84668b52a16b0b6942544"
             }
           }
         });
