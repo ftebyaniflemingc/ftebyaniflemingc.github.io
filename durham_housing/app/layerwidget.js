@@ -136,7 +136,7 @@ require([
       
   var allayers = new FeatureLayer({ 
          portalItem: { // autocasts as new PortalItem()
-                    id: "a9e79e4ea2a047d5b4f38a2b7d3de689",
+                    id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a",
                  // id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a",
       //url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
            
