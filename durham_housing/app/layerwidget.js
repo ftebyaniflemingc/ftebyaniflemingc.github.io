@@ -202,11 +202,9 @@ require([
 
           // run statistics on earthquakes fall within the current time extent
           const statQuery = layerView.effect.filter.createQuery();
-         statQuery.outStatistics = [sumOfUnits, censusTract, year, myq];
+         statQuery.outStatistics = [sumOfUnits, censusTract, year];
 
-          allayers
-            .queryFeatures(statQuery)
-            .then(function(result) {
+          allayers.queryFeatures(statQuery).then(function(result) {
               let htmls = [];
               statsDiv.innerHTML = "";
               if (result.error) {
@@ -217,20 +215,13 @@ require([
                   for (name in statsFields) {
                     if (attributes[name] && attributes[name] != null) {
                       const html =
-                        "<br/>" +
-                        statsFields[name] +
-                        ": <b><span> " +
-                        attributes[name].toFixed(2) +
-                        "</span></b>";
+                        "<br/>" + statsFields[name] + ": <b><span> " + attributes[name].toFixed(2) +  "</span></b>";
                       htmls.push(html);
                     }
                   }
                   var yearHtml =
-                    "<span>" +
-                    result.features[0].attributes["units_sum"] +
-                    "</span> houses were built between " +
-                    timeSlider.timeExtent.start.toLocaleDateString() +
-                    " - " +
+                    "<span>" + result.features[0].attributes["units_sum"] +  "</span> houses were built between " +
+                    timeSlider.timeExtent.start.toLocaleDateString() +   " - " +
                     timeSlider.timeExtent.end.toLocaleDateString() +
                     ".<br/>";
 
