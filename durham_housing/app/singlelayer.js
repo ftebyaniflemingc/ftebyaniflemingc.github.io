@@ -172,7 +172,7 @@ require([
                   content: "<p>has  {infilling2016_csv_SumOfUnits} housing starts in {Date}.</p>"
                   }  // Display text in pop-up 
            
-          }
+          //}
         });
                     
                     mymap.add(allayers);
