@@ -204,7 +204,7 @@ webmap.add(layer);
         const mylegend = new Expand({
           content: new Legend({
             view: myview,
-            style: 'classic' // other styles include 'classic'
+            style: 'card' // other styles include 'classic'
           }),
           view: myview,
           expanded: true,
