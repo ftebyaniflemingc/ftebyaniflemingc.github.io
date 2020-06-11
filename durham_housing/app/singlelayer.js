@@ -6,7 +6,7 @@ require([
       "esri/layers/Layer",
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen",
-      "esri/widgets/LayerList",
+      //"esri/widgets/LayerList",
       "esri/widgets/Legend",
       "esri/widgets/Expand",
       "esri/widgets/TimeSlider",
@@ -14,7 +14,7 @@ require([
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(WebMap, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
+        function(WebMap, MapView, FeatureLayer, Layer, Home, Fullscreen, Legend, Expand, 
                   TimeSlider,  PopupTemplate ){
     let layerView;
       //---------------FeatureLayers---------------
@@ -329,7 +329,7 @@ require([
          }, "Fullscreen");
         myview.ui.add(myfulls, {position: "top-left", index:2 });
                 
-      
+      /*
       //-------------------Layer List-------------------------------
       myview.when(function() {
             var layerList = new LayerList({
@@ -340,7 +340,7 @@ require([
             // Add widget to screen
             myview.ui.add(layerList, {position: "top-right", index:2});
       });//LayerList
-     
+*/     
 
         // add a legend for the earthquakes layer
         const legendExpand = new Expand({
