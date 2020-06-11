@@ -203,9 +203,11 @@ require([
             },
             outFields: ["*"],
             popupTemplate: {        // Enable a popup
-                  title: [{type: "fields", fieldInfos: [{fieldName: "CTNAME", visible: true}]}, 
-                                                        //"{CTNAME}",       // Show attribute value
-                  content: "The census boundary has {SumOfUnits} housing starts in {Date} ." 
+                  title: [{type: "fields", fieldInfos: 
+                           [{fieldName: "CTNAME", visible: true}]
+                          },//Title 
+                                                        //"{CTNAME}",       Show attribute value
+                 // content: "The census boundary has {SumOfUnits} housing starts in {Date} ." 
             }  // Display text in pop-up
           });//FeatureLayer
         }//tenLayer 
