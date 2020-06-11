@@ -39,7 +39,7 @@ require([
          {id: 9, title: 2010, visible: true, 
           timeInfo: {
             startField: "Date", // name of the date field
-            interval: {unit: "years",value: 1}}, 
+            interval: {unit: "months",value: 3}}, 
          popupTemplate: {       
                   title: "The census boundary: {infilling2010_csv_Census_Tract}",
                   content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
@@ -48,7 +48,7 @@ require([
          {id: 8, title: 2011, visible: true, 
           timeInfo: {
             startField: "Date", // name of the date field
-            interval: {unit: "years",value: 1}},
+            interval: {unit: "months",value: 3}}, 
           popupTemplate: {       
                   title: "The census boundary: {infilling2011_csv_Census_Tract}",
                   content: "<p>has  {infilling2011_csv_SumOfUnits} housing starts in {Date}.</p>"
@@ -57,7 +57,7 @@ require([
          {id: 7, title: 2012, visible: true, 
           timeInfo: {
             startField: "Date", // name of the date field
-            interval: {unit: "years",value: 1}},  
+            interval: {unit: "months",value: 3}}, 
           popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
                   content: "<p>has  {infilling2012_csv_SumOfUnits} housing starts in {Date}.</p>"
@@ -66,7 +66,7 @@ require([
          {id: 6, title: 2013, visible: true, 
           timeInfo: {
             startField: "Date", // name of the date field
-            interval: {unit: "years",value: 1}},
+            interval: {unit: "months",value: 3}}, 
          popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
                   content: "<p>has  {infilling2013_csv_SumOfUnits} housing starts in {Date}.</p>"
@@ -75,7 +75,7 @@ require([
          {id: 5, title: 2014, visible: true, 
           timeInfo: {
             startField: "Date", // name of the date field
-            interval: {unit: "years",value: 1}},
+            interval: {unit: "months",value: 3}}, 
          popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
                   content: "<p>has  {infilling2014_csv_SumOfUnits} housing starts in {Date}.</p>"
@@ -84,7 +84,7 @@ require([
          {id: 4, title: 2015, visible: true, 
           timeInfo: {
             startField: "Date", // name of the date field
-            interval: {unit: "years",value: 1}},
+           interval: {unit: "months",value: 3}}, 
          popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
                   content: "<p>has  {infilling2015_csv_SumOfUnits} housing starts in {Date}.</p>"
@@ -93,7 +93,7 @@ require([
          {id: 3, title: 2016, visible: true, 
           timeInfo: {
             startField: "Date", // name of the date field
-            interval: {unit: "years",value: 1}},
+            interval: {unit: "months",value: 3}}, 
          popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
                   content: "<p>has  {infilling2016_csv_SumOfUnits} housing starts in {Date}.</p>"
@@ -102,7 +102,7 @@ require([
          {id: 2, title: 2017, visible: true, 
           timeInfo: {
             startField: "Date", // name of the date field
-            interval: {unit: "years",value: 1}},
+            interval: {unit: "months",value: 3}}, 
          popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
                   content: "<p>has  {infilling2017_csv_SumOfUnits} housing starts in {Date}.</p>"
@@ -111,7 +111,7 @@ require([
          {id: 1, title: 2018, visible: true, 
           timeInfo: {
             startField: "Date", // name of the date field
-            interval: {unit: "years",value: 1}},
+            interval: {unit: "months",value: 3}}, 
          popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
                   content: "<p>has  {infilling2018_csv_SumOfUnits} housing starts in {Date}.</p>"
@@ -120,7 +120,7 @@ require([
          {id: 0, title: 2019, visible: true, 
           timeInfo: {
             startField: "Date", // name of the date field
-            interval: {unit: "years",value: 1}},
+            interval: {unit: "months",value: 3}}, 
          popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
                   content: "<p>has  {infilling2019_csv_SumOfUnits} housing starts in {Date}.</p>"
