@@ -130,7 +130,7 @@ require([
       });
       //const allayers = definitions.map(function(definition) {
       // add the california fire layers
-        mymap.addMany(allayers);
+        mymap.add(allayers);
     mymap.reorder(allayers); 
       
       // Mapview, referencing Map instance
