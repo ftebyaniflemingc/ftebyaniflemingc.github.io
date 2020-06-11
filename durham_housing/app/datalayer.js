@@ -204,8 +204,8 @@ require([
             },
             outFields: ["*"],
             popupTemplate: {       
-                  title: "{CensusBoundary2016_CMANAME}",
-                  content:"{infilling2010_csv_SumOfUnits }, {Date}"
+                  title: "{CensusBoundary2016_CT}",
+                  content:"{infilling2010_csv_SumOfUnits}, {Date}"
                   }  // Display text in pop-up 
               //    content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts in {Date} ." 
             
