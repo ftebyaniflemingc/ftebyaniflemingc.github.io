@@ -38,7 +38,7 @@ require([
       sublayers:[
          {id: 9, title: 2010, visible: true, 
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {unit: "months",value: 3}}, 
          popupTemplate: {       
                   title: "The census boundary: {infilling2010_csv_Census_Tract}",
@@ -47,7 +47,7 @@ require([
          },
          {id: 8, title: 2011, visible: true, 
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {unit: "months",value: 3}}, 
           popupTemplate: {       
                   title: "The census boundary: {infilling2011_csv_Census_Tract}",
@@ -56,7 +56,7 @@ require([
          },
          {id: 7, title: 2012, visible: true, 
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {unit: "months",value: 3}}, 
           popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
@@ -65,7 +65,7 @@ require([
          },
          {id: 6, title: 2013, visible: true, 
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {unit: "months",value: 3}}, 
          popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
@@ -74,7 +74,7 @@ require([
          },
          {id: 5, title: 2014, visible: true, 
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {unit: "months",value: 3}}, 
          popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
@@ -83,7 +83,7 @@ require([
          },
          {id: 4, title: 2015, visible: true, 
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
            interval: {unit: "months",value: 3}}, 
          popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
@@ -92,7 +92,7 @@ require([
          },
          {id: 3, title: 2016, visible: true, 
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {unit: "months",value: 3}}, 
          popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
@@ -101,7 +101,7 @@ require([
          },
          {id: 2, title: 2017, visible: true, 
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {unit: "months",value: 3}}, 
          popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
@@ -110,7 +110,7 @@ require([
          },
          {id: 1, title: 2018, visible: true, 
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {unit: "months",value: 3}}, 
          popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
@@ -119,7 +119,7 @@ require([
          },
          {id: 0, title: 2019, visible: true, 
           timeInfo: {
-            startField: "Date", // name of the date field
+            startField: "{Date}", // name of the date field
             interval: {unit: "months",value: 3}}, 
          popupTemplate: {       
                   title: "The census boundary: {CensusBoundary2016_CT}",
