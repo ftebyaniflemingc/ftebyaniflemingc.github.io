@@ -271,6 +271,27 @@ require([
           year: "Year"
           
         };
+      
+       //---------------FullScreen Button---------------
+      
+       var myfulls = new Fullscreen({
+           view: myview,
+            visible: true //show the button
+         }, "Fullscreen");
+        myview.ui.add(myfulls, {position: "top-left", index:2 });
+                
+      
+      //-------------------Layer List-------------------------------
+      myview.when(function() {
+            var layerList = new LayerList({
+                  view: myview,
+                  visible: true // show the button
+            }, "Layer");
+  
+            // Add widget to screen
+            myview.ui.add(layerList, {position: "top-right", index:3});
+      });//LayerList
+     
 
         // add a legend for the earthquakes layer
         const legendExpand = new Expand({
