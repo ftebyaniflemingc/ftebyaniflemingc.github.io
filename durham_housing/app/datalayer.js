@@ -41,10 +41,11 @@ require([
         const url =
           "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
           //    "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
-        const definitions = [
+      
+      const definitions = [
          {id: 9, title: 2010, visible: true, offset: 0,
          popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2010_CTNAME}",       // Show attribute value
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
                   content: "The census boundary has {infilling2010_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
             }
          },
