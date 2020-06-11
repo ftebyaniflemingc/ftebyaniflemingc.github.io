@@ -184,7 +184,7 @@ require([
                myChart.data.labels = lblChart;
                myChart.update();
               var startMonth = mytimeSlider.timeExtent.start.toLocaleString("default", { month: "long" });
-              var endMonth = mytimeSlider.timeExtent.end.toLocaleString("default", { month: "long" });
+             var endMonth = mytimeSlider.timeExtent.end.toLocaleString("default", { month: "long" });
               monthDiv.innerHTML = "<b> Month: <span>" + startMonth + " - " + endMonth + "</span></b>";
                   });
                });
