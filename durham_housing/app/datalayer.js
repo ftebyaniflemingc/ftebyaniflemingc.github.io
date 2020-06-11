@@ -204,8 +204,8 @@ require([
             },
             outFields: ["*"],
             popupTemplate: {       
-                  title: "The census boundary: {CT}",
-                  content: "<p>has  {SumOfUnits} housing starts in {Date}.</p>"
+                  title: "The census boundary: {infilling2010_csv_Census_Tract}",
+                  content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
                   }  // Display text in pop-up 
               //    content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts in {Date} ." 
             
