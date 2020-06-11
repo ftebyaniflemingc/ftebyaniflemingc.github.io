@@ -3,6 +3,38 @@ html, body {
   margin: 0;
   height: 100%;
   width: 100%;
+  font-family: 'Roboto', Calibri, sans-serif;
+  color: #656565;
+}
+
+div {
+  display: block;
+}
+
+/* App Header */
+.appHeader {
+  background: url("https://www.cmhc-schl.gc.ca/Content/project/cmhc/img/logo/CMHC_WordMark_EN.svg") repeat-x scroll left top #transparent;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.appHeader .headerLogo {
+  height: calc(100% - 10px);
+  left: 15px;
+}
+
+.appHeader .headerTitle {
+  color: #656565;
+  font-size: 16pt;
+  font-weight: bold;
+  left: 30px;
+}
+
+.appHeader .headerLogo,
+.appHeader .headerTitle {
+  float: left;
 }
 
 /* Sets the order of the flexible */
