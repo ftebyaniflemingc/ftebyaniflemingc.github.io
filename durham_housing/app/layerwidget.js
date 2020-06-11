@@ -128,8 +128,8 @@ require([
           
         
       // add the california fire layers
-  //      mymap.addMany(allayers);
-    //  mymap.reorder(allayers);
+        mymap.addMany(allayers);
+    mymap.reorder(allayers);
     
 // Mapview, referencing Map instance
       const myview = new MapView({
