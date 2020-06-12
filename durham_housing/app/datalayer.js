@@ -187,6 +187,7 @@ require([
       mymap.add(layer10);
       mymap.layers.addMany([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
 
+      
       // add the california fire layers
         //mymap.layers.add(layer);
       //mymap.reorder(layer);
@@ -200,6 +201,10 @@ require([
             zoom: 10
       }); //mapview 
       
+
+myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then ( function ( lv ) {
+ 
+layerView = lv;
       
        //---------------Home Button---------------
         var myhome = new Home({
@@ -256,10 +261,13 @@ require([
           }
         });
         myview.ui.add(timeSlider, "bottom-right");
+      
+      let timeLayerView;
+
 
         // wait till the layer view is loaded
         myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
-          layerView = lv;
+          timeLayerView = lv;
 
           // start time of the time slider - 5/25/2019
           const thestart = new Date(2010, 1, 1);
@@ -301,7 +309,7 @@ require([
             excludedEffect: "grayscale(20%) opacity(12%)"
           };
         });
-
+});
       
       /*
       const timeSlider = new TimeSlider ({
