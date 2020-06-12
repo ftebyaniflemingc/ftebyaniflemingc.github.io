@@ -129,7 +129,7 @@ require([
       });       
        
         // add the california fire layers
-        mymap.add(layer);
+        mymap.addMany(layer);
       mymap.reorder(layer);
          
 // Mapview, referencing WebMap instance
