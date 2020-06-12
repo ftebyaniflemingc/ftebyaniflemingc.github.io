@@ -286,7 +286,7 @@ require([
 
           // Values property is set so that timeslider widget show the first day. We are setting the thumbs positions.
           timeSlider.values = [thestart, theend];
-        });
+        
 
         // watch for time slider timeExtent change
         timeSlider.watch("timeExtent", function() {
@@ -294,7 +294,7 @@ require([
           // timeSlider's current time extent.
           [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].definitionExpression =
             "Date <= " + timeSlider.timeExtent.end.getTime();
-
+});
           // now gray out earthquakes that happened before the time slider's current
           // timeExtent... leaving footprint of earthquakes that already happened
          // layerView.effect = {
