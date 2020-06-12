@@ -311,11 +311,11 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
 */
       const timeSlider = new TimeSlider({
           container: "timeSlider",
-          playRate: 50,
+          playRate: 1500,
           stops: {
             interval: {
-              value: 1,
-              unit: "hours"
+              value: 3,
+              unit: "month"
             }
           }
         });
