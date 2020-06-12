@@ -220,10 +220,10 @@ require([
           mode: "time-window",
           view: myview
         });
-        myview.ui.add(timeSlider, "manual");
+        myview.ui.add(timeSlider, "bottom-right");
 
         // add the UI for titles, stats and chart.
-        myview.ui.add("titleDiv", "top-right");
+        //myview.ui.add("titleDiv", "bottom-right");
 
         myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10]).then(function(lv) {
           const fullTimeExtent = [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].timeInfo.fullTimeExtent;
