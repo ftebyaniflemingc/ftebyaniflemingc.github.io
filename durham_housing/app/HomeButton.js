@@ -185,37 +185,43 @@ webmap.add(layer);
       
      //---------------Time Slider--------------- 
       
-      
-    const timeSlider = new TimeSlider({
-          container: "timeSlider",
-          mode: "time-window",
-          playRate: 1000,  
-          view: myview
-        });//mytimeSlider
-        myview.ui.add(timeSlider, "manual");
-        
-      // wait till the layer view is loaded
-      let timeLayerView;  
-      myview.whenLayerView(layer).then(function(mylv) {
-          timeLayerView = mylv;
+      const timeSlider = new TimeSlider ({
+   container : "timeSlider" ,
+   mode : "instant" ,
+   view : myview
+});
+myview.ui.add (timeSlider, "manual" );
 
-          // starts time of the time slider from layer Year2010 first date: 2009/12/31
-           const thestart = layer.timeInfo.fullTimeExtent.start;       
-          //const thestart = new Date("12/31/2009, 7:00 PM");
-          // sets time slider's full extent to 2019/12/31 - until end date of layer's fullTimeExtent
-          timeSlider.fullTimeExtent = {
-            start: thestart,
-            end: layer.timeInfo.fullTimeExtent.end
-          };
+let timeLayerView;
 
-  const start = fullTimeExtent.start;
-  // set up time slider properties based on layer timeInfo
-  timeSlider.fullTimeExtent = fullTimeExtent;
-  timeSlider.values = [start];
+myview.whenLayerView (layer) .then ( function ( lv ) {
+  timeLayerView = lv;
+
+  timeSlider.fullTimeExtent = layer.timeInfo.fullTimeExtent;
   timeSlider.stops = {
-    interval: layer.timeInfo.interval
+    interval : {
+       value : 1 ,
+       unit : "years"
+    },
+    timeExtent : {
+       start : layer.timeInfo.fullTimeExtent.start, // 1579564800000, 
+      end: layer.timeInfo.fullTimeExtent.end // 1584403200000
+    }
+  }
+
+
+});
+
+view.ui.add (timeSlider, "manual" );
+
+timeSlider.watch ( "timeExtent" , function ( value ) {
+   // update layer view filter to reflect current timeExtent
+  timeLayerView.filter = {
+    timeExtent : value
   };
-});//function(mylv)
+});
+
+      
    /*
 
       const timeSlider = new TimeSlider({
