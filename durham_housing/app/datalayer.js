@@ -144,7 +144,7 @@ require([
       mymap.reorder(layer);
 // Mapview, referencing WebMap instance
       var myview = new MapView({
-            map: webmap,    // The WebMap instance created above
+            map: mymap,    // The WebMap instance created above
             layer: [layer],
             container: "mapid",
             center: [-78.871866,43.914656],
