@@ -38,7 +38,10 @@ require([
                   },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }
+            interval: {        
+              unit: "days",
+              value: 1
+            }}
         });
       mymap.add(layer1);
         var layer2 = new FeatureLayer({ 
@@ -50,7 +53,10 @@ require([
                   },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }
+            interval: {        
+              unit: "days",
+              value: 1
+            }}
         });
       mymap.add(layer2);
         var layer3 = new FeatureLayer({ 
@@ -62,7 +68,10 @@ require([
                   },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }
+            interval: {        
+              unit: "days",
+              value: 1
+            }}
         });
       mymap.add(layer3);
         var layer4 = new FeatureLayer({ 
@@ -74,7 +83,10 @@ require([
                   },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }
+            interval: {        
+              unit: "days",
+              value: 1
+            }}
         });
       mymap.add(layer4);
       
@@ -87,7 +99,10 @@ require([
                   },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }
+            interval: {        
+              unit: "days",
+              value: 1
+            }}
         });
       mymap.add(layer5);
       
@@ -100,7 +115,10 @@ require([
                   },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }
+            interval: {        
+              unit: "days",
+              value: 1
+            }}
         });
       mymap.add(layer6);
       
@@ -113,7 +131,10 @@ require([
                   },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }
+            interval: {        
+              unit: "days",
+              value: 1
+            }}
         });
       mymap.add(layer7);
       
@@ -126,7 +147,10 @@ require([
                   },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }
+            interval: {        
+              unit: "days",
+              value: 1
+            }}
         });
       mymap.add(layer8);
       
@@ -139,7 +163,10 @@ require([
                   },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }
+            interval: {        
+              unit: "days",
+              value: 1
+            }}
         });
       mymap.add(layer9);
       
@@ -152,7 +179,10 @@ require([
                   },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }
+            interval: {        
+              unit: "months",
+              value: 1
+            }}
         });
       mymap.add(layer10);
       mymap.layers.addMany([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
