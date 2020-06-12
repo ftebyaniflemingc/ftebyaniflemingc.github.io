@@ -55,17 +55,15 @@
         let layerView;
 
         const layer = new FeatureLayer ({
-          url:
-            "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/WebLayer2/FeatureServer",
-          
+          url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/WebLayer2/FeatureServer",
+
           title: "South Durham Housing Builtes (2010-2019)",
-          
           timeInfo: {
             startField: "Date", // name of the date field
             interval: {
               // set time interval to one day
               unit: "months",
-              value: 1    } },
+              value: 1    } },//timeInfo
           renderer: {
             type: "simple",
             field: "CT",
@@ -73,7 +71,7 @@
               type: "simple-marker",
               color: "orange",
               outline: null
-            },
+            },//symbol
             visualVariables: [{
                 type: "size",
                 field: "SumOfUnits",
@@ -83,10 +81,10 @@
                   },
                   {value: 100, size: "15" },
                   {value: 150, size: "35" }
-                ]
-              }]
+                ]//stops
+              }]//visu
           }//render
-         });
+         });//FeatureLayer
 
         const map = new Map({
           basemap: {
@@ -145,7 +143,7 @@
           // widget show the first day. We are setting
           // the thumbs positions.
           timeSlider.values = [start, end];
-        });
+        });//lv
 
         // watch for time slider timeExtent change
         timeSlider.watch("timeExtent", function() {
@@ -163,6 +161,7 @@
             },
             excludedEffect: "grayscale(20%) opacity(12%)"
           };
+        });
       });
     </script>
   </head>
