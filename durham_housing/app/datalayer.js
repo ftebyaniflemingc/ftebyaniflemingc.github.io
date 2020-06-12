@@ -135,13 +135,13 @@ require([
             }}
          ];    
       
-      const layer = FeatureLayer(function() {
+      const layer = FeatureLayer;
           
        
         // add the california fire layers
         mymap.addMany(layer);
       mymap.reorder(layer);
-             });
+             
 // Mapview, referencing WebMap instance
       var myview = new MapView({
             map: mymap,    // The WebMap instance created above
