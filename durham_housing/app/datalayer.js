@@ -28,7 +28,7 @@ require([
             }
           }
         });
-            
+            /*
       // Mapview, referencing Map instance
       const myview = new MapView({
             map: mymap,    // The Map instance created above
@@ -36,7 +36,7 @@ require([
             center: [-78.871866,43.914656],
             zoom: 10
       }); //mapview
-      
+      */
    // create ten new instances of feature layers based on the following definitions
         const url =
           "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
@@ -145,7 +145,7 @@ require([
 // Mapview, referencing WebMap instance
       var myview = new MapView({
             map: webmap,    // The WebMap instance created above
-            layers: [layer],
+            layer: [layer],
             container: "mapid",
             center: [-78.871866,43.914656],
             zoom: 10
