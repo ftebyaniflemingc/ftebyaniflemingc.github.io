@@ -188,7 +188,7 @@ webmap.add(layer);
    mode: "instant" ,
    view: myview
 });
-myview.ui.add (timeSlider, "bottom-left" );
+myview.ui.add (timeSlider, "bottom-right" );
 
 let timeLayerView;
 
@@ -210,7 +210,7 @@ myview.whenLayerView (layer) .then ( function ( lv ) {
 
 });
 
-myview.ui.add (timeSlider, "manual" );
+myview.ui.add (timeSlider, "bottom-right" );
 
 timeSlider.watch ( "timeExtent" , function ( value ) {
    // update layer view filter to reflect current timeExtent
