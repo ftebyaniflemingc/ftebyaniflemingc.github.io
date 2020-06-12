@@ -28,9 +28,9 @@ require([
       }); //webmap
      
   var layer = new FeatureLayer({ 
-         portalItem: { // autocasts as new PortalItem()
-                 id: "a9e79e4ea2a047d5b4f38a2b7d3de689",
-  //url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/",
+      /*   portalItem: { // autocasts as new PortalItem()
+                 id: "a9e79e4ea2a047d5b4f38a2b7d3de689", */
+ url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/",
             sublayers:[
          {id: 9, title: "Year2010",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2010_csv_Census_Tract > 0)",
