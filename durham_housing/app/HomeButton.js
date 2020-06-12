@@ -186,11 +186,11 @@ webmap.add(layer);
      //---------------Time Slider--------------- 
       
       const timeSlider = new TimeSlider ({
-   container: "timeSliderDiv" ,
+   //container: "timeSliderDiv" ,
    mode: "instant" ,
    view: myview
 });
-myview.ui.add (timeSlider, "manual" );
+myview.ui.add (timeSlider, "bottom-left" );
 
 let timeLayerView;
 
