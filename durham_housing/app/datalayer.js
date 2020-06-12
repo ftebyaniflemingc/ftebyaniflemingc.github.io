@@ -236,6 +236,7 @@ require([
           timeSlider.stops = {
             interval: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].timeInfo.interval
           };
+        });      
         });
       /*   
       const timeSlider = new TimeSlider({
