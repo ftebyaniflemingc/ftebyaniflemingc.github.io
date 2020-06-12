@@ -27,13 +27,12 @@ require([
           }
       }); //webmap
      
-  var layer = new FeatureLayer({ 
-         portalItem: { // autocasts as new PortalItem()
-                   id: "a9e79e4ea2a047d5b4f38a2b7d3de689",
-
-    //  url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/",
-           
-               sublayers:[
+ // var layer = new FeatureLayer({ 
+         //portalItem: { // autocasts as new PortalItem()
+           //        id: "a9e79e4ea2a047d5b4f38a2b7d3de689",
+const   url = "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
+           const definitions = [
+             //  sublayers:[
          {id: 9, title: "Year2010",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2010_csv_Census_Tract > 0)",
                popupTemplate: {        // Enable a popup
@@ -125,8 +124,11 @@ require([
           timeInfo: {
             startField: "{Date}", // name of the date field
             }}
-         ] }     
-  }); //FeatureLayer
+         ];
+ // }); //FeatureLayer
+          const layer = definitions.map(function(definition) {
+          
+        });
 webmap.add(layer);
       webmap.reorder(layer);
     
