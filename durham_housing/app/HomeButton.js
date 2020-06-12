@@ -16,7 +16,7 @@ require([
       "dojo/domReady!"
         ], 
         function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, TimeSlider, SublayersOwner, PopupTemplate ){
-    let layerView;
+    let layerView, timeSlider;
       //---------------FeatureLayers---------------
    /// Creates a WebMap instance
       var webmap = new Map({
@@ -186,7 +186,7 @@ webmap.add(layer);
      //---------------Time Slider--------------- 
       
       const timeSlider = new TimeSlider ({
-   container: "timeSlider" ,
+   container: "timeSliderDiv" ,
    mode: "instant" ,
    view: myview
 });
@@ -204,8 +204,8 @@ myview.whenLayerView (layer) .then ( function ( lv ) {
        unit : "years"
     },
     timeExtent : {
-       start : layer.timeInfo.fullTimeExtent.start, // 1579564800000, 
-      end: layer.timeInfo.fullTimeExtent.end // 1584403200000
+       start : layer.timeInfo.fullTimeExtent.start, // 
+      end: layer.timeInfo.fullTimeExtent.end // 
     }
   }
 
