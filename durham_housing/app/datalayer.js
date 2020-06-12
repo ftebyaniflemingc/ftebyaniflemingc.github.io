@@ -204,12 +204,12 @@ require([
             zoom: 10
       }); //mapview 
       
-
+/*
 myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10]).then(function (layerView) {
     layerView.watch("updating", function (value) {
     });
       });
-          
+       */   
           
        //---------------Home Button---------------
         var myhome = new Home({
@@ -262,8 +262,7 @@ myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,lay
             interval: {
               value: 1,
               unit: "years"
-            }
-          }
+            } }
         });
         myview.ui.add(timeSlider, "bottom-right");
       
@@ -301,15 +300,15 @@ myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,lay
 
           // now gray out earthquakes that happened before the time slider's current
           // timeExtent... leaving footprint of earthquakes that already happened
-          layerView.effect = {
-            filter: {
-              timeExtent: timeSlider.timeExtent,
-              geometry: myview.extent
-            },
-            excludedEffect: "grayscale(20%) opacity(12%)"
+         // layerView.effect = {
+           // filter: {
+            //  timeExtent: timeSlider.timeExtent,
+             // geometry: myview.extent
+           // },
+           // excludedEffect: "grayscale(20%) opacity(12%)"
           };
         });//function()
-});//function(lv)
+      //});//function(lv)
       
       /*
       const timeSlider = new TimeSlider ({
