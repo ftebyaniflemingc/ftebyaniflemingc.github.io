@@ -187,17 +187,8 @@ require([
             }}
         });
       mymap.add(layer10);
-      // How to get Layer view of ten layers while layers are loading
-        const layerViewsEachAlways = function getLayerViews() {
-          //promise method to wait for a number of promises to either resolve or reject.
-              return promiseUtils.eachAlways(
-            [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].map(function(layer) {
-              return myview.whenLayerView(layer);
-            })//function(layer)
-          );//return
-        };//getLayerViews()
       
-      mymap.layers.addMany([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
+       mymap.layers.addMany([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
 
       // Mapview, referencing WebMap instance
       var myview = new MapView({
@@ -207,6 +198,17 @@ require([
             center: [-78.871866,43.914656],
             zoom: 10
       }); //mapview 
+      
+      
+      // How to get Layer view of ten layers while layers are loading
+        const layerViewsEachAlways = function getLayerViews() {
+          //promise method to wait for a number of promises to either resolve or reject.
+              return promiseUtils.eachAlways(
+            [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].map(function(layers) {
+              return myview.whenLayerView(layers);
+            })//function(layers)
+          );//return
+        };//getLayerViews()
        //---------------Home Button---------------
         var myhome = new Home({
             view: myview,
