@@ -270,6 +270,7 @@ require([
             },
             excludedEffect: "grayscale(20%) opacity(12%)"
           };
+        });
 
       
       /*
