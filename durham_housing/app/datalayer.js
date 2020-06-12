@@ -39,7 +39,7 @@ require([
                   content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
                   },  // Display text in pop-up 
           timeInfo: {
-            startField: "{Date}", // name of the date field
+            startField: "Date", // name of the date field
             interval: {        
               unit: "days",
               value: 1
