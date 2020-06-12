@@ -251,7 +251,7 @@ require([
         }); //Expand 
         myview.ui.add(mylegend, "bottom-left");
       
-     //---------------Time Slider--------------- 
+ /*    //---------------Time Slider--------------- 
       
       const timeSlider = new TimeSlider({
           container: "timeSlider",
