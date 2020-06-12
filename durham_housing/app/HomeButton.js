@@ -212,7 +212,7 @@ myview.whenLayerView (layer) .then ( function ( lv ) {
 
 });
 
-view.ui.add (timeSlider, "manual" );
+myview.ui.add (timeSlider, "manual" );
 
 timeSlider.watch ( "timeExtent" , function ( value ) {
    // update layer view filter to reflect current timeExtent
