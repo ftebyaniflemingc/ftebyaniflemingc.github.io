@@ -238,5 +238,57 @@ require([
         }); //Expand 
         myview.ui.add(mylegend, "bottom-left");
       
+        //---------------Legend---------------
+      
+      const mytimeSlider = new TimeSlider({
+          //container: "timeSlider",
+          playRate: 1000,
+          stops: {
+            interval: {
+              value: 1,
+              unit: "months"
+            }
+          }
+        });
+        myview.ui.add(mytimeSlider, "bottom-right");
+
+        // wait till the layer view is loaded
+        myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
+          layerView = lv;
+
+          // start time of the time slider the first day of 2010
+          const start = new Date(2010, 12, 31);
+          // set time slider's full extent to 2019/12/31 - until end date of layer's fullTimeExtent
+          mytimeSlider.fullTimeExtent = {
+            start: start,
+            end: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].timeInfo.fullTimeExtent.end
+          };
+
+          // We will be showing sum of units with one month interval when the app is loaded the sum of units between next month.
+          const end = new Date(start);
+          // end of current time extent for time slider  showing next units built  with one month interval
+          end.setDate(end.getDate() + 1);
+
+          // Values property is set the first month. 
+          mytimeSlider.values = [start, end];
+        });//lv
+
+        // watch for time slider timeExtent change
+        mytimeSlider.watch("timeExtent", function() {
+          // only show units built up until the end of timeSlider's current time extent.
+          [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].definitionExpression =
+            "Date <= " + mytimeSlider.timeExtent.end.getTime();
+
+          // now gray out sum of units before the time slider's current timeExtent
+          layerView.effect = {
+            filter: {
+              timeExtent: mytimeSlider.timeExtent,
+              geometry: myview.extent
+            },
+            excludedEffect: "grayscale(45%) opacity(25%)"
+          };
+        });
+      });
+      
      
 }); //require
