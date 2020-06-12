@@ -248,7 +248,7 @@ require([
           mymap.add([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ],0);
         }
 
-        / Set up the query
+       // Set up the query
         var query = {
           geometry: polygon,
           distance: distance,
