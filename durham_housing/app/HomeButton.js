@@ -207,30 +207,7 @@ webmap.add(layer);
             end: layer.timeInfo.fullTimeExtent.end
           };
 
-          // TimeSlider shows the sum of units in any census tract with one month interval
-          // when the app is loaded will show comulative units between 2010/01/01 - 2019/12/31
-          const theend = new Date(thestart);
-          
-         //var year = end.getFullYear();
-         //var month = end.getMonth();
-         //var day = end.getDate();
-         //var ny = new Date(year + 1, month, day);
-
-          // end of current time extent for time slider with one month interval
-          //theend.setYear(theend.getYear() + 1);
- 
-          // Values property show the first day in timeSlider
-          mytimeSlider.values = [thestart, theend];
-             // mytimeSlider.values = [thestart];
-              mytimeSlider.createStopsByInterval(
-              mytimeSlider.fullTimeExtent, {
-             value: 1,
-             unit: "years"
-              }
-              );//Interval
-              });//mylv
-
-      
+         
 /*     // watch for time slider timeExtent change
         mytimeSlider.watch("timeExtent", function() {
         
@@ -324,19 +301,19 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
         // watch for time slider timeExtent change
         timeSlider.watch("timeExtent", function() {
           // only show earthquakes happened up until the end of
-          // timeSlider's current time extent.
-          //layer.definitionExpression =
-          //  "time <= " + timeSlider.timeExtent.end.getTime();
+         // timeSlider's current time extent.
+          layer.definitionExpression =
+            "time <= " + timeSlider.timeExtent.end.getTime();
 
           // now gray out earthquakes that happened before the time slider's current
           // timeExtent... leaving footprint of earthquakes that already happened
-          //layerView.effect = {
-       //     filter: {
-        //      timeExtent: timeSlider.timeExtent,
-         //     geometry: myview.extent
-        //    },
-        //    excludedEffect: "grayscale(20%) opacity(12%)"
-        //  };
+          layerView.effect = {
+            filter: {
+            timeExtent: timeSlider.timeExtent,
+              geometry: myview.extent
+           },
+           excludedEffect: "grayscale(20%) opacity(12%)"
+         };
         });
  
       
