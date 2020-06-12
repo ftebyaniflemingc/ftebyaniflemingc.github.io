@@ -29,113 +29,142 @@ require([
         });
        
    // create ten new instances of feature layers based on the following definitions
-        var layer = new FeatureLayer({ 
-     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/",
+        var layer1 = new FeatureLayer({ 
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9",
           //    "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
-        /* portalItem: { // autocasts as new PortalItem()
-                 id: "a9e79e4ea2a047d5b4f38a2b7d3de689", */
-      sublayers: [
-         {id: 9, title: "Year2010",  visible: true, 
-                   popupTemplate: {       
+      popupTemplate: {       
                   title: "The census boundary: {infilling2010_csv_Census_Tract}",
                   content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
                   },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }},
-         {id: 8, title: "Year2011",  visible: true, 
-          definitionExpression: "(CensusBoundary2011_CT> 0) AND (infilling2011_csv_Census_Tract > 0)",
-               popupTemplate: {       
-                  title: "The census boundary: {infilling2010_csv_Census_Tract}",
-                  content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },
+            }
+        });
+      mymap.add(layer1);
+        var layer2 = new FeatureLayer({ 
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/8",
+          //    "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2012_csv_Census_Tract}",
+                  content: "<p>has  {infilling2012_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }},
-         {id: 7, title: "Year2012",  visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2012_csv_Census_Tract > 0)",
-               popupTemplate: {       
-                  title: "The census boundary: {infilling2010_csv_Census_Tract}",
-                  content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },
+            }
+        });
+      mymap.add(layer2);
+        var layer2 = new FeatureLayer({ 
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/7",
+
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2012_csv_Census_Tract}",
+                  content: "<p>has  {infilling2012_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }},
-         {id: 6, title: "Year2013",  visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2013_csv_Census_Tract > 0)",
-               popupTemplate: {       
-                  title: "The census boundary: {infilling2010_csv_Census_Tract}",
-                  content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },
+            }
+        });
+      mymap.add(layer2);
+        var layer3 = new FeatureLayer({ 
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/6",
+
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2013_csv_Census_Tract}",
+                  content: "<p>has  {infilling2013_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }},
-         {id: 5, title: "Year2014",  visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2014_csv_Census_Tract > 0)",
-               popupTemplate: {       
-                  title: "The census boundary: {infilling2010_csv_Census_Tract}",
-                  content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },
+            }
+        });
+      mymap.add(layer3);
+      
+        var layer4 = new FeatureLayer({ 
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/5",
+
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2014_csv_Census_Tract}",
+                  content: "<p>has  {infilling2014_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }},
-         {id: 4, title: "Year2015",  visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2015_csv_Census_Tract > 0)",
-               popupTemplate: {       
-                  title: "The census boundary: {infilling2010_csv_Census_Tract}",
-                  content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },
+            }
+        });
+      mymap.add(layer4);
+      
+      var layer5 = new FeatureLayer({ 
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/4",
+
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2015_csv_Census_Tract}",
+                  content: "<p>has  {infilling2015_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }},
-         {id: 3, title: "Year2016", visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2016_csv_Census_Tract > 0)",
-               popupTemplate: {       
-                  title: "The census boundary: {infilling2010_csv_Census_Tract}",
-                  content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },
+            }
+        });
+      mymap.add(layer5);
+      
+      var layer6 = new FeatureLayer({ 
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/3",
+
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2016_csv_Census_Tract}",
+                  content: "<p>has  {infilling2016_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }},
-         {id: 2, title: "Year2017", visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2017_csv_Census_Tract > 0)",
-               popupTemplate: {       
-                  title: "The census boundary: {infilling2010_csv_Census_Tract}",
-                  content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },
+            }
+        });
+      mymap.add(layer6);
+      
+      var layer7 = new FeatureLayer({ 
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/2",
+
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2017_csv_Census_Tract}",
+                  content: "<p>has  {infilling2017_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }},
-           
-         {id: 1, title: "Year2018", visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2018_csv_Census_Tract > 0)",
-             popupTemplate: {       
-                  title: "The census boundary: {infilling2010_csv_Census_Tract}",
-                  content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },
+            }
+        });
+      mymap.add(layer7);
+      
+      var layer8 = new FeatureLayer({ 
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/1",
+
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2018_csv_Census_Tract}",
+                  content: "<p>has  {infilling2019_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }},
-         {id: 0, title: "Year2019", visible: true, 
-         definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2019_csv_Census_Tract > 0)",         
-               popupTemplate: {       
-                  title: "The census boundary: {infilling2010_csv_Census_Tract}",
-                  content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },
+            }
+        });
+      mymap.add(layer8);
+      
+      var layer9 = new FeatureLayer({ 
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/0",
+
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2019_csv_Census_Tract}",
+                  content: "<p>has  {infilling2019_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  },  // Display text in pop-up 
           timeInfo: {
             startField: "{Date}", // name of the date field
-            }}
-         ]
-      });       
-       
-        // add the california fire layers
-        mymap.layers.add(layer);
-      mymap.reorder(layer);
+            }
+        });
+      mymap.add(layer9);
+      mymap.layers.addMany([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9 ]);
+
+      // add the california fire layers
+        //mymap.layers.add(layer);
+      //mymap.reorder(layer);
          
 // Mapview, referencing WebMap instance
       var myview = new MapView({
             map: mymap,    // The WebMap instance created above
-            layers: [layer],
+            layers: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9],
             container: "mapid",
             center: [-78.871866,43.914656],
             zoom: 10
@@ -195,10 +224,10 @@ myview.ui.add (timeSlider, "bottom-right" );
 
 let timeLayerView;
 
-myview.whenLayerView(layer).then ( function ( lv ) {
+myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9 ]).then ( function ( lv ) {
   timeLayerView = lv;
 
-  timeSlider.fullTimeExtent = layer.timeInfo.fullTimeExtent;
+  timeSlider.fullTimeExtent = [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9 ].timeInfo.fullTimeExtent;
   timeSlider.stops = {
     interval : {
        value : 1 ,
