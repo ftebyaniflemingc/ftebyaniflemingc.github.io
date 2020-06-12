@@ -180,7 +180,7 @@ webmap.add(layer);
           expanded: true,
         }); //Expand 
         myview.ui.add(mylegend, "bottom-left");
-      /*
+      
      //---------------Time Slider--------------- 
       
       const timeSlider = new TimeSlider ({
@@ -220,7 +220,7 @@ timeSlider.watch ( "timeExtent" , function ( value ) {
 });
 
       
-*/
+/*
 
       const timeSlider = new TimeSlider({
           //container: "timeSlider",
@@ -280,6 +280,6 @@ timeSlider.watch ( "timeExtent" , function ( value ) {
            excludedEffect: "grayscale(20%) opacity(12%)"
          };
         });
- 
+ */
       
 }); //require
