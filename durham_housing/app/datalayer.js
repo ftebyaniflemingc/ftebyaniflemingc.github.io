@@ -221,6 +221,9 @@ require([
           view: myview
         });
         myview.ui.add(timeSlider, "bottom-right");
+      
+      myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
+          layerView = lv
 
         // add the UI for titles, stats and chart.
         //myview.ui.add("titleDiv", "bottom-right");
