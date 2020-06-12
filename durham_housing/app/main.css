@@ -60,7 +60,7 @@ html, body {
   left: 25%;
   text-align: center;   
 }
-#timeSlider{
+#timeSliderDiv{
   width: 60%;
   left: 3750px;
   right: 350px;
