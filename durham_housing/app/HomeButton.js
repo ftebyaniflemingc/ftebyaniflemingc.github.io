@@ -30,7 +30,7 @@ require([
   var layer = new FeatureLayer({ 
       /*   portalItem: { // autocasts as new PortalItem()
                    id: "a9e79e4ea2a047d5b4f38a2b7d3de689",*/
-      
+
       url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
            
                sublayers:[
@@ -185,14 +185,14 @@ webmap.add(layer);
       
      //---------------Time Slider--------------- 
       
-      /*
-    const mytimeSlider = new TimeSlider({
+      
+    const timeSlider = new TimeSlider({
           container: "timeSlider",
           mode: "time-window",
-          playRate: 100,  
+          playRate: 1000,  
           view: myview
         });//mytimeSlider
-        myview.ui.add(mytimeSlider, "manual");
+        myview.ui.add(timeSlider, "manual");
         
       // wait till the layer view is loaded
       let timeLayerView;  
@@ -200,48 +200,14 @@ webmap.add(layer);
           timeLayerView = mylv;
 
           // starts time of the time slider from layer Year2010 first date: 2009/12/31
-            const thestart = layer.timeInfo.fullTimeExtent.start;       
+           const thestart = layer.timeInfo.fullTimeExtent.start;       
           //const thestart = new Date("12/31/2009, 7:00 PM");
           // sets time slider's full extent to 2019/12/31 - until end date of layer's fullTimeExtent
-          mytimeSlider.fullTimeExtent = {
+          timeSlider.fullTimeExtent = {
             start: thestart,
             end: layer.timeInfo.fullTimeExtent.end
           };
 
-         
-/*     // watch for time slider timeExtent change
-        mytimeSlider.watch("timeExtent", function() {
-        
-        // only show sum of units until the end of timeSlider's current date extent.
-        layer.definitionExpression = "Date <= " + mytimeSlider.timeExtent.theend.getDate();
-
-       });//watch
-         
-      // Create a time slider to update layerView filter
-const timeSlider = new TimeSlider({
-  container: "timeSlider",
-  mode: "time-window",
-      view: myview
-});
-myview.ui.add(timeSlider, "manual");
-
-// wait until the layer view is loaded
-let timeLayerView;
-myview.whenLayerView(layer).then(function(mylv) {
-  timeLayerView = mylv;
-// set up time slider properties based on layer timeInfo
-   
-const fullTimeExtent = layer.timeInfo.fullTimeExtent;
-/*      
-  timeSlider.stops = {interval: {value: 1, unit: "years"
-    },
-        timeExtent:{
-              start: layer.timeInfo.fullTimeExtent.start,
-              end: layer.timeInfo.fullTimeExtent.end
-        }//timeExtent
-  }//timeSlider.stops 
-     */
-              /*
   const start = fullTimeExtent.start;
   // set up time slider properties based on layer timeInfo
   timeSlider.fullTimeExtent = fullTimeExtent;
@@ -250,13 +216,7 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
     interval: layer.timeInfo.interval
   };
 });//function(mylv)
-
-      //---------------Time Play--------------- 
-      
-   timeSlider.set({ loop: false,
-                         PlayRate: 100
-                        });
-         timeSlider.play();  
+   /*
 
       const timeSlider = new TimeSlider({
           container: "timeSlider",
