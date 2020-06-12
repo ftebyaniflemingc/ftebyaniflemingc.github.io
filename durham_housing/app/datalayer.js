@@ -214,7 +214,27 @@ require([
         myview.ui.add(mylegend, "bottom-left");
       
      //---------------Time Slider--------------- 
-      
+        // time slider widget initialization
+        const timeSlider = new TimeSlider({
+          container: "timeSlider",
+          mode: "time-window",
+          view: myview
+        });
+        myview.ui.add(timeSlider, "manual");
+
+        // add the UI for titles, stats and chart.
+        myview.ui.add("titleDiv", "top-right");
+
+        myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10]).then(function(lv) {
+          const fullTimeExtent = [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].timeInfo.fullTimeExtent;
+
+          // set up time slider properties
+          timeSlider.fullTimeExtent = fullTimeExtent;
+          timeSlider.stops = {
+            interval: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].timeInfo.interval
+          };
+        });
+      /*   
       const timeSlider = new TimeSlider({
           container: "timeSlider",
           playRate: 15000,
