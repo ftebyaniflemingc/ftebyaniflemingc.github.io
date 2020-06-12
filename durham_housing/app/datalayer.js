@@ -52,7 +52,7 @@ require([
                   content: "<p>has  {infilling2012_csv_SumOfUnits} housing starts in {Date}.</p>"
                   },  // Display text in pop-up 
           timeInfo: {
-            startField: "{Date}", // name of the date field
+            startField: "Date", // name of the date field
             interval: {        
               unit: "days",
               value: 1
@@ -67,7 +67,7 @@ require([
                   content: "<p>has  {infilling2012_csv_SumOfUnits} housing starts in {Date}.</p>"
                   },  // Display text in pop-up 
           timeInfo: {
-            startField: "{Date}", // name of the date field
+            startField: "Date", // name of the date field
             interval: {        
               unit: "days",
               value: 1
@@ -82,7 +82,7 @@ require([
                   content: "<p>has  {infilling2013_csv_SumOfUnits} housing starts in {Date}.</p>"
                   },  // Display text in pop-up 
           timeInfo: {
-            startField: "{Date}", // name of the date field
+            startField: "Date", // name of the date field
             interval: {        
               unit: "days",
               value: 1
@@ -98,7 +98,7 @@ require([
                   content: "<p>has  {infilling2014_csv_SumOfUnits} housing starts in {Date}.</p>"
                   },  // Display text in pop-up 
           timeInfo: {
-            startField: "{Date}", // name of the date field
+            startField: "Date", // name of the date field
             interval: {        
               unit: "days",
               value: 1
@@ -114,7 +114,7 @@ require([
                   content: "<p>has  {infilling2015_csv_SumOfUnits} housing starts in {Date}.</p>"
                   },  // Display text in pop-up 
           timeInfo: {
-            startField: "{Date}", // name of the date field
+            startField: "Date", // name of the date field
             interval: {        
               unit: "days",
               value: 1
@@ -130,7 +130,7 @@ require([
                   content: "<p>has  {infilling2016_csv_SumOfUnits} housing starts in {Date}.</p>"
                   },  // Display text in pop-up 
           timeInfo: {
-            startField: "{Date}", // name of the date field
+            startField: "Date", // name of the date field
             interval: {        
               unit: "days",
               value: 1
@@ -146,7 +146,7 @@ require([
                   content: "<p>has  {infilling2017_csv_SumOfUnits} housing starts in {Date}.</p>"
                   },  // Display text in pop-up 
           timeInfo: {
-            startField: "{Date}", // name of the date field
+            startField: "Date", // name of the date field
             interval: {        
               unit: "days",
               value: 1
@@ -162,7 +162,7 @@ require([
                   content: "<p>has  {infilling2019_csv_SumOfUnits} housing starts in {Date}.</p>"
                   },  // Display text in pop-up 
           timeInfo: {
-            startField: "{Date}", // name of the date field
+            startField: "Date", // name of the date field
             interval: {        
               unit: "days",
               value: 1
@@ -178,9 +178,9 @@ require([
                   content: "<p>has  {infilling2019_csv_SumOfUnits} housing starts in {Date}.</p>"
                   },  // Display text in pop-up 
           timeInfo: {
-            startField: "{Date}", // name of the date field
+            startField: "Date", // name of the date field
             interval: {        
-              unit: "months",
+              unit: "days",
               value: 1
             }}
         });
