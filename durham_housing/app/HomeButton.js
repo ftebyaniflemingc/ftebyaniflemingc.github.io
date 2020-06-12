@@ -308,7 +308,7 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
                          PlayRate: 100
                         });
          timeSlider.play();  
-*/
+*
       const timeSlider = new TimeSlider({
           container: "timeSlider",
           playRate: 1500,
@@ -364,6 +364,35 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
             },
             excludedEffect: "grayscale(20%) opacity(12%)"
           };
-        });
+        });*/
  
+      // Create a time slider to update layerView filter
+var timeSlider = new TimeSlider({
+  container: "timeSliderDiv",
+  mode: "cumulative-from-start",
+});
+view.ui.add(timeSlider, "manual");
+
+// wait until the layer view is loaded
+let timeLayerView;
+view.whenLayerView(layer).then(function(layerView) {
+  timeLayerView = layerView;
+  const fullTimeExtent = layer.timeInfo.fullTimeExtent;
+  const start = fullTimeExtent.start;
+
+  // set up time slider properties based on layer timeInfo
+  timeSlider.fullTimeExtent = fullTimeExtent;
+  timeSlider.values = [start];
+  timeSlider.stops = {
+    interval: layer.timeInfo.interval
+  };
+});
+
+timeSlider.watch("timeExtent", function(value){
+  // update layer view filter to reflect current timeExtent
+  timeLayerView.filter = {
+    timeExtent: value
+  };
+});
+      
 }); //require
