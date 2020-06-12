@@ -364,6 +364,6 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
             },
             excludedEffect: "grayscale(20%) opacity(12%)"
           };
-
+        });
  
 }); //require
