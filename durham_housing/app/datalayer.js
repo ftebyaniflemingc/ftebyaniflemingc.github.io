@@ -37,11 +37,12 @@ require([
       }); //mapview
       */
    // create ten new instances of feature layers based on the following definitions
-        const url =
-          "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
+        const layer = new FeatureLayer({ 
+     url :
+          "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/",
           //    "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
       
-      const definitions = [
+      sublayers: [
          {id: 9, title: "Year2010",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2010_csv_Census_Tract > 0)",
                popupTemplate: {        // Enable a popup
@@ -135,11 +136,10 @@ require([
             }}
          ];    
       
-      const layer = FeatureLayer;
-          
+      });       
        
         // add the california fire layers
-        mymap.addMany(layer);
+        mymap.add(layer);
       mymap.reorder(layer);
              
 // Mapview, referencing WebMap instance
