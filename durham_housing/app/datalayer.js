@@ -306,7 +306,7 @@ myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,lay
              // geometry: myview.extent
            // },
            // excludedEffect: "grayscale(20%) opacity(12%)"
-          };
+          //};
         });//function()
       //});//function(lv)
       
