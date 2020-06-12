@@ -252,7 +252,9 @@ require([
         myview.ui.add(mylegend, "bottom-left");
       
      //---------------Time Slider--------------- 
-      
+      myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
+          layerView = lv;
+            
       const timeSlider = new TimeSlider({
           container: "timeSlider",
           playRate: 15000,
@@ -266,8 +268,7 @@ require([
       
       //let timeLayerView;
      // wait till the layer view is loaded
-        myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
-          layerView = lv;
+        
 
           // start time of the time slider - 5/25/2019
           const thestart = new Date(2010, 1, 1);
