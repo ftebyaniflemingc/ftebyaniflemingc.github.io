@@ -9,13 +9,14 @@ require([
       "esri/widgets/LayerList",
       "esri/widgets/Legend",
       "esri/widgets/Expand",
+      "esri/core/watchUtils",
       "esri/widgets/TimeSlider",
     
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, LayerList, Legend, Expand, 
+        function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, LayerList, Legend, Expand, watchUtils,
                   TimeSlider, PopupTemplate ){
     let layerView;
       //---------------FeatureLayers---------------
@@ -254,8 +255,15 @@ require([
         myview.ui.add(mytimeSlider, "bottom-right");
 
         // wait till the layer view is loaded
-        myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
-          layerView = lv;
+         myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
+          watchUtils.whenFalseOnce(layerView, "updating", function() {
+                layerView = lv;
+            
+          });
+        });
+      
+       // myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
+       //   layerView = lv;
 
           // start time of the time slider the first day of 2010
           const start = new Date(2010, 12, 31);
