@@ -251,7 +251,7 @@ require([
         }); //Expand 
         myview.ui.add(mylegend, "bottom-left");
       
- /*    //---------------Time Slider--------------- 
+     //---------------Time Slider--------------- 
       
       const timeSlider = new TimeSlider({
           container: "timeSlider",
@@ -292,7 +292,7 @@ require([
           // only show earthquakes happened up until the end of
           // timeSlider's current time extent.
           [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].definitionExpression =
-            "time <= " + timeSlider.timeExtent.end.getTime();
+            "Date <= " + timeSlider.timeExtent.end.getTime();
 
           // now gray out earthquakes that happened before the time slider's current
           // timeExtent... leaving footprint of earthquakes that already happened
