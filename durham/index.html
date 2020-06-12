@@ -152,14 +152,14 @@
           // update the fire stats between 2014 - 2018 once timeExtent of
           // the timeSlider changes
           timeSlider.watch("timeExtent", function() {
-            updateFiresStats();
+            updateUnitesStats();
           });
-          createFiresChart();
+          createUnitesChart();
         });
 
         view.whenLayerView(layers[0]).then(function(layerView) {
           watchUtils.whenFalseOnce(layerView, "updating", function() {
-            updateFiresStats();
+            updateUnitesStats();
           });
         }); 
 
@@ -185,7 +185,7 @@
         };
 
         // query five layerviews representing fires between 2014-2018
-        // this will be called from the UudateFiresStats function
+        // this will be called from the UudateUnitsStats function
         const queryFeaturesForStats = function getQueryResults(
           layerViewsResults
         ) {
@@ -309,7 +309,7 @@
         }
 
        
-        // Fires chart section
+        // Unites chart section
         const monthDiv = document.getElementById("monthDiv");
         const infoDiv = document.getElementById("infoDiv");
         const chartCanvas = document.getElementById("uniteChart");
