@@ -134,7 +134,7 @@ require([
           timeInfo: {
             startField: "{Date}", // name of the date field
             }}
-         ];    
+         ]    
       
       });       
        
