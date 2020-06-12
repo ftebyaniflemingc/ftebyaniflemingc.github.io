@@ -1,6 +1,6 @@
 //---------------esri rquirements ---------------
 require([
-      "esri/WebMap",
+      "esri/Map",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
       "esri/layers/Layer",
@@ -15,11 +15,11 @@ require([
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(WebMap, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, TimeSlider,SublayersOwner, PopupTemplate ){
+        function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, TimeSlider,SublayersOwner, PopupTemplate ){
     let layerView;
       //---------------FeatureLayers---------------
    /// Creates a WebMap instance
-      var webmap = new WebMap({
+      var webmap = new Map({
             portalItem: { //autocasts as new PortalItem()
                   id: "a9e79e4ea2a047d5b4f38a2b7d3de689",
                   //id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a"
