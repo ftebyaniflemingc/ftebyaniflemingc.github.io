@@ -17,7 +17,7 @@ require([
         ], 
         function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
                   TimeSlider, PopupTemplate ){
-    //let layerView;
+    let layerView;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
       const mymap = new Map({
@@ -214,31 +214,7 @@ require([
         myview.ui.add(mylegend, "bottom-left");
       
      //---------------Time Slider--------------- 
-        // time slider widget initialization
-        const timeSlider = new TimeSlider({
-          container: "timeSlider",
-          mode: "time-window",
-          view: myview
-        });
-        myview.ui.add(timeSlider, "bottom-right");
-      
-      myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
-          layerView = lv
-
-        // add the UI for titles, stats and chart.
-        //myview.ui.add("titleDiv", "bottom-right");
-
-        //myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10]).then(function(lv) {
-          //const fullTimeExtent = [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].timeInfo.fullTimeExtent;
-
-          // set up time slider properties
-          timeSlider.fullTimeExtent = fullTimeExtent;
-          timeSlider.stops = {
-            interval: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].timeInfo.interval
-          };
-             
-        });
-      /*   
+       
       const timeSlider = new TimeSlider({
           container: "timeSlider",
           playRate: 15000,
@@ -256,26 +232,26 @@ require([
           layerView = lv;
 
           // start time of the time slider - 5/25/2019
-          const start = new Date(2009, 12, 31);
+          const thestart = new Date(2010, 1, 1);
           // set time slider's full extent to
           // 5/25/5019 - until end date of layer's fullTimeExtent
           timeSlider.fullTimeExtent = {
-            start: start,
+            start: thestart,
             end: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].timeInfo.fullTimeExtent.end
           };
 
           // We will be showing earthquakes with one day interval
           // when the app is loaded we will show earthquakes that
           // happened between 5/25 - 5/26.
-          const end = new Date(start);
+          const theend = new Date(start);
           // end of current time extent for time slider
           // showing earthquakes with one day interval
-          end.setDate(end.getDate() + 1);
+          theend.setDate(theend.getDate() + 1);
 
           // Values property is set so that timeslider
           // widget show the first day. We are setting
           // the thumbs positions.
-          timeSlider.values = [start, end];
+          timeSlider.values = [thestart, theend];
         });
 
         // watch for time slider timeExtent change
