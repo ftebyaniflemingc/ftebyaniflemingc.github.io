@@ -252,61 +252,65 @@ require([
         myview.ui.add(mylegend, "bottom-left");
       
      //---------------Time Slider--------------- 
-      myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
-          layerView = lv;
             
-      const timeSlider = new TimeSlider({
+     
+const timeSlider = new TimeSlider({
           container: "timeSlider",
-          playRate: 15000,
+          playRate: 50,
           stops: {
             interval: {
               value: 1,
-              unit: "years"
-            } }
+              unit: "hours"
+            }
+          }
         });
-        myview.ui.add(timeSlider, "bottom-right");
-      
-      //let timeLayerView;
-     // wait till the layer view is loaded
-        
+        myview.ui.add(timeSlider, "manual");
+
+        // wait till the layer view is loaded
+        myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10]).then(function(lv) {
+          layerView = lv;
 
           // start time of the time slider - 5/25/2019
-          const thestart = new Date(2010, 1, 1);
+          const start = new Date(2010, 1, 1);
           // set time slider's full extent to
           // 5/25/5019 - until end date of layer's fullTimeExtent
           timeSlider.fullTimeExtent = {
-            start: thestart,
-            end: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].timeInfo.fullTimeExtent.end
+            start: start,
+            end: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].timeInfo.fullTimeExtent.end
           };
 
-          const theend = new Date(start);
+          // We will be showing earthquakes with one day interval
+          // when the app is loaded we will show earthquakes that
+          // happened between 5/25 - 5/26.
+          const end = new Date(start);
           // end of current time extent for time slider
           // showing earthquakes with one day interval
-          theend.setDate(theend.getDate() + 1);
+          end.setDate(end.getDate() + 1);
 
-          // Values property is set so that timeslider widget show the first day. We are setting the thumbs positions.
-          timeSlider.values = [thestart, theend];
-        
+          // Values property is set so that timeslider
+          // widget show the first day. We are setting
+          // the thumbs positions.
+          timeSlider.values = [start, end];
+        });
 
         // watch for time slider timeExtent change
         timeSlider.watch("timeExtent", function() {
           // only show earthquakes happened up until the end of
           // timeSlider's current time extent.
-          [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].definitionExpression =
-            "Date <= " + timeSlider.timeExtent.end.getTime();
-});
+          [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].definitionExpression =
+            "time <= " + timeSlider.timeExtent.end.getTime();
+
           // now gray out earthquakes that happened before the time slider's current
           // timeExtent... leaving footprint of earthquakes that already happened
-         // layerView.effect = {
-           // filter: {
-            //  timeExtent: timeSlider.timeExtent,
-             // geometry: myview.extent
-           // },
-           // excludedEffect: "grayscale(20%) opacity(12%)"
-          //};
-        });//function()
-      //});//function(lv)
-      
+          layerView.effect = {
+            filter: {
+              timeExtent: timeSlider.timeExtent,
+              geometry: myview.extent
+            },
+            excludedEffect: "grayscale(20%) opacity(12%)"
+          };
+        });
+ 
       /*
       const timeSlider = new TimeSlider ({
    //container: "timeSliderDiv" ,
