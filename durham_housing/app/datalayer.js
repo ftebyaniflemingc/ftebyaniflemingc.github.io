@@ -10,7 +10,7 @@ require([
       "esri/widgets/LayerList",
       "esri/widgets/Legend",
       "esri/widgets/Expand",
-      "esri/core/promiseUtils"
+      "esri/core/promiseUtils",
       "esri/widgets/TimeSlider",
     
       "esri/PopupTemplate",
