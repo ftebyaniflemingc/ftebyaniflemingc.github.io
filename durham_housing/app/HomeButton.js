@@ -10,7 +10,7 @@ require([
       "esri/widgets/Legend",
       "esri/widgets/Expand",
       "esri/widgets/TimeSlider",
-      "esri/layers/mixins/SublayersOwner",
+      //"esri/layers/mixins/SublayersOwner",
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
@@ -20,10 +20,11 @@ require([
       //---------------FeatureLayers---------------
    /// Creates a WebMap instance
       var webmap = new Map({
-            portalItem: { //autocasts as new PortalItem()
-                  id: "a9e79e4ea2a047d5b4f38a2b7d3de689",
-                  //id: "2f46a0d5c31f4f5fb0d2d8f53eb9998a"
-                  }
+            basemap: {
+            portalItem: {
+              id: "3582b744bba84668b52a16b0b6942544"
+            }
+          }
       }); //webmap
      
   var layer = new FeatureLayer({ 
