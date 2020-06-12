@@ -27,15 +27,7 @@ require([
             }
           }
         });
-            
-      // Mapview, referencing Map instance
-      const myview = new MapView({
-            map: mymap,    // The Map instance created above
-            container: "mapid",
-            center: [-78.871866,43.914656],
-            zoom: 10
-      }); //mapview
-      
+       
    // create ten new instances of feature layers based on the following definitions
         const layer = new FeatureLayer({ 
      url :
@@ -141,15 +133,15 @@ require([
         // add the california fire layers
         mymap.add(layer);
       mymap.reorder(layer);
-  /*           
+         
 // Mapview, referencing WebMap instance
       var myview = new MapView({
             map: mymap,    // The WebMap instance created above
-            layer: [layer],
+            layers: [layer],
             container: "mapid",
             center: [-78.871866,43.914656],
             zoom: 10
-      }); //mapview */
+      }); //mapview 
       
       
        //---------------Home Button---------------
