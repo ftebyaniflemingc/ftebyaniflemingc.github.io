@@ -256,7 +256,7 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
                          PlayRate: 100
                         });
          timeSlider.play();  
-*/
+
       const timeSlider = new TimeSlider({
           container: "timeSlider",
           mpde: "cumulative-from-start",
@@ -315,6 +315,6 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
            excludedEffect: "grayscale(20%) opacity(12%)"
          };
         });
- 
+ */
       
 }); //require
