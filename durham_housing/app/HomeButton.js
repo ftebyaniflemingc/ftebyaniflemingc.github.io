@@ -298,7 +298,7 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
               
           // start time of the time slider - 5/25/2019
           const start = new Date(2010, 1, 1);
-          const end: new Date(2019, 12, 31);
+          const end = new Date(2019, 12, 31);
           // set time slider's full extent to
           // 5/25/5019 - until end date of layer's fullTimeExtent
           timeSlider.fullTimeExtent = {
