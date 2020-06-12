@@ -46,17 +46,18 @@
       require([
         "esri/Map",
         "esri/views/MapView",
-        "esri/layers/GeoJSONLayer",
+        "esri/layers/FeatureLayer",
+      "esri/layers/Layer",
         "esri/widgets/TimeSlider",
         "esri/widgets/Expand",
         "esri/widgets/Legend"
-      ], function(Map, MapView, GeoJSONLayer, TimeSlider, Expand, Legend) {
+      ], function(Map, MapView, FeatureLayer, Layer, TimeSlider, Expand) {
         let layerView;
 
-        const layer = new GeoJSONLayer({
+        const layer = new FeatureLayer ({
           url:
             "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/WebLayer2/FeatureServer",
-          copyright: "USGS Earthquakes",
+          
           title: "South Durham Housing Builtes (2010-2019)",
           
           timeInfo: {
@@ -124,7 +125,7 @@
               id: "3582b744bba84668b52a16b0b6942544"
             }
           }
-          layers: [layer]
+          layer: [layer]
         });
 
         var view = new MapView({
@@ -139,7 +140,7 @@
         // by default timeSlider.mode is "time-window" - shows
         // data falls within time range
         const timeSlider = new TimeSlider({
-          container: "timeSlider",
+          //container: "timeSlider",
           playRate: 1000,
           stops: {
             interval: {
