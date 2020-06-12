@@ -50,8 +50,8 @@ require([
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/8",
           //    "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
       popupTemplate: {       
-                  title: "The census boundary: {infilling2012_csv_Census_Tract}",
-                  content: "<p>has  {infilling2012_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  title: "The census boundary: {infilling2011_csv_Census_Tract}",
+                  content: "<p>has  {infilling2011_csv_SumOfUnits} housing starts in {Date}.</p>"
                   },  // Display text in pop-up 
           timeInfo: {
             startField: "Date", // name of the date field
@@ -161,7 +161,7 @@ require([
 
       popupTemplate: {       
                   title: "The census boundary: {infilling2018_csv_Census_Tract}",
-                  content: "<p>has  {infilling2019_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  content: "<p>has  {infilling2018_csv_SumOfUnits} housing starts in {Date}.</p>"
                   },  // Display text in pop-up 
           timeInfo: {
             startField: "Date", // name of the date field
