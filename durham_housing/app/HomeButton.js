@@ -137,7 +137,7 @@ webmap.add(layer);
             layers: [layer],
             container: "mapid",
             center: [-78.871866,43.914656],
-            zoom: 11
+            zoom: 10
       }); //mapview
       
       
@@ -186,9 +186,9 @@ webmap.add(layer);
      //---------------Time Slider--------------- 
       
       const timeSlider = new TimeSlider ({
-   container : "timeSlider" ,
-   mode : "instant" ,
-   view : myview
+   container: "timeSlider" ,
+   mode: "instant" ,
+   view: myview
 });
 myview.ui.add (timeSlider, "manual" );
 
