@@ -287,8 +287,6 @@ require([
             },
             excludedEffect: "grayscale(45%) opacity(25%)"
           };
-        });
-      });
+        });//function()
       
-     
 }); //require
