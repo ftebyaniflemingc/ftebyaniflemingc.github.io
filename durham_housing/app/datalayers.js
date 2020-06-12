@@ -238,5 +238,46 @@ require([
         }); //Expand 
         myview.ui.add(mylegend, "bottom-left");
       
+      // Query Feature Layer
+
+// Client-side queries 
+      function queryFeatureLayerView(polygon, distance, spatialRelationship, sqlExpression) {
+        // Add the layer if it is missing
+        if (mymap.findLayerById([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].url)) {
+          [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].outFields = ["*"];
+          mymap.add([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ],0);
+        }
+
+        / Set up the query
+        var query = {
+          geometry: polygon,
+          distance: distance,
+          spatialRelationship: spatialRelationship,
+          outFields: ["*"],
+          returnGeometry: true,
+          where: sqlExpression
+        };
+        // Wait for the layerview to be ready and then query features
+        myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(featureLayerView) {
+          if (featureLayerView.updating) {
+            var handle = featureLayerView.watch("updating", function(isUpdating){
+              if (!isUpdating) {
+                // Execute the query
+                featureLayerView.queryFeatures(query).then(function(result) {
+                  addGraphics(result)
+                });
+                handle.remove();
+              }
+            });
+          } else {
+            // Execute the query
+            featureLayerView.queryFeatures(query).then(function(result) {
+              addGraphics(result);
+            });
+          }
+        });
+      }
+  
+      
      
 }); //require
