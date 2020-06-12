@@ -10,14 +10,13 @@ require([
       "esri/widgets/Legend",
       "esri/widgets/Expand",
       "esri/widgets/TimeSlider",
-      "esri/core/watchUtils",
-      "esri/core/promiseUtils",
+    
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
         function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
-                  TimeSlider, watchUtils, promiseUtils, PopupTemplate ){
+                  TimeSlider, PopupTemplate ){
     let layerView;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
@@ -136,12 +135,13 @@ require([
             }}
          ];    
       
-      const layer = definitions.map(function(definition) {
-          return (definition);
-        });
+      const layer = FeatureLayer(function() {
+          
+       
         // add the california fire layers
         mymap.addMany(layer);
       mymap.reorder(layer);
+             });
 // Mapview, referencing WebMap instance
       var myview = new MapView({
             map: mymap,    // The WebMap instance created above
@@ -205,7 +205,7 @@ myview.ui.add (timeSlider, "bottom-right" );
 
 let timeLayerView;
 
-myview.whenLayerView (layer) .then ( function ( lv ) {
+myview.whenLayerView(layer).then ( function ( lv ) {
   timeLayerView = lv;
 
   timeSlider.fullTimeExtent = layer.timeInfo.fullTimeExtent;
