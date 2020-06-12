@@ -11,13 +11,14 @@ require([
       "esri/widgets/Legend",
       "esri/widgets/Expand",
       "esri/core/promiseUtils",
+      "esri/core/watchUtils",
       "esri/widgets/TimeSlider",
     
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(Map, MapView, FeatureLayer, FeatureLayerView, Layer, Home, Fullscreen, LayerList, Legend, Expand, promiseUtils,
+        function(Map, MapView, FeatureLayer, FeatureLayerView, Layer, Home, Fullscreen, LayerList, Legend, Expand, promiseUtils, watchUtils,
                   TimeSlider, PopupTemplate ){
     let layerView;
       //---------------FeatureLayers---------------
@@ -252,63 +253,69 @@ require([
         myview.ui.add(mylegend, "bottom-left");
       
      //---------------Time Slider--------------- 
-            
-     
+    
+  const    timeSlider = new TimeSlider({
+             view: myview,
+            fullTimeExtent: {
+              start: new Date(2010, 1, 1),
+              end: new Date(2019, 12, 31)
+            },
+            playRate: 2000,
+            stops: {interval: {value: 1,unit: "months" }
+            }
+          });
+     /*
 const timeSlider = new TimeSlider({
-          container: "timeSlider",
-          playRate: 50,
+        //  container: "timeSlider",
+          playRate: 1000,
           stops: {
             interval: {
               value: 1,
-              unit: "hours"
+              unit: "months"
             }
           }
         });
-        myview.ui.add(timeSlider, "manual");
-
+        myview.ui.add(timeSlider, "bottom-right");
+*/
         // wait till the layer view is loaded
-        myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10]).then(function(lv) {
-          layerView = lv;
-
+       
           // start time of the time slider - 5/25/2019
-          const start = new Date(2010, 1, 1);
+          //const start = new Date(2010, 1, 1);
           // set time slider's full extent to
           // 5/25/5019 - until end date of layer's fullTimeExtent
-          timeSlider.fullTimeExtent = {
-            start: start,
-            end: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].timeInfo.fullTimeExtent.end
-          };
+         // timeSlider.fullTimeExtent = {
+          //  start: start,
+         //   end: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].timeInfo.fullTimeExtent.end   };
 
           // We will be showing earthquakes with one day interval
           // when the app is loaded we will show earthquakes that
           // happened between 5/25 - 5/26.
-          const end = new Date(start);
+          //const end = new Date(start);
           // end of current time extent for time slider
           // showing earthquakes with one day interval
-          end.setDate(end.getDate() + 1);
+          //end.setDate(end.getDate() + 1);
 
           // Values property is set so that timeslider
           // widget show the first day. We are setting
           // the thumbs positions.
-          timeSlider.values = [start, end];
-        });
+          //timeSlider.values = [start, end];        });
 
         // watch for time slider timeExtent change
         timeSlider.watch("timeExtent", function() {
-          // only show earthquakes happened up until the end of
-          // timeSlider's current time extent.
-          [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].definitionExpression =
-            "time <= " + timeSlider.timeExtent.end.getTime();
-
-          // now gray out earthquakes that happened before the time slider's current
-          // timeExtent... leaving footprint of earthquakes that already happened
-          layerView.effect = {
-            filter: {
-              timeExtent: timeSlider.timeExtent,
-              geometry: myview.extent
-            },
-            excludedEffect: "grayscale(20%) opacity(12%)"
-          };
+        }):
+        myview.whenLayerView([layer1]).then(function(lv) {
+              watchUtils.whenFalseOnce(layerView, "updating", function() {
+              layerView = lv;
+              });
+        let start = new Date(timeSlider.timeExtent.start);
+        let end = new Date(timeSlider.timeExtent.end);
+                start.setFullYear(
+                  start.getFullYear() - layerView.layer.timeInfo.value
+                );
+                end.setFullYear(
+                  end.getFullYear() - layerView.layer.timeInfo.value
+                );
+        
         });
  
       /*
