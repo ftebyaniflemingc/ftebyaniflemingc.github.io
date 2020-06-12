@@ -65,9 +65,7 @@
             interval: {
               // set time interval to one day
               unit: "months",
-              value: 1
-            }
-          },
+              value: 1    } },
           renderer: {
             type: "simple",
             field: "CT",
@@ -76,48 +74,19 @@
               color: "orange",
               outline: null
             },
-            visualVariables: [
-              {
+            visualVariables: [{
                 type: "size",
                 field: "SumOfUnits",
-                stops: [
-                  {
+                stops: [{
                     value: 1,
                     size: "5px"
                   },
-                  {
-                    value: 2,
-                    size: "15"
-                  },
-                  {
-                    value: 3,
-                    size: "35"
-                  }
+                  {value: 100, size: "15" },
+                  {value: 150, size: "35" }
                 ]
-              }
-            ]
-          },
-          popupTemplate: {
-            title: "{title}",
-            content: [{ type: "fields",
-                fieldInfos: [{
-                    fieldName: "place",
-                    label: "Location",
-                    visible: true},
-                  {
-                    fieldName: "mag",
-                    label: "Magnitude",
-                    visible: true
-                  },
-                  {
-                    fieldName: "depth",
-                    label: "Depth",
-                    visible: true
-                  }]
-              }
-            ]
-          }
-        });
+              }]
+          }//render
+         });
 
         const map = new Map({
           basemap: {
@@ -125,7 +94,7 @@
               id: "3582b744bba84668b52a16b0b6942544"
             }
           }
-          layer: [layer]
+          
         });
 
         var view = new MapView({
