@@ -224,18 +224,18 @@ myview.ui.add (timeSlider, "bottom-right" );
 
 let timeLayerView;
 
-myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9 ]).then ( function ( lv ) {
+myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then ( function ( lv ) {
   timeLayerView = lv;
 
-  timeSlider.fullTimeExtent = [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9 ].timeInfo.fullTimeExtent;
+  timeSlider.fullTimeExtent = [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].timeInfo.fullTimeExtent;
   timeSlider.stops = {
     interval : {
        value : 1 ,
        unit : "years"
     },
     timeExtent : {
-       start : layer.timeInfo.fullTimeExtent.start, // 
-      end: layer.timeInfo.fullTimeExtent.end // 
+       start : [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].timeInfo.fullTimeExtent.start, // 
+      end: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].timeInfo.fullTimeExtent.end // 
     }
   }
 
@@ -252,7 +252,7 @@ timeSlider.watch ( "timeExtent" , function ( value ) {
 });
 
       
-      /*      
+            
        // How to get Layer view of ten layers while layers are loading
         const layerViewsEachAlways = function getLayerViews() {
           //promise method to wait for a number of promises to either resolve or reject.
@@ -264,7 +264,7 @@ timeSlider.watch ( "timeExtent" , function ( value ) {
         };//getLayerViews()
       
       //----------timeSlider----------
-      
+ /*     
         myview.when(function() {
        
           mytimeSlider = new TimeSlider({
