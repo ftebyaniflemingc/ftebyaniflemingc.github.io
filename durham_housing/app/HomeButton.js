@@ -28,10 +28,10 @@ require([
       }); //webmap
      
   var layer = new FeatureLayer({ 
-      /*   portalItem: { // autocasts as new PortalItem()
-                   id: "a9e79e4ea2a047d5b4f38a2b7d3de689",*/
+         portalItem: { // autocasts as new PortalItem()
+                   id: "a9e79e4ea2a047d5b4f38a2b7d3de689",
 
-      url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/",
+    //  url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/",
            
                sublayers:[
          {id: 9, title: "Year2010",  visible: true, 
@@ -125,7 +125,7 @@ require([
           timeInfo: {
             startField: "{Date}", // name of the date field
             }}
-         ] 
+        // ] 
                  
   }); //FeatureLayer
 webmap.add(layer);
