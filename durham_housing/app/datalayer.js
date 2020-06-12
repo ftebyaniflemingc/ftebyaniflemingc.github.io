@@ -18,7 +18,7 @@ require([
         ], 
         function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
                   TimeSlider, watchUtils, promiseUtils, PopupTemplate ){
-    let mytimeSlider, myChart;
+    let layerView;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
       const mymap = new Map({
@@ -43,35 +43,197 @@ require([
           //    "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
       
       const definitions = [
-         {id: 9, title: 2010, visible: true, offset: 0, 
-         popupTemplate: {       
-                  title: "The census boundary: {infilling2010_csv_Census_Tract}",
-                  content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  }  // Display text in pop-up 
-         },
-         {id: 8, title: 2011, visible: true, offset: 1,
-          popupTemplate: {       
-                  title: "The census boundary: {infilling2011_csv_Census_Tract}",
-                  content: "<p>has  {infilling2011_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  }  // Display text in pop-up 
-         },
-         {id: 7, title: 2012, visible: true, offset: 2},
-         {id: 6, title: 2013, visible: true, offset: 3},
-         {id: 5, title: 2014, visible: true, offset: 4},
-         {id: 4, title: 2015, visible: true, offset: 5},
-         {id: 3, title: 2016, visible: true, offset: 6},
-         {id: 2, title: 2017, visible: true, offset: 7},
-         {id: 1, title: 2018, visible: true, offset: 8},
-         {id: 0, title: 2019, visible: true, offset: 9}
-          ];    
+         {id: 9, title: "Year2010",  visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2010_csv_Census_Tract > 0)",
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2010_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            }},
+         {id: 8, title: "Year2011",  visible: true, 
+          definitionExpression: "(CensusBoundary2011_CT> 0) AND (infilling2011_csv_Census_Tract > 0)",
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2011_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2011_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            }},
+         {id: 7, title: "Year2012",  visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2012_csv_Census_Tract > 0)",
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2012_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            }},
+         {id: 6, title: "Year2013",  visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2013_csv_Census_Tract > 0)",
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary20166CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2013_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            }},
+         {id: 5, title: "Year2014",  visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2014_csv_Census_Tract > 0)",
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2014_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2014_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            }},
+         {id: 4, title: "Year2015",  visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2015_csv_Census_Tract > 0)",
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary20166CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2015_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            }},
+         {id: 3, title: "Year2016", visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2016_csv_Census_Tract > 0)",
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            }},
+         {id: 2, title: "Year2017", visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2017_csv_Census_Tract > 0)",
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2017_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            }},
+           
+         {id: 1, title: "Year2018", visible: true, 
+          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2018_csv_Census_Tract > 0)",
+             popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2018_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            }},
+         {id: 0, title: "Year2019", visible: true, 
+         definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2019_csv_Census_Tract > 0)",         
+               popupTemplate: {        // Enable a popup
+                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
+                  content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display text in pop-up
+            },
+          timeInfo: {
+            startField: "{Date}", // name of the date field
+            }}
+         ];    
       
-      const allayers = definitions.map(function(definition) {
-          return tenLayers(definition);
+      const layer = definitions.map(function(definition) {
+          return (definition);
         });
         // add the california fire layers
-        mymap.addMany(allayers);
-      mymap.reorder(allayers);
+        mymap.addMany(layer);
+      mymap.reorder(layer);
+// Mapview, referencing WebMap instance
+      var myview = new MapView({
+            map: webmap,    // The WebMap instance created above
+            layers: [layer],
+            container: "mapid",
+            center: [-78.871866,43.914656],
+            zoom: 10
+      }); //mapview
       
+      
+       //---------------Home Button---------------
+        var myhome = new Home({
+            view: myview,
+            visible: true //show the button
+            }, "Home");
+                              
+//Add the widget to the top right of screen
+        myview.ui.add(myhome,  {position: "top-left", index:1 });
+        
+      
+      //---------------FullScreen Button---------------
+      
+       var myfulls = new Fullscreen({
+           view: myview,
+            visible: true //show the button
+         }, "Fullscreen");
+        myview.ui.add(myfulls, {position: "top-left", index:2 });
+                
+      
+      //-------------------Layer List-------------------------------
+      myview.when(function() {
+            var layerList = new LayerList({
+                  view: myview,
+                  visible: true // show the button
+            }, "Layer");
+  
+            // Add widget to screen
+            myview.ui.add(layerList, {position: "top-right", index:3});
+      });//LayerList
+           
+        //---------------Legend---------------
+      
+        const mylegend = new Expand({
+          content: new Legend({
+            view: myview,
+            style: 'classic' // other styles include 'classic'
+          }),
+          view: myview,
+          expanded: true,
+        }); //Expand 
+        myview.ui.add(mylegend, "bottom-left");
+      
+     //---------------Time Slider--------------- 
+      
+      const timeSlider = new TimeSlider ({
+   //container: "timeSliderDiv" ,
+   mode: "instant" ,
+   view: myview
+});
+myview.ui.add (timeSlider, "bottom-right" );
+
+let timeLayerView;
+
+myview.whenLayerView (layer) .then ( function ( lv ) {
+  timeLayerView = lv;
+
+  timeSlider.fullTimeExtent = layer.timeInfo.fullTimeExtent;
+  timeSlider.stops = {
+    interval : {
+       value : 1 ,
+       unit : "years"
+    },
+    timeExtent : {
+       start : layer.timeInfo.fullTimeExtent.start, // 
+      end: layer.timeInfo.fullTimeExtent.end // 
+    }
+  }
+
+
+});
+
+myview.ui.add (timeSlider, "bottom-right" );
+
+timeSlider.watch ( "timeExtent" , function ( value ) {
+   // update layer view filter to reflect current timeExtent
+  timeLayerView.filter = {
+    timeExtent : value
+  };
+});
+
+      
+      /*      
        // How to get Layer view of ten layers while layers are loading
         const layerViewsEachAlways = function getLayerViews() {
           //promise method to wait for a number of promises to either resolve or reject.
@@ -179,7 +341,7 @@ require([
           // if the stats query returned a year for the given layerview
           // then process and update the chart
           if (result.value.year !== null){
-            // extract the year and month from the date*/
+            // extract the year and month from the date
             let date = new Date(result.value.year);
             let year = date.getFullYear();
            // for each layerview representing units of houses between 2010-2019
@@ -203,7 +365,7 @@ require([
               var startMonth = mytimeSlider.timeExtent.start.toLocaleString("default", { month: "long" });
               var endMonth = mytimeSlider.timeExtent.end.toLocaleString("default", { month: "long" });
               monthDiv.innerHTML = "<b> Month: <span>" + startMonth + " - " + endMonth + "</span></b>";
-              */
+              
                   });
                });
               }  
@@ -223,10 +385,10 @@ require([
                   title: "The census boundary: {CensusBoundary2016_CT}",
                   content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
                   }  // Display text in pop-up 
-           /* popupTemplate: {       
+            popupTemplate: {       
                   title: "The census boundary: {infilling2010_csv_Census_Tract}",
                   content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  }  // Display text in pop-up */
+                  }  // Display text in pop-up 
               //    content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts in {Date} ." 
             
           });//FeatureLayer
@@ -263,7 +425,7 @@ require([
       });//LayerList
            
         //---------------Legend---------------
-      /*
+      
         const mylegend = new Expand({
           content: new Legend({
             view: myview,
@@ -273,7 +435,7 @@ require([
           expanded: true,
         }); //Expand 
         myview.ui.add(mylegend, "bottom-left");
-      */
+      
       const layerInfos = allayers.map(function(layer, i) {
           return {
             title: "",
@@ -338,6 +500,6 @@ require([
             }//options
           });//mychart
         }//function
-          
+          */
      
 }); //require
