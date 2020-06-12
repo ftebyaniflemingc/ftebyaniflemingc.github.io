@@ -10,13 +10,14 @@ require([
       "esri/widgets/LayerList",
       "esri/widgets/Legend",
       "esri/widgets/Expand",
+      "esri/core/promiseUtils"
       "esri/widgets/TimeSlider",
     
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(Map, MapView, FeatureLayer, FeatureLayerView, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
+        function(Map, MapView, FeatureLayer, FeatureLayerView, Layer, Home, Fullscreen, LayerList, Legend, Expand, promiseUtils,
                   TimeSlider, PopupTemplate ){
     let layerView;
       //---------------FeatureLayers---------------
@@ -186,16 +187,9 @@ require([
             }}
         });
       mymap.add(layer10);
-      
-      
       mymap.layers.addMany([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
 
-      
-      // add the california fire layers
-        //mymap.layers.add(layer);
-      //mymap.reorder(layer);
-         
-// Mapview, referencing WebMap instance
+      // Mapview, referencing WebMap instance
       var myview = new MapView({
              map: mymap,    // The WebMap instance created above
             layers: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10],
@@ -203,14 +197,6 @@ require([
             center: [-78.871866,43.914656],
             zoom: 10
       }); //mapview 
-      
-/*
-myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10]).then(function (layerView) {
-    layerView.watch("updating", function (value) {
-    });
-      });
-       */   
-          
        //---------------Home Button---------------
         var myhome = new Home({
             view: myview,
@@ -254,7 +240,17 @@ myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,lay
         myview.ui.add(mylegend, "bottom-left");
       
      //---------------Time Slider--------------- 
+      // How to get Layer view of ten layers while layers are loading
+        const layerViewsEachAlways = function getLayerViews() {
+          //promise method to wait for a number of promises to either resolve or reject.
+              return promiseUtils.eachAlways(
+            [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].map(function(layer) {
+              return myview.whenLayerView(layer);
+            })//function(layer)
+          );//return
+        };//getLayerViews()
        
+      
       const timeSlider = new TimeSlider({
           container: "timeSlider",
           playRate: 15000,
@@ -267,9 +263,7 @@ myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,lay
         myview.ui.add(timeSlider, "bottom-right");
       
       let timeLayerView;
-
-
-        // wait till the layer view is loaded
+     // wait till the layer view is loaded
         myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
           timeLayerView = lv;
 
