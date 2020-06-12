@@ -286,8 +286,7 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
           stops: {interval: {
               value: 1,
               unit: "years"
-            }
-          }
+            }}
         });
         myview.ui.add(timeSlider, "manual");
 
@@ -296,7 +295,7 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
           layerView = lv;
 
           // start time of the time slider - 5/25/2019
-          const start = new Date(2009, 12, 31);
+          const start = new Date(2010, 1, 1);
           // set time slider's full extent to
           // 5/25/5019 - until end date of layer's fullTimeExtent
           timeSlider.fullTimeExtent = {
@@ -327,13 +326,13 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
 
           // now gray out earthquakes that happened before the time slider's current
           // timeExtent... leaving footprint of earthquakes that already happened
-          layerView.effect = {
-            filter: {
-              timeExtent: timeSlider.timeExtent,
-              geometry: myview.extent
-            },
-            excludedEffect: "grayscale(20%) opacity(12%)"
-          };
+          //layerView.effect = {
+       //     filter: {
+        //      timeExtent: timeSlider.timeExtent,
+         //     geometry: myview.extent
+        //    },
+        //    excludedEffect: "grayscale(20%) opacity(12%)"
+        //  };
         });
  
       
