@@ -187,6 +187,16 @@ require([
             }}
         });
       mymap.add(layer10);
+      // How to get Layer view of ten layers while layers are loading
+        const layerViewsEachAlways = function getLayerViews() {
+          //promise method to wait for a number of promises to either resolve or reject.
+              return promiseUtils.eachAlways(
+            [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].map(function(layer) {
+              return myview.whenLayerView(layer);
+            })//function(layer)
+          );//return
+        };//getLayerViews()
+      
       mymap.layers.addMany([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
 
       // Mapview, referencing WebMap instance
@@ -240,16 +250,6 @@ require([
         myview.ui.add(mylegend, "bottom-left");
       
      //---------------Time Slider--------------- 
-      // How to get Layer view of ten layers while layers are loading
-        const layerViewsEachAlways = function getLayerViews() {
-          //promise method to wait for a number of promises to either resolve or reject.
-              return promiseUtils.eachAlways(
-            [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].map(function(layer) {
-              return myview.whenLayerView(layer);
-            })//function(layer)
-          );//return
-        };//getLayerViews()
-       
       
       const timeSlider = new TimeSlider({
           container: "timeSlider",
