@@ -123,7 +123,7 @@ require([
           timeInfo: {
             startField: "{Date}", // name of the date field
             }}
-         ]}
+         ]
   }); //FeatureLayer
        
 webmap.add(layer);
