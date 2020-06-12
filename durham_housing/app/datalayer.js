@@ -225,14 +225,14 @@ require([
             }
           }
         });
-        myview.ui.add(timeSlider, "bottom-left");
+        myview.ui.add(timeSlider, "bottom-right");
 
         // wait till the layer view is loaded
         myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
           layerView = lv;
 
           // start time of the time slider - 5/25/2019
-          const start = new Date(2019, 4, 25);
+          const start = new Date(2009, 12, 31);
           // set time slider's full extent to
           // 5/25/5019 - until end date of layer's fullTimeExtent
           timeSlider.fullTimeExtent = {
