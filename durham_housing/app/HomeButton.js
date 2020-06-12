@@ -40,10 +40,7 @@ require([
             },
           timeInfo: {
             startField: "{Date}", // name of the date field
-            interval: {  // set time interval to one month
-              unit: "months",
-              value: 1
-            }}},
+            }},
          {id: 8, title: "Year2011",  visible: true, 
           definitionExpression: "(CensusBoundary2011_CT> 0) AND (infilling2011_csv_Census_Tract > 0)",
                popupTemplate: {        // Enable a popup
@@ -52,10 +49,7 @@ require([
             },
           timeInfo: {
             startField: "{Date}", // name of the date field
-            interval: { 
-              unit: "months",
-              value: 1
-            }}},
+            }},
          {id: 7, title: "Year2012",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2012_csv_Census_Tract > 0)",
                popupTemplate: {        // Enable a popup
@@ -64,10 +58,7 @@ require([
             },
           timeInfo: {
             startField: "{Date}", // name of the date field
-            interval: {
-              unit: "months",
-              value: 1
-            }}},
+            }},
          {id: 6, title: "Year2013",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2013_csv_Census_Tract > 0)",
                popupTemplate: {        // Enable a popup
@@ -76,10 +67,7 @@ require([
             },
           timeInfo: {
             startField: "{Date}", // name of the date field
-            interval: {
-              unit: "months",
-              value: 1
-            }}},
+            }},
          {id: 5, title: "Year2014",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2014_csv_Census_Tract > 0)",
                popupTemplate: {        // Enable a popup
@@ -88,10 +76,7 @@ require([
             },
           timeInfo: {
             startField: "{Date}", // name of the date field
-            interval: {
-              unit: "months",
-              value: 1
-            }}},
+            }},
          {id: 4, title: "Year2015",  visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2015_csv_Census_Tract > 0)",
                popupTemplate: {        // Enable a popup
@@ -100,10 +85,7 @@ require([
             },
           timeInfo: {
             startField: "{Date}", // name of the date field
-            interval: {
-              unit: "months",
-              value: 1
-            }}},
+            }},
          {id: 3, title: "Year2016", visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2016_csv_Census_Tract > 0)",
                popupTemplate: {        // Enable a popup
@@ -112,10 +94,7 @@ require([
             },
           timeInfo: {
             startField: "{Date}", // name of the date field
-            interval: {
-              unit: "months",
-              value: 1
-            }}},
+            }},
          {id: 2, title: "Year2017", visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2017_csv_Census_Tract > 0)",
                popupTemplate: {        // Enable a popup
@@ -124,10 +103,7 @@ require([
             },
           timeInfo: {
             startField: "{Date}", // name of the date field
-            interval: {
-               unit: "months",
-              value: 1
-            }}},
+            }},
            
          {id: 1, title: "Year2018", visible: true, 
           definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2018_csv_Census_Tract > 0)",
@@ -137,10 +113,7 @@ require([
             },
           timeInfo: {
             startField: "{Date}", // name of the date field
-            interval: {
-              unit: "months",
-              value: 1
-            }}},
+            }},
          {id: 0, title: "Year2019", visible: true, 
          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2019_csv_Census_Tract > 0)",         
                popupTemplate: {        // Enable a popup
@@ -149,10 +122,7 @@ require([
             },
           timeInfo: {
             startField: "{Date}", // name of the date field
-            interval: {
-              unit: "months",
-              value: 1
-           }}}
+            }}
          ]}    
                  
   }); //FeatureLayer
