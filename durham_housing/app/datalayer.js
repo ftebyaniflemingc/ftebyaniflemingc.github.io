@@ -17,7 +17,7 @@ require([
         ], 
         function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
                   TimeSlider, PopupTemplate ){
-    let layerView;
+    //let layerView;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
       const mymap = new Map({
@@ -228,15 +228,15 @@ require([
         // add the UI for titles, stats and chart.
         //myview.ui.add("titleDiv", "bottom-right");
 
-        myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10]).then(function(lv) {
-          const fullTimeExtent = [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].timeInfo.fullTimeExtent;
+        //myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10]).then(function(lv) {
+          //const fullTimeExtent = [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].timeInfo.fullTimeExtent;
 
           // set up time slider properties
           timeSlider.fullTimeExtent = fullTimeExtent;
           timeSlider.stops = {
             interval: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].timeInfo.interval
           };
-        });      
+             
         });
       /*   
       const timeSlider = new TimeSlider({
