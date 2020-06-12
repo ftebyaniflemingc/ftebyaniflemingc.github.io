@@ -187,6 +187,7 @@ require([
       mymap.add(layer10);
       
        mymap.layers.addMany([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
+      mymap.layers.reorder([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
 
       // Mapview, referencing WebMap instance
       var myview = new MapView({
