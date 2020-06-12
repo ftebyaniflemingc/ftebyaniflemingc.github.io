@@ -16,7 +16,7 @@ require([
       "dojo/domReady!"
         ], 
         function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, TimeSlider, SublayersOwner, PopupTemplate ){
-    let layerView, timeSlider;
+    let layerView;
       //---------------FeatureLayers---------------
    /// Creates a WebMap instance
       var webmap = new Map({
