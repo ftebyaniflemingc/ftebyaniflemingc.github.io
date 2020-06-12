@@ -284,7 +284,7 @@ const fullTimeExtent = layer.timeInfo.fullTimeExtent;
           mpde: "cumulative-from-start",
             playRate: 1500,
           stops: {interval: {
-              value: ,
+              value: 1,
               unit: "years"
             }
           }
