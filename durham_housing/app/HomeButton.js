@@ -31,7 +31,7 @@ require([
       /*   portalItem: { // autocasts as new PortalItem()
                    id: "a9e79e4ea2a047d5b4f38a2b7d3de689",*/
 
-      url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer",
+      url:"https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/",
            
                sublayers:[
          {id: 9, title: "Year2010",  visible: true, 
@@ -182,7 +182,7 @@ webmap.add(layer);
           expanded: true,
         }); //Expand 
         myview.ui.add(mylegend, "bottom-left");
-      
+      /*
      //---------------Time Slider--------------- 
       
       const timeSlider = new TimeSlider ({
@@ -222,10 +222,10 @@ timeSlider.watch ( "timeExtent" , function ( value ) {
 });
 
       
-   /*
+*/
 
       const timeSlider = new TimeSlider({
-          container: "timeSlider",
+          //container: "timeSlider",
           mpde: "cumulative-from-start",
             playRate: 1500,
           stops: {interval: {
@@ -233,7 +233,7 @@ timeSlider.watch ( "timeExtent" , function ( value ) {
               unit: "years"
             }}
         });
-        myview.ui.add(timeSlider, "manual");
+        myview.ui.add(timeSlider, "bottom-righ");
 
         // wait till the layer view is loaded
         myview.whenLayerView(layer).then(function(lv) {
@@ -282,6 +282,6 @@ timeSlider.watch ( "timeExtent" , function ( value ) {
            excludedEffect: "grayscale(20%) opacity(12%)"
          };
         });
- */
+ 
       
 }); //require
