@@ -10,11 +10,12 @@ require([
       "esri/widgets/Legend",
       "esri/widgets/Expand",
       "esri/widgets/TimeSlider",
+      "esri/layers/mixins/SublayersOwner",
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(WebMap, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, TimeSlider, PopupTemplate ){
+        function(WebMap, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, TimeSlider,SublayersOwner, PopupTemplate ){
     let layerView;
       //---------------FeatureLayers---------------
    /// Creates a WebMap instance
