@@ -302,7 +302,7 @@ const timeSlider = new TimeSlider({
 
         // watch for time slider timeExtent change
         timeSlider.watch("timeExtent", function() {
-        }):
+        });
         myview.whenLayerView([layer1]).then(function(lv) {
               watchUtils.whenFalseOnce(layerView, "updating", function() {
               layerView = lv;
