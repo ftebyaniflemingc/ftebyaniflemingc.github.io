@@ -251,7 +251,7 @@ timeSlider.watch ( "timeExtent" , function ( value ) {
   };
 });
 
-      
+      /* 
             
        // How to get Layer view of ten layers while layers are loading
         const layerViewsEachAlways = function getLayerViews() {
@@ -264,7 +264,7 @@ timeSlider.watch ( "timeExtent" , function ( value ) {
         };//getLayerViews()
       
       //----------timeSlider----------
- /*     
+     
         myview.when(function() {
        
           mytimeSlider = new TimeSlider({
