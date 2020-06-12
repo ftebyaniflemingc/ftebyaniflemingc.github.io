@@ -3,6 +3,7 @@ require([
       "esri/Map",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
+      "esri/views/layers/FeatureLayerView",
       "esri/layers/Layer",
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen",
@@ -15,7 +16,7 @@ require([
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
+        function(Map, MapView, FeatureLayer, FeatureLayerView, Layer, Home, Fullscreen, LayerList, Legend, Expand, 
                   TimeSlider, PopupTemplate ){
     let layerView;
       //---------------FeatureLayers---------------
@@ -185,6 +186,8 @@ require([
             }}
         });
       mymap.add(layer10);
+      
+      
       mymap.layers.addMany([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
 
       
@@ -194,7 +197,7 @@ require([
          
 // Mapview, referencing WebMap instance
       var myview = new MapView({
-            map: mymap,    // The WebMap instance created above
+             map: mymap,    // The WebMap instance created above
             layers: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10],
             container: "mapid",
             center: [-78.871866,43.914656],
@@ -202,10 +205,12 @@ require([
       }); //mapview 
       
 
-myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then ( function ( lv ) {
- 
-layerView = lv;
-      
+myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10]).then(function (layerView) {
+    layerView.watch("updating", function (value) {
+    });
+      });
+          
+          
        //---------------Home Button---------------
         var myhome = new Home({
             view: myview,
