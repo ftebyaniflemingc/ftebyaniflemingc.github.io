@@ -53,7 +53,7 @@ require([
             }
         });
       mymap.add(layer2);
-        var layer2 = new FeatureLayer({ 
+        var layer3 = new FeatureLayer({ 
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/7",
 
       popupTemplate: {       
@@ -64,8 +64,8 @@ require([
             startField: "{Date}", // name of the date field
             }
         });
-      mymap.add(layer2);
-        var layer3 = new FeatureLayer({ 
+      mymap.add(layer3);
+        var layer4 = new FeatureLayer({ 
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/6",
 
       popupTemplate: {       
@@ -76,9 +76,9 @@ require([
             startField: "{Date}", // name of the date field
             }
         });
-      mymap.add(layer3);
+      mymap.add(layer4);
       
-        var layer4 = new FeatureLayer({ 
+        var layer5 = new FeatureLayer({ 
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/5",
 
       popupTemplate: {       
@@ -89,9 +89,9 @@ require([
             startField: "{Date}", // name of the date field
             }
         });
-      mymap.add(layer4);
+      mymap.add(layer5);
       
-      var layer5 = new FeatureLayer({ 
+      var layer6 = new FeatureLayer({ 
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/4",
 
       popupTemplate: {       
@@ -102,9 +102,9 @@ require([
             startField: "{Date}", // name of the date field
             }
         });
-      mymap.add(layer5);
+      mymap.add(layer6);
       
-      var layer6 = new FeatureLayer({ 
+      var layer7 = new FeatureLayer({ 
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/3",
 
       popupTemplate: {       
@@ -115,9 +115,9 @@ require([
             startField: "{Date}", // name of the date field
             }
         });
-      mymap.add(layer6);
+      mymap.add(layer7);
       
-      var layer7 = new FeatureLayer({ 
+      var layer8 = new FeatureLayer({ 
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/2",
 
       popupTemplate: {       
@@ -128,9 +128,9 @@ require([
             startField: "{Date}", // name of the date field
             }
         });
-      mymap.add(layer7);
+      mymap.add(layer8);
       
-      var layer8 = new FeatureLayer({ 
+      var layer9 = new FeatureLayer({ 
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/1",
 
       popupTemplate: {       
@@ -141,9 +141,9 @@ require([
             startField: "{Date}", // name of the date field
             }
         });
-      mymap.add(layer8);
+      mymap.add(layer9);
       
-      var layer9 = new FeatureLayer({ 
+      var layer10 = new FeatureLayer({ 
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/0",
 
       popupTemplate: {       
@@ -154,8 +154,8 @@ require([
             startField: "{Date}", // name of the date field
             }
         });
-      mymap.add(layer9);
-      mymap.layers.addMany([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9 ]);
+      mymap.add(layer10);
+      mymap.layers.addMany([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
 
       // add the california fire layers
         //mymap.layers.add(layer);
@@ -164,7 +164,7 @@ require([
 // Mapview, referencing WebMap instance
       var myview = new MapView({
             map: mymap,    // The WebMap instance created above
-            layers: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9],
+            layers: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10],
             container: "mapid",
             center: [-78.871866,43.914656],
             zoom: 10
