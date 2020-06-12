@@ -31,7 +31,7 @@ require([
         });
        
    // create ten new instances of feature layers based on the following definitions
-        var layer1 = new FeatureLayer({ 
+  /*      var layer1 = new FeatureLayer({ 
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/9",
           //    "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
       popupTemplate: {       
@@ -45,7 +45,7 @@ require([
               value: 1
             }}
         });
-      mymap.add(layer1);
+      mymap.add(layer1); */
         var layer2 = new FeatureLayer({ 
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/8",
           //    "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
@@ -191,18 +191,18 @@ require([
         const layerViewsEachAlways = function getLayerViews() {
           //promise method to wait for a number of promises to either resolve or reject.
               return promiseUtils.eachAlways(
-            [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].map(function(layer) {
+            [layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].map(function(layer) {
               return myview.whenLayerView(layer);
             })//function(layer)
           );//return
         };//getLayerViews()
       
-      mymap.layers.addMany([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
+      mymap.layers.addMany([ layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
 
       // Mapview, referencing WebMap instance
       var myview = new MapView({
              map: mymap,    // The WebMap instance created above
-            layers: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10],
+            layers: [ layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10],
             container: "mapid",
             center: [-78.871866,43.914656],
             zoom: 10
@@ -264,7 +264,7 @@ require([
       
       let timeLayerView;
      // wait till the layer view is loaded
-        myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
+        myview.whenLayerView([ layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
           timeLayerView = lv;
 
           // start time of the time slider - 5/25/2019
@@ -273,7 +273,7 @@ require([
           // 5/25/5019 - until end date of layer's fullTimeExtent
           timeSlider.fullTimeExtent = {
             start: thestart,
-            end: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].timeInfo.fullTimeExtent.end
+            end: [layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].timeInfo.fullTimeExtent.end
           };
 
           const theend = new Date(start);
@@ -289,7 +289,7 @@ require([
         timeSlider.watch("timeExtent", function() {
           // only show earthquakes happened up until the end of
           // timeSlider's current time extent.
-          [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].definitionExpression =
+          [ layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].definitionExpression =
             "time <= " + timeSlider.timeExtent.end.getTime();
 
           // now gray out earthquakes that happened before the time slider's current
