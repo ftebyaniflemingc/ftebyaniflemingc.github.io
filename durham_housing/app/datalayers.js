@@ -230,13 +230,15 @@ require([
            
         //---------------Legend---------------
       
+      
+      
         const mylegend = new Expand({
           content: new Legend({
             view: myview,
             style: 'classic' // other styles include 'classic'
           }),
           view: myview,
-          expanded: true,
+          expanded: false,
         }); //Expand 
         myview.ui.add(mylegend, "bottom-left");
       
