@@ -62,7 +62,7 @@ html, body {
   resize: both;
   overflow: auto;
 }
-#timeSliderDiv{
+#timeSlider{
   width: 60%;
   left: 3750px;
   right: 350px;
