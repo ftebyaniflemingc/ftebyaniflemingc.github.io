@@ -106,16 +106,16 @@
         const url =
           "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
         const definitions = [
-          { id: 0, year: 2019 offset: 9 },
-          { id: 1, year: 2018 offset: 8 },
-          { id: 2, year: 2017 offset: 7 },
-          { id: 3, year: 2016 offset: 6 },
-          { id: 4, year: 2015 offset: 5 },
-          { id: 5, year: 2014 offset: 4 },
-          { id: 6, year: 2013 offset: 3 },
-          { id: 7, year: 2012 offset: 2 },
-          { id: 8, year: 2011 offset: 1 },
-          { id: 9, year: 2010 offset: 0 },
+          { id: 0, year: 2019, offset: 9 },
+          { id: 1, year: 2018, offset: 8 },
+          { id: 2, year: 2017, offset: 7 },
+          { id: 3, year: 2016, offset: 6 },
+          { id: 4, year: 2015, offset: 5 },
+          { id: 5, year: 2014, offset: 4 },
+          { id: 6, year: 2013, offset: 3 },
+          { id: 7, year: 2012, offset: 2 },
+          { id: 8, year: 2011, offset: 1 },
+          { id: 9, year: 2010, offset: 0 },
         ];
         const layers = definitions.map(function(definition) {
           return createLayer(definition);
