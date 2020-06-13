@@ -58,7 +58,9 @@ html, body {
   top: 10px;
   width: 50%;
   left: 25%;
-  text-align: center;   
+  text-align: center;  
+  resize: both;
+  overflow: auto;
 }
 #timeSliderDiv{
   width: 60%;
