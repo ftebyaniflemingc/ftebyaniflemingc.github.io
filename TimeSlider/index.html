@@ -70,7 +70,7 @@
         "esri/Map",
         "esri/layers/FeatureLayer",
         "esri/views/MapView",
-        "esri/widgets/Legend",
+        
         "esri/widgets/Expand",
         "esri/widgets/TimeSlider",
         "esri/core/watchUtils",
@@ -79,7 +79,7 @@
         Map,
         FeatureLayer,
         MapView,
-        Legend,
+        
         Expand,
         TimeSlider,
         watchUtils,
@@ -141,7 +141,7 @@
               start: new Date(2010, 1, 1),
               end: new Date(2019, 12, 31)
             },
-            playRate: 1000,
+            playRate: 1500,
             stops: {
               interval: {
                 value: 1,
@@ -165,14 +165,14 @@
         });
 
         // fire stats for each year between 2014 - 2018
-        const sumAcres = {
-          onStatisticField: "{SumOfUnits}",
-          outStatisticFieldName: "acres_sum",
+        const sumUnits = {
+          onStatisticField: "SumOfUnits",
+          outStatisticFieldName: "units_sum",
           statisticType: "sum"
         };
-        const fireCounts = {
-          onStatisticField: "{CT}",
-          outStatisticFieldName: "fire_counts",
+        const ctCounts = {
+          onStatisticField: "CT",
+          outStatisticFieldName: "ct_counts",
           statisticType: "count"
         };
         const year = {
@@ -182,7 +182,7 @@
         };
         // stats query
         const statQuery = {
-          outStatistics: [sumAcres, fireCounts, year]
+          outStatistics: [sumUnits, ctCounts, year]
         };
 
         // query five layerviews representing fires between 2014-2018
@@ -260,10 +260,10 @@
 
                     // array of burnt acres sum returned in the query results
                     // for each layerview representing fires between 2014-2018
-                    acresBurntList.push(result.value.acres_sum.toFixed(2));
+                    acresBurntList.push(result.value.units_sum.toFixed(2));
 
                     //chart labels will show the year and count of fires for that year
-                    const label = year + ", " + result.value.fire_counts;
+                    const label = year + ", " + result.value.ct_counts;
                     chartLabels.push(label);
                   }
                 }
@@ -303,7 +303,7 @@
             },
             outFields: ["*"],
             popupTemplate: {
-              title: "{CT}}",
+              title: "{CT}",
               content: "{SumOfUnits}, {Date}"
             }
           });
