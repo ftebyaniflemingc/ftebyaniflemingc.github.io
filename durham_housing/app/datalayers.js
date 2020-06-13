@@ -230,17 +230,20 @@ require([
            
         //---------------Legend---------------
       
-      
-      
+           
         const mylegend = new Expand({
-          content: new Legend({
+          collapsedIconClass: "esri-icon-collapse",
+          expandIconClass: "esri-icon-expand",
+          expandTooltip: "Legend",
+           view: myview,
+              content: new Legend({
             view: myview,
             style: 'classic' // other styles include 'classic'
           }),
           view: myview,
           expanded: false,
         }); //Expand 
-        myview.ui.add(mylegend, "bottom-left");
+        myview.ui.add(mylegend, {position: "top-left", index:3});
       
         //---------------Legend---------------
       
