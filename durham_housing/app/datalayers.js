@@ -32,9 +32,7 @@ require([
    // create ten new instances of feature layers based on the following definitions
        var layer1 = new FeatureLayer({ 
        url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units_1/FeatureServer/9",
-    // url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/9",
-    //  "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
-      popupTemplate: {       
+          popupTemplate: {       
                   title: "The census boundary: {infilling2010_csv_Census_Tract}",
                   content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
                   },  // Display text in pop-up 
@@ -48,8 +46,7 @@ require([
       mymap.add(layer1); 
         var layer2 = new FeatureLayer({ 
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units_1/FeatureServer/8",
-              //"https://https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/8",
-          //    "https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/";
+          
       popupTemplate: {       
                   title: "The census boundary: {infilling2011_csv_Census_Tract}",
                   content: "<p>has  {infilling2011_csv_SumOfUnits} housing starts in {Date}.</p>"
