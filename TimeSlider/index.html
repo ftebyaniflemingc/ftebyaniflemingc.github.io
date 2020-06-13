@@ -89,7 +89,7 @@
         const map = new Map({
           basemap: {
             portalItem: {
-              id: "4f2e99ba65e34bb8af49733d9778fb8e"
+              id: "3582b744bba84668b52a16b0b6942544"
             }
           }
         });
@@ -166,17 +166,17 @@
 
         // fire stats for each year between 2014 - 2018
         const sumAcres = {
-          onStatisticField: "Shape__Area",
+          onStatisticField: "{Shape__Area}",
           outStatisticFieldName: "acres_sum",
           statisticType: "sum"
         };
         const fireCounts = {
-          onStatisticField: "OBJECTID",
+          onStatisticField: "{OBJECTID}",
           outStatisticFieldName: "fire_counts",
           statisticType: "count"
         };
         const year = {
-          onStatisticField: "Date",
+          onStatisticField: "{Date}",
           outStatisticFieldName: "year",
           statisticType: "max"
         };
@@ -346,7 +346,7 @@
               labels: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
               datasets: [
                 {
-                  label: "Acres burnt, year, fire counts",
+                  label: "Sum of Units, year, fire counts",
                   backgroundColor: "#ff642e", //"#B266FF",
                   data: [0]
                 }
