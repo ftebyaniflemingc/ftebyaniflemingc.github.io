@@ -243,7 +243,7 @@ require([
         }); //Expand 
         myview.ui.add(mylegend, {position: "top-left", index:3});
       
-        //---------------Legend---------------
+        //--------------TimeSlider---------------
       
       const mytimeSlider = new TimeSlider({
           container: "timeSlider",
@@ -261,7 +261,7 @@ require([
          myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
           watchUtils.whenFalseOnce(layerView, "updating", function(){
             layerView = lv;
-          });
+          //});
         //});
       
        // myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
@@ -282,7 +282,8 @@ require([
 
           // Values property is set the first month. 
           mytimeSlider.values = [start, end];
-        });//lv
+          });
+          });//lv
 
         // watch for time slider timeExtent change
         mytimeSlider.watch("timeExtent", function() {
