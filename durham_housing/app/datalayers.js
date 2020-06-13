@@ -249,7 +249,7 @@ require([
           mode: "time-window",
           view: myview
         });
-        myview.ui.add(timeSlider, "bottom-right");
+        myview.ui.add(timeSlider, "manual");
 
         // add the UI for titles, stats and chart.
         //view.ui.add("titleDiv", "top-right");
