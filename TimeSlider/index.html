@@ -85,7 +85,7 @@
         watchUtils,
         promiseUtils
       ) {
-        let timeSlider, firesChart;
+        let timeSlider, unitsChart;
         const map = new Map({
           basemap: {
             portalItem: {
@@ -120,10 +120,10 @@
         const layers = definitions.map(function(definition) {
           return createLayer(definition);
         });
-        // add the california fire layers
+        // add the housing units layers
         map.addMany(layers);
 
-        // get layerviews of each fire layers once the layers are loaded
+        // get layerviews of each units layers once the layers are loaded
         const layerViewsEachAlways = function getLayerViews() {
           return promiseUtils.eachAlways(
             layers.map(function(layer) {
@@ -150,21 +150,21 @@
             }
           });
 
-          // update the fire stats between 2014 - 2018 once timeExtent of
+          // update the unit stats between 2010 - 2019 once timeExtent of
           // the timeSlider changes
           timeSlider.watch("timeExtent", function() {
-            updateFiresStats();
+            updateUnitsStats();
           });
-          createFiresChart();
+          createUnitsChart();
         });
 
         view.whenLayerView(layers[0]).then(function(layerView) {
           watchUtils.whenFalseOnce(layerView, "updating", function() {
-            updateFiresStats();
+            updateUnitsStats();
           });
         });
 
-        // fire stats for each year between 2014 - 2018
+        // unit stats for each year between 2014 - 2018
         const sumUnits = {
           onStatisticField: "SumOfUnits",
           outStatisticFieldName: "units_sum",
@@ -185,8 +185,8 @@
           outStatistics: [sumUnits, ctCounts, year]
         };
 
-        // query five layerviews representing fires between 2014-2018
-        // this will be called from the UudateFiresStats function
+        // query five layerviews representing units between 2014-2018
+        // this will be called from the UudateUnitsStats function
         const queryFeaturesForStats = function getQueryResults(
           layerViewsResults
         ) {
@@ -233,19 +233,19 @@
         };
 
         // This function is called when the timeSlider's timeExtent changes
-        // It queries each layer view for fire stats and updates the chart
-        function updateFiresStats() {
+        // It queries each layer view for unit stats and updates the chart
+        function updateUnitsStats() {
           layerViewsEachAlways().then(function(layerViewsResults) {
-            // query each and every fire layerviews for stats and process the results
+            // query each and every unit layerviews for stats and process the results
             queryFeaturesForStats(layerViewsResults).then(function(
-              fireStatsQueryResults
+              unitStatsQueryResults
             ) {
               yearDiv.innerHTML = "";
               let year;
               let acresBurntList = [];
               let chartLabels = [];
-              // fire stats query results are back. Loop through them and process.
-              fireStatsQueryResults.map(function(result) {
+              // unit stats query results are back. Loop through them and process.
+              unitStatsQueryResults.map(function(result) {
                 if (result.error) {
                   return promiseUtils.resolve(result.error);
                 }
@@ -268,11 +268,11 @@
                   }
                 }
               });
-              // query results have been processed. Update the fires chart to display
+              // query results have been processed. Update the inites chart to display
               // sum of acres burnt for the given month and year
-              firesChart.data.datasets[0].data = acresBurntList;
-              firesChart.data.labels = chartLabels;
-              firesChart.update();
+              unitsChart.data.datasets[0].data = acresBurntList;
+              unitsChart.data.labels = chartLabels;
+              unitsChart.update();
               startYear = timeSlider.timeExtent.start.toLocaleString(
                 "default",
                 { year: "long" }
@@ -291,7 +291,7 @@
         }
 
         // Creates five instances of feature layers each representing
-        // fires for the given year (between 2014 - 2018)
+        // units for the given year (between 2014 - 2018)
         function createLayer(definition) {
           const year = definition.year;
 
@@ -308,10 +308,10 @@
             }
           });
         }
-        // Fires chart section
+        // Units chart section
         const yearDiv = document.getElementById("yearDiv");
         const infoDiv = document.getElementById("infoDiv");
-        const chartCanvas = document.getElementById("fireChart");
+        const chartCanvas = document.getElementById("unitChart");
         const infoDivExpand = new Expand({
           collapsedIconClass: "esri-icon-collapse",
           expandIconClass: "esri-icon-expand",
@@ -324,15 +324,15 @@
 
         // create a bar chart to display sum of acres
         // burnt for the given month and year.
-        function createFiresChart() {
+        function createUnitsChart() {
           Chart.defaults.global.defaultFontColor = "#d1d1d1";
-          firesChart = new Chart(chartCanvas.getContext("2d"), {
+          unitsChart = new Chart(chartCanvas.getContext("2d"), {
             type: "bar",
             data: {
               labels: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
               datasets: [
                 {
-                  label: "Sum of Units, year, fire counts",
+                  label: "Sum of Units, year, census tract",
                   backgroundColor: "#ff642e", //"#B266FF",
                   data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
                 }
@@ -378,7 +378,7 @@
               tooltips: {
                 callbacks: {
                   title: function(tooltipItem, data) {
-                    return "Fire";
+                    return "Unit";
                   },
                   label: function(tooltipItem, data) {
                     const yearCount = tooltipItem.xLabel.split(",");
@@ -403,12 +403,12 @@
     <div id="timeSliderDiv"></div>
     <div id="infoDiv" class="esri-widget">
       <div class="esri-widget__heading">
-        <h4>California fires 2014 - 2018</h4>
+        <h4>South Durham Region Housing 2010 - 2019</h4>
       </div>
       <div id="yearDiv"></div>
       <br />
       <canvas
-        id="fireChart"
+        id="unitChart"
         height="250"
         width="300"
         class="esri-widget"
