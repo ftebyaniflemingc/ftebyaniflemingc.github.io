@@ -166,17 +166,17 @@
 
         // fire stats for each year between 2014 - 2018
         const sumAcres = {
-          onStatisticField: "{Shape__Area}",
+          onStatisticField: "Shape__Area",
           outStatisticFieldName: "acres_sum",
           statisticType: "sum"
         };
         const fireCounts = {
-          onStatisticField: "{OBJECTID}",
+          onStatisticField: "OBJECTID",
           outStatisticFieldName: "fire_counts",
           statisticType: "count"
         };
         const year = {
-          onStatisticField: "{Date}",
+          onStatisticField: "Date",
           outStatisticFieldName: "year",
           statisticType: "max"
         };
@@ -308,20 +308,6 @@
             }
           });
         }
-
-        // create the legend
-        const layerInfos = layers.map(function(layer, i) {
-          return {
-            title: "",
-            layer: layer
-          };
-        });
-        const legend = new Legend({
-          view: view,
-          layerInfos: layerInfos
-        });
-        view.ui.add(legend, "top-left");
-
         // Fires chart section
         const monthDiv = document.getElementById("monthDiv");
         const infoDiv = document.getElementById("infoDiv");
