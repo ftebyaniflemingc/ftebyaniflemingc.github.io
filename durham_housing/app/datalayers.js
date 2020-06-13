@@ -244,30 +244,9 @@ require([
         myview.ui.add(mylegend, {position: "top-left", index:3});
       
         //---------------Legend---------------
-       const timeSlider = new TimeSlider({
-          container: "timeSlider",
-          mode: "time-window",
-          view: myview
-        });
-        myview.ui.add(timeSlider, "manual");
-
-        // add the UI for titles, stats and chart.
-        //view.ui.add("titleDiv", "top-right");
-
-        myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
-          const fullTimeExtent = [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10].timeInfo.fullTimeExtent;
-
-          // set up time slider properties
-          timeSlider.fullTimeExtent = fullTimeExtent;
-          timeSlider.stops = {
-            interval: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].timeInfo.interval
-          };
-        });
-
       
-      /*
       const mytimeSlider = new TimeSlider({
-          //container: "timeSlider",
+          container: "timeSlider",
           playRate: 1000,
           stops: {
             interval: {
@@ -289,7 +268,7 @@ require([
        //   layerView = lv;
 
           // start time of the time slider the first day of 2010
-          const start = new Date(2010, 12, 31);
+          const start = new Date(2009, 12, 31);
           // set time slider's full extent to 2019/12/31 - until end date of layer's fullTimeExtent
           mytimeSlider.fullTimeExtent = {
             start: start,
@@ -309,7 +288,7 @@ require([
         mytimeSlider.watch("timeExtent", function() {
           // only show units built up until the end of timeSlider's current time extent.
           [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].definitionExpression =
-            "Date <= " + mytimeSlider.timeExtent.end.getTime();
+            "{Date <= }" + mytimeSlider.timeExtent.end.getTime();
 
           // now gray out sum of units before the time slider's current timeExtent
           layerView.effect = {
@@ -320,6 +299,5 @@ require([
             excludedEffect: "grayscale(45%) opacity(25%)"
           };
         });//function()
-        */
       
 }); //require
