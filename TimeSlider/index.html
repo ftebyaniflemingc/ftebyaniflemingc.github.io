@@ -139,13 +139,13 @@
             view: view,
             fullTimeExtent: {
               start: new Date(2010, 1, 1),
-              end: new Date(2019, 12, 31)
+              end: new Date(2018, 12, 31)
             },
-            playRate: 2000,
+            playRate: 100,
             stops: {
               interval: {
                 value: 1,
-                unit: "months"
+                unit: "year"
               }
             }
           });
@@ -166,12 +166,12 @@
 
         // fire stats for each year between 2014 - 2018
         const sumAcres = {
-          onStatisticField: "Shape__Area",
+          onStatisticField: "{SumOfUnits}",
           outStatisticFieldName: "acres_sum",
           statisticType: "sum"
         };
         const fireCounts = {
-          onStatisticField: "OBJECTID",
+          onStatisticField: "{CT}",
           outStatisticFieldName: "fire_counts",
           statisticType: "count"
         };
@@ -240,8 +240,8 @@
             queryFeaturesForStats(layerViewsResults).then(function(
               fireStatsQueryResults
             ) {
-              monthDiv.innerHTML = "";
-              let month;
+              yearDiv.innerHTML = "";
+              let year;
               let acresBurntList = [];
               let chartLabels = [];
               // fire stats query results are back. Loop through them and process.
@@ -273,18 +273,18 @@
               firesChart.data.datasets[0].data = acresBurntList;
               firesChart.data.labels = chartLabels;
               firesChart.update();
-              startMonth = timeSlider.timeExtent.start.toLocaleString(
+              startYear = timeSlider.timeExtent.start.toLocaleString(
                 "default",
-                { month: "long" }
+                { year: "long" }
               );
-              endMonth = timeSlider.timeExtent.end.toLocaleString("default", {
-                month: "long"
+              endYear = timeSlider.timeExtent.end.toLocaleString("default", {
+                year: "long"
               });
-              monthDiv.innerHTML =
-                "<b> Month: <span>" +
-                startMonth +
+              yearDiv.innerHTML =
+                "<b> Year: <span>" +
+                startYear +
                 " - " +
-                endMonth +
+                endYear +
                 "</span></b>";
             });
           });
@@ -309,7 +309,7 @@
           });
         }
         // Fires chart section
-        const monthDiv = document.getElementById("monthDiv");
+        const yearDiv = document.getElementById("yearDiv");
         const infoDiv = document.getElementById("infoDiv");
         const chartCanvas = document.getElementById("fireChart");
         const infoDivExpand = new Expand({
@@ -345,7 +345,7 @@
               },
               title: {
                 display: true,
-                text: "Sum of Units built in by month",
+                text: "Sum of Units built in by year",
                 fontFamily:
                   "'Avenir Next W00','Helvetica Neue', Helvetica, Arial, sans-serif"
               },
@@ -405,7 +405,7 @@
       <div class="esri-widget__heading">
         <h4>California fires 2014 - 2018</h4>
       </div>
-      <div id="monthDiv"></div>
+      <div id="yearDiv"></div>
       <br />
       <canvas
         id="fireChart"
