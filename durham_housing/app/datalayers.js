@@ -241,7 +241,7 @@ require([
             style: 'classic' // other styles include 'classic'
           }),
           view: myview,
-          expanded: false,
+          expanded: true, // Legend widget is visible when the UI is loaded
         }); //Expand 
         myview.ui.add(mylegend, {position: "top-left", index:3});
       
