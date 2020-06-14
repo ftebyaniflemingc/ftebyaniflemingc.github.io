@@ -41,8 +41,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layerView: true
+            }}
         });
       mymap.add(layer1); 
         var layer2 = new FeatureLayer({ 
@@ -72,8 +71,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layerView: true
+            }}
         });
       mymap.add(layer3);
         var layer4 = new FeatureLayer({ 
@@ -88,8 +86,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layerView: true
+            }}
         });
       mymap.add(layer4);
       
@@ -105,8 +102,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layerView: true
+            }}
         });
       mymap.add(layer5);
       
@@ -122,8 +118,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layerView: true
+            }}
         });
       mymap.add(layer6);
       
@@ -139,8 +134,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layerView: true
+            }}
         });
       mymap.add(layer7);
       
@@ -156,8 +150,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layerView: true
+            }}
         });
       mymap.add(layer8);
       
@@ -172,8 +165,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layerView: true
+            }}
         });
       mymap.add(layer9);
       
@@ -188,13 +180,14 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layerView: true
+            }}
         });
       mymap.add(layer10);
       
        mymap.addMany([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]);
       // Mapview, referencing WebMap instance
+      
+      
       var myview = new MapView({
              map: mymap,    // The WebMap instance created above
             layers: [layer10, layer9, layer8, layer7, layer6, layer5, layer4, layer3, layer2, layer1],
@@ -265,11 +258,10 @@ require([
 
         // wait till the layer view is loaded
          myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]).then(function(lv) {
-          watchUtils.whenFalseOnce(layerView, "updating", function(){
+          });
+               watchUtils.whenFalseOnce(layerView, "updating", function(error){
             layerView = lv;
-          //});
-        //});
-      
+     });        
        // myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
        //   layerView = lv;
 
@@ -288,8 +280,7 @@ require([
 
           // Values property is set the first month. 
           mytimeSlider.values = [thestart, theend];
-          });
-          });//lv
+          
 
         // watch for time slider timeExtent change
         mytimeSlider.watch("timeExtent", function() {
