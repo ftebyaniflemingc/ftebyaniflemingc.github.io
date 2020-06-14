@@ -246,7 +246,7 @@ require([
         //--------------TimeSlider---------------
       
       const mytimeSlider = new TimeSlider({
-          container: "timeSlider",
+          //container: "timeSlider",
           playRate: 1000,
           stops: {
             interval: {
