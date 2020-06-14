@@ -155,7 +155,6 @@ require([
       
       var layer9 = new FeatureLayer({ 
        url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units_1/FeatureServer/1",
-
       popupTemplate: {       
                   title: "The census boundary: {infilling2018_csv_Census_Tract}",
                   content: "<p>has  {infilling2018_csv_SumOfUnits} housing starts in {Date}.</p>"
@@ -171,7 +170,6 @@ require([
       
       var layer10 = new FeatureLayer({ 
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units_1/FeatureServer/0",
-
       popupTemplate: {       
                   title: "The census boundary: {infilling2019_csv_Census_Tract}",
                   content: "<p>has  {infilling2019_csv_SumOfUnits} housing starts in {Date}.</p>"
@@ -186,7 +184,7 @@ require([
       mymap.add(layer10);
       
        mymap.layers.addMany([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
-      mymap.layers.reorder([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
+     // mymap.layers.reorder([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
 
       // Mapview, referencing WebMap instance
       var myview = new MapView({
