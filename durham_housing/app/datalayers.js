@@ -183,13 +183,13 @@ require([
         });
       mymap.add(layer10);
       
-       mymap.layers.addMany([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
+       mymap.layers.addMany([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]);
      // mymap.layers.reorder([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
 
       // Mapview, referencing WebMap instance
       var myview = new MapView({
              map: mymap,    // The WebMap instance created above
-            layers: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10],
+            layers: [layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1],
             container: "mapid",
             center: [-78.871866,43.914656],
             zoom: 10
@@ -256,7 +256,7 @@ require([
         myview.ui.add(mytimeSlider, "bottom-right");
 
         // wait till the layer view is loaded
-         myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
+         myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]).then(function(lv) {
           watchUtils.whenFalseOnce(layerView, "updating", function(){
             layerView = lv;
           //});
@@ -266,27 +266,27 @@ require([
        //   layerView = lv;
 
           // start time of the time slider the first day of 2010
-          const start = new Date(2009, 12, 31);
+          const thestart = new Date(2009, 12, 31);
           // set time slider's full extent to 2019/12/31 - until end date of layer's fullTimeExtent
           mytimeSlider.fullTimeExtent = {
-            start: start,
-            end: [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].timeInfo.fullTimeExtent.end
+            start: thestart,
+            end: [layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1].timeInfo.fullTimeExtent.end
           };
 
           // We will be showing sum of units with one month interval when the app is loaded the sum of units between next month.
-          const end = new Date(start);
+          const theend = new Date(thestart);
           // end of current time extent for time slider  showing next units built  with one month interval
-          end.setDate(end.getDate() + 1);
+          theend.setDate(theend.getDate() + 1);
 
           // Values property is set the first month. 
-          mytimeSlider.values = [start, end];
+          mytimeSlider.values = [thestart, theend];
           });
           });//lv
 
         // watch for time slider timeExtent change
         mytimeSlider.watch("timeExtent", function() {
           // only show units built up until the end of timeSlider's current time extent.
-          [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].definitionExpression =
+          [layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1].definitionExpression =
                 {Date} + mytimeSlider.timeExtent.end.getTime();
 
           // now gray out sum of units before the time slider's current timeExtent
