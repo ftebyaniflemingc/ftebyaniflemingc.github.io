@@ -266,10 +266,10 @@ require([
         myview.ui.add(mytimeSlider, "bottom-right");
 
         // wait till the layer view is loaded
-         myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]).then(function(lv) {
+         myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]).then(function(layerView) {
       //    });
          //      watchUtils.whenFalseOnce(layerView, "updating", function(error){
-            layerView = lv;
+            //layerView = lv;
      });        
       
 
