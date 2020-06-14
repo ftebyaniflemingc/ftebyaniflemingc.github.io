@@ -99,7 +99,7 @@ require([
           timeInfo: {
             startField: {Date}, // name of the date field
             interval: {        
-              unit: "days",
+              unit: "months",
               value: 1
             }}
         });
@@ -163,7 +163,7 @@ require([
           timeInfo: {
             startField: {Date}, // name of the date field
             interval: {        
-              unit: "days",
+              unit: "months",
               value: 1
             }}
         });
@@ -248,12 +248,12 @@ require([
       const mytimeSlider = new TimeSlider({
           //container: "timeSlider",
           playRate: 1000,
-          stops: {
+        /*  stops: {
             interval: {
               value: 1,
               unit: "months"
             }
-          }
+          }*/
         });
         myview.ui.add(mytimeSlider, "bottom-right");
 
@@ -289,7 +289,7 @@ require([
         mytimeSlider.watch("timeExtent", function() {
           // only show units built up until the end of timeSlider's current time extent.
           [layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ].definitionExpression =
-            "{Date <= }" + mytimeSlider.timeExtent.end.getTime();
+                {Date} + mytimeSlider.timeExtent.end.getTime();
 
           // now gray out sum of units before the time slider's current timeExtent
           layerView.effect = {
