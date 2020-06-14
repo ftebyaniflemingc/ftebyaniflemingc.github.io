@@ -195,6 +195,15 @@ require([
             center: [-78.871866,43.914656],
             zoom: 10
       }); //mapview 
+
+      myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4, layer3, layer2, layer1])
+    .then(function(layerView) {
+      // The layerview for the layer
+    })
+    .catch(function(error) {
+      // An error occurred during the layerview creation
+    });
+
        //---------------Home Button---------------
         var myhome = new Home({
             view: myview,
@@ -262,9 +271,9 @@ require([
                watchUtils.whenFalseOnce(layerView, "updating", function(error){
             layerView = lv;
      });        
-       // myview.whenLayerView([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]).then(function(lv) {
-       //   layerView = lv;
+      
 
+      
           // start time of the time slider the first day of 2010
           const thestart = new Date(2009, 12, 31);
           // set time slider's full extent to 2019/12/31 - until end date of layer's fullTimeExtent
