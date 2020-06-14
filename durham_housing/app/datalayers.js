@@ -195,7 +195,7 @@ require([
             zoom: 10
       }); //mapview 
 
-      layerView.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4, layer3, layer2, layer1])
+      myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4, layer3, layer2, layer1])
     .then(function(layerView) {
             
       // The layerview for the layer
@@ -260,9 +260,9 @@ const timeSlider = new TimeSlider({
 });
 myview.ui.add(timeSlider, "bottom-right");
 
-myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]).then(function(lv) {
-    watchUtils.whenFalseOnce(lv, "updating", function(error){
-          console.log(lv);
+myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]).then(function(layerViewv) {
+    watchUtils.whenFalseOnce(layerViewv, "updating", function(error){
+          console.log(layerViewv);
     });
   // start time of the TimeSlider - 
   const start = new Date(2009, 12, 31);
