@@ -280,7 +280,7 @@ require([
           mytimeSlider.fullTimeExtent = {
             start: thestart,
             //end: [layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1].timeInfo.fullTimeExtent.end };
-              end: [layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1].timeInfo.end 
+              end: [layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1].timeInfo 
           };
 
           // We will be showing sum of units with one month interval when the app is loaded the sum of units between next month.
