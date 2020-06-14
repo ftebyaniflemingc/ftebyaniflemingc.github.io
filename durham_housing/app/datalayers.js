@@ -18,7 +18,7 @@ require([
         ], 
         function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, LayerList, Legend, Expand, 
                   TimeSlider, PopupTemplate ){
-    let layerView;
+   // let layerView;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
       const mymap = new Map({
@@ -199,7 +199,7 @@ require([
       myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4, layer3, layer2, layer1])
     .then(function(layerView) {
       // The layerview for the layer
-    });
+    })
     .catch(function(error) {
       // An error occurred during the layerview creation
     });
