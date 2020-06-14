@@ -18,7 +18,7 @@ require([
         ], 
         function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, LayerList, Legend, Expand, 
                   TimeSlider, PopupTemplate ){
-   // let layerView;
+    let layerView;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
       const mymap = new Map({
@@ -252,7 +252,42 @@ require([
         myview.ui.add(mylegend, {position: "top-left", index:3});
       
         //--------------TimeSlider---------------
+       // create a new TimeSlider widget
+const timeSlider = new TimeSlider({
+ // container: "timeSlider",
+  playRate: 50
+});
+myview.ui.add(timeSlider, "bottom-right");
+
+myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]).then(function(lv) {
+      layerView = lv;
+  // start time of the TimeSlider - 5/25/2019
+  const start = new Date(2009, 12, 31);
+  const end = new Date(start);
+  // end of current time extent for TimeSlider
+  // showing earthquakes with one day interval
+  end.setDate(end.getDate() + 1);
+
+  // set TimeSlider's full extent to 5/25/5019 - until end date of layer's fullTimeExtent
+  timeSlider.fullTimeExtent = {
+    start: start,
+    end: [layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1].timeInfo.fullTimeExtent.end
+  };
+  // setting current time extent
+  timeSlider.values = [start, end];
+
+  // calculate stops for the TimeSlider
+  // with one day interval for given full time extent
+  timeSlider.createStopsByInterval(
+    timeSlider.fullTimeExtent,
+    {
+      value: 1,
+      unit: "months"
+    }
+  );
+});
       
+      /*
       const mytimeSlider = new TimeSlider({
           //container: "timeSlider",
           playRate: 1000,
@@ -306,5 +341,5 @@ require([
             excludedEffect: "grayscale(45%) opacity(25%)"
           };
         });//function()
-      
+      */
 }); //require
