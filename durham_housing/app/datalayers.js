@@ -9,14 +9,14 @@ require([
       "esri/widgets/LayerList",
       "esri/widgets/Legend",
       "esri/widgets/Expand",
-      "esri/core/watchUtils",
+    //  "esri/core/watchUtils",
       "esri/widgets/TimeSlider",
     
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, LayerList, Legend, Expand, watchUtils,
+        function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, LayerList, Legend, Expand, 
                   TimeSlider, PopupTemplate ){
     let layerView;
       //---------------FeatureLayers---------------
@@ -267,8 +267,8 @@ require([
 
         // wait till the layer view is loaded
          myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]).then(function(lv) {
-          });
-               watchUtils.whenFalseOnce(layerView, "updating", function(error){
+      //    });
+         //      watchUtils.whenFalseOnce(layerView, "updating", function(error){
             layerView = lv;
      });        
       
