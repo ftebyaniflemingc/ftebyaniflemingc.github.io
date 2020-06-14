@@ -18,7 +18,7 @@ require([
         ], 
         function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, LayerList, Legend, Expand, watchUtils,
                   TimeSlider, PopupTemplate ){
-    let layerView;
+  //  let layerView;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
       const mymap = new Map({
