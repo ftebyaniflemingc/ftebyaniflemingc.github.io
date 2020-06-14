@@ -276,15 +276,18 @@ require([
       
           // start time of the time slider the first day of 2010
           const thestart = new Date(2009, 12, 31);
+          
           // set time slider's full extent to 2019/12/31 - until end date of layer's fullTimeExtent
           mytimeSlider.fullTimeExtent = {
             start: thestart,
             end: [layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1].timeInfo.fullTimeExtent.end 
           };
-            //  end: [layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1].timeInfo  };
+          
 
           // We will be showing sum of units with one month interval when the app is loaded the sum of units between next month.
-          const theend = new Date(thestart);
+          //const theend = new Date(thestart);
+          const theend = new Date( [layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]
+                                  .timeInfo.fullTimeExtent.end );
           // end of current time extent for time slider  showing next units built  with one month interval
           theend.setDate(theend.getDate() + 1);
 
