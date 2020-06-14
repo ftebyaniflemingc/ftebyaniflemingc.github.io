@@ -260,11 +260,11 @@ const timeSlider = new TimeSlider({
   playRate: 50
 });
 myview.ui.add(timeSlider, "bottom-right");
-
+/*
 myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]).then(function(layerViewv) {
     watchUtils.whenFalseOnce(layerViewv, "updating", function(error){
           console.log(layerViewv);
-    });
+    }); */
   // start time of the TimeSlider - 
   const start = new Date(2009, 12, 31);
   const theend = new Date(start);
