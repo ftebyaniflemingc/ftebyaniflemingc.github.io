@@ -9,6 +9,7 @@ require([
       "esri/widgets/LayerList",
       "esri/widgets/Legend",
       "esri/widgets/Expand",
+      "esri/core/watchUtils",
     //  "esri/core/watchUtils",
       "esri/widgets/TimeSlider",
     
@@ -16,9 +17,9 @@ require([
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, LayerList, Legend, Expand, 
+        function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, LayerList, Legend, Expand, watchUtils
                   TimeSlider, PopupTemplate ){
-    let layerView;
+    //let layerView;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
       const mymap = new Map({
@@ -41,8 +42,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layeView: 9
+            }}
         });
       mymap.add(layer1); 
         var layer2 = new FeatureLayer({ 
@@ -57,8 +57,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layerView: 8
+            }}
         });
       mymap.add(layer2);
         var layer3 = new FeatureLayer({ 
@@ -72,8 +71,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layeView: 7
+            }}
         });
       mymap.add(layer3);
         var layer4 = new FeatureLayer({ 
@@ -88,8 +86,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layeView: 6
+            }}
         });
       mymap.add(layer4);
       
@@ -105,8 +102,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layeView: 5
+            }}
         });
       mymap.add(layer5);
       
@@ -122,8 +118,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layeView: 4
+            }}
         });
       mymap.add(layer6);
       
@@ -139,8 +134,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layeView: 3
+            }}
         });
       mymap.add(layer7);
       
@@ -156,8 +150,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layeView: 2
+            }}
         });
       mymap.add(layer8);
       
@@ -172,8 +165,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layeView: 1
+            }}
         });
       mymap.add(layer9);
       
@@ -188,8 +180,7 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }},
-             layeView: 0
+            }}
         });
       mymap.add(layer10);
       
@@ -207,6 +198,7 @@ require([
 
       myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4, layer3, layer2, layer1])
     .then(function(layerView) {
+            
       // The layerview for the layer
     })
     .catch(function(error) {
@@ -269,7 +261,9 @@ const timeSlider = new TimeSlider({
 myview.ui.add(timeSlider, "bottom-right");
 
 myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]).then(function(lv) {
-      layerView = lv;
+    watchUtils.whenFalseOnce(lv, "updating", function(error){
+          console.log(lv);
+    });
   // start time of the TimeSlider - 
   const start = new Date(2009, 12, 31);
   const theend = new Date(start);
