@@ -4,7 +4,7 @@ require([
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
       "esri/layers/Layer",
-      "esri/views/layerView",
+      "esri/views/layers/LayerView",
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen",
       "esri/widgets/LayerList",
@@ -17,7 +17,7 @@ require([
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(Map, MapView, FeatureLayer,  Layer, layerView, Home, Fullscreen, LayerList, Legend, Expand, watchUtils,
+        function(Map, MapView, FeatureLayer,  Layer, LayerView, Home, Fullscreen, LayerList, Legend, Expand, watchUtils,
                   TimeSlider, PopupTemplate ){
   //  let layerView;
       //---------------FeatureLayers---------------
