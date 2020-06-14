@@ -17,7 +17,7 @@ require([
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, LayerList, Legend, Expand, watchUtils
+        function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, LayerList, Legend, Expand, watchUtils,
                   TimeSlider, PopupTemplate ){
     //let layerView;
       //---------------FeatureLayers---------------
