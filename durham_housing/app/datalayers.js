@@ -183,13 +183,11 @@ require([
         });
       mymap.add(layer10);
       
-       mymap.layers.addMany([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]);
-     // mymap.layers.reorder([layer1, layer2, layer3, layer4, layer5, layer6, layer8,layer9, layer10 ]);
-
+       mymap.addMany([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]);
       // Mapview, referencing WebMap instance
       var myview = new MapView({
              map: mymap,    // The WebMap instance created above
-            layers: [layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1],
+            layers: [layer10, layer9, layer8, layer7, layer6, layer5, layer4, layer3, layer2, layer1],
             container: "mapid",
             center: [-78.871866,43.914656],
             zoom: 10
