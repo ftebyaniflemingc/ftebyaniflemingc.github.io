@@ -42,7 +42,7 @@ require([
               unit: "months",
               value: 1
             }},
-             layeView: 0
+             layeView: 9
         });
       mymap.add(layer1); 
         var layer2 = new FeatureLayer({ 
@@ -58,7 +58,7 @@ require([
               unit: "months",
               value: 1
             }},
-             layerView: 1
+             layerView: 8
         });
       mymap.add(layer2);
         var layer3 = new FeatureLayer({ 
@@ -73,7 +73,7 @@ require([
               unit: "months",
               value: 1
             }},
-             layeView: 2
+             layeView: 7
         });
       mymap.add(layer3);
         var layer4 = new FeatureLayer({ 
@@ -89,7 +89,7 @@ require([
               unit: "months",
               value: 1
             }},
-             layeView: 3
+             layeView: 6
         });
       mymap.add(layer4);
       
@@ -106,7 +106,7 @@ require([
               unit: "months",
               value: 1
             }},
-             layeView: 4
+             layeView: 5
         });
       mymap.add(layer5);
       
@@ -123,7 +123,7 @@ require([
               unit: "months",
               value: 1
             }},
-             layeView: 5
+             layeView: 4
         });
       mymap.add(layer6);
       
@@ -140,7 +140,7 @@ require([
               unit: "months",
               value: 1
             }},
-             layeView: 6
+             layeView: 3
         });
       mymap.add(layer7);
       
@@ -157,7 +157,7 @@ require([
               unit: "months",
               value: 1
             }},
-             layeView: 7
+             layeView: 2
         });
       mymap.add(layer8);
       
@@ -173,7 +173,7 @@ require([
               unit: "months",
               value: 1
             }},
-             layeView: 8
+             layeView: 1
         });
       mymap.add(layer9);
       
@@ -189,7 +189,7 @@ require([
               unit: "months",
               value: 1
             }},
-             layeView: 9
+             layeView: 0
         });
       mymap.add(layer10);
       
