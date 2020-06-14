@@ -41,7 +41,8 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }}
+            }},
+             layeView: 0
         });
       mymap.add(layer1); 
         var layer2 = new FeatureLayer({ 
@@ -57,7 +58,7 @@ require([
               unit: "months",
               value: 1
             }},
-             layerView: true
+             layerView: 1
         });
       mymap.add(layer2);
         var layer3 = new FeatureLayer({ 
@@ -71,7 +72,8 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }}
+            }},
+             layeView: 2
         });
       mymap.add(layer3);
         var layer4 = new FeatureLayer({ 
@@ -86,7 +88,8 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }}
+            }},
+             layeView: 3
         });
       mymap.add(layer4);
       
@@ -102,7 +105,8 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }}
+            }},
+             layeView: 4
         });
       mymap.add(layer5);
       
@@ -118,7 +122,8 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }}
+            }},
+             layeView: 5
         });
       mymap.add(layer6);
       
@@ -134,7 +139,8 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }}
+            }},
+             layeView: 6
         });
       mymap.add(layer7);
       
@@ -150,7 +156,8 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }}
+            }},
+             layeView: 7
         });
       mymap.add(layer8);
       
@@ -165,7 +172,8 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }}
+            }},
+             layeView: 8
         });
       mymap.add(layer9);
       
@@ -180,7 +188,8 @@ require([
             interval: {        
               unit: "months",
               value: 1
-            }}
+            }},
+             layeView: 9
         });
       mymap.add(layer10);
       
