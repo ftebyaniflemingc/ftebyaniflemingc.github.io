@@ -256,12 +256,12 @@ require([
       const mytimeSlider = new TimeSlider({
           //container: "timeSlider",
           playRate: 1000,
-        /*  stops: {
+          stops: {
             interval: {
               value: 1,
               unit: "months"
             }
-          }*/
+          }
         });
         myview.ui.add(mytimeSlider, "bottom-right");
 
