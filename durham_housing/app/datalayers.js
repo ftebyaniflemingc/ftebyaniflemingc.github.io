@@ -10,16 +10,16 @@ require([
       "esri/widgets/LayerList",
       "esri/widgets/Legend",
       "esri/widgets/Expand",
-      "esri/core/watchUtils",
+   //   "esri/core/watchUtils",
       "esri/widgets/TimeSlider",
     
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(WebMap, MapView, FeatureLayer,  Layer, LayerView, Home, Fullscreen, LayerList, Legend, Expand, watchUtils,
+        function(WebMap, MapView, FeatureLayer,  Layer, LayerView, Home, Fullscreen, LayerList, Legend, Expand,
                   TimeSlider, PopupTemplate ){
-  //  let layerView;
+   let layerView;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
       const mymap = new WebMap({
@@ -260,8 +260,11 @@ const timeSlider = new TimeSlider({
   playRate: 50
 });
 myview.ui.add(timeSlider, "bottom-right");
+
+        myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]).then(function(lv) {
+          layerView = lv;
 /*
-myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]).then(function(layerViewv) {
+myview.whenLayerView().then(function(layerViewv) {
     watchUtils.whenFalseOnce(layerViewv, "updating", function(error){
           console.log(layerViewv);
     }); */
