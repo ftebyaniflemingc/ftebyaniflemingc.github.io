@@ -166,21 +166,21 @@ require([
    mybookmarks : [
      new Bookmarks ({
        name : "Oshawa" ,
-     /*  extent : {
+       extent : {
          spatialReference : {wkid : 32617},
         xmin : -78.790409 ,
          ymin : 43.868072 ,
          xmax : -78.940272 ,
          ymax : 43.95708
-      }, */
+      }, 
            name : "Whitby" ,
-      /* extent : {
-         spatialReference : {wkid : 102100},
-        xmin : -78.790409 ,
-         ymin : 43.868072 ,
-         xmax : -78.940272 ,
-         ymax : 43.95708
-      } */
+       extent : {
+         spatialReference : {wkid : 32617},
+        xmin : -79.038958 ,
+         ymin : 43.992001 ,
+         xmax : -78.880817 ,
+         ymax : 43.850775
+      } 
     }) // other bookmarks ...   
    ]
 
