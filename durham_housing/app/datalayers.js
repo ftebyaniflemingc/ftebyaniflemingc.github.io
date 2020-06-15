@@ -159,7 +159,35 @@ require([
                 
       
       //-------------------Layer List-------------------------------
-      
+         const bookmarks = new Bookmarks ({
+   view : myview,
+   bookmarks : [
+     new Bookmark ({
+       name : "Oshawa" ,
+       extent : {
+         spatialReference : {
+           wkid : 102100
+        },
+        xmin : -78.790409 ,
+         ymin : 43.868072 ,
+         xmax : -78.940272 ,
+         ymax : 43.95708
+      }
+    }) // other bookmarks ...   
+   ]
+
+
+
+
+});
+
+
+const bkExpand = new Expand ({
+   view : myview,
+   content : bookmarks,
+   expanded : false
+});
+         myview.ui.add ({position: "top-right", index:1 });
       
       
       myview.when(function() {
