@@ -200,8 +200,11 @@ require([
    view : myview,
    bookmarks: [        
    new Bookmark({
-            name: "Oshawa"
-           extent: {   spatialReference: {  wkid: 32617  },
+            name: "Oshawa",
+           extent: {   
+                 spatialReference: {  
+                       wkid: 32617  
+                 },
          xmin : -78.940272,
          ymin : 43.95708,
          xmax :  -78.790409,
