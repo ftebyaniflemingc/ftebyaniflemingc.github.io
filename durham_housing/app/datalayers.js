@@ -168,18 +168,18 @@ require([
        name : "Oshawa" ,
        extent : {
          spatialReference : {wkid : 32617},
-        xmin : -78.790409 ,
-         ymin : 43.868072 ,
-         xmax : -78.940272 ,
-         ymax : 43.95708
+        xmin : -78.940272,
+         ymin : 43.95708,
+         xmax :  -78.790409,
+         ymax : 43.868072
       }, 
            name : "Whitby" ,
        extent : {
          spatialReference : {wkid : 32617},
-        xmin : -79.038958 ,
-         ymin : 43.992001 ,
-         xmax : -78.880817 ,
-         ymax : 43.850775
+        xmin : -78.880817,
+         ymin :  43.850775,
+         xmax : -79.038958,
+         ymax : 43.992001
       } 
     }) // other bookmarks ...   
    ]
