@@ -5,6 +5,7 @@ require([
       "esri/layers/FeatureLayer",
       "esri/layers/Layer",
       "esri/widgets/Bookmarks",
+       "esri/webmap/Bookmark",
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen",
       "esri/widgets/LayerList",
@@ -14,7 +15,7 @@ require([
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(WebMap, MapView, FeatureLayer,  Layer, Bookmarks, Home, Fullscreen, LayerList, Legend, Expand,  PopupTemplate ){
+        function(WebMap, MapView, FeatureLayer,  Layer, Bookmarks, Bookmark, Home, Fullscreen, LayerList, Legend, Expand,  PopupTemplate ){
    let layerView;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
