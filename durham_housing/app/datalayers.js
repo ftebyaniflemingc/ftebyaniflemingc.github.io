@@ -11,7 +11,7 @@ require([
       "esri/widgets/Legend",
       "esri/widgets/Bookmarks",
       "esri/webmap/Bookmark",
-     /"esri/PopupTemplate",
+     "esri/PopupTemplate"
     //"dojo/dom",
     //"dojo/domReady!"
         ], 
