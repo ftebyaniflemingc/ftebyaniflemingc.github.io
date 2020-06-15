@@ -203,7 +203,7 @@ require([
             name: "Oshawa",
            extent: {   
                  spatialReference: {  
-                       wkid: 32617  
+                       wkid: 26917 
                  },
          xmin : -78.940272,
          ymin : 43.95708,
