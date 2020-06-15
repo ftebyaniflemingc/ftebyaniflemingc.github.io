@@ -11,9 +11,9 @@ require([
       "esri/widgets/Legend",
       "esri/widgets/Bookmarks",
       "esri/webmap/Bookmark",
-      "esri/PopupTemplate",
-      "dojo/dom",
-      "dojo/domReady!"
+     /"esri/PopupTemplate",
+    //"dojo/dom",
+    //"dojo/domReady!"
         ], 
         function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, Expand, LayerList, Legend, Bookmarks, Bookmark, PopupTemplate ){
    let layerView;
@@ -196,10 +196,9 @@ require([
         myview.ui.add(mylegend, {position: "top-left", index:3}); //position is the third from the top
   
       //-------------------BookMarks------------------------------- 
-    var mybookmarks = new Bookmarks ({
+    const bookmarks = new Bookmarks ({
    view : myview,
-   mybookmarks: [  
-                       
+   bookmarks: [        
    new Bookmark({
             name: "Oshawa"
        /*     extent: {   spatialReference: {  wkid: 32617  },
@@ -263,7 +262,7 @@ require([
 
 const bkExpand = new Expand ({
    view : myview,
-   content : mybookmarks,
+   content : bookmarks,
    expanded : false
 });
          myview.ui.add (bkExpand, {position: "top-right", index:1 });
