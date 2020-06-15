@@ -161,15 +161,13 @@ require([
                 
      //-------------------BookMarks------------------------------- 
       
-         const bookmarks = new Bookmarks ({
+         const mybookmarks = new Bookmark ({
    view : myview,
-   bookmarks : [
-     new Bookmarks ({
+   mybookmarks : [
+     new Bookmark ({
        name : "Oshawa" ,
        extent : {
-         spatialReference : {
-           wkid : 102100
-        },
+         spatialReference : {wkid : 102100},
         xmin : -78.790409 ,
          ymin : 43.868072 ,
          xmax : -78.940272 ,
@@ -186,7 +184,7 @@ require([
 
 const bkExpand = new Expand ({
    view : myview,
-   content : bookmarks,
+   content : mybookmarks,
    expanded : false
 });
          myview.ui.add (bkExpand, {position: "top-right", index:1 });
