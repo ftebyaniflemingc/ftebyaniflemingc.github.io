@@ -3,7 +3,7 @@ html, body {
   margin: 0;
   height: 100%;
   width: 100%;
-  font-family: 'Roboto', Calibri, sans-serif;
+  font-family: 'Roboto', 'Calibri', sans-serif;
   color: #656565;
 }
 
@@ -52,13 +52,14 @@ html, body {
 #titleId { 
   background-color: rgba(255, 255, 255, 0.8);
   padding: 5px;
-  font-size: 26px;
+  font-size: 2vw;
   font-weight: normal;
   font-family: "Arial Unicode MS";
   position: absolute;
   top: 10px;
   width: 50%;
   left: 25%;
+  rightt: 25%;
   text-align: center;   
 }
 
