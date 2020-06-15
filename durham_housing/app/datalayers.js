@@ -200,19 +200,15 @@ require([
    view : myview,
    bookmarks: [        
    new Bookmark({
-            name: "Oshawa",
-         extent:{
-           center:  [-78.861287, 43.917085], 
-            zoom: 13
-         }
-         /*  extent: {
-                 spatialReference: {wkid: 26917},   
+         name: "Oshawa",
+         extent: {
+           spatialReference: {wkid: 26917},   
                  
-          xmin : -78.795736,
+         xmin : -78.795736,
          ymin : 43.867134,
          xmax :  -78.931791,
          ymax : 43.960520
-            } */
+            } 
          /*  }),
           new Bookmark({
             name: "Whitby"
