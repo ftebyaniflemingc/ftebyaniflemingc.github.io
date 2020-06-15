@@ -161,7 +161,7 @@ require([
                 
      //-------------------BookMarks------------------------------- 
       
-         var bookmarks = new Bookmarks ({
+         const bookmarks = new Bookmarks ({
    view : myview,
    bookmarks : [
      new Bookmarks ({
