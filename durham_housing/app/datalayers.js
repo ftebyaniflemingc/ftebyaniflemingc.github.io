@@ -202,8 +202,8 @@ require([
    new Bookmark({
          name: "Oshawa",
          extent: {
-           spatialReference: {latestwkid: 26917, 
-                              wkid: 26917},   
+           spatialReference: {latestwkid: 32617, 
+                              wkid: 102100},   
                  zoom:12,
          ymax : -78.891533,
          xmax : 43.853411,
