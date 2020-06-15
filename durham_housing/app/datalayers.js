@@ -201,7 +201,7 @@ require([
    bookmarks: [        
    new Bookmark({
             name: "Oshawa",
-         mapView:{
+         myview:{
            center:  [-78.861287, 43.917085], 
             zoom: 13
          }
