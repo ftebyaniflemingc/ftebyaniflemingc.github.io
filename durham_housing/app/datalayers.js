@@ -202,7 +202,7 @@ require([
    new Bookmark({
          name: "Oshawa",
          extent: {
-           spatialReference: {latestwkid: 29617, wkid: 29617},   
+           spatialReference: {wkid: 32217},   
                  zoom:11,
          xmin: -2950517.178084,
     ymin: -4378501.731185,
@@ -214,6 +214,7 @@ require([
             name: "Whitby",
             extent: {
               spatialReference: {latestwkid: 29617, wkid: 29617},   
+                  zoom:11,
               xmin : -78.880817,
          ymin :  43.850775,
          xmax : -79.038958,
@@ -223,7 +224,8 @@ require([
          new Bookmark({
             name: "Ajax",
             extent: {
-              spatialReference: {latestwkid: 29617, wkid: 29617},   
+              spatialReference: {latestwkid: 29617, wkid: 29617},  
+                  zoom:11,
               xmin: -79.040779,
               ymin: 43.824347,
               xmax: -79.008874,
@@ -243,7 +245,8 @@ require([
           new Bookmark({
             name: "Pickering",
             extent: {
-              spatialReference: {latestwkid: 29617, wkid: 29617},   
+              spatialReference: {latestwkid: 29617, wkid: 29617}, 
+                  zoom:11,
               xmin: -79.121710,
               ymin: 43.803571,
               xmax: -79.039612,
@@ -259,6 +262,6 @@ const bkExpand = new Expand ({
    content : bookmarks,
    expanded : false
 });
-         myview.ui.add (bkExpand, {position: "top-right", index:1 });
+         myview.ui.add (bkExpand, {position: "buttom-right", index:1 });
       
 }); //require
