@@ -130,7 +130,7 @@ require([
             layers: [layer10, layer9, layer8, layer7, layer6, layer5, layer4, layer3, layer2, layer1],
             container: "mapid",
            center: [-78.871866,43.914656],
-            zoom: 7
+            zoom: 10
       }); //mapview 
 
       myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4, layer3, layer2, layer1])
@@ -204,10 +204,10 @@ require([
          extent: {
            spatialReference: {wkid: 26917},   
                  zoom:12,
-         xmin : -78.891533,
-         ymin : 43.853411,
-         xmax :  -78.846423,
-         ymax : 43.930244
+         xmin : -788915.33,
+         ymin : 438534.11,
+         xmax :  -788464.23,
+         ymax : 439302.44
             } 
          /*  }),
           new Bookmark({
