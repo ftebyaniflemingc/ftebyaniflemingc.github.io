@@ -201,8 +201,10 @@ require([
    bookmarks: [        
    new Bookmark({
             name: "Oshawa",
+         mapView:{
            center:  [-78.861287, 43.917085], 
-            zoom: 12
+            zoom: 13
+         }
          /*  extent: {
                  spatialReference: {wkid: 26917},   
                  
