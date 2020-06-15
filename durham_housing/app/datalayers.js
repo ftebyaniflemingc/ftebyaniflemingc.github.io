@@ -35,7 +35,7 @@ require([
           });
       mymap.add(layer1); 
         var layer2 = new FeatureLayer({ 
-     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/Housing_Units/FeatureServer/8",
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units_1/FeatureServer/8",
           
       popupTemplate: {       
                   title: "The census boundary: {infilling2011_csv_Census_Tract}",
