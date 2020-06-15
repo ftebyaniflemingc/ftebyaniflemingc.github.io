@@ -196,9 +196,10 @@ require([
         myview.ui.add(mylegend, {position: "top-left", index:3}); //position is the third from the top
   
       //-------------------BookMarks------------------------------- 
-    const mybookmarks = new Bookmarks ({
+    var mybookmarks = new Bookmarks ({
    view : myview,
-   mybookmarks: [   
+   mybookmarks: [  
+                       
    new Bookmark({
             name: "Oshawa"
        /*     extent: {   spatialReference: {  wkid: 32617  },
