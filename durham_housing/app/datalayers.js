@@ -4,6 +4,7 @@ require([
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
       "esri/layers/Layer",
+      "esri/widgets/Bookmarks",
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen",
       "esri/widgets/LayerList",
@@ -13,7 +14,7 @@ require([
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, LayerList, Legend, Expand,  PopupTemplate ){
+        function(Map, MapView, FeatureLayer,  Layer, Bookmarks, Home, Fullscreen, LayerList, Legend, Expand,  PopupTemplate ){
    let layerView;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
@@ -159,7 +160,7 @@ require([
                 
      //-------------------BookMarks------------------------------- 
       
-         const bookmarks = new Bookmarks ({
+         const mybookmarks = new Bookmarks ({
    view : myview,
    bookmarks : [
      new Bookmark ({
@@ -184,7 +185,7 @@ require([
 
 const bkExpand = new Expand ({
    view : myview,
-   content : bookmarks,
+   content : mybookmarks,
    expanded : false
 });
          myview.ui.add (bkExpand, {position: "top-right", index:1 });
