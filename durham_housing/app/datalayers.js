@@ -160,7 +160,7 @@ require([
         myview.ui.add(myfulls, {position: "top-left", index:2 }); //position is the second custom widget from the top
                 
      //-------------------BookMarks------------------------------- 
-    let mybookmarks = new Bookmarks ({
+    const mybookmarks = new Bookmarks ({
    view : myview,
    mybookmarks : [   
    new Bookmark({
@@ -190,10 +190,10 @@ require([
               spatialReference: {
                 wkid: 32617
               },
-              xmin: -2814690.83,
-              ymin: -2081978.04,
-              xmax: 8182457.30,
-              ymax: 4620020
+              xmin: ,
+              ymin: ,
+              xmax: ,
+              ymax: 
             }
           }), 
          new Bookmark({
@@ -202,10 +202,10 @@ require([
               spatialReference: {
                 wkid: 32617
               },
-              xmin: 1511963.70,
-              ymin: 1661959.86,
-              xmax: 12391704.56,
-              ymax: 5869053.90
+              xmin: ,
+              ymin: ,
+              xmax: ,
+              ymax: 
             }
           }),
           new Bookmark({
@@ -214,10 +214,10 @@ require([
               spatialReference: {
                  wkid: 32617
               },
-              xmin: -19424807.06,
-              ymin: -6466370.88,
-              xmax: 2843439.52,
-              ymax: 6937626.40
+              xmin: ,
+              ymin: ,
+              xmax: ,
+              ymax: 
             }*/
           }) 
         ]
