@@ -129,6 +129,9 @@ require([
              map: mymap,    // The Map instance created above
             layers: [layer10, layer9, layer8, layer7, layer6, layer5, layer4, layer3, layer2, layer1],
             container: "mapid",
+            constraints: {
+                rotationEnabled: false
+            },
             center: [-78.871866,43.914656],
             zoom: 9
       }); //mapview 
