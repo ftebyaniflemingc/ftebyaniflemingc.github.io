@@ -204,10 +204,10 @@ require([
          extent: {
            spatialReference: {wkid: 102100},   
                  zoom:12,
-         xmin : -788915.33,
-         ymin : 438534.11,
-         xmax :  -788464.23,
-         ymax : 439302.44
+         xmin : -78.891533,
+         ymin : 43.853411,
+         xmax :  -78.846423,
+         ymax : 43.930244
             } 
          /*  }),
           new Bookmark({
