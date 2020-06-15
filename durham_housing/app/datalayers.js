@@ -157,8 +157,8 @@ require([
          }, "Fullscreen");
         myview.ui.add(myfulls, {position: "top-left", index:2 }); //position is the second custom widget from the top
                 
+     //-------------------BookMarks------------------------------- 
       
-      //-------------------Layer List-------------------------------
          const bookmarks = new Bookmarks ({
    view : myview,
    bookmarks : [
@@ -187,9 +187,9 @@ const bkExpand = new Expand ({
    content : bookmarks,
    expanded : false
 });
-         myview.ui.add ({position: "top-right", index:1 });
+         myview.ui.add (bkExpand, {position: "top-right", index:1 });
       
-      
+  //-------------------Layer List-------------------------------    
       myview.when(function() {
       const layerList = new Expand({
           collapsedIconClass: "esri-icon-collapse",
