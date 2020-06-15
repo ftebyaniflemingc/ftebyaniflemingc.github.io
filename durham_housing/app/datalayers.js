@@ -185,7 +185,7 @@ require([
 
 const bkExpand = new Expand ({
    view : myview,
-   content : mybookmarks,
+   content : bookmarks,
    expanded : false
 });
          myview.ui.add (bkExpand, {position: "top-right", index:1 });
