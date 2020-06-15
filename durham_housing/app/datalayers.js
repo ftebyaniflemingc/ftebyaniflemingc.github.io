@@ -161,11 +161,19 @@ require([
                 
      //-------------------BookMarks------------------------------- 
       
-         const mybookmarks = new Bookmarks ({
+         const mybookmarks = new Bookmark ({
    view : myview,
    mybookmarks : [
-     new Bookmarks ({
+     new Bookmark ({
        name : "Oshawa" ,
+       extent : {
+         spatialReference : {wkid : 32617},
+        xmin : -78.790409 ,
+         ymin : 43.868072 ,
+         xmax : -78.940272 ,
+         ymax : 43.95708
+      },
+           name : "Whitby" ,
        extent : {
          spatialReference : {wkid : 102100},
         xmin : -78.790409 ,
