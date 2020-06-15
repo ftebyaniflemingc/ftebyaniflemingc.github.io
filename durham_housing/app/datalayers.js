@@ -165,6 +165,7 @@ require([
    view : myview,
    mybookmarks : [
      new Bookmarks ({
+           [
            new Bookmark ({
        name : "Oshawa" ,
        extent : {
@@ -183,7 +184,8 @@ require([
          xmax : -79.038958,
          ymax : 43.992001
       } */
-    }) // other bookmarks ...   
+    ]
+     }) // other bookmarks ...   
    ]
 
 
