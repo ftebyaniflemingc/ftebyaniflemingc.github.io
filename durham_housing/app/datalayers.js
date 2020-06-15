@@ -256,7 +256,7 @@ require([
               ymin: 43.803571,
               xmax: -79.039612,
               ymax: 43.991980
-            }*/
+            }
           }) 
         ]
 });//new Bookmarks
