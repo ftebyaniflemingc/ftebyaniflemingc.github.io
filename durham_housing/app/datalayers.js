@@ -27,7 +27,7 @@ require([
        
    // create ten new instances of feature layers based on the following definitions
        var layer1 = new FeatureLayer({ 
-       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units_1/FeatureServer/9",
+       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/9",
           popupTemplate: {       
                   title: "The census boundary: {infilling2010_csv_Census_Tract}",
                   content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
@@ -35,7 +35,7 @@ require([
           });
       mymap.add(layer1); 
         var layer2 = new FeatureLayer({ 
-     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units_1/FeatureServer/8",
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/8",
           
       popupTemplate: {       
                   title: "The census boundary: {infilling2011_csv_Census_Tract}",
@@ -44,7 +44,7 @@ require([
         });
       mymap.add(layer2);
         var layer3 = new FeatureLayer({ 
-     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units_1/FeatureServer/7",
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/7",
                     popupTemplate: {       
                   title: "The census boundary: {infilling2012_csv_Census_Tract}",
                   content: "<p>has  {infilling2012_csv_SumOfUnits} housing starts in {Date}.</p>"
@@ -62,7 +62,7 @@ require([
       mymap.add(layer4);
       
         var layer5 = new FeatureLayer({ 
-     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units_1/FeatureServer/5",
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/5",
 
       popupTemplate: {       
                   title: "The census boundary: {infilling2014_csv_Census_Tract}",
@@ -72,7 +72,7 @@ require([
       mymap.add(layer5);
       
       var layer6 = new FeatureLayer({ 
-       url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units_1/FeatureServer/4",
+       url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/4",
 
       popupTemplate: {       
                   title: "The census boundary: {infilling2015_csv_Census_Tract}",
@@ -82,7 +82,7 @@ require([
       mymap.add(layer6);
       
       var layer7 = new FeatureLayer({ 
-      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units_1/FeatureServer/3",
+      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/3",
 
       popupTemplate: {       
                   title: "The census boundary: {infilling2016_csv_Census_Tract}",
@@ -92,7 +92,7 @@ require([
       mymap.add(layer7);
       
       var layer8 = new FeatureLayer({ 
-      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units_1/FeatureServer/2",
+      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/2",
 
       popupTemplate: {       
                   title: "The census boundary: {infilling2017_csv_Census_Tract}",
@@ -102,7 +102,7 @@ require([
       mymap.add(layer8);
       
       var layer9 = new FeatureLayer({ 
-       url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units_1/FeatureServer/1",
+       url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/1",
       popupTemplate: {       
                   title: "The census boundary: {infilling2018_csv_Census_Tract}",
                   content: "<p>has  {infilling2018_csv_SumOfUnits} housing starts in {Date}.</p>"
@@ -111,7 +111,7 @@ require([
       mymap.add(layer9);
       
       var layer10 = new FeatureLayer({ 
-     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units_1/FeatureServer/0",
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/0",
       popupTemplate: {       
                   title: "The census boundary: {infilling2019_csv_Census_Tract}",
                   content: "<p>has  {infilling2019_csv_SumOfUnits} housing starts in {Date}.</p>"
