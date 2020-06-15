@@ -174,9 +174,10 @@ require([
          ymin : 43.95708,
          xmax :  -78.790409,
          ymax : 43.868072
-         },
-      
-           name : "Whitby" ,
+         }
+           }),//oshawa bookmark
+             new Bookmark({ 
+       name : "Whitby" ,
        extent : {
          spatialReference : {wkid : 32617},
         xmin : -78.880817,
@@ -184,15 +185,10 @@ require([
          xmax : -79.038958,
          ymax : 43.992001
       } 
-         })
-     ]
-     }) // other bookmarks ...   
+     }) //whitby bookmark
    ]
 
-
-
-
-});
+});//new Bookmarks
 
 
 const bkExpand = new Expand ({
