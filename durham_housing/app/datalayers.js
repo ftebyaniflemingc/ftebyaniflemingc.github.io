@@ -262,6 +262,6 @@ const bkExpand = new Expand ({
    content : bookmarks,
    expanded : false
 });
-         myview.ui.add (bkExpand, {position: "buttom-right", index:1 });
+         myview.ui.add (bkExpand,  "bottom-right");
       
 }); //require
