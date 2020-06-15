@@ -1,144 +1,146 @@
 //---------------esri rquirements ---------------
 require([
-      "esri/Map",
+      "esri/WebMap",
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
       "esri/layers/Layer",
+      "esri/widgets/Bookmarks",
+       "esri/webmap/Bookmark",
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen",
       "esri/widgets/LayerList",
       "esri/widgets/Legend",
       "esri/widgets/Expand",
-      "esri/widgets/TimeSlider",
-      //"esri/layers/mixins/SublayersOwner",
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(Map, MapView, FeatureLayer, Layer, Home, Fullscreen, LayerList, Legend, Expand, TimeSlider, SublayersOwner, PopupTemplate ){
-    let layerView;
+        function(WebMap, MapView, FeatureLayer,  Layer, Bookmarks, Bookmark, Home, Fullscreen, LayerList, Legend, Expand,  PopupTemplate ){
+   let layerView;
       //---------------FeatureLayers---------------
-   /// Creates a WebMap instance
-      var webmap = new Map({
-            basemap: {
+   /// Creates a Map instance
+      const mymap = new WebMap({
+          basemap: {//basemap source: https://www.arcgis.com/home/item.html?id=3582b744bba84668b52a16b0b6942544
             portalItem: {
-              id: "3582b744bba84668b52a16b0b6942544"
+              id: "3582b744bba84668b52a16b0b6942544" 
             }
           }
-      }); //webmap
-     
-  var layer = new FeatureLayer({ 
-      /*   portalItem: { // autocasts as new PortalItem()
-                 id: "a9e79e4ea2a047d5b4f38a2b7d3de689", */
-     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/South_Durham_Region_Housing_From_2010_to_2019/FeatureServer/",
-            sublayers:[
-         {id: 9, title: "Year2010",  visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2010_csv_Census_Tract > 0)",
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2010_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            }},
-         {id: 8, title: "Year2011",  visible: true, 
-          definitionExpression: "(CensusBoundary2011_CT> 0) AND (infilling2011_csv_Census_Tract > 0)",
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2011_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2011_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            }},
-         {id: 7, title: "Year2012",  visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2012_csv_Census_Tract > 0)",
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2012_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            }},
-         {id: 6, title: "Year2013",  visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2013_csv_Census_Tract > 0)",
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary20166CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2013_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            }},
-         {id: 5, title: "Year2014",  visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2014_csv_Census_Tract > 0)",
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2014_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2014_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            }},
-         {id: 4, title: "Year2015",  visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2015_csv_Census_Tract > 0)",
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary20166CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2015_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            }},
-         {id: 3, title: "Year2016", visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2016_csv_Census_Tract > 0)",
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2016_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            }},
-         {id: 2, title: "Year2017", visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2017_csv_Census_Tract > 0)",
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2017_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            }},
-           
-         {id: 1, title: "Year2018", visible: true, 
-          definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2018_csv_Census_Tract > 0)",
-             popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2018_csv_SumOfUnits} housing starts."   // Display ttext in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            }},
-         {id: 0, title: "Year2019", visible: true, 
-         definitionExpression: "(CensusBoundary2016_CT> 0) AND (infilling2019_csv_Census_Tract > 0)",         
-               popupTemplate: {        // Enable a popup
-                  title: "{CensusBoundary2016_CTNAME}",       // Show attribute value
-                  content: "The census boundary has {infilling2019_csv_SumOfUnits} housing starts."   // Display text in pop-up
-            },
-          timeInfo: {
-            startField: "{Date}", // name of the date field
-            }}
-         ]
-  }); //FeatureLayer
+        });
        
-webmap.add(layer);
-      webmap.reorder(layer);
-    
+   // create ten new instances of feature layers based on the following definitions
+       var layer1 = new FeatureLayer({ 
+       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/9",
+          popupTemplate: {       
+                  title: "The census boundary: {infilling2010_csv_Census_Tract}",
+                  content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }  // Display text in pop-up 
+          });
+      mymap.add(layer1); 
+        var layer2 = new FeatureLayer({ 
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/8",
+          
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2011_csv_Census_Tract}",
+                  content: "<p>has  {infilling2011_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }
+        });
+      mymap.add(layer2);
+        var layer3 = new FeatureLayer({ 
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/7",
+                    popupTemplate: {       
+                  title: "The census boundary: {infilling2012_csv_Census_Tract}",
+                  content: "<p>has  {infilling2012_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }
+        });
+      mymap.add(layer3);
+        var layer4 = new FeatureLayer({ 
+       url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/6",
+
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2013_csv_Census_Tract}",
+                  content: "<p>has  {infilling2013_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }
+        });
+      mymap.add(layer4);
+      
+        var layer5 = new FeatureLayer({ 
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/5",
+
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2014_csv_Census_Tract}",
+                  content: "<p>has  {infilling2014_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }
+        });
+      mymap.add(layer5);
+      
+      var layer6 = new FeatureLayer({ 
+       url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/4",
+
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2015_csv_Census_Tract}",
+                  content: "<p>has  {infilling2015_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }
+        });
+      mymap.add(layer6);
+      
+      var layer7 = new FeatureLayer({ 
+      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/3",
+
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2016_csv_Census_Tract}",
+                  content: "<p>has  {infilling2016_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }
+        });
+      mymap.add(layer7);
+      
+      var layer8 = new FeatureLayer({ 
+      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/2",
+
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2017_csv_Census_Tract}",
+                  content: "<p>has  {infilling2017_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }
+        });
+      mymap.add(layer8);
+      
+      var layer9 = new FeatureLayer({ 
+       url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/1",
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2018_csv_Census_Tract}",
+                  content: "<p>has  {infilling2018_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }
+        });
+      mymap.add(layer9);
+      
+      var layer10 = new FeatureLayer({ 
+     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/0",
+      popupTemplate: {       
+                  title: "The census boundary: {infilling2019_csv_Census_Tract}",
+                  content: "<p>has  {infilling2019_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  }
+        });
+      mymap.add(layer10);
+      
+       mymap.addMany([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]);
       // Mapview, referencing WebMap instance
+      
+      
       var myview = new MapView({
-            map: webmap,    // The WebMap instance created above
-            layers: [layer],
+             Webmap: mymap,    // The WebMap instance created above
+            layers: [layer10, layer9, layer8, layer7, layer6, layer5, layer4, layer3, layer2, layer1],
             container: "mapid",
             center: [-78.871866,43.914656],
             zoom: 10
-      }); //mapview
-      
-      
+      }); //mapview 
+
+      myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4, layer3, layer2, layer1])
+    .then(function(layerView) {      
+      // The layerview for the layer
+      })
+    .catch(function(error) { // An error occurred during the layerview creation
+    
+    });
+
        //---------------Home Button---------------
         var myhome = new Home({
             view: myview,
@@ -146,7 +148,7 @@ webmap.add(layer);
             }, "Home");
                               
 //Add the widget to the top right of screen
-        myview.ui.add(myhome,  {position: "top-left", index:1 });
+        myview.ui.add(myhome,  {position: "top-left", index:1 }); //position is the first custom widget from the top
         
       
       //---------------FullScreen Button---------------
@@ -155,131 +157,72 @@ webmap.add(layer);
            view: myview,
             visible: true //show the button
          }, "Fullscreen");
-        myview.ui.add(myfulls, {position: "top-left", index:2 });
+        myview.ui.add(myfulls, {position: "top-left", index:2 }); //position is the second custom widget from the top
                 
+     //-------------------BookMarks------------------------------- 
       
-      //-------------------Layer List-------------------------------
+         const bookmarks = new Bookmarks ({
+   view : myview,
+   bookmarks : [
+     new Bookmarks ({
+       name : "Oshawa" ,
+       extent : {
+         spatialReference : {
+           wkid : 102100
+        },
+        xmin : -78.790409 ,
+         ymin : 43.868072 ,
+         xmax : -78.940272 ,
+         ymax : 43.95708
+      }
+    }) // other bookmarks ...   
+   ]
+
+
+
+
+});
+
+
+const bkExpand = new Expand ({
+   view : myview,
+   content : bookmarks,
+   expanded : false
+});
+         myview.ui.add (bkExpand, {position: "top-right", index:1 });
+      
+  //-------------------Layer List-------------------------------    
       myview.when(function() {
-            var layerList = new LayerList({
-                  view: myview,
-                  visible: true // show the button
-            }, "Layer");
-  
+      const layerList = new Expand({
+          collapsedIconClass: "esri-icon-collapse",
+          expandIconClass: "esri-icon-expand",
+          expandTooltip: "LayerList",
+           view: myview,
+           content: new LayerList({
+            view: myview
+          }),
+          view: myview,
+          expanded: true, // layerList widget is visible when the UI is loaded
+        }); //Expand       
+            
             // Add widget to screen
-            myview.ui.add(layerList, {position: "top-right", index:3});
+            myview.ui.add(layerList, "top-right");
       });//LayerList
            
         //---------------Legend---------------
-      
+           
         const mylegend = new Expand({
-          content: new Legend({
+          collapsedIconClass: "esri-icon-collapse",
+          expandIconClass: "esri-icon-expand",
+          expandTooltip: "Legend",
+           view: myview,
+           content: new Legend({
             view: myview,
             style: 'classic' // other styles include 'classic'
           }),
           view: myview,
-          expanded: true,
+          expanded: true, // Legend widget is visible when the UI is loaded
         }); //Expand 
-        myview.ui.add(mylegend, "bottom-left");
-      
-     //---------------Time Slider--------------- 
-      
-      const timeSlider = new TimeSlider ({
-   //container: "timeSliderDiv" ,
-   mode: "instant" ,
-   view: myview
-});
-myview.ui.add (timeSlider, "bottom-right" );
-
-let timeLayerView;
-
-myview.whenLayerView (layer) .then ( function ( lv ) {
-  timeLayerView = lv;
-
-  timeSlider.fullTimeExtent = layer.timeInfo.fullTimeExtent;
-  timeSlider.stops = {
-    interval : {
-       value : 1 ,
-       unit : "years"
-    },
-    timeExtent : {
-       start : layer.timeInfo.fullTimeExtent.start, // 
-      end: layer.timeInfo.fullTimeExtent.end // 
-    }
-  }
-
-
-});
-
-myview.ui.add (timeSlider, "bottom-right" );
-
-timeSlider.watch ( "timeExtent" , function ( value ) {
-   // update layer view filter to reflect current timeExtent
-  timeLayerView.filter = {
-    timeExtent : value
-  };
-});
-
-      
-/*
-
-      const timeSlider = new TimeSlider({
-          //container: "timeSlider",
-          mpde: "cumulative-from-start",
-            playRate: 1500,
-          stops: {interval: {
-              value: 1,
-              unit: "years"
-            }}
-        });
-        myview.ui.add(timeSlider, "bottom-righ");
-
-        // wait till the layer view is loaded
-        myview.whenLayerView(layer).then(function(lv) {
-          layerView = lv;
-             
-              
-          // start time of the time slider - 5/25/2019
-          const start = new Date(2010, 1, 1);
-          const end = new Date(2019, 12, 31);
-          // set time slider's full extent to
-          // 5/25/5019 - until end date of layer's fullTimeExtent
-          timeSlider.fullTimeExtent = {
-            start: start,
-            end: end
-                //end: layer.timeInfo.fullTimeExtent.end
-          };
-
-          // We will be showing earthquakes with one day interval
-          // when the app is loaded we will show earthquakes that
-          // happened between 5/25 - 5/26.
-         // const end = new Date(start);
-          // end of current time extent for time slider
-          // showing earthquakes with one day interval
-         // end.setDate(end.getDate() + 1);
-
-          // Values property is set so that timeslider
-          // widget show the first day. We are setting
-          // the thumbs positions.
-          timeSlider.values = [start, end];
-        });
-
-        // watch for time slider timeExtent change
-        timeSlider.watch("timeExtent", function() {
-          // only show earthquakes happened up until the end of
-         // timeSlider's current time extent.
-          layer.definitionExpression =
-            "time <= " + timeSlider.timeExtent.end.getTime();
-
-          // now gray out earthquakes that happened before the time slider's current
-          // timeExtent... leaving footprint of earthquakes that already happened
-          layerView.effect = {
-            filter: {
-            timeExtent: timeSlider.timeExtent,
-              geometry: myview.extent
-           },
-           excludedEffect: "grayscale(20%) opacity(12%)"
-         };
-        });
- */
-      
+        myview.ui.add(mylegend, {position: "top-left", index:3}); //position is the third from the top
+  
 }); //require
