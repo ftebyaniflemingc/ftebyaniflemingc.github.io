@@ -174,7 +174,7 @@ require([
          ymin : 43.95708,
          xmax :  -78.790409,
          ymax : 43.868072
-         }, 
+         }
       }),
          new Bookmark ({
            name : "Whitby" ,
