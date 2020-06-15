@@ -202,12 +202,12 @@ require([
    new Bookmark({
          name: "Oshawa",
          extent: {
-           spatialReference: {wkid: 32617},   
+           spatialReference: {wkid: 26917},   
                  zoom:11,
-         xmin: -2937226.30783,
-    ymin: -4365091.442119,
-    xmax: -2934154.046223,
-    ymax: -4383895.442607,
+         xmin: 784759.9,
+    ymin: 435224.9,
+    xmax: 440050.8,
+    ymax: 785619.2,
             } 
            }),
           new Bookmark({
