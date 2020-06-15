@@ -6,16 +6,16 @@ require([
       "esri/layers/Layer",
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen",
+      "esri/widgets/Expand",
       "esri/widgets/LayerList",
       "esri/widgets/Legend",
       "esri/widgets/Bookmarks",
       "esri/webmap/Bookmark",
-      "esri/widgets/Expand",
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, LayerList, Legend, Bookmarks, Bookmark, Expand,  PopupTemplate ){
+        function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, Expand, LayerList, Legend, Bookmarks, Bookmark, PopupTemplate ){
    let layerView;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
@@ -122,11 +122,11 @@ require([
       mymap.add(layer10);
       
        mymap.addMany([layer10, layer9, layer8, layer7, layer6, layer5, layer4,layer3, layer2, layer1]);
-      // Mapview, referencing WebMap instance
+      // Mapview, referencing Map instance
       
       
       var myview = new MapView({
-             map: mymap,    // The WebMap instance created above
+             map: mymap,    // The Map instance created above
             layers: [layer10, layer9, layer8, layer7, layer6, layer5, layer4, layer3, layer2, layer1],
             container: "mapid",
             center: [-78.871866,43.914656],
@@ -137,7 +137,7 @@ require([
     .then(function(layerView) {      
       // The layerview for the layer
       })
-    .catch(function(error) { // An error occurred during the layerview creation
+    .catch(function(error) { // catch any error occurred during the layerview creation
     
     });
 
@@ -188,7 +188,7 @@ require([
            view: myview,
            content: new Legend({
             view: myview,
-            style: 'classic' // other styles include 'classic'
+            style: 'classic' // other styles include 'card'
           }),
           view: myview,
           expanded: true, // Legend widget is visible when the UI is loaded
