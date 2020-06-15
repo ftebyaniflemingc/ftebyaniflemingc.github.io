@@ -161,10 +161,10 @@ require([
                 
      //-------------------BookMarks------------------------------- 
       
-         const mybookmarks = new Bookmark ({
+         const mybookmarks = new Bookmarks ({
    view : myview,
    mybookmarks : [
-     new Bookmark ({
+     new Bookmarks ({
        name : "Oshawa" ,
      /*  extent : {
          spatialReference : {wkid : 32617},
