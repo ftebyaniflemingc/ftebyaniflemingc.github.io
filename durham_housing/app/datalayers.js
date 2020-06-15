@@ -183,7 +183,7 @@ require([
          ymin :  43.850775,
          xmax : -79.038958,
          ymax : 43.992001
-      } */
+      } 
          })
      ]
      }) // other bookmarks ...   
