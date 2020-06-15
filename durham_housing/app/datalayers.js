@@ -4,18 +4,18 @@ require([
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
       "esri/layers/Layer",
-      "esri/widgets/Bookmarks",
-      "esri/webmap/Bookmark",
       "esri/widgets/Home", 
       "esri/widgets/Fullscreen",
       "esri/widgets/LayerList",
       "esri/widgets/Legend",
+      "esri/widgets/Bookmarks",
+      "esri/webmap/Bookmark",
       "esri/widgets/Expand",
       "esri/PopupTemplate",
       "dojo/dom",
       "dojo/domReady!"
         ], 
-        function(Map, MapView, FeatureLayer,  Layer, Bookmarks, Bookmark, Home, Fullscreen, LayerList, Legend, Expand,  PopupTemplate ){
+        function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, LayerList, Legend, Bookmarks, Bookmark, Expand,  PopupTemplate ){
    let layerView;
       //---------------FeatureLayers---------------
    /// Creates a Map instance
@@ -159,10 +159,46 @@ require([
          }, "Fullscreen");
         myview.ui.add(myfulls, {position: "top-left", index:2 }); //position is the second custom widget from the top
                 
-     //-------------------BookMarks------------------------------- 
+     
+      
+  //-------------------Layer List-------------------------------    
+      myview.when(function() {
+      const layerList = new Expand({
+          collapsedIconClass: "esri-icon-collapse",
+          expandIconClass: "esri-icon-expand",
+          expandTooltip: "LayerList",
+           view: myview,
+           content: new LayerList({
+            view: myview
+          }),
+          view: myview,
+          expanded: true, // layerList widget is visible when the UI is loaded
+        }); //Expand       
+            
+            // Add widget to screen
+            myview.ui.add(layerList, "top-right");
+      });//LayerList
+           
+        //---------------Legend---------------
+           
+        const mylegend = new Expand({
+          collapsedIconClass: "esri-icon-collapse",
+          expandIconClass: "esri-icon-expand",
+          expandTooltip: "Legend",
+           view: myview,
+           content: new Legend({
+            view: myview,
+            style: 'classic' // other styles include 'classic'
+          }),
+          view: myview,
+          expanded: true, // Legend widget is visible when the UI is loaded
+        }); //Expand 
+        myview.ui.add(mylegend, {position: "top-left", index:3}); //position is the third from the top
+  
+      //-------------------BookMarks------------------------------- 
     const mybookmarks = new Bookmarks ({
    view : myview,
-   mybookmarks : [   
+   mybookmarks: [   
    new Bookmark({
             name: "Oshawa"
        /*     extent: {   spatialReference: {  wkid: 32617  },
@@ -170,11 +206,11 @@ require([
          ymin : 43.95708,
          xmax :  -78.790409,
          ymax : 43.868072
-            } */
+            } 
           }),
           new Bookmark({
             name: "Whitby"
-         /*   extent: {
+            extent: {
               spatialReference: {
                 wkid: 32617
               },
@@ -231,38 +267,4 @@ const bkExpand = new Expand ({
 });
          myview.ui.add (bkExpand, {position: "top-right", index:1 });
       
-  //-------------------Layer List-------------------------------    
-      myview.when(function() {
-      const layerList = new Expand({
-          collapsedIconClass: "esri-icon-collapse",
-          expandIconClass: "esri-icon-expand",
-          expandTooltip: "LayerList",
-           view: myview,
-           content: new LayerList({
-            view: myview
-          }),
-          view: myview,
-          expanded: true, // layerList widget is visible when the UI is loaded
-        }); //Expand       
-            
-            // Add widget to screen
-            myview.ui.add(layerList, "top-right");
-      });//LayerList
-           
-        //---------------Legend---------------
-           
-        const mylegend = new Expand({
-          collapsedIconClass: "esri-icon-collapse",
-          expandIconClass: "esri-icon-expand",
-          expandTooltip: "Legend",
-           view: myview,
-           content: new Legend({
-            view: myview,
-            style: 'classic' // other styles include 'classic'
-          }),
-          view: myview,
-          expanded: true, // Legend widget is visible when the UI is loaded
-        }); //Expand 
-        myview.ui.add(mylegend, {position: "top-left", index:3}); //position is the third from the top
-  
 }); //require
