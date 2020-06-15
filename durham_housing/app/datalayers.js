@@ -31,14 +31,8 @@ require([
           popupTemplate: {       
                   title: "The census boundary: {infilling2010_csv_Census_Tract}",
                   content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },  // Display text in pop-up 
-          timeInfo: {
-            startField: {Date}, // name of the date field
-            interval: {        
-              unit: "months",
-              value: 1
-            }}
-        });
+                  }  // Display text in pop-up 
+          });
       mymap.add(layer1); 
         var layer2 = new FeatureLayer({ 
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units_1/FeatureServer/8",
@@ -46,13 +40,7 @@ require([
       popupTemplate: {       
                   title: "The census boundary: {infilling2011_csv_Census_Tract}",
                   content: "<p>has  {infilling2011_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },  // Display text in pop-up 
-          timeInfo: {
-            startField: {Date}, // name of the date field
-            interval: {        
-              unit: "months",
-              value: 1
-            }}
+                  }
         });
       mymap.add(layer2);
         var layer3 = new FeatureLayer({ 
@@ -60,13 +48,7 @@ require([
                     popupTemplate: {       
                   title: "The census boundary: {infilling2012_csv_Census_Tract}",
                   content: "<p>has  {infilling2012_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },  // Display text in pop-up 
-          timeInfo: {
-            startField: {Date}, // name of the date field
-            interval: {        
-              unit: "months",
-              value: 1
-            }}
+                  }
         });
       mymap.add(layer3);
         var layer4 = new FeatureLayer({ 
@@ -75,13 +57,7 @@ require([
       popupTemplate: {       
                   title: "The census boundary: {infilling2013_csv_Census_Tract}",
                   content: "<p>has  {infilling2013_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },  // Display text in pop-up 
-          timeInfo: {
-            startField: {Date}, // name of the date field
-            interval: {        
-              unit: "months",
-              value: 1
-            }}
+                  }
         });
       mymap.add(layer4);
       
@@ -91,13 +67,7 @@ require([
       popupTemplate: {       
                   title: "The census boundary: {infilling2014_csv_Census_Tract}",
                   content: "<p>has  {infilling2014_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },  // Display text in pop-up 
-          timeInfo: {
-            startField: {Date}, // name of the date field
-            interval: {        
-              unit: "months",
-              value: 1
-            }}
+                  }
         });
       mymap.add(layer5);
       
@@ -107,13 +77,7 @@ require([
       popupTemplate: {       
                   title: "The census boundary: {infilling2015_csv_Census_Tract}",
                   content: "<p>has  {infilling2015_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },  // Display text in pop-up 
-          timeInfo: {
-            startField: {Date}, // name of the date field
-            interval: {        
-              unit: "months",
-              value: 1
-            }}
+                  }
         });
       mymap.add(layer6);
       
@@ -123,13 +87,7 @@ require([
       popupTemplate: {       
                   title: "The census boundary: {infilling2016_csv_Census_Tract}",
                   content: "<p>has  {infilling2016_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },  // Display text in pop-up 
-          timeInfo: {
-            startField: "Date", // name of the date field
-            interval: {        
-              unit: "months",
-              value: 1
-            }}
+                  }
         });
       mymap.add(layer7);
       
@@ -139,13 +97,7 @@ require([
       popupTemplate: {       
                   title: "The census boundary: {infilling2017_csv_Census_Tract}",
                   content: "<p>has  {infilling2017_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },  // Display text in pop-up 
-          timeInfo: {
-            startField: {Date}, // name of the date field
-            interval: {        
-              unit: "months",
-              value: 1
-            }}
+                  }
         });
       mymap.add(layer8);
       
@@ -154,13 +106,7 @@ require([
       popupTemplate: {       
                   title: "The census boundary: {infilling2018_csv_Census_Tract}",
                   content: "<p>has  {infilling2018_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },  // Display text in pop-up 
-          timeInfo: {
-            startField: {Date}, // name of the date field
-            interval: {        
-              unit: "months",
-              value: 1
-            }}
+                  }
         });
       mymap.add(layer9);
       
@@ -169,13 +115,7 @@ require([
       popupTemplate: {       
                   title: "The census boundary: {infilling2019_csv_Census_Tract}",
                   content: "<p>has  {infilling2019_csv_SumOfUnits} housing starts in {Date}.</p>"
-                  },  // Display text in pop-up 
-          timeInfo: {
-            startField: {Date}, // name of the date field
-            interval: {        
-              unit: "months",
-              value: 1
-            }}
+                  }
         });
       mymap.add(layer10);
       
@@ -192,12 +132,10 @@ require([
       }); //mapview 
 
       myview.whenLayerView([layer10, layer9, layer8, layer7, layer6, layer5, layer4, layer3, layer2, layer1])
-    .then(function(layerView) {
-            
+    .then(function(layerView) {      
       // The layerview for the layer
       })
-    .catch(function(error) {
-      // An error occurred during the layerview creation
+    .catch(function(error) { // An error occurred during the layerview creation
     
     });
 
@@ -208,7 +146,7 @@ require([
             }, "Home");
                               
 //Add the widget to the top right of screen
-        myview.ui.add(myhome,  {position: "top-left", index:1 });
+        myview.ui.add(myhome,  {position: "top-left", index:1 }); //position is the first custom widget from the top
         
       
       //---------------FullScreen Button---------------
@@ -217,7 +155,7 @@ require([
            view: myview,
             visible: true //show the button
          }, "Fullscreen");
-        myview.ui.add(myfulls, {position: "top-left", index:2 });
+        myview.ui.add(myfulls, {position: "top-left", index:2 }); //position is the second custom widget from the top
                 
       
       //-------------------Layer List-------------------------------
@@ -234,15 +172,11 @@ require([
             view: myview
           }),
           view: myview,
-          expanded: true, // Legend widget is visible when the UI is loaded
+          expanded: true, // layerList widget is visible when the UI is loaded
         }); //Expand       
-            /*
-            var layerList = new LayerList({
-                  view: myview,
-                  visible: true // show the button
-            }, "Layer"); */
+            
             // Add widget to screen
-            myview.ui.add(layerList, {position: "top-right", index:3});
+            myview.ui.add(layerList, "top-right");
       });//LayerList
            
         //---------------Legend---------------
@@ -259,6 +193,6 @@ require([
           view: myview,
           expanded: true, // Legend widget is visible when the UI is loaded
         }); //Expand 
-        myview.ui.add(mylegend, {position: "top-left", index:3});
+        myview.ui.add(mylegend, {position: "top-left", index:3}); //position is the third from the top
   
 }); //require
