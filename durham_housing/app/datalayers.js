@@ -202,20 +202,19 @@ require([
    new Bookmark({
          name: "Oshawa",
          extent: {
-           spatialReference: {latestwkid: 32617, 
-                              wkid: 102100},   
-                 zoom:12,
+           spatialReference: {wkid: 102009},   
+                 zoom:11,
          ymax : -78.891533,
          xmax : 43.853411,
          ymin :  -78.846423,
          xmin : 43.950244
             } 
-         /*  }),
+           }),
           new Bookmark({
-            name: "Whitby"
+            name: "Whitby",
             extent: {
               spatialReference: {
-                wkid: 32617
+                wkid: 102009
               },
               xmin : -78.880817,
          ymin :  43.850775,
@@ -227,36 +226,36 @@ require([
             name: "Ajax",
             extent: {
               spatialReference: {
-                wkid: 32617
+                wkid: 102009
               },
-              xmin: ,
-              ymin: ,
-              xmax: ,
-              ymax: 
+              xmin: -79.040779,
+              ymin: 43.824347,
+              xmax: -79.008874,
+              ymax: 43.921957
             }
           }), 
          new Bookmark({
             name: "Clarington",
             extent: {
               spatialReference: {
-                wkid: 32617
+                wkid: 102009
               },
-              xmin: ,
-              ymin: ,
-              xmax: ,
-              ymax: 
+              xmin: -78.795824,
+              ymin: 43.872488,
+              xmax: -78.544123,
+              ymax: 44.063681
             }
           }),
           new Bookmark({
             name: "Pickering",
             extent: {
               spatialReference: {
-                 wkid: 32617
+                 wkid: 102009
               },
-              xmin: ,
-              ymin: ,
-              xmax: ,
-              ymax: 
+              xmin: -79.121710,
+              ymin: 43.803571,
+              xmax: -79.039612,
+              ymax: 43.991980
             }*/
           }) 
         ]
