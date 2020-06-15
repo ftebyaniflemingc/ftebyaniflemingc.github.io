@@ -202,7 +202,7 @@ require([
    new Bookmark({
          name: "Oshawa",
          extent: {
-           spatialReference: {wkid: 102009},   
+           spatialReference: {wkid: 102002},   
                  zoom:11,
          ymax : -78.891533,
          xmax : 43.853411,
@@ -214,7 +214,7 @@ require([
             name: "Whitby",
             extent: {
               spatialReference: {
-                wkid: 102009
+                wkid: 102002
               },
               xmin : -78.880817,
          ymin :  43.850775,
@@ -226,7 +226,7 @@ require([
             name: "Ajax",
             extent: {
               spatialReference: {
-                wkid: 102009
+                wkid: 102002
               },
               xmin: -79.040779,
               ymin: 43.824347,
@@ -238,7 +238,7 @@ require([
             name: "Clarington",
             extent: {
               spatialReference: {
-                wkid: 102009
+                wkid: 102002
               },
               xmin: -78.795824,
               ymin: 43.872488,
@@ -250,7 +250,7 @@ require([
             name: "Pickering",
             extent: {
               spatialReference: {
-                 wkid: 102009
+                 wkid: 102002
               },
               xmin: -79.121710,
               ymin: 43.803571,
