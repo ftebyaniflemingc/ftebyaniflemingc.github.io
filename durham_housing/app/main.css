@@ -48,47 +48,6 @@ html, body {
   order: 1;
 }
 
-#titleId { 
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 5px;
-  font-size:10vw;
-  font-weight: normal;
-  font-family: "Arial Unicode MS";
-  position: absolute;
-  top: 10px;
-  width: 50%;
-  left: 25%;
-  text-align: center;  
-  resize: both;
-  overflow: auto;
-}
-#timeSlider{
-  width: 60%;
-  left: 3750px;
-  right: 350px;
-   bottom: 200px;
-   position: absolute;
-}
-/*
-
-#main {
-      padding: 10px;
-      text-align: center;
-      position: absolute;
-      right: 250px;
-      bottom: 50px;
-      width:100px;
-      }
-    #logo {
-      padding: 25px;
-       }
- #titleText {
-      padding: 10px;
-   font-family: "Tahoma";   
-   font-weight: normal;
-      text-align: center;
-      font-size: 12px;
-    }
 /* esri overrides */
       .esri-widget {
         border: 1px solid 4f4944;
@@ -98,26 +57,11 @@ html, body {
     padding: 0;
     padding-top: 4px;
     }
- //.esri-time-slider__layout--wide .esri-time-slider__time-extent,
-// .esri-time-slider__layout--compact .esri-time-slider__time-extent,
-// .esri-time-slider__layout--wide .esri-time-slider__min,
-// .esri-time-slider__layout--wide .esri-time-slider__max,
-// .esri-time-slider__layout--compact .esri-time-slider__min-date,
-// .esri-time-slider__layout--compact .esri-time-slider__max-date,
-// .esri-legend__layer-caption {  display: none;  }
-
+ 
 /* Footer meant to emulate CMHC website: https://www.cmhc-schl.gc.ca/ */
 #Canada_logo img {
     float: right;
     width: 120px;
     vertical-align: top;
     margin-right: 40px;
-    
-.footer-bottom {
-    border-top: 1px solid #606060;
-    padding: 25px 0;
-    margin-top: 35px;
-    font-size: 0.95em;
-    line-height: 2em;
-}
-
+ 
