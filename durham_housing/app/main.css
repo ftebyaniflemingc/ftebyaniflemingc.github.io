@@ -19,7 +19,7 @@ html, body {
 
 .appHeader .headerLogo {
   height: calc(100% - 10px);
-  left: 15px;
+  left: 155px;
 }
 
 .appHeader .headerTitle {
@@ -32,7 +32,7 @@ html, body {
 .appHeader .subHeaderTitle {
   color: #CFCFCF;
   font-size: small;
-  padding-left: 20px;
+  padding-left: 50px;
 }
 
 .appHeader .headerLogo,
