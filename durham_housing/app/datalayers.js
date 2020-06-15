@@ -160,34 +160,67 @@ require([
         myview.ui.add(myfulls, {position: "top-left", index:2 }); //position is the second custom widget from the top
                 
      //-------------------BookMarks------------------------------- 
-      
-         let mybookmarks = new Bookmarks ({
+    let mybookmarks = new Bookmarks ({
    view : myview,
-   mybookmarks : [
-     new Bookmarks ({
-           [
-           new Bookmark ({
-       name : "Oshawa" ,
-       extent : {
-         spatialReference : {wkid : 32617},
-        xmin : -78.940272,
+   mybookmarks : [   
+   new Bookmark({
+            name: "Oshawa",
+            extent: {   spatialReference: {  wkid: 32617  },
+         xmin : -78.940272,
          ymin : 43.95708,
          xmax :  -78.790409,
          ymax : 43.868072
-         }
-           }),//oshawa bookmark
-             new Bookmark({ 
-       name : "Whitby" ,
-       extent : {
-         spatialReference : {wkid : 32617},
-        xmin : -78.880817,
+            }
+         /* }),
+          new Bookmark({
+            name: "Whitby",
+            extent: {
+              spatialReference: {
+                wkid: 32617
+              },
+              xmin : -78.880817,
          ymin :  43.850775,
          xmax : -79.038958,
          ymax : 43.992001
-      } 
-     }) //whitby bookmark
-   ]
-
+            }
+          }), 
+         new Bookmark({
+            name: "Ajax",
+            extent: {
+              spatialReference: {
+                wkid: 32617
+              },
+              xmin: -2814690.83,
+              ymin: -2081978.04,
+              xmax: 8182457.30,
+              ymax: 4620020
+            }
+          }), 
+         new Bookmark({
+            name: "Clarington",
+            extent: {
+              spatialReference: {
+                wkid: 32617
+              },
+              xmin: 1511963.70,
+              ymin: 1661959.86,
+              xmax: 12391704.56,
+              ymax: 5869053.90
+            }
+          }),
+          new Bookmark({
+            name: "Pickering",
+            extent: {
+              spatialReference: {
+                 wkid: 32617
+              },
+              xmin: -19424807.06,
+              ymin: -6466370.88,
+              xmax: 2843439.52,
+              ymax: 6937626.40
+            }*/
+          }) 
+        ]
 });//new Bookmarks
 
 
