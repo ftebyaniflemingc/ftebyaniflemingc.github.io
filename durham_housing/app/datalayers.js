@@ -204,8 +204,8 @@ require([
          zoom: 11,
          extent: {
        spatialReference: {wkid: 4326},
-       xmax: -78.846526,
-       ymax: 43.93044,
+       xmax: -78.853373,
+       ymax: 43.993984,
        xmin: -78.882321,
        ymin: 43.853228        
                /*
@@ -219,42 +219,46 @@ require([
     new Bookmark({
       name: "Whitby",
       extent: {
+       xmax: -78.846526,
+       ymax: 43.93044,
+       xmin: -78.882321,
+       ymin: 43.853228,        
+            /*
       xmin: 663426.3125,
       ymin: 4859045.3837,
       xmax: 666187.6516000004,
-      ymax: 4869539.968900001, 
-                  spatialReference: {latestWkid: 102100, wkid: 26917}
+      ymax: 4869539.968900001,  */
+                  spatialReference: {wkid: 4326}
             }
           }), 
          new Bookmark({
             name: "Ajax",
             extent: {
-       xmin: 654978.2319,
-       ymin: 4853328.5953,
-       xmax: 662340.5842,
-       ymax: 4863793.0985, 
-                  spatialReference: {latestWkid:26917, wkid: 26917}
+       xmin: -79.043398,
+       ymin: 43.816760,
+       xmax: -79.008231,
+       ymax: 43.922018, 
+                  spatialReference: {wkid: 4326}
             }
           }), 
-     /*    new Bookmark({
+        new Bookmark({
             name: "Clarington",
             extent: {
-              spatialReference: {latestWkid: 
-                                 29617, wkid: 26917},  
-              xmin: -78.795824,
-              ymin: 43.872488,
-              xmax: -78.544123,
-              ymax: 44.063681
+              spatialReference: {wkid: 4326},  
+              xmin: -78.569085,
+              ymin: 44.059600,
+              xmax: -78.797020,
+              ymax: 43.874056
             }
-          }),*/
+          }),
           new Bookmark({
             name: "Pickering",
             extent: {
-              xmin: 645404.47449999955,
-              ymin: 4850755.0143999998,
-              xmax: 657741.90789999999,
-              ymax:  4864856.5720000006, 
-                  spatialReference: {latestWkid:26917, wkid: 26917}
+              xmin: -79.117055,
+              ymin: 43.796094,
+              xmax: -79.030839,
+              ymax:  43.946665, 
+                  spatialReference: {wkid: 4326}
             }
           }) 
         ]
