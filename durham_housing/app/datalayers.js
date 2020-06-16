@@ -213,46 +213,46 @@ require([
           new Bookmark({
             name: "Whitby",
             extent: {
-              spatialReference: {wkid: 26917},   
+              spatialReference: {latestWkid: 26917, wkid: 26917},   
                   zoom:11,
       xmin: 647010.7342499997,
       ymin: 4851955.572000001,
       xmax: 701281.892,
       ymax: 4921200.074999999
-   
             }
           }), 
          new Bookmark({
             name: "Ajax",
             extent: {
-              spatialReference: {latestwkid: 
-                                 29617, wkid: 26917},  
-                  zoom:11,
-              xmin: 4855118.44,
-              ymin: 662725.58,
-              xmax: 4861581.79,
-              ymax: 655779.47
+              spatialReference: {latestWkid: 
+                                 26917, wkid: 26917},  
+       xmin: 652998.92625817,
+       ymin: 4852998.918745141,
+       xmax: 664000.9262581699,
+       ymax: 4866000.91874514
             }
           }), 
-         new Bookmark({
+     /*    new Bookmark({
             name: "Clarington",
             extent: {
-              spatialReference: {latestwkid: 29617, wkid: 29617},   
+              spatialReference: {latestWkid: 
+                                 29617, wkid: 26917},  
               xmin: -78.795824,
               ymin: 43.872488,
               xmax: -78.544123,
               ymax: 44.063681
             }
-          }),
+          }),*/
           new Bookmark({
             name: "Pickering",
             extent: {
-              spatialReference: {latestwkid: 29617, wkid: 29617}, 
-                  zoom:11,
-              xmin: 4851454.92,
-              ymin: 651568.07,
-              xmax: 4872771.84,
-              ymax: 656728.53
+              spatialReference: {latestWkid: 
+                                 26917, wkid: 26917},  
+  
+              xmin: 645404.47449999955,
+              ymin: 4850755.0143999998,
+              xmax: 657741.90789999999,
+              ymax:  4864856.5720000006
             }
           }) 
         ]
