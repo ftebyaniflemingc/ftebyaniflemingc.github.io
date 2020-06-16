@@ -1,3 +1,9 @@
+//--------------------------------------------------------------------------------------------------------------
+//This JavaScript were developed for Project 2020, web app development 
+//The most of code were used from ArcGIS for API Tutorials;  https://developers.arcgis.com/javascript/
+//--------------------------------------------------------------------------------------------------------------
+
+
 //---------------esri rquirements ---------------
 require([
       "esri/Map",
@@ -162,6 +168,7 @@ require([
      
       
   //-------------------Layer List-------------------------------    
+      
       myview.when(function() {
       const layerList = new Expand({
           collapsedIconClass: "esri-icon-collapse",
@@ -207,7 +214,7 @@ require([
          name: "Oshawa",
          zoom: 12,
          extent: { // set the range of the citi's boundary by max and min of upper and lower lat/long
-       spatialReference: {wkid: 4326}, //
+       spatialReference: {wkid: 4326}, 
        xmax: -78.867251,
        ymax: 44.031790,
        xmin: -78.882321,
@@ -260,8 +267,6 @@ require([
           }) 
         ]
 });//new Bookmarks
-
-
 const bkExpand = new Expand ({
    view : myview,
    content : bookmarks,
