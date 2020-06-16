@@ -213,7 +213,7 @@ require([
           new Bookmark({
             name: "Whitby",
             extent: {
-              spatialReference: {wkid: 32217},   
+              spatialReference: {wkid: 26917},   
                   zoom:11,
               xmin : -78.880817,
          ymin :  43.850775,
@@ -224,12 +224,13 @@ require([
          new Bookmark({
             name: "Ajax",
             extent: {
-              spatialReference: {wkid: 32217},  
+              spatialReference: {latestwkid: 
+                                 29617, wkid: 26917},  
                   zoom:11,
-              xmin: -79.040779,
-              ymin: 43.824347,
-              xmax: -79.008874,
-              ymax: 43.921957
+              xmin: 4855118.44,
+              ymin: 662725.58,
+              xmax: 4861581.79,
+              ymax: 655779.47
             }
           }), 
          new Bookmark({
