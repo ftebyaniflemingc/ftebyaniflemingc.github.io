@@ -206,7 +206,7 @@ require([
        ymin: 4856843.429218002,
        xmax: 683788.1489771781,
        ymax: 4879145.70614508,
-       spatialReference: {latestWkid: 26917, wkid: 26917}
+       spatialReference: {latestWkid: 26917, wkid: 102100}
          }
            }),
     new Bookmark({
