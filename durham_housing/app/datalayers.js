@@ -201,14 +201,14 @@ require([
    bookmarks: [        
    new Bookmark({
          name: "Oshawa",
-         extent: {
-           spatialReference: {wkid: 26917},   
+         fullextent: {
+           spatialReference: {latestWkid: 26917, wkid: 26917},   
                  zoom:11,
-         xmin: 4860460.11,
-         ymin: 676864.44,
-         xmax: 4869457.00,
-         ymax: 666591.21
-            } 
+       xmin: 657621.4911103005,
+       ymin: 4856843.429218002,
+       xmax: 683788.1489771781,
+       ymax: 4879145.70614508,
+         }
            }),
           new Bookmark({
             name: "Whitby",
