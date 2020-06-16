@@ -195,15 +195,19 @@ require([
         }); //Expand 
         myview.ui.add(mylegend, {position: "top-left", index:3}); //position is the third from the top
   
+      
+      
       //-------------------BookMarks------------------------------- 
+      
+      
     const bookmarks = new Bookmarks ({
    view : myview,
    bookmarks: [        
    new Bookmark({
          name: "Oshawa",
          zoom: 12,
-         extent: {
-       spatialReference: {wkid: 4326},
+         extent: { // set the range of the citi's boundary by max and min of upper and lower lat/long
+       spatialReference: {wkid: 4326}, //
        xmax: -78.867251,
        ymax: 44.031790,
        xmin: -78.882321,
@@ -263,6 +267,6 @@ const bkExpand = new Expand ({
    content : bookmarks,
    expanded : false
 });
-         myview.ui.add (bkExpand,  "bottom-right");
+         myview.ui.add (bkExpand,  {position: "top-left", index:4 });
       
 }); //require
