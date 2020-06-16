@@ -212,12 +212,11 @@ require([
     new Bookmark({
       name: "Whitby",
       extent: {
-            xtent": {
       xmin: 663426.3125,
       ymin: 4859045.3837,
       xmax: 666187.6516000004,
       ymax: 4869539.968900001, 
-                  spatialReference: {latestWkid: 26917, wkid: 26917}
+                  spatialReference: {latestWkid: 102100, wkid: 26917}
             }
           }), 
          new Bookmark({
