@@ -202,32 +202,31 @@ require([
    new Bookmark({
          name: "Oshawa",
          extent: {
-          
        xmin: 657621.4911103005,
        ymin: 4856843.429218002,
        xmax: 683788.1489771781,
        ymax: 4879145.70614508,
-                spatialReference: {latestWkid: 26917, wkid: 26917}
+       spatialReference: {latestWkid: 26917, wkid: 26917}
          }
            }),
-          new Bookmark({
-            name: "Whitby",
-            extent: {
-      xmin: 647010.7342499997,
-      ymin: 4851955.572000001,
-      xmax: 701281.892,
-      ymax: 4921200.074999999, 
+    new Bookmark({
+      name: "Whitby",
+      extent: {
+            xtent": {
+      xmin: 663426.3125,
+      ymin: 4859045.3837,
+      xmax: 666187.6516000004,
+      ymax: 4869539.968900001, 
                   spatialReference: {latestWkid: 26917, wkid: 26917}
             }
           }), 
          new Bookmark({
             name: "Ajax",
             extent: {
-              
-       xmin: 652998.92625817,
-       ymin: 4852998.918745141,
-       xmax: 664000.9262581699,
-       ymax: 4866000.91874514, 
+       xmin: 654978.2319,
+       ymin: 4853328.5953,
+       xmax: 662340.5842,
+       ymax: 4863793.0985, 
                   spatialReference: {latestWkid:26917, wkid: 26917}
             }
           }), 
