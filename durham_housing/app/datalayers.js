@@ -237,8 +237,8 @@ require([
               zoom: 11,
             extent: {
               spatialReference: {wkid: 4326},  
-              xmin: -78.569085,
-              ymin: 44.059600,
+              xmin: -78.797020,
+              ymin: 43.874056,
               xmax: -78.573542,
               ymax: 44.085060
             }
