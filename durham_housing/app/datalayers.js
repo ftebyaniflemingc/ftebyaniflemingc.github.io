@@ -239,8 +239,8 @@ require([
               spatialReference: {wkid: 4326},  
               xmin: -78.569085,
               ymin: 44.059600,
-              xmax: -78.797020,
-              ymax: 43.874056
+              xmax: -78.573542,
+              ymax: 44.085060
             }
           }),
           new Bookmark({
@@ -250,8 +250,8 @@ require([
                   spatialReference: {wkid: 4326},
               xmin: -79.117055,
               ymin: 43.796094,
-              xmax: -79.040839,
-              ymax:  43.990354
+              xmax: -79.064839,
+              ymax:  43.996354
             }
           }) 
         ]
