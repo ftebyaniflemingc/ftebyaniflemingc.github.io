@@ -204,8 +204,8 @@ require([
          zoom: 11,
          extent: {
        spatialReference: {wkid: 4326},
-       xmax: -78.853373,
-       ymax: 43.993984,
+       xmax: -78.867251,
+       ymax: 44.031790,
        xmin: -78.882321,
        ymin: 43.853228        
                /*
@@ -218,9 +218,10 @@ require([
            }),
     new Bookmark({
       name: "Whitby",
+          zoom: 11,
       extent: {
-       xmax: -78.846526,
-       ymax: 43.93044,
+       xmax: -78.957248,
+       ymax: 44.010622,
        xmin: -78.882321,
        ymin: 43.853228,        
             /*
@@ -233,6 +234,7 @@ require([
           }), 
          new Bookmark({
             name: "Ajax",
+               zoom: 11,
             extent: {
        xmin: -79.043398,
        ymin: 43.816760,
@@ -243,6 +245,7 @@ require([
           }), 
         new Bookmark({
             name: "Clarington",
+              zoom: 11,
             extent: {
               spatialReference: {wkid: 4326},  
               xmin: -78.569085,
