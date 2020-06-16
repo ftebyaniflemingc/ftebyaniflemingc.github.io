@@ -63,7 +63,7 @@ html, body {
   text-align: center;   
 }
 
-/* esri overrides */
+/* esri overrides
       .esri-widget {
         border: 1px solid 4f4944;
       }
@@ -71,21 +71,21 @@ html, body {
  .esri-legend__service {
     padding: 0;
     padding-top: 4px;
-    }
+    }.
  
-/* Footer meant to emulate CMHC website: https://www.cmhc-schl.gc.ca/ */
+
 #Canada_logo img {
     float: right;
     width: 120px;
     vertical-align: top;
     margin-right: 40px;
-
+/* Footer meant to emulate CMHC website: https://www.cmhc-schl.gc.ca/ 
   .footer-bottom {
     border-top: 1px solid #606060;
     padding: 25px 0;
     margin-top: 35px;
     font-size: 0.95em;
     line-height: 2em;
-}
+} */
 
 
