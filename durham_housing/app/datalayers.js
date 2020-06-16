@@ -248,10 +248,10 @@ require([
             extent: {
               spatialReference: {latestwkid: 29617, wkid: 29617}, 
                   zoom:11,
-              xmin: -79.121710,
-              ymin: 43.803571,
-              xmax: -79.039612,
-              ymax: 43.991980
+              xmin: 4851454.92,
+              ymin: 651568.07,
+              xmax: 4872771.84,
+              ymax: 656728.53
             }
           }) 
         ]
