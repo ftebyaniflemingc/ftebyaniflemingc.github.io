@@ -201,46 +201,35 @@ require([
    bookmarks: [        
    new Bookmark({
          name: "Oshawa",
-         zoom: 11,
+         zoom: 12,
          extent: {
        spatialReference: {wkid: 4326},
        xmax: -78.867251,
        ymax: 44.031790,
        xmin: -78.882321,
        ymin: 43.853228        
-               /*
-       spatialReference: {latestWkid: 26917, wkid: 26917},
-       xmin: 657621.4911103005,
-       ymin: 4856843.429218002,
-       xmax: 683788.1489771781,
-       ymax: 4879145.70614508 */
         }
            }),
     new Bookmark({
       name: "Whitby",
-          zoom: 11,
+          zoom: 12,
       extent: {
+            spatialReference: {wkid: 4326},
        xmax: -78.957248,
        ymax: 44.010622,
        xmin: -78.882321,
-       ymin: 43.853228,        
-            /*
-      xmin: 663426.3125,
-      ymin: 4859045.3837,
-      xmax: 666187.6516000004,
-      ymax: 4869539.968900001,  */
-                  spatialReference: {wkid: 4326}
+       ymin: 43.853228        
             }
           }), 
          new Bookmark({
             name: "Ajax",
                zoom: 11,
             extent: {
+                  spatialReference: {wkid: 4326},
        xmin: -79.043398,
        ymin: 43.816760,
        xmax: -79.008231,
-       ymax: 43.922018, 
-                  spatialReference: {wkid: 4326}
+       ymax: 43.922018
             }
           }), 
         new Bookmark({
@@ -256,12 +245,13 @@ require([
           }),
           new Bookmark({
             name: "Pickering",
+                zoom: 11,
             extent: {
+                  spatialReference: {wkid: 4326},
               xmin: -79.117055,
               ymin: 43.796094,
-              xmax: -79.030839,
-              ymax:  43.946665, 
-                  spatialReference: {wkid: 4326}
+              xmax: -79.040839,
+              ymax:  43.990354
             }
           }) 
         ]
