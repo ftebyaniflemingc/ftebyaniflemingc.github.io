@@ -129,7 +129,7 @@ require([
              map: mymap,    // The Map instance created above
             layers: [layer10, layer9, layer8, layer7, layer6, layer5, layer4, layer3, layer2, layer1],
             container: "mapid",
-            spatialReference: {latestWkid: 26917, wkid: 26917},
+            spatialReference: {wkid: 4326},
            center: [-78.871866,43.914656],
             zoom: 10
       }); //mapview 
@@ -203,11 +203,17 @@ require([
    new Bookmark({
          name: "Oshawa",
          extent: {
+       spatialReference: {wkid: 4326},
+       xmin: -78.891533,
+       ymin: 43.583411,
+       xmax: -78.846423,
+       ymax: 43.930244        
+               /*
        spatialReference: {latestWkid: 26917, wkid: 26917},
        xmin: 657621.4911103005,
        ymin: 4856843.429218002,
        xmax: 683788.1489771781,
-       ymax: 4879145.70614508
+       ymax: 4879145.70614508 */
         }
            }),
     new Bookmark({
