@@ -272,6 +272,6 @@ const bkExpand = new Expand ({
    content : bookmarks,
    expanded : false
 });
-         myview.ui.add (bkExpand, "buttom-right");
+         myview.ui.add (bkExpand, {position: "top-left", index: 3);
       
 }); //require
