@@ -37,7 +37,7 @@ require([
        var layer1 = new FeatureLayer({ 
        url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/9",
           popupTemplate: {       
-                  title: "The census boundary: {infilling2010_csv_Census_Tract}",
+                  title: "The census tract: {infilling2010_csv_Census_Tract}",
                   content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
                   }  // Display text in pop-up 
           });
