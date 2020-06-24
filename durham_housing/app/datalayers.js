@@ -105,7 +105,7 @@ require([
 
       popupTemplate: {       
                   title: "The census boundary: {infilling2017_csv_Census_Tract}",
-                  content: "<p>has  {infilling2017_csv_SumOfUnits} housing starts in {StartDate}.</p>"
+                  content: "<p>has  {infilling2017_csv_SumOfUnits} housing starts in {Start_Date}.</p>"
                   }
         });
       mymap.add(layer8);
