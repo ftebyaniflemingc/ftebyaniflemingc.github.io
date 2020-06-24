@@ -17,14 +17,13 @@ require([
       "esri/widgets/Legend",
       "esri/widgets/Bookmarks",
       "esri/webmap/Bookmark",
-     "esri/PopupTemplate"
-    //"dojo/dom",
-    //"dojo/domReady!"
-        ], 
+      "esri/PopupTemplate"
+          ], 
         function(Map, MapView, FeatureLayer,  Layer, Home, Fullscreen, Expand, LayerList, Legend, Bookmarks, Bookmark, PopupTemplate ){
    let layerView;
+      
       //---------------FeatureLayers---------------
-   /// Creates a Map instance
+      /// Creates a Map instance
       const mymap = new Map({
           basemap: {//basemap source: https://www.arcgis.com/home/item.html?id=3582b744bba84668b52a16b0b6942544
             portalItem: {
@@ -35,8 +34,7 @@ require([
        
    // create ten new instances of feature layers based on the following definitions
        var layer1 = new FeatureLayer({ 
-       //url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/9",
-             url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing/FeatureServer/9",
+       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing/FeatureServer/9",
           popupTemplate: {       
                   title: "The census tract: {infilling2010_csv_Census_Tract}",
                   content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Start_Date}.</p>"
@@ -44,7 +42,7 @@ require([
           });
       mymap.add(layer1); 
         var layer2 = new FeatureLayer({ 
-     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing/FeatureServer/8",
+        url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing/FeatureServer/8",
           
       popupTemplate: {       
                   title: "The census tract: {infilling2011_csv_Census_Tract}",
@@ -53,7 +51,7 @@ require([
         });
       mymap.add(layer2);
         var layer3 = new FeatureLayer({ 
-     url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing/FeatureServer/7",
+        url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing/FeatureServer/7",
                     popupTemplate: {       
                   title: "The census tract: {infilling2012_csv_Census_Tract}",
                   content: "<p>has  {infilling2012_csv_SumOfUnits} housing starts in {Start_Date}.</p>"
