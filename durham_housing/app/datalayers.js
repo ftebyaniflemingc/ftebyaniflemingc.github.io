@@ -35,10 +35,11 @@ require([
        
    // create ten new instances of feature layers based on the following definitions
        var layer1 = new FeatureLayer({ 
-       url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/9",
+       //url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing_Units/FeatureServer/9",
+             url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing/FeatureServer/9",
           popupTemplate: {       
                   title: "The census tract: {infilling2010_csv_Census_Tract}",
-                  content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Date}.</p>"
+                  content: "<p>has  {infilling2010_csv_SumOfUnits} housing starts in {Start_Date}.</p>"
                   }  // Display text in pop-up 
           });
       mymap.add(layer1); 
