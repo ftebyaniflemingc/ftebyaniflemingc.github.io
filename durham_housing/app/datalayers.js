@@ -47,7 +47,7 @@ require([
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing/FeatureServer/8",
           
       popupTemplate: {       
-                  title: "The census boundary: {infilling2011_csv_Census_Tract}",
+                  title: "The census tract: {infilling2011_csv_Census_Tract}",
                   content: "<p>has  {infilling2011_csv_SumOfUnits} housing starts in {Start_Date}.</p>"
                   }
         });
@@ -55,7 +55,7 @@ require([
         var layer3 = new FeatureLayer({ 
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing/FeatureServer/7",
                     popupTemplate: {       
-                  title: "The census boundary: {infilling2012_csv_Census_Tract}",
+                  title: "The census tract: {infilling2012_csv_Census_Tract}",
                   content: "<p>has  {infilling2012_csv_SumOfUnits} housing starts in {Start_Date}.</p>"
                   }
         });
@@ -64,7 +64,7 @@ require([
        url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing/FeatureServer/6",
 
       popupTemplate: {       
-                  title: "The census boundary: {infilling2013_csv_Census_Tract}",
+                  title: "The census tract: {infilling2013_csv_Census_Tract}",
                   content: "<p>has  {infilling2013_csv_SumOfUnits} housing starts in {Start_Date}.</p>"
                   }
         });
@@ -74,7 +74,7 @@ require([
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing/FeatureServer/5",
 
       popupTemplate: {       
-                  title: "The census boundary: {infilling2014_csv_Census_Tract}",
+                  title: "The census tract: {infilling2014_csv_Census_Tract}",
                   content: "<p>has  {infilling2014_csv_SumOfUnits} housing starts in {Start_Date}.</p>"
                   }
         });
@@ -84,7 +84,7 @@ require([
        url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing/FeatureServer/4",
 
       popupTemplate: {       
-                  title: "The census boundary: {infilling2015_csv_Census_Tract}",
+                  title: "The census tract: {infilling2015_csv_Census_Tract}",
                   content: "<p>has  {infilling2015_csv_SumOfUnits} housing starts in {Start_Date}.</p>"
                   }
         });
@@ -94,7 +94,7 @@ require([
       url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing/FeatureServer/3",
 
       popupTemplate: {       
-                  title: "The census boundary: {infilling2016_csv_Census_Tract}",
+                  title: "The census tract: {infilling2016_csv_Census_Tract}",
                   content: "<p>has  {infilling2016_csv_SumOfUnits} housing starts in {Start_Date}.</p>"
                   }
         });
@@ -104,7 +104,7 @@ require([
       url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing/FeatureServer/2",
 
       popupTemplate: {       
-                  title: "The census boundary: {infilling2017_csv_Census_Tract}",
+                  title: "The census tract: {infilling2017_csv_Census_Tract}",
                   content: "<p>has  {infilling2017_csv_SumOfUnits} housing starts in {Start_Date}.</p>"
                   }
         });
@@ -113,7 +113,7 @@ require([
       var layer9 = new FeatureLayer({ 
        url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing/FeatureServer/1",
       popupTemplate: {       
-                  title: "The census boundary: {infilling2018_csv_Census_Tract}",
+                  title: "The census tract: {infilling2018_csv_Census_Tract}",
                   content: "<p>has  {infilling2018_csv_SumOfUnits} housing starts in {Start_Date}.</p>"
                   }
         });
@@ -122,7 +122,7 @@ require([
       var layer10 = new FeatureLayer({ 
      url : "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/SDR_Housing/FeatureServer/0",
       popupTemplate: {       
-                  title: "The census boundary: {infilling2019_csv_Census_Tract}",
+                  title: "The census tract: {infilling2019_csv_Census_Tract}",
                   content: "<p>has  {infilling2019_csv_SumOfUnits} housing starts in {Start_Date}.</p>"
                   }
         });
